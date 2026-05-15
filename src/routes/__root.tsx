@@ -75,11 +75,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Sistema de Pedidos Comerciais — Hospitalar" },
       { name: "description", content: "Sistema de pedidos com tabela de preços hospitalar, arredondamento automático para caixa padrão e exportação em PDF." },
       { name: "author", content: "Riquímica" },
-      { property: "og:title", content: "Sistema de Pedidos Comerciais" },
-      { property: "og:description", content: "Geração de pedidos com cálculo e arredondamento automáticos." },
+      { property: "og:title", content: "Sistema de Pedidos Comerciais — Hospitalar" },
+      { property: "og:description", content: "Sistema de pedidos com tabela de preços hospitalar, arredondamento automático para caixa padrão e exportação em PDF." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Sistema de Pedidos Comerciais — Hospitalar" },
+      { name: "twitter:description", content: "Sistema de pedidos com tabela de preços hospitalar, arredondamento automático para caixa padrão e exportação em PDF." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6ce99b42-b6bf-444b-8caf-ec70ad80cb10/id-preview-fc69eecb--253f7c06-e534-4631-b73d-db578999f901.lovable.app-1778853056098.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6ce99b42-b6bf-444b-8caf-ec70ad80cb10/id-preview-fc69eecb--253f7c06-e534-4631-b73d-db578999f901.lovable.app-1778853056098.png" },
     ],
     links: [
       {
