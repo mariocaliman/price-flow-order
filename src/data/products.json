@@ -1,0 +1,3688 @@
+[
+  {
+    "codigo": "0520100102",
+    "descricao": "ACE-RIO 98ML - REMOVEDOR DE ESMALTE",
+    "apresentacao": "98ml",
+    "ncm": "33043000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Acetona",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 10.0,
+      "RQE Especialista": 5.0,
+      "RQS Estrategico": 5.5,
+      "Venda Direta": 5.75
+    }
+  },
+  {
+    "codigo": "0520100101",
+    "descricao": "ACE-RIO 500ML - REMOVEDOR DE ESMALTE",
+    "apresentacao": "500ml",
+    "ncm": "33043000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Acetona",
+    "validade": "24",
+    "qtdPorEmbalagem": 24,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 29.8,
+      "RQE Especialista": 14.9,
+      "RQS Estrategico": 16.39,
+      "Venda Direta": 17.14
+    }
+  },
+  {
+    "codigo": "0520104843",
+    "descricao": "AGUA BORICADA 3% 100ML ALM. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Ácido Bórico",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.43,
+      "RQE Especialista": 1.72,
+      "RQS Estrategico": 1.89,
+      "Venda Direta": 1.98
+    }
+  },
+  {
+    "codigo": "0520100402",
+    "descricao": "AGUA OXIGENADA 10 VOL. 100ML ALM. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Peróxido De Hidrogênio",
+    "validade": "36",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.3,
+      "RQE Especialista": 1.65,
+      "RQS Estrategico": 1.82,
+      "Venda Direta": 1.9
+    }
+  },
+  {
+    "codigo": "0530100101",
+    "descricao": "AGUA OXIGENADA 10 VOL. 1L",
+    "apresentacao": "1L",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Peróxido De Hidrogênio",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 8.9,
+      "RQE Especialista": 4.45,
+      "RQS Estrategico": 4.9,
+      "Venda Direta": 5.12
+    }
+  },
+  {
+    "codigo": "0530102036",
+    "descricao": "ALCOOL IODADO 100ML ALMOTOLIA TWIST OFF - 30 UNIDADES",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodo",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 6.36,
+      "RQE Especialista": 3.18,
+      "RQS Estrategico": 3.5,
+      "Venda Direta": 3.66
+    }
+  },
+  {
+    "codigo": "0510100301",
+    "descricao": "ALCOOL IODADO 0,1% 1L",
+    "apresentacao": "1L",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodo",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 33.6,
+      "RQE Especialista": 16.8,
+      "RQS Estrategico": 18.48,
+      "Venda Direta": 19.32
+    }
+  },
+  {
+    "codigo": "0530301164",
+    "descricao": "GLICERINA BRANCA 90 ML - CS",
+    "apresentacao": "90ml",
+    "ncm": "33049990",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Glicerina",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 13.4,
+      "RQE Especialista": 6.7,
+      "RQS Estrategico": 7.37,
+      "Venda Direta": 7.71
+    }
+  },
+  {
+    "codigo": "0530301165",
+    "descricao": "GLICERINA BRANCA 1 L - CS",
+    "apresentacao": "1L",
+    "ncm": "33049990",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Glicerina",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 80.0,
+      "RQE Especialista": 40.0,
+      "RQS Estrategico": 44.0,
+      "Venda Direta": 46.0
+    }
+  },
+  {
+    "codigo": "0530100201",
+    "descricao": "OLEO MINERAL 100ML",
+    "apresentacao": "100ml",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Óleo Mineral",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 11.8,
+      "RQE Especialista": 5.9,
+      "RQS Estrategico": 6.49,
+      "Venda Direta": 6.79
+    }
+  },
+  {
+    "codigo": "0520104101",
+    "descricao": "PASTA D AGUA 100G",
+    "apresentacao": "100G",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Óxido De Zinco",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 16.0,
+      "RQE Especialista": 8.0,
+      "RQS Estrategico": 8.8,
+      "Venda Direta": 9.2
+    }
+  },
+  {
+    "codigo": "0510105166",
+    "descricao": "RIALCOOL 70 ANTISSEPTICO SACHE 1ML DISPLAY 120 UNID.",
+    "apresentacao": "1ml",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "36",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 35.8,
+      "RQE Especialista": 17.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 20.59
+    }
+  },
+  {
+    "codigo": "0510101117",
+    "descricao": "RIALCOOL 70 ANTISSEP.30 ML ALM. TWIST OFF",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 2.7,
+      "RQE Especialista": 1.35,
+      "RQS Estrategico": null,
+      "Venda Direta": 1.56
+    }
+  },
+  {
+    "codigo": "0520103202",
+    "descricao": "RIALCOOL 70 ANTISSEPTICO 50 ML",
+    "apresentacao": "50ml",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "36",
+    "qtdPorEmbalagem": 48,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.3,
+      "RQE Especialista": 1.65,
+      "RQS Estrategico": null,
+      "Venda Direta": 1.9
+    }
+  },
+  {
+    "codigo": "0510101114",
+    "descricao": "RIALCOOL 70 ANTISSEP. 100ML ALM.TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "36",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.8,
+      "RQE Especialista": 1.9,
+      "RQS Estrategico": 2.09,
+      "Venda Direta": 2.19
+    }
+  },
+  {
+    "codigo": "0510101116",
+    "descricao": "RIALCOOL 70 ANTIS. 100ML ALM.TWIST OFF V.P.",
+    "apresentacao": "100ml Twist Off VP",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "36",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.8,
+      "RQE Especialista": 1.9,
+      "RQS Estrategico": 2.09,
+      "Venda Direta": 2.19
+    }
+  },
+  {
+    "codigo": "0510101119",
+    "descricao": "RIALCOOL 70 ANTISSEP. 250ML ALM.V.P TWIST OFF",
+    "apresentacao": "250ml Twist Off",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "36",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 9.0,
+      "RQE Especialista": 4.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 5.18
+    }
+  },
+  {
+    "codigo": "0510101103",
+    "descricao": "RIALCOOL 70 ANTISSEPTICO 1L",
+    "apresentacao": "1L",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 21.8,
+      "RQE Especialista": 10.9,
+      "RQS Estrategico": 11.99,
+      "Venda Direta": 12.54
+    }
+  },
+  {
+    "codigo": "0510101904",
+    "descricao": "RIALCOOL 70 ANTISSEPTICO 1L SERIGRAFADO",
+    "apresentacao": "1L Serigrafado",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 21.8,
+      "RQE Especialista": 10.9,
+      "RQS Estrategico": 11.99,
+      "Venda Direta": 12.54
+    }
+  },
+  {
+    "codigo": "0520104813",
+    "descricao": "RIOCARE OLEO DE AMENDOAS HIDRATANTE 100ML",
+    "apresentacao": "100ml",
+    "ncm": "33072090",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Óleo De Amêndoas",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 13.6,
+      "RQE Especialista": 6.8,
+      "RQS Estrategico": 7.48,
+      "Venda Direta": 7.82
+    }
+  },
+  {
+    "codigo": "0510101306",
+    "descricao": "RIODEINE DERMO SUAVE DEGER. 100ML ALM. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30039099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodopovidona 10%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 13.42,
+      "RQE Especialista": 6.71,
+      "RQS Estrategico": 7.39,
+      "Venda Direta": 7.72
+    }
+  },
+  {
+    "codigo": "0510101302",
+    "descricao": "RIODEINE DERMO SUAVE DEGERMANTE 1L",
+    "apresentacao": "1L",
+    "ncm": "30039099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodopovidona 10%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 105.3,
+      "RQE Especialista": 52.65,
+      "RQS Estrategico": 57.92,
+      "Venda Direta": 60.55
+    }
+  },
+  {
+    "codigo": "0530100507",
+    "descricao": "RIODEINE DERMO SUAVE TOPICO 30ML ALMOTOLIA TWIST OFF",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "30039099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodopolividona 10%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 5.9,
+      "RQE Especialista": 2.95,
+      "RQS Estrategico": 3.25,
+      "Venda Direta": 3.4
+    }
+  },
+  {
+    "codigo": "0530100506",
+    "descricao": "RIODEINE DERMO SUAVE TOPICO 100ML ALM. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30039099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodopolividona 10%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 12.9,
+      "RQE Especialista": 6.45,
+      "RQS Estrategico": 7.1,
+      "Venda Direta": 7.42
+    }
+  },
+  {
+    "codigo": "0530100502",
+    "descricao": "RIODEINE DERMO SUAVE TOPICO 100ML SPRAY",
+    "apresentacao": "100ml Spray",
+    "ncm": "30039099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodopolividona 10%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 17.9,
+      "RQE Especialista": 8.95,
+      "RQS Estrategico": 9.85,
+      "Venda Direta": 10.3
+    }
+  },
+  {
+    "codigo": "0510103401",
+    "descricao": "RIODEINE DERMO SUAVE TOPICO 1L",
+    "apresentacao": "1L",
+    "ncm": "30039099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodopolividona 10%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 100.4,
+      "RQE Especialista": 50.2,
+      "RQS Estrategico": 55.22,
+      "Venda Direta": 57.73
+    }
+  },
+  {
+    "codigo": "0510101407",
+    "descricao": "RIODEINE TINTURA 100ML ALMOT. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30039099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodopolividona 10%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 13.4,
+      "RQE Especialista": 6.7,
+      "RQS Estrategico": 7.37,
+      "Venda Direta": 7.71
+    }
+  },
+  {
+    "codigo": "0510101401",
+    "descricao": "RIODEINE TINTURA 1L",
+    "apresentacao": "1L",
+    "ncm": "30039099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodopolividona 10%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 105.0,
+      "RQE Especialista": 52.5,
+      "RQS Estrategico": 57.75,
+      "Venda Direta": 60.38
+    }
+  },
+  {
+    "codigo": "0510300306",
+    "descricao": "RIOHEX 0,2 DERMO SUAVE 30ML ALM. TWIST OFF",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "29252923",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Clorexidina 0,2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 2.2,
+      "RQE Especialista": 1.1,
+      "RQS Estrategico": 1.21,
+      "Venda Direta": 1.27
+    }
+  },
+  {
+    "codigo": "0510300305",
+    "descricao": "RIOHEX 0,2 DERMO SUAVE 100ML ALM. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "29252923",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Clorexidina 0,2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 2.9,
+      "RQE Especialista": 1.45,
+      "RQS Estrategico": 1.6,
+      "Venda Direta": 1.67
+    }
+  },
+  {
+    "codigo": "0510300307",
+    "descricao": "RIOHEX 0,2 DERMO SUAVE 1L",
+    "apresentacao": "1L",
+    "ncm": "29252923",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Clorexidina 0,2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 11.2,
+      "RQE Especialista": 5.6,
+      "RQS Estrategico": 6.16,
+      "Venda Direta": 6.44
+    }
+  },
+  {
+    "codigo": "0510101610",
+    "descricao": "RIOHEX 0,5% ALCOOLICO - 30ML ALMOTOLIA TWIST OFF",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 0,5%",
+    "validade": "36",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.2,
+      "RQE Especialista": 1.6,
+      "RQS Estrategico": 1.76,
+      "Venda Direta": 1.84
+    }
+  },
+  {
+    "codigo": "0510101609",
+    "descricao": "RIOHEX 0,5% ALCOOLICO - 100ML ALM. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 0,5%",
+    "validade": "36",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 4.4,
+      "RQE Especialista": 2.2,
+      "RQS Estrategico": 2.42,
+      "Venda Direta": 2.53
+    }
+  },
+  {
+    "codigo": "0510101601",
+    "descricao": "RIOHEX 0,5% ALCOOLICO - 1L",
+    "apresentacao": "1L",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 0,5%",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 24.0,
+      "RQE Especialista": 12.0,
+      "RQS Estrategico": 13.2,
+      "Venda Direta": 13.8
+    }
+  },
+  {
+    "codigo": "0510101611",
+    "descricao": "RIOHEX 0,5% COLORIDO - 100 ML TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 0,5%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 4.8,
+      "RQE Especialista": 2.4,
+      "RQS Estrategico": 2.64,
+      "Venda Direta": 2.76
+    }
+  },
+  {
+    "codigo": "0510101606",
+    "descricao": "RIOHEX 0,5% COLORIDO - 1L",
+    "apresentacao": "1L",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 0,5%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 26.0,
+      "RQE Especialista": 13.0,
+      "RQS Estrategico": 14.3,
+      "Venda Direta": 14.95
+    }
+  },
+  {
+    "codigo": "0520104801",
+    "descricao": "RIOHEX 1% AQUOSO - 30ML ALMOTOLIA TWIST OFF",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 1%",
+    "validade": "36",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 2.8,
+      "RQE Especialista": 1.4,
+      "RQS Estrategico": null,
+      "Venda Direta": 1.61
+    }
+  },
+  {
+    "codigo": "0530102020",
+    "descricao": "RIOHEX 1% AQUOSO - 30ML SPRAY CAIXA C/12 UND",
+    "apresentacao": "30ml Spray",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 1%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 16.0,
+      "RQE Especialista": 8.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 9.2
+    }
+  },
+  {
+    "codigo": "0530102005",
+    "descricao": "RIOHEX 1% AQUOSO - 100ML ALM. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 1%",
+    "validade": "36",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.8,
+      "RQE Especialista": 1.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 2.19
+    }
+  },
+  {
+    "codigo": "0530102007",
+    "descricao": "RIOHEX 1% AQUOSO - 1L",
+    "apresentacao": "1L",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 1%",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 17.9,
+      "RQE Especialista": 8.95,
+      "RQS Estrategico": null,
+      "Venda Direta": 10.3
+    }
+  },
+  {
+    "codigo": "0510105208",
+    "descricao": "RIOHEX 2% ALCOOLICO - SACHE 1ML DISPLAY 120 UND (CX C/12)",
+    "apresentacao": "1ml Sache",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 39.8,
+      "RQE Especialista": 19.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 22.89
+    }
+  },
+  {
+    "codigo": "0510105081",
+    "descricao": "RIOHEX 2% ALCOOLICO - 30ML TWIST OFF",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.5,
+      "RQE Especialista": 1.75,
+      "RQS Estrategico": null,
+      "Venda Direta": 2.02
+    }
+  },
+  {
+    "codigo": "0510105082",
+    "descricao": "RIOHEX 2% ALCOOLICO - 100ML TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 5.5,
+      "RQE Especialista": 2.75,
+      "RQS Estrategico": null,
+      "Venda Direta": 3.17
+    }
+  },
+  {
+    "codigo": "0510105083",
+    "descricao": "RIOHEX 2% ALCOOLICO - 1L",
+    "apresentacao": "1L",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 35.0,
+      "RQE Especialista": 17.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 20.13
+    }
+  },
+  {
+    "codigo": "0510105154",
+    "descricao": "RIOHEX 2% COLORIDO - 30ML TWIST OFF",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.8,
+      "RQE Especialista": 1.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 2.19
+    }
+  },
+  {
+    "codigo": "0510105149",
+    "descricao": "RIOHEX 2% COLORIDO - 100ML ALMOTOLIA TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 6.2,
+      "RQE Especialista": 3.1,
+      "RQS Estrategico": null,
+      "Venda Direta": 3.57
+    }
+  },
+  {
+    "codigo": "0510105150",
+    "descricao": "RIOHEX 2% COLORIDO - 1L",
+    "apresentacao": "1L",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 37.0,
+      "RQE Especialista": 18.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 21.28
+    }
+  },
+  {
+    "codigo": "0510105353",
+    "descricao": "RIOHEX 2% COLORIDO AQUOSO 100ML ALM. TWIST OFF (LANÇAMENTO)",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 5.5,
+      "RQE Especialista": 2.75,
+      "RQS Estrategico": null,
+      "Venda Direta": 3.17
+    }
+  },
+  {
+    "codigo": "0510105352",
+    "descricao": "RIOHEX 2% COLORIDO AQUOSO 30ML ALM. TWIST OFF  (LANÇAMENTO)",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.5,
+      "RQE Especialista": 1.75,
+      "RQS Estrategico": null,
+      "Venda Direta": 2.02
+    }
+  },
+  {
+    "codigo": "0510105084",
+    "descricao": "RIOHEX 2% AQUOSO - 30ML ALM TWIST OFF",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.2,
+      "RQE Especialista": 1.6,
+      "RQS Estrategico": null,
+      "Venda Direta": 1.84
+    }
+  },
+  {
+    "codigo": "0510105085",
+    "descricao": "RIOHEX 2% AQUOSO - 100ML ALM TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 4.8,
+      "RQE Especialista": 2.4,
+      "RQS Estrategico": null,
+      "Venda Direta": 2.76
+    }
+  },
+  {
+    "codigo": "0510105086",
+    "descricao": "RIOHEX 2% AQUOSO - 1L",
+    "apresentacao": "1L",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 28.0,
+      "RQE Especialista": 14.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 16.1
+    }
+  },
+  {
+    "codigo": "0510105341",
+    "descricao": "RIOHEX 2% DEGERMANTE 22ML ESPONJA BANHO  - CX C/ 108",
+    "apresentacao": "",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 108,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 2.8,
+      "RQE Especialista": 1.4,
+      "RQS Estrategico": null,
+      "Venda Direta": 1.61
+    }
+  },
+  {
+    "codigo": "0510101711",
+    "descricao": "RIOHEX 2% DEGERMANTE - 30ML ALMOTOLIA TWIST OFF",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.8,
+      "RQE Especialista": 1.9,
+      "RQS Estrategico": 2.09,
+      "Venda Direta": 2.19
+    }
+  },
+  {
+    "codigo": "0510101710",
+    "descricao": "RIOHEX 2% DEGERMANTE - 100ML ALM. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 5.8,
+      "RQE Especialista": 2.9,
+      "RQS Estrategico": 3.19,
+      "Venda Direta": 3.34
+    }
+  },
+  {
+    "codigo": "0510101714",
+    "descricao": "RIOHEX 2% DEGERMANTE - 1L",
+    "apresentacao": "1L",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 31.5,
+      "RQE Especialista": 15.75,
+      "RQS Estrategico": 17.33,
+      "Venda Direta": 18.12
+    }
+  },
+  {
+    "codigo": "0510105093",
+    "descricao": "RIOHEX 2% DEGERMANTE - 1L PUMP",
+    "apresentacao": "1L Pump",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 37.5,
+      "RQE Especialista": 18.75,
+      "RQS Estrategico": 20.63,
+      "Venda Direta": 21.57
+    }
+  },
+  {
+    "codigo": "0510105305",
+    "descricao": "RIOHEX 2% TINTURA PREP 3ML C/ APLICADOR",
+    "apresentacao": "3ml C/ Aplicador",
+    "ncm": "3004.90.47",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "60",
+    "qtdPorEmbalagem": 36,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 29.8,
+      "RQE Especialista": 14.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 17.14
+    }
+  },
+  {
+    "codigo": "0510105306",
+    "descricao": "RIOHEX 2% TINTURA PREP 10,5ML C/ APLICADOR",
+    "apresentacao": "10,5ml C/ Aplicador",
+    "ncm": "3004.90.47",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "60",
+    "qtdPorEmbalagem": 36,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 31.5,
+      "RQE Especialista": 15.75,
+      "RQS Estrategico": null,
+      "Venda Direta": 18.12
+    }
+  },
+  {
+    "codigo": "0510105215",
+    "descricao": "RIOHEX 2% TINTURA PREP 26ML C/ APLICADOR",
+    "apresentacao": "26ml C/ Aplicador",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 36,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 33.0,
+      "RQE Especialista": 16.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 18.98
+    }
+  },
+  {
+    "codigo": "0510105307",
+    "descricao": "RIOHEX 2% TINTURA PREP 35ML C/ APLICADOR",
+    "apresentacao": "35ml C/ Aplicador",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 36,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 33.88,
+      "RQE Especialista": 16.94,
+      "RQS Estrategico": null,
+      "Venda Direta": 19.49
+    }
+  },
+  {
+    "codigo": "0510105145",
+    "descricao": "RIOHEX 2% TINTURA 30ML ALMOTOLIA TWIST OFF",
+    "apresentacao": "30ml",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 9.6,
+      "RQE Especialista": 4.8,
+      "RQS Estrategico": null,
+      "Venda Direta": 5.52
+    }
+  },
+  {
+    "codigo": "0510105146",
+    "descricao": "RIOHEX 2% TINTURA 100ML ALMOTOLIA TWIST OFF",
+    "apresentacao": "100ml",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 15.2,
+      "RQE Especialista": 7.6,
+      "RQS Estrategico": null,
+      "Venda Direta": 8.74
+    }
+  },
+  {
+    "codigo": "0510101811",
+    "descricao": "RIOHEX 4% DEGERMANTE - 100ML ALM.TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 4%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 7.8,
+      "RQE Especialista": 3.9,
+      "RQS Estrategico": 4.29,
+      "Venda Direta": 4.49
+    }
+  },
+  {
+    "codigo": "0510101801",
+    "descricao": "RIOHEX 4% DEGERMANTE - 1L",
+    "apresentacao": "1L",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 4%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 58.8,
+      "RQE Especialista": 29.4,
+      "RQS Estrategico": 32.34,
+      "Venda Direta": 33.81
+    }
+  },
+  {
+    "codigo": "0510105257",
+    "descricao": "RIOHEX 4% ESPUMA 1000ML BOLSA STANDARD",
+    "apresentacao": "1000ml Refil",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 4%",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 93.5,
+      "RQE Especialista": 46.75,
+      "RQS Estrategico": null,
+      "Venda Direta": 53.77
+    }
+  },
+  {
+    "codigo": "0530301151",
+    "descricao": "RIOHEX GARD 0,12% GEL - 20G",
+    "apresentacao": "20G",
+    "ncm": "33069000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Clorexidina 0,12%",
+    "validade": "24",
+    "qtdPorEmbalagem": 16,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 11.86,
+      "RQE Especialista": 5.93,
+      "RQS Estrategico": null,
+      "Venda Direta": 6.82
+    }
+  },
+  {
+    "codigo": "0530301102",
+    "descricao": "RIOHEX GARD 0,12% 30ML TWIST OFF",
+    "apresentacao": "30ml Twist Off",
+    "ncm": "33069000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Clorexidina 0,12%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 3.4,
+      "RQE Especialista": 1.7,
+      "RQS Estrategico": null,
+      "Venda Direta": 1.96
+    }
+  },
+  {
+    "codigo": "0520300610",
+    "descricao": "RIOHEX GARD 0,12% 250ML",
+    "apresentacao": "250ml C/ Copo Dosador",
+    "ncm": "33069000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Clorexidina 0,12%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 14.7,
+      "RQE Especialista": 7.35,
+      "RQS Estrategico": null,
+      "Venda Direta": 8.46
+    }
+  },
+  {
+    "codigo": "0520300612",
+    "descricao": "RIOHEX GARD 0,12% 1L PUMP",
+    "apresentacao": "1L Pump",
+    "ncm": "33069000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Clorexidina 0,12%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 36.6,
+      "RQE Especialista": 18.3,
+      "RQS Estrategico": null,
+      "Venda Direta": 21.05
+    }
+  },
+  {
+    "codigo": "0520300613",
+    "descricao": "RIOHEX GARD 0,12% 2L PUMP",
+    "apresentacao": "2L Pump",
+    "ncm": "33069000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Clorexidina 0,12%",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 70.0,
+      "RQE Especialista": 35.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 40.25
+    }
+  },
+  {
+    "codigo": "0530102056",
+    "descricao": "RIODERM PROTECTION - SOLUCAO FISIOLOGICA 250ML T.O (ALMOTOLIA) (Lançamento )",
+    "apresentacao": "250ml Twist Off",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Solução fisiologica",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 6.98,
+      "RQE Especialista": 3.49,
+      "RQS Estrategico": 3.84,
+      "Venda Direta": 4.02
+    }
+  },
+  {
+    "codigo": "0510102003",
+    "descricao": "TINTURA DE BENJOIN 100ML ALM. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Sumatra Benzoin",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 19.8,
+      "RQE Especialista": 9.9,
+      "RQS Estrategico": 10.89,
+      "Venda Direta": 11.39
+    }
+  },
+  {
+    "codigo": "0510102002",
+    "descricao": "TINTURA DE BENJOIN 1L",
+    "apresentacao": "1L",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Sumatra Benzoin",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 155.0,
+      "RQE Especialista": 77.5,
+      "RQS Estrategico": 85.25,
+      "Venda Direta": 89.13
+    }
+  },
+  {
+    "codigo": "0530100601",
+    "descricao": "TINTURA DE IODO 2% 1L",
+    "apresentacao": "1L",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodo 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 190.0,
+      "RQE Especialista": 95.0,
+      "RQS Estrategico": 104.5,
+      "Venda Direta": 109.25
+    }
+  },
+  {
+    "codigo": "0530301163",
+    "descricao": "VASELINA LIQUIDA 100 ML ALM TWIST OFF - CS",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "27121000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Vaselina Líquida",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 9.8,
+      "RQE Especialista": 4.9,
+      "RQS Estrategico": 5.39,
+      "Venda Direta": 5.64
+    }
+  },
+  {
+    "codigo": "0530301162",
+    "descricao": "VASELINA LIQUIDA 1 L - CS",
+    "apresentacao": "1L",
+    "ncm": "27121000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Vaselina Líquida",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 59.8,
+      "RQE Especialista": 29.9,
+      "RQS Estrategico": 32.89,
+      "Venda Direta": 34.39
+    }
+  },
+  {
+    "codigo": "0530102028",
+    "descricao": "VASELINA SOLIDA (POMADA) 30G - BISNAGA CS",
+    "apresentacao": "30G Bisnaga CS",
+    "ncm": "27121000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Vaselina Sólida",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 9.9,
+      "RQE Especialista": 4.95,
+      "RQS Estrategico": 5.45,
+      "Venda Direta": 5.7
+    }
+  },
+  {
+    "codigo": "0530301160",
+    "descricao": "VASELINA SOLIDA (POMADA) 90G BISNAGA - CS",
+    "apresentacao": "90G",
+    "ncm": "27121000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Vaselina Sólida",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 16.4,
+      "RQE Especialista": 8.2,
+      "RQS Estrategico": 9.02,
+      "Venda Direta": 9.43
+    }
+  },
+  {
+    "codigo": "0530301161",
+    "descricao": "VASELINA SOLIDA (POMADA) 500 G - CS",
+    "apresentacao": "500G",
+    "ncm": "27121000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Vaselina Sólida",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "PREPARAÇÃO DE PELE",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 78.0,
+      "RQE Especialista": 39.0,
+      "RQS Estrategico": 42.9,
+      "Venda Direta": 44.85
+    }
+  },
+  {
+    "codigo": "0510105300",
+    "descricao": "PREVENCAP RIOHEX 2% CHG - 25 FITAS",
+    "apresentacao": "Fita",
+    "ncm": "29252923",
+    "classificacao": "Correlato",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 640.0,
+      "RQE Especialista": 320.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 368.0
+    }
+  },
+  {
+    "codigo": "0510105302",
+    "descricao": "PREVENCAP ISOPROPILICO - 25 FITAS",
+    "apresentacao": "Fita",
+    "ncm": "29051220",
+    "classificacao": "Correlato",
+    "principioAtivo": "Álcool Isopropílico",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 200.0,
+      "RQE Especialista": 100.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 115.0
+    }
+  },
+  {
+    "codigo": "0530301146",
+    "descricao": "REMOVEX SENSITIVE 30ML SPRAY",
+    "apresentacao": "30ml Spray",
+    "ncm": "29094411",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Blend De Óleo Mineral",
+    "validade": "24",
+    "qtdPorEmbalagem": 18,
+    "linha": "Premium",
+    "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 30.0,
+      "RQE Especialista": 15.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 17.25
+    }
+  },
+  {
+    "codigo": "0530301010",
+    "descricao": "RIOCARE GEL DE ARNICA - 160G (Lançamento )",
+    "apresentacao": "160g",
+    "ncm": "33072090",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Arnica",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Clássica",
+    "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 29.5,
+      "RQE Especialista": 14.75,
+      "RQS Estrategico": 16.23,
+      "Venda Direta": 16.97
+    }
+  },
+  {
+    "codigo": "0520300848",
+    "descricao": "RIOCARE OLEO AGE 100ML ALMOTOLIA T.O",
+    "apresentacao": "100ml",
+    "ncm": "33049990",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Óleo De Girassol",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 13.8,
+      "RQE Especialista": 6.9,
+      "RQS Estrategico": 7.59,
+      "Venda Direta": 7.94
+    }
+  },
+  {
+    "codigo": "0520300847",
+    "descricao": "RIOCARE OLEO AGE 200ML ALMOTOLIA T.O",
+    "apresentacao": "200ml",
+    "ncm": "33049990",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Óleo De Girassol",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 27.8,
+      "RQE Especialista": 13.9,
+      "RQS Estrategico": 15.29,
+      "Venda Direta": 15.99
+    }
+  },
+  {
+    "codigo": "0530600011",
+    "descricao": "RIODERM PROTECTION - CREME BARREIRA 30G BISNAGA   (Lançamento )",
+    "apresentacao": "30g",
+    "ncm": "30059090",
+    "classificacao": "Correlato",
+    "principioAtivo": "Creme Barreira",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 45.0,
+      "RQE Especialista": 22.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 25.88
+    }
+  },
+  {
+    "codigo": "0530600012",
+    "descricao": "RIODERM PROTECTION - CREME BARREIRA 60G   (Lançamento )",
+    "apresentacao": "60g",
+    "ncm": "30059090",
+    "classificacao": "Correlato",
+    "principioAtivo": "Creme Barreira",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 82.0,
+      "RQE Especialista": 41.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 47.15
+    }
+  },
+  {
+    "codigo": "0530600001",
+    "descricao": "RIODERM PROTECTION - CREME BARREIRA 92G BISNAGA",
+    "apresentacao": "92g",
+    "ncm": "30059090",
+    "classificacao": "Correlato",
+    "principioAtivo": "Creme Barreira",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 120.0,
+      "RQE Especialista": 60.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 69.0
+    }
+  },
+  {
+    "codigo": "0530600002",
+    "descricao": "RIODERM PROTECTION - PELICULA PROTETORA SEM ARDOR 30ML SPRAY",
+    "apresentacao": "30ml Spray",
+    "ncm": "30059090",
+    "classificacao": "Correlato",
+    "principioAtivo": "Protetor Cutâneo",
+    "validade": "24",
+    "qtdPorEmbalagem": 18,
+    "linha": "Premium",
+    "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
+    "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
+    "precos": {
+      "Tabela": 60.0,
+      "RQE Especialista": 30.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 34.5
+    }
+  },
+  {
+    "codigo": "0510400928",
+    "descricao": "DISPENSADOR RIOQUIMICA HANDS SCRUB REFIL AUTOMATICA",
+    "apresentacao": "Unidade",
+    "ncm": "84798999",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 1790.0,
+      "RQE Especialista": 895.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 1029.25
+    }
+  },
+  {
+    "codigo": "0510400924",
+    "descricao": "DISPENSADOR RIOQUIMICA STANDARD ESPUMA/SPRAY AUTOM. RQ 1000ML",
+    "apresentacao": "1000ml Refil",
+    "ncm": "39229000",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 428.0,
+      "RQE Especialista": 214.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 246.1
+    }
+  },
+  {
+    "codigo": "0510400905",
+    "descricao": "DISPENSADOR RQ STANDARD ESPUMA SPRAY MANUAL",
+    "apresentacao": "1000ml Refil",
+    "ncm": "39229000",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 145.0,
+      "RQE Especialista": 72.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 83.38
+    }
+  },
+  {
+    "codigo": "0510400954",
+    "descricao": "MORSA PARA SUPORTE RETANGULAR DE SORO",
+    "apresentacao": "Unidade",
+    "ncm": "39269090",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 22.0,
+      "RQE Especialista": 11.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 12.65
+    }
+  },
+  {
+    "codigo": "0510400805",
+    "descricao": "PEDESTAL PARA SABONETEIRA ELETRONICA",
+    "apresentacao": "Unidade",
+    "ncm": "73269090",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 1000.0,
+      "RQE Especialista": 500.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 575.0
+    }
+  },
+  {
+    "codigo": "0510400930",
+    "descricao": "PEDESTAL PARA SABONETEIRA RIO HANDS SCRUB",
+    "apresentacao": "Unidade",
+    "ncm": "73269090",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 1000.0,
+      "RQE Especialista": 500.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 575.0
+    }
+  },
+  {
+    "codigo": "0510401002",
+    "descricao": "PRESILHA DE INOX P/ SUPORTE BEIRA LEITO",
+    "apresentacao": "Unidade",
+    "ncm": "73269090",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 52.6,
+      "RQE Especialista": 26.3,
+      "RQS Estrategico": null,
+      "Venda Direta": 30.25
+    }
+  },
+  {
+    "codigo": "0510105269",
+    "descricao": "RIALCOOL 70 FOAM 225ML RETANGULAR",
+    "apresentacao": "225ml",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 53.0,
+      "RQE Especialista": 26.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 30.48
+    }
+  },
+  {
+    "codigo": "0510105270",
+    "descricao": "RIALCOOL 70 FOAM 475ML RETANGULAR",
+    "apresentacao": "475ml",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 94.0,
+      "RQE Especialista": 47.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 54.05
+    }
+  },
+  {
+    "codigo": "0510105271",
+    "descricao": "RIALCOOL 70 FOAM 1000ML REFIL BOLSA",
+    "apresentacao": "1000ml Refil",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 149.2,
+      "RQE Especialista": 74.6,
+      "RQS Estrategico": null,
+      "Venda Direta": 85.79
+    }
+  },
+  {
+    "codigo": "0510105169",
+    "descricao": "RIO HANDS SCRUB 1250ML REFIL",
+    "apresentacao": "1250ml Refil",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Blend De Álcoois E Clorexidina",
+    "validade": "24",
+    "qtdPorEmbalagem": 4,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 320.0,
+      "RQE Especialista": 160.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 184.0
+    }
+  },
+  {
+    "codigo": "0510301262",
+    "descricao": "RIOCARE FOAM 225ML RETANGULAR - FN",
+    "apresentacao": "225ml",
+    "ncm": "38089429",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 42.0,
+      "RQE Especialista": 21.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 24.15
+    }
+  },
+  {
+    "codigo": "0510301263",
+    "descricao": "RIOCARE FOAM 475ML RETANGULAR - FN",
+    "apresentacao": "475ml",
+    "ncm": "38089429",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 62.0,
+      "RQE Especialista": 31.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 35.65
+    }
+  },
+  {
+    "codigo": "0510301264",
+    "descricao": "RIOCARE FOAM 1000ML REFIL STANDARD - FN",
+    "apresentacao": "1000ml Refil",
+    "ncm": "38089429",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 109.2,
+      "RQE Especialista": 54.6,
+      "RQS Estrategico": null,
+      "Venda Direta": 62.79
+    }
+  },
+  {
+    "codigo": "0510301265",
+    "descricao": "RIOCARE FOAM 1000ML REFIL STANDARD VP - FN",
+    "apresentacao": "1000ml Refil",
+    "ncm": "38089429",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 109.2,
+      "RQE Especialista": 54.6,
+      "RQS Estrategico": null,
+      "Venda Direta": 62.79
+    }
+  },
+  {
+    "codigo": "0540300020",
+    "descricao": "RIOCARE GEL 55G / 61ML",
+    "apresentacao": "55G",
+    "ncm": "38089429",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 7.1,
+      "RQE Especialista": 3.55,
+      "RQS Estrategico": null,
+      "Venda Direta": 4.09
+    }
+  },
+  {
+    "codigo": "0540300024",
+    "descricao": "RIOCARE GEL 215G / 238ML RETANGULAR PUMP",
+    "apresentacao": "215Gr/238ml Pump",
+    "ncm": "38089429",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 19.0,
+      "RQE Especialista": 9.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 10.93
+    }
+  },
+  {
+    "codigo": "0540300023",
+    "descricao": "RIOCARE GEL 430G / 478ML RETANGULAR PUMP",
+    "apresentacao": "430Gr/478ml Pump",
+    "ncm": "38089429",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 29.0,
+      "RQE Especialista": 14.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 16.68
+    }
+  },
+  {
+    "codigo": "0530301120",
+    "descricao": "RIOCARE GEL REFIL 900G / 1000ML STANDARD",
+    "apresentacao": "900G (1000ml)",
+    "ncm": "38089429",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 55.8,
+      "RQE Especialista": 27.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 32.09
+    }
+  },
+  {
+    "codigo": "0510105225",
+    "descricao": "RIOGEL ANTISSEPTICO 86G/100ML ALM. TWIST OFF - FN",
+    "apresentacao": "86G (100ml) Twist Off",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 4.4,
+      "RQE Especialista": 2.2,
+      "RQS Estrategico": 2.42,
+      "Venda Direta": 2.53
+    }
+  },
+  {
+    "codigo": "0510105226",
+    "descricao": "RIOGEL ANTISSEPTICO 215G/250ML PUMP COM FRASCO QUADRADO",
+    "apresentacao": "215G/250ml Pump",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 19.8,
+      "RQE Especialista": 9.9,
+      "RQS Estrategico": 10.89,
+      "Venda Direta": 11.39
+    }
+  },
+  {
+    "codigo": "0510105224",
+    "descricao": "RIOGEL ANTISSEPTICO 430G/500ML PUMP COM FRASCO QUADRADO",
+    "apresentacao": "430G/500ml Pump",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 28.0,
+      "RQE Especialista": 14.0,
+      "RQS Estrategico": 15.4,
+      "Venda Direta": 16.1
+    }
+  },
+  {
+    "codigo": "0510105231",
+    "descricao": "RIOGEL ANTISSEPTICO 860G/1000ML REFIL STANDARD - FN",
+    "apresentacao": "860G (1L)Refil",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 49.8,
+      "RQE Especialista": 24.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 28.64
+    }
+  },
+  {
+    "codigo": "0510105247",
+    "descricao": "RIOHEX 2% ESCOVA 22ML - 108 UN",
+    "apresentacao": "Escova/Esponja",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 108,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 4.2,
+      "RQE Especialista": 2.1,
+      "RQS Estrategico": null,
+      "Venda Direta": 2.42
+    }
+  },
+  {
+    "codigo": "0510105008",
+    "descricao": "RIOHEX 2% DEGERMANTE - 1000ML REFIL STANDARD",
+    "apresentacao": "1000ml Refil",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 65.0,
+      "RQE Especialista": 32.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 37.38
+    }
+  },
+  {
+    "codigo": "0510105004",
+    "descricao": "RIOHEX 2% ESPUMA 1000ML REFIL STANDARD",
+    "apresentacao": "1000ml Refil",
+    "ncm": "30049047",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Clorexidina 2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 73.5,
+      "RQE Especialista": 36.75,
+      "RQS Estrategico": null,
+      "Venda Direta": 42.27
+    }
+  },
+  {
+    "codigo": "0510301006",
+    "descricao": "RIOMAX CREMOSO 1000ML REFIL STANDARD",
+    "apresentacao": "1000ml Refil",
+    "ncm": "34013000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Sabonete Cremoso",
+    "validade": "36",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 41.8,
+      "RQE Especialista": 20.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 24.04
+    }
+  },
+  {
+    "codigo": "0540300029",
+    "descricao": "RIOMAX ESPUMA 1000ML REFIL STANDARD",
+    "apresentacao": "1000ml Refil",
+    "ncm": "34013000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Sabonete Espuma",
+    "validade": "36",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 45.8,
+      "RQE Especialista": 22.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 26.34
+    }
+  },
+  {
+    "codigo": "0530301148",
+    "descricao": "RIOMAX LUXURY ERVA DOCE ESPUMA 1000ML REFIL BOLSA",
+    "apresentacao": "1000ml Refil",
+    "ncm": "34013000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Sabonete Espuma",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 47.8,
+      "RQE Especialista": 23.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 27.49
+    }
+  },
+  {
+    "codigo": "0530301150",
+    "descricao": "RIOMAX LUXURY JASMIM ESPUMA 1000ML REFIL BOLSA",
+    "apresentacao": "1000ml Refil",
+    "ncm": "34013000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Sabonete Espuma",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 47.8,
+      "RQE Especialista": 23.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 27.49
+    }
+  },
+  {
+    "codigo": "0510300402",
+    "descricao": "RIOMAX SABONETE CREMOSO 1L",
+    "apresentacao": "1L",
+    "ncm": "34013000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Sabonete Cremoso",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 15.8,
+      "RQE Especialista": 7.9,
+      "RQS Estrategico": 8.69,
+      "Venda Direta": 9.09
+    }
+  },
+  {
+    "codigo": "0530301117",
+    "descricao": "RIOMAX SABONETE NEUTRO 100ML ALM. TWIST OFF",
+    "apresentacao": "100ml Twist Off",
+    "ncm": "34013000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Sabonete Neutro",
+    "validade": "36",
+    "qtdPorEmbalagem": 30,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 4.8,
+      "RQE Especialista": 2.4,
+      "RQS Estrategico": 2.64,
+      "Venda Direta": 2.76
+    }
+  },
+  {
+    "codigo": "0510300703",
+    "descricao": "RIOMAX SABONETE NEUTRO 1L",
+    "apresentacao": "1L",
+    "ncm": "34013000",
+    "classificacao": "Cosmético",
+    "principioAtivo": "Sabonete Neutro",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 16.0,
+      "RQE Especialista": 8.0,
+      "RQS Estrategico": 8.8,
+      "Venda Direta": 9.2
+    }
+  },
+  {
+    "codigo": "0510400310",
+    "descricao": "RQ ESCOVA SECA",
+    "apresentacao": "Escova/Esponja",
+    "ncm": "96032900",
+    "classificacao": "Correlato",
+    "principioAtivo": "Escova Seca",
+    "validade": "60",
+    "qtdPorEmbalagem": 80,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 3.2,
+      "RQE Especialista": 1.6,
+      "RQS Estrategico": 1.76,
+      "Venda Direta": 1.84
+    }
+  },
+  {
+    "codigo": "0510400955",
+    "descricao": "SUPORTE BEIRA LEITO COM DUPLA FACE (AVULSO)",
+    "apresentacao": "Unidade",
+    "ncm": "39269090",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 2.88,
+      "RQE Especialista": 1.44,
+      "RQS Estrategico": null,
+      "Venda Direta": 1.66
+    }
+  },
+  {
+    "codigo": "0510400710",
+    "descricao": "SUPORTE DE ACRILICO PARA ESCOVA DE DEGERMACAO",
+    "apresentacao": "Unidade",
+    "ncm": "39206900",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 1700.0,
+      "RQE Especialista": 850.0,
+      "RQS Estrategico": 935.0,
+      "Venda Direta": 977.5
+    }
+  },
+  {
+    "codigo": "0510400903",
+    "descricao": "SUPORTE INOX PARA FRASCO PUMP 1L (C/ COTOVELO)",
+    "apresentacao": "1000ml Refil",
+    "ncm": "73269090",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 207.9,
+      "RQE Especialista": 103.95,
+      "RQS Estrategico": 114.35,
+      "Venda Direta": 119.55
+    }
+  },
+  {
+    "codigo": "0510400902",
+    "descricao": "SUPORTE INOX PARA FRASCO PUMP 1L (S/ COTOVELO)",
+    "apresentacao": "1000ml Refil",
+    "ncm": "73269090",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 138.0,
+      "RQE Especialista": 69.0,
+      "RQS Estrategico": 75.9,
+      "Venda Direta": 79.35
+    }
+  },
+  {
+    "codigo": "0510400915",
+    "descricao": "SUPORTE P/ FRASCO QUADRADO PUMP 225/238ML - (PAREDE/LEITO)",
+    "apresentacao": "238ml",
+    "ncm": "39269090",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 52.5,
+      "RQE Especialista": 26.25,
+      "RQS Estrategico": null,
+      "Venda Direta": 30.19
+    }
+  },
+  {
+    "codigo": "0510400931",
+    "descricao": "SUPORTE P/ FRASCO QUADRADO PUMP 475/478ML - PAREDE/LEITO",
+    "apresentacao": "478ml",
+    "ncm": "39269090",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 57.0,
+      "RQE Especialista": 28.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 32.78
+    }
+  },
+  {
+    "codigo": "0200000269",
+    "descricao": "TAMPA LOTTON PUMP 1L (28MM BRANCA PESC/230MM)",
+    "apresentacao": "Frasco 1L",
+    "ncm": "84132000",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 6.0,
+      "RQE Especialista": 3.0,
+      "RQS Estrategico": 3.3,
+      "Venda Direta": 3.45
+    }
+  },
+  {
+    "codigo": "E0305",
+    "descricao": "TAMPA LOTTON PUMP P/ GALAO 5L (42MM INCOLOR PESC/235MM)",
+    "apresentacao": "Unidade",
+    "ncm": "84248990",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 9.8,
+      "RQE Especialista": 4.9,
+      "RQS Estrategico": 5.39,
+      "Venda Direta": 5.64
+    }
+  },
+  {
+    "codigo": "0510201507",
+    "descricao": "DETER RIO PRECLEAN SPRAY/ ESPUMA 750ML  (Lançamento )",
+    "apresentacao": "750ml Spray / Foam",
+    "ncm": "3402.39.90",
+    "classificacao": "Saneante",
+    "principioAtivo": "-",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 39.2,
+      "RQE Especialista": 19.6,
+      "RQS Estrategico": null,
+      "Venda Direta": 22.54
+    }
+  },
+  {
+    "codigo": "0510201505",
+    "descricao": "DETER RIO PRONTO USO 1L FLIP TOP",
+    "apresentacao": "1L Flip Top",
+    "ncm": "34023990",
+    "classificacao": "Saneante",
+    "principioAtivo": "Detergente Neutro",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 19.8,
+      "RQE Especialista": 9.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 11.39
+    }
+  },
+  {
+    "codigo": "0510201506",
+    "descricao": "DETER RIO PRONTO USO 5L",
+    "apresentacao": "5L",
+    "ncm": "34023990",
+    "classificacao": "Saneante",
+    "principioAtivo": "Detergente Neutro",
+    "validade": "36",
+    "qtdPorEmbalagem": 4,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 97.0,
+      "RQE Especialista": 48.5,
+      "RQS Estrategico": null,
+      "Venda Direta": 55.78
+    }
+  },
+  {
+    "codigo": "0510400904",
+    "descricao": "DILUIDOR ELETRONICO BIVOLT - RQ RIOZYME / RIOCLEAN (Novo)",
+    "apresentacao": "Unidade",
+    "ncm": "84798912",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 7600.0,
+      "RQE Especialista": 3800.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 4370.0
+    }
+  },
+  {
+    "codigo": "0520104827",
+    "descricao": "FITA GLUTARON TEST STRIPS - 30 UNID (B)",
+    "apresentacao": "Frasco",
+    "ncm": "38229000",
+    "classificacao": "Saneante",
+    "principioAtivo": "-",
+    "validade": "24",
+    "qtdPorEmbalagem": 1,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 207.9,
+      "RQE Especialista": 103.95,
+      "RQS Estrategico": 114.35,
+      "Venda Direta": 119.55
+    }
+  },
+  {
+    "codigo": "0520104828",
+    "descricao": "FITA PERAX RIO - 250 A 2000PPM - 30UN (B)",
+    "apresentacao": "Frasco",
+    "ncm": "38229000",
+    "classificacao": "Saneante",
+    "principioAtivo": "-",
+    "validade": "24",
+    "qtdPorEmbalagem": 1,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 157.9,
+      "RQE Especialista": 78.95,
+      "RQS Estrategico": 86.85,
+      "Venda Direta": 90.8
+    }
+  },
+  {
+    "codigo": "0520104826",
+    "descricao": "FITA RIOSCOPE OPA TEST STRIPS - 40UND (B)",
+    "apresentacao": "Frasco",
+    "ncm": "38229000",
+    "classificacao": "Saneante",
+    "principioAtivo": "-",
+    "validade": "24",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 262.5,
+      "RQE Especialista": 131.25,
+      "RQS Estrategico": null,
+      "Venda Direta": 150.94
+    }
+  },
+  {
+    "codigo": "0510201836",
+    "descricao": "GLUTARON 32 DIAS 1L",
+    "apresentacao": "1L",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "Glutaraldeído 2,2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 36.0,
+      "RQE Especialista": 18.0,
+      "RQS Estrategico": 19.8,
+      "Venda Direta": 20.7
+    }
+  },
+  {
+    "codigo": "0510201837",
+    "descricao": "GLUTARON 32 DIAS 5L",
+    "apresentacao": "5L",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "Glutaraldeído 2,2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 4,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 98.0,
+      "RQE Especialista": 49.0,
+      "RQS Estrategico": 53.9,
+      "Venda Direta": 56.35
+    }
+  },
+  {
+    "codigo": "0510201824",
+    "descricao": "INATIVADOR PARA GLUTARALDEIDO 40G",
+    "apresentacao": "40G",
+    "ncm": "35079019",
+    "classificacao": "Saneante",
+    "principioAtivo": "-",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 29.0,
+      "RQE Especialista": 14.5,
+      "RQS Estrategico": 15.95,
+      "Venda Direta": 16.68
+    }
+  },
+  {
+    "codigo": "0510201823",
+    "descricao": "INATIVADOR PARA GLUTARALDEIDO 200G",
+    "apresentacao": "200G",
+    "ncm": "35079019",
+    "classificacao": "Saneante",
+    "principioAtivo": "-",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 48.0,
+      "RQE Especialista": 24.0,
+      "RQS Estrategico": 26.4,
+      "Venda Direta": 27.6
+    }
+  },
+  {
+    "codigo": "0510201857",
+    "descricao": "INATIVADOR RIOSCOPE OPA - GLICINA 33G",
+    "apresentacao": "33G",
+    "ncm": "35079019",
+    "classificacao": "Saneante",
+    "principioAtivo": "-",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 20.9,
+      "RQE Especialista": 10.45,
+      "RQS Estrategico": null,
+      "Venda Direta": 12.02
+    }
+  },
+  {
+    "codigo": "0510202070",
+    "descricao": "MAXSLIP SPRAY ESPUMA 750ML GATILHO",
+    "apresentacao": "750ml Spray / Foam",
+    "ncm": "38249949",
+    "classificacao": "Saneante",
+    "principioAtivo": "Óleo Mineral",
+    "validade": "24",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 51.8,
+      "RQE Especialista": 25.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 29.79
+    }
+  },
+  {
+    "codigo": "0510202074",
+    "descricao": "MAXSLIP PLUS 5L",
+    "apresentacao": "5L",
+    "ncm": "38249949",
+    "classificacao": "Saneante",
+    "principioAtivo": "Óleo Mineral",
+    "validade": "24",
+    "qtdPorEmbalagem": 4,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 460.0,
+      "RQE Especialista": 230.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 264.5
+    }
+  },
+  {
+    "codigo": "0530200105",
+    "descricao": "OXI MAX 1L",
+    "apresentacao": "1L",
+    "ncm": "38249949",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ácido Fosfórico",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 69.0,
+      "RQE Especialista": 34.5,
+      "RQS Estrategico": 37.95,
+      "Venda Direta": 39.68
+    }
+  },
+  {
+    "codigo": "0530200106",
+    "descricao": "OXI MAX 5L",
+    "apresentacao": "5L",
+    "ncm": "38249949",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ácido Fosfórico",
+    "validade": "36",
+    "qtdPorEmbalagem": 4,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 260.0,
+      "RQE Especialista": 130.0,
+      "RQS Estrategico": 143.0,
+      "Venda Direta": 149.5
+    }
+  },
+  {
+    "codigo": "0510202082",
+    "descricao": "PERAX RIO 0,2 PRONTO USO 1L",
+    "apresentacao": "1L",
+    "ncm": "29159050",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ácido Peracético 0,2%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 69.8,
+      "RQE Especialista": 34.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 40.14
+    }
+  },
+  {
+    "codigo": "0510202083",
+    "descricao": "PERAX RIO 0,2 PRONTO USO 5L",
+    "apresentacao": "5L",
+    "ncm": "29159050",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ácido Peracético 0,2%",
+    "validade": "36",
+    "qtdPorEmbalagem": 4,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 249.8,
+      "RQE Especialista": 124.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 143.64
+    }
+  },
+  {
+    "codigo": "0510401004",
+    "descricao": "PERAX RIO 3,5 5L",
+    "apresentacao": "5L",
+    "ncm": "29159050",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ácido Peracético 3,5%",
+    "validade": "12",
+    "qtdPorEmbalagem": 2,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 270.0,
+      "RQE Especialista": 135.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 155.25
+    }
+  },
+  {
+    "codigo": "0510200901",
+    "descricao": "RIO 93 1KG",
+    "apresentacao": "1Kg",
+    "ncm": "28352500",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ortofosfato Trissódico",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 110.0,
+      "RQE Especialista": 55.0,
+      "RQS Estrategico": 60.5,
+      "Venda Direta": 63.25
+    }
+  },
+  {
+    "codigo": "0510202147",
+    "descricao": "RIOVEX 250ML SPRAY",
+    "apresentacao": "250 ml",
+    "ncm": "29094411",
+    "classificacao": "Saneante",
+    "principioAtivo": "Etilglicol, solvente e veículo",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 42.0,
+      "RQE Especialista": 21.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 24.15
+    }
+  },
+  {
+    "codigo": "0520104830",
+    "descricao": "RIOSCOPE OPA 1L",
+    "apresentacao": "1L",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ortoftalaldeído 0,55%",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 94.5,
+      "RQE Especialista": 47.25,
+      "RQS Estrategico": null,
+      "Venda Direta": 54.34
+    }
+  },
+  {
+    "codigo": "0510202100",
+    "descricao": "RIOSCOPE OPA 5L 36 MESES",
+    "apresentacao": "5L",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ortoftalaldeído 0,55%",
+    "validade": "36",
+    "qtdPorEmbalagem": 4,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 450.0,
+      "RQE Especialista": 225.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 258.75
+    }
+  },
+  {
+    "codigo": "0510201851",
+    "descricao": "RIOZYME ECO 1L",
+    "apresentacao": "1L",
+    "ncm": "35079019",
+    "classificacao": "Saneante",
+    "principioAtivo": "Detergente Enzimático",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 45.0,
+      "RQE Especialista": 22.5,
+      "RQS Estrategico": 24.75,
+      "Venda Direta": 25.88
+    }
+  },
+  {
+    "codigo": "0510201852",
+    "descricao": "RIOZYME ECO 5L",
+    "apresentacao": "5L",
+    "ncm": "35079019",
+    "classificacao": "Saneante",
+    "principioAtivo": "Detergente Enzimático",
+    "validade": "24",
+    "qtdPorEmbalagem": 4,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 210.0,
+      "RQE Especialista": 105.0,
+      "RQS Estrategico": 115.5,
+      "Venda Direta": 120.75
+    }
+  },
+  {
+    "codigo": "0510200504",
+    "descricao": "RIOZYME EX+ 5L",
+    "apresentacao": "5L",
+    "ncm": "35079019",
+    "classificacao": "Saneante",
+    "principioAtivo": "Detergente Enzimático",
+    "validade": "24",
+    "qtdPorEmbalagem": 4,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 890.0,
+      "RQE Especialista": 445.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 511.75
+    }
+  },
+  {
+    "codigo": "0510201808",
+    "descricao": "RIOZYME IV E NEUTRO 1L",
+    "apresentacao": "1L",
+    "ncm": "35079019",
+    "classificacao": "Saneante",
+    "principioAtivo": "Detergente Enzimático",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 90.0,
+      "RQE Especialista": 45.0,
+      "RQS Estrategico": 49.5,
+      "Venda Direta": 51.75
+    }
+  },
+  {
+    "codigo": "0510201812",
+    "descricao": "RIOZYME IV E NEUTRO 5L",
+    "apresentacao": "5L",
+    "ncm": "35079019",
+    "classificacao": "Saneante",
+    "principioAtivo": "Detergente Enzimático",
+    "validade": "24",
+    "qtdPorEmbalagem": 4,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 430.0,
+      "RQE Especialista": 215.0,
+      "RQS Estrategico": 236.5,
+      "Venda Direta": 247.25
+    }
+  },
+  {
+    "codigo": "0510201845",
+    "descricao": "RIOZYME PRONTO USO 750ML SPRAY/ESPUMA",
+    "apresentacao": "750ml Spray / Foam",
+    "ncm": "35079019",
+    "classificacao": "Saneante",
+    "principioAtivo": "Detergente Enzimático",
+    "validade": "36",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 59.8,
+      "RQE Especialista": 29.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 34.39
+    }
+  },
+  {
+    "codigo": "0520101101",
+    "descricao": "ALCOOL ISOPROPILICO 50ML",
+    "apresentacao": "50ml",
+    "ncm": "29051220",
+    "classificacao": "Saneante",
+    "principioAtivo": "Álcool Isopropílico",
+    "validade": "24",
+    "qtdPorEmbalagem": 48,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 7.0,
+      "RQE Especialista": 3.5,
+      "RQS Estrategico": 3.85,
+      "Venda Direta": 4.03
+    }
+  },
+  {
+    "codigo": "0520200102",
+    "descricao": "ALCOOL ISOPROPILICO 50ML SPRAY",
+    "apresentacao": "50ml Spray",
+    "ncm": "29051220",
+    "classificacao": "Saneante",
+    "principioAtivo": "Álcool Isopropílico",
+    "validade": "24",
+    "qtdPorEmbalagem": 15,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 9.8,
+      "RQE Especialista": 4.9,
+      "RQS Estrategico": 5.39,
+      "Venda Direta": 5.64
+    }
+  },
+  {
+    "codigo": "0540201045",
+    "descricao": "CLORO RIO PASTILHAS C/ 10X1G - CX 12 UN + FRASCOS 250ML P/ DILUICAO",
+    "apresentacao": "10X1G",
+    "ncm": "38089419",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ácido Dicloroisocianúrico",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 38.0,
+      "RQE Especialista": 19.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 21.85
+    }
+  },
+  {
+    "codigo": "0540201008",
+    "descricao": "CLORO RIO PASTILHAS C/ 150X1G",
+    "apresentacao": "150X1G",
+    "ncm": "38089419",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ácido Dicloroisocianúrico",
+    "validade": "24",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 418.0,
+      "RQE Especialista": 209.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 240.35
+    }
+  },
+  {
+    "codigo": "0510201829",
+    "descricao": "CLORO RIO 1% 1L (VAL. 12 MESES)",
+    "apresentacao": "1L",
+    "ncm": "38089419",
+    "classificacao": "Saneante",
+    "principioAtivo": "Hipoclorito De Sódio 1%",
+    "validade": "12",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 11.0,
+      "RQE Especialista": 5.5,
+      "RQS Estrategico": 6.05,
+      "Venda Direta": 6.33
+    }
+  },
+  {
+    "codigo": "0510201830",
+    "descricao": "CLORO RIO 1% 5L (VAL. 12 MESES)",
+    "apresentacao": "5L",
+    "ncm": "38089419",
+    "classificacao": "Saneante",
+    "principioAtivo": "Hipoclorito De Sódio 1%",
+    "validade": "12",
+    "qtdPorEmbalagem": 4,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 50.0,
+      "RQE Especialista": 25.0,
+      "RQS Estrategico": 27.5,
+      "Venda Direta": 28.75
+    }
+  },
+  {
+    "codigo": "0510201831",
+    "descricao": "CLORO RIO 2,5% 1L (VAL. 24 MESES)",
+    "apresentacao": "1L",
+    "ncm": "38089419",
+    "classificacao": "Saneante",
+    "principioAtivo": "Hipoclorito De Sódio 2,5%",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 11.8,
+      "RQE Especialista": 5.9,
+      "RQS Estrategico": 6.49,
+      "Venda Direta": 6.79
+    }
+  },
+  {
+    "codigo": "0510201832",
+    "descricao": "CLORO RIO 2,5% 5L (VAL. 24 MESES)",
+    "apresentacao": "5L",
+    "ncm": "38089419",
+    "classificacao": "Saneante",
+    "principioAtivo": "Hipoclorito De Sódio 2,5%",
+    "validade": "24",
+    "qtdPorEmbalagem": 4,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 57.0,
+      "RQE Especialista": 28.5,
+      "RQS Estrategico": 31.35,
+      "Venda Direta": 32.78
+    }
+  },
+  {
+    "codigo": "0510401006",
+    "descricao": "DILUIDOR ELETRONICO BIVOLT (SENSOR) - RIOQUIMICA",
+    "apresentacao": "Unidade",
+    "ncm": "84798912",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 7600.0,
+      "RQE Especialista": 3800.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 4370.0
+    }
+  },
+  {
+    "codigo": "E0110",
+    "descricao": "FRASCO SPRAY 750ML BRANCO 28MM",
+    "apresentacao": "750ml Spray / Foam",
+    "ncm": "39233090",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 5.8,
+      "RQE Especialista": 2.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 3.34
+    }
+  },
+  {
+    "codigo": "0510202086",
+    "descricao": "GERMI RIO WIPES - FLOW PACK (SACO PLASTICO) 50 UNIDADES CX C/15 UNIDADES",
+    "apresentacao": "Lenço",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "Blend De Quaternário De Amônia E Biganida",
+    "validade": "24",
+    "qtdPorEmbalagem": 15,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 31.9,
+      "RQE Especialista": 15.95,
+      "RQS Estrategico": null,
+      "Venda Direta": 18.35
+    }
+  },
+  {
+    "codigo": "0530200117",
+    "descricao": "GERMI RIO SPRAY/ ESPUMA 750ML",
+    "apresentacao": "750ml Spray / Foam",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "Blend De Quaternário De Amônia E Biganida",
+    "validade": "36",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 31.9,
+      "RQE Especialista": 15.95,
+      "RQS Estrategico": null,
+      "Venda Direta": 18.35
+    }
+  },
+  {
+    "codigo": "0510201601",
+    "descricao": "GERMI RIO 1L",
+    "apresentacao": "1L",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "Blend De Quaternário De Amônia E Biganida",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 15.8,
+      "RQE Especialista": 7.9,
+      "RQS Estrategico": 8.69,
+      "Venda Direta": 9.09
+    }
+  },
+  {
+    "codigo": "0510201602",
+    "descricao": "GERMI RIO 5L",
+    "apresentacao": "5L",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "Blend De Quaternário Amônia E Biganida",
+    "validade": "36",
+    "qtdPorEmbalagem": 4,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 70.0,
+      "RQE Especialista": 35.0,
+      "RQS Estrategico": 38.5,
+      "Venda Direta": 40.25
+    }
+  },
+  {
+    "codigo": "0530200127",
+    "descricao": "GERMI RIO PLUS 5L",
+    "apresentacao": "5L",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "Blend De Quaternário Amônia E Biganida",
+    "validade": "36",
+    "qtdPorEmbalagem": 4,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 990.0,
+      "RQE Especialista": 495.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 569.25
+    }
+  },
+  {
+    "codigo": "0520104834",
+    "descricao": "FITA GERMI RIO PLUS TEST STRIPS - 50 UNID (B)",
+    "apresentacao": "Frasco",
+    "ncm": "38229000",
+    "classificacao": "Saneante",
+    "principioAtivo": "-",
+    "validade": "24",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 188.04,
+      "RQE Especialista": 94.02,
+      "RQS Estrategico": null,
+      "Venda Direta": 108.13
+    }
+  },
+  {
+    "codigo": "0510200409",
+    "descricao": "OXIRIO PLUS 5L",
+    "apresentacao": "5L",
+    "ncm": "34024200",
+    "classificacao": "Saneante",
+    "principioAtivo": "Peróxido De Hidrogênio E Quaternário Amônia",
+    "validade": "24",
+    "qtdPorEmbalagem": 4,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 490.0,
+      "RQE Especialista": 245.0,
+      "RQS Estrategico": null,
+      "Venda Direta": 281.75
+    }
+  },
+  {
+    "codigo": "0510200406",
+    "descricao": "OXIRIO SPRAY/ESPUMA 750ML (GATILHO)",
+    "apresentacao": "750ml Spray / Foam",
+    "ncm": "34024200",
+    "classificacao": "Saneante",
+    "principioAtivo": "Peróxido De Hidrogênio E Quaternário Amônia",
+    "validade": "36",
+    "qtdPorEmbalagem": 6,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 41.8,
+      "RQE Especialista": 20.9,
+      "RQS Estrategico": null,
+      "Venda Direta": 24.04
+    }
+  },
+  {
+    "codigo": "0510202087",
+    "descricao": "OXIRIO WIPES - FLOW PACK (SACO PLASTICO) 50 UNIDADES CX C/15",
+    "apresentacao": "",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "-",
+    "validade": "24",
+    "qtdPorEmbalagem": 15,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 31.9,
+      "RQE Especialista": 15.95,
+      "RQS Estrategico": null,
+      "Venda Direta": 18.35
+    }
+  },
+  {
+    "codigo": "0510400900",
+    "descricao": "PULVERIZADOR ELETROSTATICO PORTATIL VIRACLEAN",
+    "apresentacao": "Unidade",
+    "ncm": "84242000",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 5580.0,
+      "RQE Especialista": null,
+      "RQS Estrategico": null,
+      "Venda Direta": 3208.5
+    }
+  },
+  {
+    "codigo": "0510400913",
+    "descricao": "REGULADOR DE PRESSAO",
+    "apresentacao": "Unidade",
+    "ncm": "84811000",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 700.0,
+      "RQE Especialista": null,
+      "RQS Estrategico": null,
+      "Venda Direta": 402.5
+    }
+  },
+  {
+    "codigo": "0510101108",
+    "descricao": "RIALCOOL 70 1L",
+    "apresentacao": "1L",
+    "ncm": "22072019",
+    "classificacao": "Saneante",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 21.6,
+      "RQE Especialista": null,
+      "RQS Estrategico": 11.88,
+      "Venda Direta": 12.42
+    }
+  },
+  {
+    "codigo": "0510200801",
+    "descricao": "RIALCOOL 70 5L",
+    "apresentacao": "5L",
+    "ncm": "22072019",
+    "classificacao": "Saneante",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "36",
+    "qtdPorEmbalagem": 4,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 99.0,
+      "RQE Especialista": null,
+      "RQS Estrategico": 54.45,
+      "Venda Direta": 56.93
+    }
+  },
+  {
+    "codigo": "0530201303",
+    "descricao": "RIALCOOL 70 SERIGRAFADO 1L",
+    "apresentacao": "1L Serigrafado",
+    "ncm": "22072019",
+    "classificacao": "Saneante",
+    "principioAtivo": "Álcool Etílico 70%",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 19.6,
+      "RQE Especialista": null,
+      "RQS Estrategico": 10.78,
+      "Venda Direta": 11.27
+    }
+  },
+  {
+    "codigo": "0520100801",
+    "descricao": "RIALCOOL ETILICO ABSOLUTO 99,3 INPM 50ML",
+    "apresentacao": "50ml",
+    "ncm": "22071090",
+    "classificacao": "Saneante",
+    "principioAtivo": "Álcool Absoluto 99,3 Inpm",
+    "validade": "36",
+    "qtdPorEmbalagem": 48,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 5.1,
+      "RQE Especialista": null,
+      "RQS Estrategico": 2.81,
+      "Venda Direta": 2.94
+    }
+  },
+  {
+    "codigo": "0510200101",
+    "descricao": "RIALCOOL ETILICO ABSOLUTO 99,3 INPM 1L",
+    "apresentacao": "1L",
+    "ncm": "22071090",
+    "classificacao": "Saneante",
+    "principioAtivo": "Álcool Absoluto 99,3 Inpm",
+    "validade": "36",
+    "qtdPorEmbalagem": 12,
+    "linha": "Clássica",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 31.0,
+      "RQE Especialista": null,
+      "RQS Estrategico": 17.05,
+      "Venda Direta": 17.83
+    }
+  },
+  {
+    "codigo": "0510202146",
+    "descricao": "RIOCLEAN DETERGENTE PLUS 5L (Lançamento )",
+    "apresentacao": "5L",
+    "ncm": "34023990",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ácido Dodecilbenzeno Sulfonico",
+    "validade": "24",
+    "qtdPorEmbalagem": 12,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 121.8,
+      "RQE Especialista": null,
+      "RQS Estrategico": null,
+      "Venda Direta": 70.04
+    }
+  },
+  {
+    "codigo": "R0448",
+    "descricao": "ROTULO GERMI RIO PLUS NOVO 750ML FRENTE (P/ FRASCO VAZIO)",
+    "apresentacao": "Unidade",
+    "ncm": "48211000",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 1.68,
+      "RQE Especialista": null,
+      "RQS Estrategico": null,
+      "Venda Direta": 0.97
+    }
+  },
+  {
+    "codigo": "R0449",
+    "descricao": "ROTULO GERMI RIO PLUS NOVO 750ML VERSO (P/ FRASCO VAZIO)",
+    "apresentacao": "Unidade",
+    "ncm": "49119900",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 1.68,
+      "RQE Especialista": null,
+      "RQS Estrategico": null,
+      "Venda Direta": 0.97
+    }
+  },
+  {
+    "codigo": "R0444",
+    "descricao": "ROTULO OXIRIO PLUS NOVO 750ML FRENTE (P/ FRASCO VAZIO)",
+    "apresentacao": "Unidade",
+    "ncm": "48211000",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 1.68,
+      "RQE Especialista": null,
+      "RQS Estrategico": null,
+      "Venda Direta": 0.97
+    }
+  },
+  {
+    "codigo": "R0445",
+    "descricao": "ROTULO OXIRIO PLUS NOVO 750ML VERSO (P/ FRASCO VAZIO)",
+    "apresentacao": "Unidade",
+    "ncm": "48211000",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 1.68,
+      "RQE Especialista": null,
+      "RQS Estrategico": null,
+      "Venda Direta": 0.97
+    }
+  },
+  {
+    "codigo": "E0101",
+    "descricao": "TAMPA 750 ML/1 L VALV GATILHO SPRAY/ESPUMA 28MM BRANCA JH01R",
+    "apresentacao": "Gatilho 750ml",
+    "ncm": "84248990",
+    "classificacao": "Acessório",
+    "principioAtivo": "-",
+    "validade": "-",
+    "qtdPorEmbalagem": 1,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 9.0,
+      "RQE Especialista": null,
+      "RQS Estrategico": null,
+      "Venda Direta": 5.18
+    }
+  },
+  {
+    "codigo": "0540201047",
+    "descricao": "VIRACLEAN 150 X 1G - CX 02 UND",
+    "apresentacao": "Pastilha",
+    "ncm": "38089429",
+    "classificacao": "Saneante",
+    "principioAtivo": "Ácido Dicloroisocianúrico",
+    "validade": "24",
+    "qtdPorEmbalagem": 2,
+    "linha": "Premium",
+    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 1200.0,
+      "RQE Especialista": null,
+      "RQS Estrategico": null,
+      "Venda Direta": 690.0
+    }
+  }
+]
