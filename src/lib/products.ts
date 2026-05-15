@@ -20,10 +20,8 @@ export interface Product {
 export const products: Product[] = data as Product[];
 
 export const priceTables: PriceTable[] = [
-  "Tabela",
   "RQE Especialista",
   "RQS Estrategico",
-  "Venda Direta",
 ];
 
 export const categorias = Array.from(new Set(products.map((p) => p.categoria))).filter(Boolean).sort();
