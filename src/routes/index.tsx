@@ -460,7 +460,42 @@ function PedidosPage() {
                               {Math.ceil(it.qtyAdjusted / box)} cx
                             </div>
                           </td>
-                          <td className="px-3 py-2 text-right">{brl(it.unitPrice)}</td>
+                          <td className="px-3 py-2 text-right">
+                            <div className="flex items-center justify-end gap-1">
+                              <span className="text-xs text-muted-foreground">R$</span>
+                              <input
+                                type="number"
+                                step="0.01"
+                                min={0}
+                                value={it.unitPrice}
+                                onChange={(e) =>
+                                  setItems((prev) => {
+                                    const nx = [...prev];
+                                    nx[idx] = { ...nx[idx], unitPrice: Number(e.target.value) || 0 };
+                                    return nx;
+                                  })
+                                }
+                                className={`w-24 px-2 py-1 text-right rounded border border-input bg-background ${
+                                  it.unitPrice !== priceOf(it.product) ? "ring-1 ring-warning" : ""
+                                }`}
+                                title={`Tabela: ${brl(priceOf(it.product))}`}
+                              />
+                            </div>
+                            {it.unitPrice !== priceOf(it.product) && (
+                              <button
+                                onClick={() =>
+                                  setItems((prev) => {
+                                    const nx = [...prev];
+                                    nx[idx] = { ...nx[idx], unitPrice: priceOf(nx[idx].product) };
+                                    return nx;
+                                  })
+                                }
+                                className="text-[10px] text-muted-foreground hover:underline mt-0.5"
+                              >
+                                restaurar tabela
+                              </button>
+                            )}
+                          </td>
                           <td className="px-3 py-2 text-right font-semibold">
                             {brl(it.unitPrice * it.qtyAdjusted)}
                           </td>
