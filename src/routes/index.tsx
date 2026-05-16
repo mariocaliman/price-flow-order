@@ -1,5 +1,7 @@
-import { useMemo, useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useMemo, useState } from "react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useAuth } from "@/hooks/use-auth";
+import { supabase } from "@/integrations/supabase/client";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import {
@@ -22,6 +24,12 @@ interface OrderItem {
 }
 
 function PedidosPage() {
+  const navigate = useNavigate();
+  const auth = useAuth();
+  useEffect(() => {
+    if (!auth.loading && !auth.user) navigate({ to: "/login" });
+  }, [auth.loading, auth.user, navigate]);
+
   // Cabeçalho
   const [cliente, setCliente] = useState("");
   const [codCliente, setCodCliente] = useState("");
@@ -269,7 +277,18 @@ function PedidosPage() {
               <p className="text-xs text-muted-foreground">Tabela Hospitalar · {ALL_PRODUCTS.length} produtos</p>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
+            {auth.isAdmin && (
+              <Link
+                to="/admin"
+                className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition"
+              >
+                Admin
+              </Link>
+            )}
+            <span className="hidden md:inline text-xs text-muted-foreground px-2">
+              {auth.nome || auth.user?.email}
+            </span>
             <button onClick={loadLastPedido} className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition">
               Carregar último
             </button>
@@ -282,6 +301,15 @@ function PedidosPage() {
               className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition disabled:opacity-50"
             >
               Gerar PDF
+            </button>
+            <button
+              onClick={async () => {
+                await supabase.auth.signOut();
+                navigate({ to: "/login" });
+              }}
+              className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition"
+            >
+              Sair
             </button>
           </div>
         </div>
