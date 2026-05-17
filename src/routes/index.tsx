@@ -149,14 +149,43 @@ function PedidosPage() {
     return { totalGeral, totalUnidades, totalCaixas, itens: items.length };
   }, [items]);
 
-  function savePedido() {
+  const [saving, setSaving] = useState(false);
+
+  async function savePedido() {
+    if (!auth.user) {
+      alert("Faça login para salvar.");
+      return;
+    }
+    if (!cliente.trim()) {
+      alert("Informe o nome do cliente antes de salvar.");
+      return;
+    }
+    if (!items.length) {
+      alert("Adicione pelo menos um item ao pedido.");
+      return;
+    }
     const payload = {
       cliente, codCliente, prazo, data, vendedor, obs, tabela, roundMode, items, totals,
       savedAt: new Date().toISOString(),
     };
-    const key = `pedido_${Date.now()}`;
-    localStorage.setItem(key, JSON.stringify(payload));
-    alert(`Pedido salvo (${key}).`);
+    setSaving(true);
+    try {
+      const { error } = await supabase.from("pedidos").insert({
+        user_id: auth.user.id,
+        nome: cliente.trim(),
+        data_pedido: data,
+        payload: payload as never,
+      });
+      if (error) throw error;
+      // Backup local
+      localStorage.setItem(`pedido_${Date.now()}`, JSON.stringify(payload));
+      alert(`Pedido "${cliente.trim()}" salvo em ${new Date(data).toLocaleDateString("pt-BR")}.`);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      alert(`Erro ao salvar pedido: ${msg}`);
+    } finally {
+      setSaving(false);
+    }
   }
 
   function loadLastPedido() {
@@ -293,8 +322,8 @@ function PedidosPage() {
             <button onClick={loadLastPedido} className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition">
               Carregar último
             </button>
-            <button onClick={savePedido} className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition">
-              Salvar
+            <button onClick={savePedido} disabled={saving} className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
+              {saving ? "Salvando..." : "Salvar"}
             </button>
             <button
               onClick={exportPDF}
