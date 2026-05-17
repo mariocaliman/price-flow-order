@@ -174,7 +174,7 @@ function PedidosPage() {
         user_id: auth.user.id,
         nome: cliente.trim(),
         data_pedido: data,
-        payload,
+        payload: payload as never,
       });
       if (error) throw error;
       // Backup local
