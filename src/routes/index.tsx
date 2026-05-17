@@ -322,8 +322,8 @@ function PedidosPage() {
             <button onClick={loadLastPedido} className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition">
               Carregar último
             </button>
-            <button onClick={savePedido} className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition">
-              Salvar
+            <button onClick={savePedido} disabled={saving} className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
+              {saving ? "Salvando..." : "Salvar"}
             </button>
             <button
               onClick={exportPDF}
