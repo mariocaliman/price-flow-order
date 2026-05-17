@@ -53,7 +53,7 @@ function AdminPage() {
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-    if (auth.loading) return;
+    if (auth.loading || auth.roleLoading) return;
     if (!auth.user) {
       navigate({ to: "/login" });
       return;
@@ -61,7 +61,7 @@ function AdminPage() {
     if (!auth.isAdmin) {
       navigate({ to: "/" });
     }
-  }, [auth.loading, auth.user, auth.isAdmin, navigate]);
+  }, [auth.loading, auth.roleLoading, auth.user, auth.isAdmin, navigate]);
 
   async function refresh() {
     setLoading(true);
@@ -118,7 +118,7 @@ function AdminPage() {
     }
   }
 
-  if (auth.loading || !auth.isAdmin) {
+  if (auth.loading || auth.roleLoading || !auth.isAdmin) {
     return (
       <div className="min-h-screen grid place-items-center text-sm text-muted-foreground">
         Carregando...

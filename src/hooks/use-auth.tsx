@@ -8,6 +8,7 @@ export interface AuthState {
   session: Session | null;
   isAdmin: boolean;
   nome: string;
+  roleLoading: boolean;
 }
 
 export function useAuth(): AuthState {
@@ -15,6 +16,7 @@ export function useAuth(): AuthState {
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [nome, setNome] = useState("");
+  const [roleLoading, setRoleLoading] = useState(true);
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => {
@@ -32,8 +34,10 @@ export function useAuth(): AuthState {
     if (!uid) {
       setIsAdmin(false);
       setNome("");
+      setRoleLoading(false);
       return;
     }
+    setRoleLoading(true);
     (async () => {
       const [{ data: roles }, { data: profile }] = await Promise.all([
         supabase.from("user_roles").select("role").eq("user_id", uid),
@@ -41,8 +45,9 @@ export function useAuth(): AuthState {
       ]);
       setIsAdmin((roles ?? []).some((r) => r.role === "admin"));
       setNome(profile?.nome ?? "");
+      setRoleLoading(false);
     })();
   }, [session?.user?.id]);
 
-  return { loading, user: session?.user ?? null, session, isAdmin, nome };
+  return { loading, user: session?.user ?? null, session, isAdmin, nome, roleLoading };
 }
