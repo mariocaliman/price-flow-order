@@ -281,9 +281,10 @@ function PedidosPage() {
             {auth.isAdmin && (
               <Link
                 to="/admin"
-                className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition"
+                title="Painel do administrador"
+                className="px-3 py-2 text-sm font-semibold rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition inline-flex items-center gap-1.5 shadow-sm"
               >
-                Admin
+                <span aria-hidden>⚙</span> Painel Admin
               </Link>
             )}
             <span className="hidden md:inline text-xs text-muted-foreground px-2">
