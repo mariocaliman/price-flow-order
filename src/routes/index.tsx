@@ -347,7 +347,7 @@ function PedidosPage() {
 
       <main className="max-w-[1500px] mx-auto px-6 py-6 grid grid-cols-12 gap-6">
         {/* Catálogo */}
-        <section className="col-span-12 lg:col-span-5 xl:col-span-4">
+        <section className="col-span-12 md:col-span-5 xl:col-span-4">
           <div className="bg-card border border-border rounded-lg overflow-hidden">
             <div className="p-4 border-b border-border space-y-3">
               <h2 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">Catálogo</h2>
@@ -415,7 +415,7 @@ function PedidosPage() {
         </section>
 
         {/* Pedido */}
-        <section className="col-span-12 lg:col-span-7 xl:col-span-8 space-y-6">
+        <section className="col-span-12 md:col-span-7 xl:col-span-8 space-y-6">
           {/* Dados do pedido */}
           <div className="bg-card border border-border rounded-lg p-5">
             <h2 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-4">Dados do pedido</h2>
@@ -466,9 +466,9 @@ function PedidosPage() {
                 Selecione produtos no catálogo ao lado para começar.
               </div>
             ) : (
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground">
+              <div className="overflow-auto max-h-[55vh]">
+                <table className="w-full min-w-[900px] text-sm">
+                  <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground sticky top-0 z-10">
                     <tr>
                       <th className="text-left px-3 py-2">Código</th>
                       <th className="text-left px-3 py-2">Produto</th>
