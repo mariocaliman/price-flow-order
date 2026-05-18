@@ -415,7 +415,7 @@ function PedidosPage() {
         </section>
 
         {/* Pedido */}
-        <section className="col-span-12 lg:col-span-7 xl:col-span-8 space-y-6">
+        <section className="col-span-12 md:col-span-7 xl:col-span-8 space-y-6">
           {/* Dados do pedido */}
           <div className="bg-card border border-border rounded-lg p-5">
             <h2 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-4">Dados do pedido</h2>
