@@ -347,7 +347,7 @@ function PedidosPage() {
 
       <main className="max-w-[1500px] mx-auto px-6 py-6 grid grid-cols-12 gap-6">
         {/* Catálogo */}
-        <section className="col-span-12 lg:col-span-5 xl:col-span-4">
+        <section className="col-span-12 md:col-span-5 xl:col-span-4">
           <div className="bg-card border border-border rounded-lg overflow-hidden">
             <div className="p-4 border-b border-border space-y-3">
               <h2 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">Catálogo</h2>
