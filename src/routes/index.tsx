@@ -357,26 +357,32 @@ function PedidosPage() {
                 placeholder="Buscar por código, descrição, princípio ativo..."
                 className="w-full px-3 py-2 rounded-md bg-background border border-input text-sm focus:outline-none focus:ring-2 focus:ring-ring"
               />
-              <div className="flex gap-2">
-                <select
-                  value={catFilter}
-                  onChange={(e) => setCatFilter(e.target.value)}
-                  className="flex-1 px-2 py-2 rounded-md bg-background border border-input text-sm"
-                >
-                  <option value="">Todas categorias</option>
-                  {categorias.map((c) => (
-                    <option key={c} value={c}>{c}</option>
-                  ))}
-                </select>
-                <select
-                  value={tabela}
-                  onChange={(e) => setTabela(e.target.value as PriceTable)}
-                  className="flex-1 px-2 py-2 rounded-md bg-background border border-input text-sm"
-                >
-                  {priceTables.map((t) => (
-                    <option key={t} value={t}>{t}</option>
-                  ))}
-                </select>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div>
+                  <label className="text-[11px] uppercase tracking-wide text-muted-foreground">Categoria</label>
+                  <select
+                    value={catFilter}
+                    onChange={(e) => setCatFilter(e.target.value)}
+                    className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm"
+                  >
+                    <option value="">Todas categorias</option>
+                    {categorias.map((c) => (
+                      <option key={c} value={c}>{c}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[11px] uppercase tracking-wide text-muted-foreground">Tabela de preço</label>
+                  <select
+                    value={tabela}
+                    onChange={(e) => setTabela(e.target.value as PriceTable)}
+                    className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm font-medium"
+                  >
+                    {priceTables.map((t) => (
+                      <option key={t} value={t}>{t}</option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
             <div className="max-h-[70vh] overflow-y-auto divide-y divide-border">
