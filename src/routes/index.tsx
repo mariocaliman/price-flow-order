@@ -466,9 +466,9 @@ function PedidosPage() {
                 Selecione produtos no catálogo ao lado para começar.
               </div>
             ) : (
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground">
+              <div className="overflow-auto max-h-[55vh]">
+                <table className="w-full min-w-[900px] text-sm">
+                  <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground sticky top-0 z-10">
                     <tr>
                       <th className="text-left px-3 py-2">Código</th>
                       <th className="text-left px-3 py-2">Produto</th>
