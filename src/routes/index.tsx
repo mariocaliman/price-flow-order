@@ -200,7 +200,7 @@ function PedidosPage() {
   }
 
   function exportPDF() {
-    const doc = new jsPDF({ unit: "mm", format: "a4" });
+    const doc = new jsPDF({ unit: "mm", format: "a4", orientation: "landscape" });
     const W = doc.internal.pageSize.getWidth();
 
     // Cabeçalho
