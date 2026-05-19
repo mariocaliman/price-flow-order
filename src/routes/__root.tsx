@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { InstallPrompt } from "@/components/install-prompt";
 
 import appCss from "../styles.css?url";
 
