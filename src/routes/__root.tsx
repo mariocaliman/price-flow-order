@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { InstallPrompt } from "@/components/install-prompt";
 
 import appCss from "../styles.css?url";
 
@@ -78,6 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Sistema de Pedidos Comerciais — Hospitalar" },
       { property: "og:description", content: "Sistema de pedidos com tabela de preços hospitalar, arredondamento automático para caixa padrão e exportação em PDF." },
       { property: "og:type", content: "website" },
+      { name: "theme-color", content: "#1e5a9e" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+      { name: "apple-mobile-web-app-title", content: "Pedidos RQ" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Sistema de Pedidos Comerciais — Hospitalar" },
@@ -86,10 +91,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6ce99b42-b6bf-444b-8caf-ec70ad80cb10/id-preview-fc69eecb--253f7c06-e534-4631-b73d-db578999f901.lovable.app-1778853056098.png" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/icon-192.png" },
+      { rel: "icon", type: "image/png", sizes: "512x512", href: "/icon-512.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -118,6 +124,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <InstallPrompt />
     </QueryClientProvider>
   );
 }
