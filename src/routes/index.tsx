@@ -296,39 +296,43 @@ function PedidosPage() {
     <div className="min-h-screen bg-background">
       {/* Topbar */}
       <header className="border-b border-border bg-card sticky top-0 z-30">
-        <div className="max-w-[1500px] mx-auto px-6 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-md bg-primary text-primary-foreground grid place-items-center font-bold">
+        <div className="max-w-[1500px] mx-auto px-3 sm:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="w-10 h-10 shrink-0 rounded-md bg-primary text-primary-foreground grid place-items-center font-bold">
               RQ
             </div>
-            <div>
-              <h1 className="font-bold leading-tight">Sistema de Pedidos Comerciais</h1>
-              <p className="text-xs text-muted-foreground">Tabela Hospitalar · {ALL_PRODUCTS.length} produtos</p>
+            <div className="min-w-0">
+              <h1 className="font-bold leading-tight text-sm sm:text-base truncate">
+                Sistema de Pedidos Comerciais
+              </h1>
+              <p className="text-[11px] sm:text-xs text-muted-foreground truncate">
+                Tabela Hospitalar · {ALL_PRODUCTS.length} produtos
+              </p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2 lg:justify-end">
             {auth.isAdmin && (
               <Link
                 to="/admin"
                 title="Painel do administrador"
-                className="px-3 py-2 text-sm font-semibold rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition inline-flex items-center gap-1.5 shadow-sm"
+                className="px-3 py-2 text-xs sm:text-sm font-semibold rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition inline-flex items-center gap-1.5 shadow-sm"
               >
-                <span aria-hidden>⚙</span> Painel Admin
+                <span aria-hidden>⚙</span> Admin
               </Link>
             )}
-            <span className="hidden md:inline text-xs text-muted-foreground px-2">
+            <span className="hidden xl:inline text-xs text-muted-foreground px-2 truncate max-w-[160px]">
               {auth.nome || auth.user?.email}
             </span>
-            <button onClick={loadLastPedido} className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition">
+            <button onClick={loadLastPedido} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
               Carregar último
             </button>
-            <button onClick={savePedido} disabled={saving} className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
+            <button onClick={savePedido} disabled={saving} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
               {saving ? "Salvando..." : "Salvar"}
             </button>
             <button
               onClick={exportPDF}
               disabled={!items.length}
-              className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition disabled:opacity-50"
+              className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition disabled:opacity-50"
             >
               Gerar PDF
             </button>
@@ -337,7 +341,7 @@ function PedidosPage() {
                 await supabase.auth.signOut();
                 navigate({ to: "/login" });
               }}
-              className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted transition"
+              className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition"
             >
               Sair
             </button>
