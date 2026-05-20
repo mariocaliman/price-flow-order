@@ -10,6 +10,7 @@ import {
   categorias,
   roundToBox,
   brl,
+  calcItemTaxes,
   type PriceTable,
   type Product,
 } from "@/lib/products";
@@ -140,13 +141,24 @@ function PedidosPage() {
   }
 
   const totals = useMemo(() => {
-    const totalGeral = items.reduce((s, it) => s + it.qtyAdjusted * it.unitPrice, 0);
-    const totalUnidades = items.reduce((s, it) => s + it.qtyAdjusted, 0);
-    const totalCaixas = items.reduce(
-      (s, it) => s + Math.ceil(it.qtyAdjusted / Math.max(1, it.product.qtdPorEmbalagem)),
-      0,
-    );
-    return { totalGeral, totalUnidades, totalCaixas, itens: items.length };
+    let totalGeral = 0, totalUnidades = 0, totalCaixas = 0;
+    let baseIcms = 0, vIcms = 0, baseIpi = 0, vIpi = 0;
+    let baseSt = 0, vSt = 0, vPis = 0, vCofins = 0;
+    for (const it of items) {
+      const t = calcItemTaxes(it.unitPrice, it.qtyAdjusted, it.product);
+      totalGeral += t.base;
+      totalUnidades += it.qtyAdjusted;
+      totalCaixas += Math.ceil(it.qtyAdjusted / Math.max(1, it.product.qtdPorEmbalagem));
+      baseIcms += t.base; vIcms += t.icms;
+      baseIpi += t.base; vIpi += t.ipi;
+      baseSt += t.stBase; vSt += t.st;
+      vPis += t.pis; vCofins += t.cofins;
+    }
+    const valorTotalNota = totalGeral + vIpi + vSt;
+    return {
+      totalGeral, totalUnidades, totalCaixas, itens: items.length,
+      baseIcms, vIcms, baseIpi, vIpi, baseSt, vSt, vPis, vCofins, valorTotalNota,
+    };
   }, [items]);
 
   const [saving, setSaving] = useState(false);
@@ -202,91 +214,133 @@ function PedidosPage() {
   function exportPDF() {
     const doc = new jsPDF({ unit: "mm", format: "a4", orientation: "landscape" });
     const W = doc.internal.pageSize.getWidth();
+    const H = doc.internal.pageSize.getHeight();
+    const pedidoNum = `#${Date.now().toString().slice(-6)}`;
 
-    // Cabeçalho
-    doc.setFillColor(30, 80, 160);
-    doc.rect(0, 0, W, 22, "F");
-    doc.setTextColor(255);
-    doc.setFontSize(16);
+    // Cabeçalho fornecedor
     doc.setFont("helvetica", "bold");
-    doc.text("PEDIDO COMERCIAL", 14, 14);
-    doc.setFontSize(9);
+    doc.setFontSize(12);
+    doc.text("RIOQUIMICA S.A", 10, 10);
     doc.setFont("helvetica", "normal");
-    doc.text(`Tabela: ${tabela}`, W - 14, 14, { align: "right" });
+    doc.setFontSize(8);
+    doc.text("AV. TARRAF, Nr. 2590/2600", 10, 14);
+    doc.text("TEL: 55-17-4009-4288", 10, 18);
+    doc.text("CNPJ: 55.643.555/0001-43", 10, 22);
 
-    doc.setTextColor(0);
-    doc.setFontSize(10);
-    let y = 30;
-    const left = [
-      ["Cliente", cliente || "-"],
-      ["Código Cliente", codCliente || "-"],
-      ["Vendedor", vendedor || "-"],
-    ];
-    const right = [
-      ["Data", new Date(data).toLocaleDateString("pt-BR")],
-      ["Prazo", prazo || "-"],
-      ["Nº Pedido", `#${Date.now().toString().slice(-6)}`],
-    ];
-    left.forEach(([k, v], i) => {
-      doc.setFont("helvetica", "bold"); doc.text(`${k}:`, 14, y + i * 6);
-      doc.setFont("helvetica", "normal"); doc.text(String(v), 45, y + i * 6);
-    });
-    right.forEach(([k, v], i) => {
-      doc.setFont("helvetica", "bold"); doc.text(`${k}:`, W / 2 + 5, y + i * 6);
-      doc.setFont("helvetica", "normal"); doc.text(String(v), W / 2 + 35, y + i * 6);
-    });
+    // Bloco direito - confirmação
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.text("CONFIRMAÇÃO DO PEDIDO", W - 10, 10, { align: "right" });
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(8);
+    doc.text(`EMISSÃO: ${new Date().toLocaleDateString("pt-BR")}`, W - 10, 14, { align: "right" });
+    doc.text(`PEDIDO Nº ${pedidoNum}`, W - 10, 18, { align: "right" });
+    doc.text(`TABELA: ${tabela}`, W - 10, 22, { align: "right" });
 
+    // Linha divisória
+    doc.setDrawColor(120);
+    doc.line(10, 26, W - 10, 26);
+
+    // Bloco cliente
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(9);
+    doc.text(`CLIENTE: ${codCliente || "-"}`, 10, 32);
+    doc.setFont("helvetica", "normal");
+    doc.text(cliente || "-", 10, 36);
+    doc.text(`VENDEDOR: ${vendedor || "-"}`, 10, 40);
+    doc.text(`COND. PGTO: ${prazo || "-"}`, 10, 44);
+    doc.text(`DATA PEDIDO: ${new Date(data).toLocaleDateString("pt-BR")}`, W / 2 + 10, 32);
+    doc.text(`Nº ITENS: ${items.length}`, W / 2 + 10, 36);
+    doc.text(`Nº VOLUMES: ${totals.totalCaixas}`, W / 2 + 10, 40);
+    doc.text(`UNIDADES: ${totals.totalUnidades}`, W / 2 + 10, 44);
+
+    doc.line(10, 48, W - 10, 48);
+
+    // Tabela de itens
     autoTable(doc, {
-      startY: y + 22,
-      head: [["Código", "Produto", "Apres.", "Cx", "Qtd", "Vol", "Preço Un.", "Total"]],
-      body: items.map((it) => [
-        it.product.codigo,
-        it.product.descricao,
-        it.product.apresentacao,
-        String(it.product.qtdPorEmbalagem),
-        String(it.qtyAdjusted),
-        String(Math.ceil(it.qtyAdjusted / Math.max(1, it.product.qtdPorEmbalagem))),
-        brl(it.unitPrice),
-        brl(it.unitPrice * it.qtyAdjusted),
-      ]),
-      styles: { fontSize: 8, cellPadding: 1.5 },
-      headStyles: { fillColor: [30, 80, 160], textColor: 255 },
+      startY: 52,
+      head: [["IT", "Produto", "Descrição", "UM", "Qtd.Vendida", "Valor Unit.", "Total", "Vlr IPI", "Vlr ST"]],
+      body: items.map((it, i) => {
+        const t = calcItemTaxes(it.unitPrice, it.qtyAdjusted, it.product);
+        return [
+          String(i + 1).padStart(2, "0"),
+          it.product.codigo,
+          `${it.product.descricao} ${it.product.apresentacao}`.trim(),
+          "UN",
+          it.qtyAdjusted.toLocaleString("pt-BR", { minimumFractionDigits: 0 }),
+          it.unitPrice.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+          t.base.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+          t.ipi.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+          t.st.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+        ];
+      }),
+      styles: { fontSize: 7.5, cellPadding: 1.2, lineColor: [180, 180, 180], lineWidth: 0.1 },
+      headStyles: { fillColor: [230, 230, 230], textColor: 0, fontStyle: "bold", lineColor: [120, 120, 120] },
       columnStyles: {
-        0: { cellWidth: 22 },
-        1: { cellWidth: 70 },
-        3: { halign: "center", cellWidth: 10 },
-        4: { halign: "center", cellWidth: 14 },
-        5: { halign: "center", cellWidth: 10 },
-        6: { halign: "right", cellWidth: 22 },
-        7: { halign: "right", cellWidth: 24 },
+        0: { cellWidth: 10, halign: "center" },
+        1: { cellWidth: 25 },
+        2: { cellWidth: "auto" as unknown as number },
+        3: { cellWidth: 10, halign: "center" },
+        4: { cellWidth: 22, halign: "right" },
+        5: { cellWidth: 22, halign: "right" },
+        6: { cellWidth: 24, halign: "right" },
+        7: { cellWidth: 20, halign: "right" },
+        8: { cellWidth: 20, halign: "right" },
       },
     });
 
     // @ts-expect-error lastAutoTable
-    let endY = doc.lastAutoTable.finalY + 6;
+    let endY = doc.lastAutoTable.finalY + 2;
+
+    // Linha de totais (T O T A I S)
+    doc.setFontSize(8);
+    doc.setFont("helvetica", "bold");
+    doc.text("T O T A I S", 12, endY + 4);
+    doc.text(totals.totalGeral.toLocaleString("pt-BR", { minimumFractionDigits: 2 }), W - 56, endY + 4, { align: "right" });
+    doc.text(totals.vIpi.toLocaleString("pt-BR", { minimumFractionDigits: 2 }), W - 32, endY + 4, { align: "right" });
+    doc.text(totals.vSt.toLocaleString("pt-BR", { minimumFractionDigits: 2 }), W - 12, endY + 4, { align: "right" });
+
+    endY += 8;
+
+    // Tabela resumo de impostos (footer estilo nota)
+    autoTable(doc, {
+      startY: endY,
+      head: [["Base ICMS", "Valor ICMS", "Base IPI", "Valor IPI", "Base ST", "Valor ST", "Valor PIS", "Valor COFINS", "Valor Total"]],
+      body: [[
+        totals.baseIcms.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+        totals.vIcms.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+        totals.baseIpi.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+        totals.vIpi.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+        totals.baseSt.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+        totals.vSt.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+        totals.vPis.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+        totals.vCofins.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+        totals.valorTotalNota.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
+      ]],
+      styles: { fontSize: 7.5, cellPadding: 1.2, halign: "right", lineColor: [120, 120, 120], lineWidth: 0.1 },
+      headStyles: { fillColor: [230, 230, 230], textColor: 0, fontStyle: "bold", halign: "center" },
+      margin: { left: 10, right: 10 },
+    });
+
+    // @ts-expect-error lastAutoTable
+    endY = doc.lastAutoTable.finalY + 6;
+
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
-    doc.text(`Itens: ${totals.itens}`, 14, endY);
-    doc.text(`Volumes (caixas): ${totals.totalCaixas}`, 60, endY);
-    doc.text(`Unidades: ${totals.totalUnidades}`, 120, endY);
-    doc.setFontSize(13);
-    doc.text(`TOTAL GERAL: ${brl(totals.totalGeral)}`, W - 14, endY + 8, { align: "right" });
+    doc.text(`VALOR TOTAL DO PEDIDO: ${brl(totals.valorTotalNota)}`, W - 10, endY, { align: "right" });
 
     if (obs) {
-      doc.setFontSize(9);
+      doc.setFontSize(8);
       doc.setFont("helvetica", "bold");
-      doc.text("Observações:", 14, endY + 22);
+      doc.text("MENSAGEM / OBSERVAÇÕES:", 10, endY + 6);
       doc.setFont("helvetica", "normal");
-      doc.text(doc.splitTextToSize(obs, W - 28), 14, endY + 28);
+      doc.text(doc.splitTextToSize(obs, W - 20), 10, endY + 10);
     }
 
-    const H = doc.internal.pageSize.getHeight();
-    doc.setDrawColor(180);
-    doc.line(W / 2 - 50, H - 25, W / 2 + 50, H - 25);
-    doc.setFontSize(9);
-    doc.text("Assinatura / Responsável", W / 2, H - 20, { align: "center" });
-    doc.setFontSize(7); doc.setTextColor(120);
-    doc.text(`Gerado em ${new Date().toLocaleString("pt-BR")}`, 14, H - 8);
+    doc.setFontSize(7);
+    doc.setTextColor(120);
+    doc.text(`Gerado em ${new Date().toLocaleString("pt-BR")}`, 10, H - 6);
+    doc.text(`Pedido ${pedidoNum}`, W - 10, H - 6, { align: "right" });
 
     const filename = `pedido_${(cliente || "cliente").replace(/\s+/g, "_")}_${data}.pdf`;
     doc.save(filename);
@@ -585,12 +639,32 @@ function PedidosPage() {
 
             {/* Totais */}
             {items.length > 0 && (
-              <div className="border-t border-border bg-muted/30 px-5 py-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-                <Stat label="Itens" value={String(totals.itens)} />
-                <Stat label="Unidades" value={String(totals.totalUnidades)} />
-                <Stat label="Volumes (caixas)" value={String(totals.totalCaixas)} />
-                <Stat label="Total geral" value={brl(totals.totalGeral)} highlight />
-              </div>
+              <>
+                <div className="border-t border-border bg-muted/30 px-5 py-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <Stat label="Itens" value={String(totals.itens)} />
+                  <Stat label="Unidades" value={String(totals.totalUnidades)} />
+                  <Stat label="Volumes (caixas)" value={String(totals.totalCaixas)} />
+                  <Stat label="Total produtos" value={brl(totals.totalGeral)} />
+                </div>
+                <div className="border-t border-border bg-card px-5 py-4">
+                  <h3 className="text-xs uppercase tracking-wide text-muted-foreground font-semibold mb-3">
+                    Impostos do pedido
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 text-sm">
+                    <Stat label="Base ICMS" value={brl(totals.baseIcms)} />
+                    <Stat label="Valor ICMS" value={brl(totals.vIcms)} />
+                    <Stat label="Base IPI" value={brl(totals.baseIpi)} />
+                    <Stat label="Valor IPI" value={brl(totals.vIpi)} />
+                    <Stat label="Base ST" value={brl(totals.baseSt)} />
+                    <Stat label="Valor ST" value={brl(totals.vSt)} />
+                    <Stat label="Valor PIS" value={brl(totals.vPis)} />
+                    <Stat label="Valor COFINS" value={brl(totals.vCofins)} />
+                    <div className="md:col-span-2 lg:col-span-2">
+                      <Stat label="Valor total da nota" value={brl(totals.valorTotalNota)} highlight />
+                    </div>
+                  </div>
+                </div>
+              </>
             )}
           </div>
         </section>

@@ -15,7 +15,19 @@
       "Tabela": 10.0,
       "RQE Especialista": 5.0,
       "RQS Estrategico": 5.5,
-      "Venda Direta": 5.75
+      "Venda Direta": 5.75,
+      "PSV": 7.5,
+      "Benef. FOB SP": 4.8,
+      "Benef. FOB RJ/MG/RS/SC/PR": 4.4590000000000005,
+      "Benef. FOB Restante Brasil": 4.208600000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.25,
+      "ipi": 0.14300000000000002,
+      "pis": 0.022000000000000002,
+      "cofins": 0.10300000000000001
     }
   },
   {
@@ -34,7 +46,19 @@
       "Tabela": 29.8,
       "RQE Especialista": 14.9,
       "RQS Estrategico": 16.39,
-      "Venda Direta": 17.14
+      "Venda Direta": 17.14,
+      "PSV": 22.35,
+      "Benef. FOB SP": 14.304,
+      "Benef. FOB RJ/MG/RS/SC/PR": 13.287820000000002,
+      "Benef. FOB Restante Brasil": 12.541628000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.25,
+      "ipi": 0.14300000000000002,
+      "pis": 0.022000000000000002,
+      "cofins": 0.10300000000000001
     }
   },
   {
@@ -53,7 +77,19 @@
       "Tabela": 3.43,
       "RQE Especialista": 1.72,
       "RQS Estrategico": 1.89,
-      "Venda Direta": 1.98
+      "Venda Direta": 1.98,
+      "PSV": 2.58,
+      "Benef. FOB SP": 1.6512,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.5338960000000001,
+      "Benef. FOB Restante Brasil": 1.4477584000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -72,7 +108,19 @@
       "Tabela": 3.3,
       "RQE Especialista": 1.65,
       "RQS Estrategico": 1.82,
-      "Venda Direta": 1.9
+      "Venda Direta": 1.9,
+      "PSV": 2.4749999999999996,
+      "Benef. FOB SP": 1.5839999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.47147,
+      "Benef. FOB Restante Brasil": 1.388838,
+      "Preço de Escolha": 1.3
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -90,8 +138,20 @@
     "precos": {
       "Tabela": 8.9,
       "RQE Especialista": 4.45,
-      "RQS Estrategico": 4.9,
-      "Venda Direta": 5.12
+      "RQS Estrategico": 4.8999999999999995,
+      "Venda Direta": 5.12,
+      "PSV": 6.675000000000001,
+      "Benef. FOB SP": 4.272,
+      "Benef. FOB RJ/MG/RS/SC/PR": 3.96851,
+      "Benef. FOB Restante Brasil": 3.8,
+      "Preço de Escolha": 3.8
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -110,7 +170,19 @@
       "Tabela": 6.36,
       "RQE Especialista": 3.18,
       "RQS Estrategico": 3.5,
-      "Venda Direta": 3.66
+      "Venda Direta": 3.6599999999999997,
+      "PSV": 4.7700000000000005,
+      "Benef. FOB SP": 3.0528,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.8359240000000003,
+      "Benef. FOB Restante Brasil": 2.6766696000000003,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -129,7 +201,19 @@
       "Tabela": 33.6,
       "RQE Especialista": 16.8,
       "RQS Estrategico": 18.48,
-      "Venda Direta": 19.32
+      "Venda Direta": 19.32,
+      "PSV": 25.200000000000003,
+      "Benef. FOB SP": 16.128,
+      "Benef. FOB RJ/MG/RS/SC/PR": 14.982240000000001,
+      "Benef. FOB Restante Brasil": 14.140896000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -148,7 +232,19 @@
       "Tabela": 13.4,
       "RQE Especialista": 6.7,
       "RQS Estrategico": 7.37,
-      "Venda Direta": 7.71
+      "Venda Direta": 7.71,
+      "PSV": 10.05,
+      "Benef. FOB SP": 6.4319999999999995,
+      "Benef. FOB RJ/MG/RS/SC/PR": 5.97506,
+      "Benef. FOB Restante Brasil": 5.639524000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.25,
+      "ipi": 0.14300000000000002,
+      "pis": 0.022000000000000002,
+      "cofins": 0.10300000000000001
     }
   },
   {
@@ -167,7 +263,19 @@
       "Tabela": 80.0,
       "RQE Especialista": 40.0,
       "RQS Estrategico": 44.0,
-      "Venda Direta": 46.0
+      "Venda Direta": 46.0,
+      "PSV": 60.0,
+      "Benef. FOB SP": 38.4,
+      "Benef. FOB RJ/MG/RS/SC/PR": 35.672000000000004,
+      "Benef. FOB Restante Brasil": 33.668800000000005,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.25,
+      "ipi": 0.14300000000000002,
+      "pis": 0.022000000000000002,
+      "cofins": 0.10300000000000001
     }
   },
   {
@@ -186,7 +294,19 @@
       "Tabela": 11.8,
       "RQE Especialista": 5.9,
       "RQS Estrategico": 6.49,
-      "Venda Direta": 6.79
+      "Venda Direta": 6.79,
+      "PSV": 8.850000000000001,
+      "Benef. FOB SP": 5.664,
+      "Benef. FOB RJ/MG/RS/SC/PR": 5.261620000000001,
+      "Benef. FOB Restante Brasil": 4.9661480000000005,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -205,7 +325,19 @@
       "Tabela": 16.0,
       "RQE Especialista": 8.0,
       "RQS Estrategico": 8.8,
-      "Venda Direta": 9.2
+      "Venda Direta": 9.2,
+      "PSV": 12.0,
+      "Benef. FOB SP": 7.68,
+      "Benef. FOB RJ/MG/RS/SC/PR": 7.1344,
+      "Benef. FOB Restante Brasil": 6.73376,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -216,7 +348,7 @@
     "classificacao": "Medicamento",
     "principioAtivo": "Álcool Etílico 70%",
     "validade": "36",
-    "qtdPorEmbalagem": 1,
+    "qtdPorEmbalagem": 12,
     "linha": "Premium",
     "categoria": "PREPARAÇÃO DE PELE",
     "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
@@ -224,7 +356,19 @@
       "Tabela": 35.8,
       "RQE Especialista": 17.9,
       "RQS Estrategico": null,
-      "Venda Direta": 20.59
+      "Venda Direta": 20.59,
+      "PSV": 26.849999999999998,
+      "Benef. FOB SP": 17.183999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 15.96322,
+      "Benef. FOB Restante Brasil": 15.9,
+      "Preço de Escolha": 15.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -243,7 +387,19 @@
       "Tabela": 2.7,
       "RQE Especialista": 1.35,
       "RQS Estrategico": null,
-      "Venda Direta": 1.56
+      "Venda Direta": 1.56,
+      "PSV": 2.0250000000000004,
+      "Benef. FOB SP": 1.296,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.2039300000000002,
+      "Benef. FOB Restante Brasil": 1.136322,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -262,7 +418,19 @@
       "Tabela": 3.3,
       "RQE Especialista": 1.65,
       "RQS Estrategico": null,
-      "Venda Direta": 1.9
+      "Venda Direta": 1.9,
+      "PSV": 2.4749999999999996,
+      "Benef. FOB SP": 1.5839999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.47147,
+      "Benef. FOB Restante Brasil": 1.388838,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -281,7 +449,19 @@
       "Tabela": 3.8,
       "RQE Especialista": 1.9,
       "RQS Estrategico": 2.09,
-      "Venda Direta": 2.19
+      "Venda Direta": 2.19,
+      "PSV": 2.8499999999999996,
+      "Benef. FOB SP": 1.8239999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.69442,
+      "Benef. FOB Restante Brasil": 1.599268,
+      "Preço de Escolha": 1.6
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -300,7 +480,19 @@
       "Tabela": 3.8,
       "RQE Especialista": 1.9,
       "RQS Estrategico": 2.09,
-      "Venda Direta": 2.19
+      "Venda Direta": 2.19,
+      "PSV": 2.8499999999999996,
+      "Benef. FOB SP": 1.8239999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.69442,
+      "Benef. FOB Restante Brasil": 1.599268,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -319,7 +511,19 @@
       "Tabela": 9.0,
       "RQE Especialista": 4.5,
       "RQS Estrategico": null,
-      "Venda Direta": 5.18
+      "Venda Direta": 5.18,
+      "PSV": 6.75,
+      "Benef. FOB SP": 4.32,
+      "Benef. FOB RJ/MG/RS/SC/PR": 4.0131000000000006,
+      "Benef. FOB Restante Brasil": 3.7877400000000003,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -338,7 +542,19 @@
       "Tabela": 21.8,
       "RQE Especialista": 10.9,
       "RQS Estrategico": 11.99,
-      "Venda Direta": 12.54
+      "Venda Direta": 12.54,
+      "PSV": 16.35,
+      "Benef. FOB SP": 10.464,
+      "Benef. FOB RJ/MG/RS/SC/PR": 9.72062,
+      "Benef. FOB Restante Brasil": 9.174748000000001,
+      "Preço de Escolha": 8.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -357,7 +573,19 @@
       "Tabela": 21.8,
       "RQE Especialista": 10.9,
       "RQS Estrategico": 11.99,
-      "Venda Direta": 12.54
+      "Venda Direta": 12.54,
+      "PSV": 16.35,
+      "Benef. FOB SP": 10.464,
+      "Benef. FOB RJ/MG/RS/SC/PR": 9.72062,
+      "Benef. FOB Restante Brasil": 9.174748000000001,
+      "Preço de Escolha": 8.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -376,7 +604,19 @@
       "Tabela": 13.6,
       "RQE Especialista": 6.8,
       "RQS Estrategico": 7.48,
-      "Venda Direta": 7.82
+      "Venda Direta": 7.82,
+      "PSV": 10.2,
+      "Benef. FOB SP": 6.528,
+      "Benef. FOB RJ/MG/RS/SC/PR": 6.06424,
+      "Benef. FOB Restante Brasil": 5.723696,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0455,
+      "pis": 0.022000000000000002,
+      "cofins": 0.10300000000000001
     }
   },
   {
@@ -392,10 +632,22 @@
     "categoria": "PREPARAÇÃO DE PELE",
     "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
     "precos": {
-      "Tabela": 13.42,
-      "RQE Especialista": 6.71,
-      "RQS Estrategico": 7.39,
-      "Venda Direta": 7.72
+      "Tabela": 14.4,
+      "RQE Especialista": 7.2,
+      "RQS Estrategico": 7.92,
+      "Venda Direta": 8.28,
+      "PSV": 10.8,
+      "Benef. FOB SP": 6.912,
+      "Benef. FOB RJ/MG/RS/SC/PR": 6.42096,
+      "Benef. FOB Restante Brasil": 6.060384,
+      "Preço de Escolha": 5.5
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -411,10 +663,22 @@
     "categoria": "PREPARAÇÃO DE PELE",
     "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
     "precos": {
-      "Tabela": 105.3,
-      "RQE Especialista": 52.65,
-      "RQS Estrategico": 57.92,
-      "Venda Direta": 60.55
+      "Tabela": 113.0,
+      "RQE Especialista": 56.5,
+      "RQS Estrategico": 62.15,
+      "Venda Direta": 64.98,
+      "PSV": 84.75,
+      "Benef. FOB SP": 54.239999999999995,
+      "Benef. FOB RJ/MG/RS/SC/PR": 50.386700000000005,
+      "Benef. FOB Restante Brasil": 47.55718,
+      "Preço de Escolha": 39.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -430,10 +694,22 @@
     "categoria": "PREPARAÇÃO DE PELE",
     "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
     "precos": {
-      "Tabela": 5.9,
-      "RQE Especialista": 2.95,
-      "RQS Estrategico": 3.25,
-      "Venda Direta": 3.4
+      "Tabela": 6.5,
+      "RQE Especialista": 3.25,
+      "RQS Estrategico": 3.5799999999999996,
+      "Venda Direta": 3.7399999999999998,
+      "PSV": 4.875,
+      "Benef. FOB SP": 3.12,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.89835,
+      "Benef. FOB Restante Brasil": 2.73559,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -449,10 +725,22 @@
     "categoria": "PREPARAÇÃO DE PELE",
     "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
     "precos": {
-      "Tabela": 12.9,
-      "RQE Especialista": 6.45,
-      "RQS Estrategico": 7.1,
-      "Venda Direta": 7.42
+      "Tabela": 13.9,
+      "RQE Especialista": 6.95,
+      "RQS Estrategico": 7.6499999999999995,
+      "Venda Direta": 8.0,
+      "PSV": 10.425,
+      "Benef. FOB SP": 6.672,
+      "Benef. FOB RJ/MG/RS/SC/PR": 6.19801,
+      "Benef. FOB Restante Brasil": 5.849954,
+      "Preço de Escolha": 5.5
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -468,10 +756,22 @@
     "categoria": "PREPARAÇÃO DE PELE",
     "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
     "precos": {
-      "Tabela": 17.9,
-      "RQE Especialista": 8.95,
-      "RQS Estrategico": 9.85,
-      "Venda Direta": 10.3
+      "Tabela": 21.5,
+      "RQE Especialista": 10.75,
+      "RQS Estrategico": 11.83,
+      "Venda Direta": 12.37,
+      "PSV": 16.125,
+      "Benef. FOB SP": 10.32,
+      "Benef. FOB RJ/MG/RS/SC/PR": 9.58685,
+      "Benef. FOB Restante Brasil": 9.048490000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -487,10 +787,22 @@
     "categoria": "PREPARAÇÃO DE PELE",
     "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
     "precos": {
-      "Tabela": 100.4,
-      "RQE Especialista": 50.2,
-      "RQS Estrategico": 55.22,
-      "Venda Direta": 57.73
+      "Tabela": 113.0,
+      "RQE Especialista": 56.5,
+      "RQS Estrategico": 62.15,
+      "Venda Direta": 64.98,
+      "PSV": 84.75,
+      "Benef. FOB SP": 54.239999999999995,
+      "Benef. FOB RJ/MG/RS/SC/PR": 50.386700000000005,
+      "Benef. FOB Restante Brasil": 47.55718,
+      "Preço de Escolha": 39.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -506,10 +818,22 @@
     "categoria": "PREPARAÇÃO DE PELE",
     "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
     "precos": {
-      "Tabela": 13.4,
-      "RQE Especialista": 6.7,
-      "RQS Estrategico": 7.37,
-      "Venda Direta": 7.71
+      "Tabela": 14.4,
+      "RQE Especialista": 7.2,
+      "RQS Estrategico": 7.92,
+      "Venda Direta": 8.28,
+      "PSV": 10.8,
+      "Benef. FOB SP": 6.912,
+      "Benef. FOB RJ/MG/RS/SC/PR": 6.42096,
+      "Benef. FOB Restante Brasil": 6.060384,
+      "Preço de Escolha": 5.5
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -525,10 +849,22 @@
     "categoria": "PREPARAÇÃO DE PELE",
     "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
     "precos": {
-      "Tabela": 105.0,
-      "RQE Especialista": 52.5,
-      "RQS Estrategico": 57.75,
-      "Venda Direta": 60.38
+      "Tabela": 113.0,
+      "RQE Especialista": 56.5,
+      "RQS Estrategico": 62.15,
+      "Venda Direta": 64.98,
+      "PSV": 84.75,
+      "Benef. FOB SP": 54.239999999999995,
+      "Benef. FOB RJ/MG/RS/SC/PR": 50.386700000000005,
+      "Benef. FOB Restante Brasil": 47.55718,
+      "Preço de Escolha": 39.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -547,7 +883,19 @@
       "Tabela": 2.2,
       "RQE Especialista": 1.1,
       "RQS Estrategico": 1.21,
-      "Venda Direta": 1.27
+      "Venda Direta": 1.27,
+      "PSV": 1.6500000000000001,
+      "Benef. FOB SP": 1.056,
+      "Benef. FOB RJ/MG/RS/SC/PR": 0.9809800000000001,
+      "Benef. FOB Restante Brasil": 0.925892,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.00165,
+      "cofins": 0.0076
     }
   },
   {
@@ -566,7 +914,19 @@
       "Tabela": 2.9,
       "RQE Especialista": 1.45,
       "RQS Estrategico": 1.6,
-      "Venda Direta": 1.67
+      "Venda Direta": 1.67,
+      "PSV": 2.175,
+      "Benef. FOB SP": 1.392,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.29311,
+      "Benef. FOB Restante Brasil": 1.220494,
+      "Preço de Escolha": 1.2
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.00165,
+      "cofins": 0.0076
     }
   },
   {
@@ -585,7 +945,19 @@
       "Tabela": 11.2,
       "RQE Especialista": 5.6,
       "RQS Estrategico": 6.16,
-      "Venda Direta": 6.44
+      "Venda Direta": 6.44,
+      "PSV": 8.399999999999999,
+      "Benef. FOB SP": 5.3759999999999994,
+      "Benef. FOB RJ/MG/RS/SC/PR": 4.99408,
+      "Benef. FOB Restante Brasil": 4.713632,
+      "Preço de Escolha": 3.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.00165,
+      "cofins": 0.0076
     }
   },
   {
@@ -604,7 +976,19 @@
       "Tabela": 3.2,
       "RQE Especialista": 1.6,
       "RQS Estrategico": 1.76,
-      "Venda Direta": 1.84
+      "Venda Direta": 1.84,
+      "PSV": 2.4000000000000004,
+      "Benef. FOB SP": 1.536,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.4268800000000001,
+      "Benef. FOB Restante Brasil": 1.3467520000000002,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -623,7 +1007,19 @@
       "Tabela": 4.4,
       "RQE Especialista": 2.2,
       "RQS Estrategico": 2.42,
-      "Venda Direta": 2.53
+      "Venda Direta": 2.53,
+      "PSV": 3.3000000000000003,
+      "Benef. FOB SP": 2.112,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.9619600000000001,
+      "Benef. FOB Restante Brasil": 1.851784,
+      "Preço de Escolha": 1.65
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -642,7 +1038,19 @@
       "Tabela": 24.0,
       "RQE Especialista": 12.0,
       "RQS Estrategico": 13.2,
-      "Venda Direta": 13.8
+      "Venda Direta": 13.8,
+      "PSV": 18.0,
+      "Benef. FOB SP": 11.52,
+      "Benef. FOB RJ/MG/RS/SC/PR": 10.701600000000001,
+      "Benef. FOB Restante Brasil": 10.10064,
+      "Preço de Escolha": 9.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -661,7 +1069,19 @@
       "Tabela": 4.8,
       "RQE Especialista": 2.4,
       "RQS Estrategico": 2.64,
-      "Venda Direta": 2.76
+      "Venda Direta": 2.76,
+      "PSV": 3.5999999999999996,
+      "Benef. FOB SP": 2.304,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.14032,
+      "Benef. FOB Restante Brasil": 2.020128,
+      "Preço de Escolha": 1.85
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -680,7 +1100,19 @@
       "Tabela": 26.0,
       "RQE Especialista": 13.0,
       "RQS Estrategico": 14.3,
-      "Venda Direta": 14.95
+      "Venda Direta": 14.95,
+      "PSV": 19.5,
+      "Benef. FOB SP": 12.48,
+      "Benef. FOB RJ/MG/RS/SC/PR": 11.5934,
+      "Benef. FOB Restante Brasil": 10.94236,
+      "Preço de Escolha": 10.4
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -699,7 +1131,19 @@
       "Tabela": 2.8,
       "RQE Especialista": 1.4,
       "RQS Estrategico": null,
-      "Venda Direta": 1.61
+      "Venda Direta": 1.61,
+      "PSV": 2.0999999999999996,
+      "Benef. FOB SP": 1.3439999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.24852,
+      "Benef. FOB Restante Brasil": 1.178408,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -718,7 +1162,19 @@
       "Tabela": 16.0,
       "RQE Especialista": 8.0,
       "RQS Estrategico": null,
-      "Venda Direta": 9.2
+      "Venda Direta": 9.2,
+      "PSV": 12.0,
+      "Benef. FOB SP": 7.68,
+      "Benef. FOB RJ/MG/RS/SC/PR": 7.1344,
+      "Benef. FOB Restante Brasil": 6.73376,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -737,7 +1193,19 @@
       "Tabela": 3.8,
       "RQE Especialista": 1.9,
       "RQS Estrategico": null,
-      "Venda Direta": 2.19
+      "Venda Direta": 2.19,
+      "PSV": 2.8499999999999996,
+      "Benef. FOB SP": 1.8239999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.69442,
+      "Benef. FOB Restante Brasil": 1.599268,
+      "Preço de Escolha": 1.6
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -756,7 +1224,19 @@
       "Tabela": 17.9,
       "RQE Especialista": 8.95,
       "RQS Estrategico": null,
-      "Venda Direta": 10.3
+      "Venda Direta": 10.299999999999999,
+      "PSV": 13.424999999999999,
+      "Benef. FOB SP": 8.591999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 7.98161,
+      "Benef. FOB Restante Brasil": 8.5,
+      "Preço de Escolha": 8.5
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -775,7 +1255,19 @@
       "Tabela": 39.8,
       "RQE Especialista": 19.9,
       "RQS Estrategico": null,
-      "Venda Direta": 22.89
+      "Venda Direta": 22.89,
+      "PSV": 29.849999999999998,
+      "Benef. FOB SP": 19.104,
+      "Benef. FOB RJ/MG/RS/SC/PR": 17.74682,
+      "Benef. FOB Restante Brasil": 16.750228,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -794,7 +1286,19 @@
       "Tabela": 3.5,
       "RQE Especialista": 1.75,
       "RQS Estrategico": null,
-      "Venda Direta": 2.02
+      "Venda Direta": 2.0199999999999996,
+      "PSV": 2.625,
+      "Benef. FOB SP": 1.68,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.56065,
+      "Benef. FOB Restante Brasil": 1.47301,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -813,7 +1317,19 @@
       "Tabela": 5.5,
       "RQE Especialista": 2.75,
       "RQS Estrategico": null,
-      "Venda Direta": 3.17
+      "Venda Direta": 3.17,
+      "PSV": 4.125,
+      "Benef. FOB SP": 2.6399999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.4524500000000002,
+      "Benef. FOB Restante Brasil": 2.31473,
+      "Preço de Escolha": 2.15
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -832,7 +1348,19 @@
       "Tabela": 35.0,
       "RQE Especialista": 17.5,
       "RQS Estrategico": null,
-      "Venda Direta": 20.13
+      "Venda Direta": 20.130000000000003,
+      "PSV": 26.25,
+      "Benef. FOB SP": 16.8,
+      "Benef. FOB RJ/MG/RS/SC/PR": 15.6065,
+      "Benef. FOB Restante Brasil": 14.7301,
+      "Preço de Escolha": 14.5
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -851,7 +1379,19 @@
       "Tabela": 3.8,
       "RQE Especialista": 1.9,
       "RQS Estrategico": null,
-      "Venda Direta": 2.19
+      "Venda Direta": 2.19,
+      "PSV": 2.8499999999999996,
+      "Benef. FOB SP": 1.8239999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.69442,
+      "Benef. FOB Restante Brasil": 1.599268,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -870,7 +1410,19 @@
       "Tabela": 6.2,
       "RQE Especialista": 3.1,
       "RQS Estrategico": null,
-      "Venda Direta": 3.57
+      "Venda Direta": 3.57,
+      "PSV": 4.65,
+      "Benef. FOB SP": 2.976,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.76458,
+      "Benef. FOB Restante Brasil": 2.609332,
+      "Preço de Escolha": 2.35
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -889,7 +1441,19 @@
       "Tabela": 37.0,
       "RQE Especialista": 18.5,
       "RQS Estrategico": null,
-      "Venda Direta": 21.28
+      "Venda Direta": 21.28,
+      "PSV": 27.75,
+      "Benef. FOB SP": 17.759999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 16.4983,
+      "Benef. FOB Restante Brasil": 15.57182,
+      "Preço de Escolha": 15.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -908,7 +1472,19 @@
       "Tabela": 5.5,
       "RQE Especialista": 2.75,
       "RQS Estrategico": null,
-      "Venda Direta": 3.17
+      "Venda Direta": 3.17,
+      "PSV": 4.125,
+      "Benef. FOB SP": 2.6399999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.4524500000000002,
+      "Benef. FOB Restante Brasil": 2.31473,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -927,7 +1503,19 @@
       "Tabela": 3.5,
       "RQE Especialista": 1.75,
       "RQS Estrategico": null,
-      "Venda Direta": 2.02
+      "Venda Direta": 2.0199999999999996,
+      "PSV": 2.625,
+      "Benef. FOB SP": 1.68,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.56065,
+      "Benef. FOB Restante Brasil": 1.47301,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -946,7 +1534,19 @@
       "Tabela": 3.2,
       "RQE Especialista": 1.6,
       "RQS Estrategico": null,
-      "Venda Direta": 1.84
+      "Venda Direta": 1.84,
+      "PSV": 2.4000000000000004,
+      "Benef. FOB SP": 1.536,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.4268800000000001,
+      "Benef. FOB Restante Brasil": 1.3467520000000002,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -965,7 +1565,19 @@
       "Tabela": 4.8,
       "RQE Especialista": 2.4,
       "RQS Estrategico": null,
-      "Venda Direta": 2.76
+      "Venda Direta": 2.76,
+      "PSV": 3.5999999999999996,
+      "Benef. FOB SP": 2.304,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.14032,
+      "Benef. FOB Restante Brasil": 2.020128,
+      "Preço de Escolha": 1.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -984,7 +1596,19 @@
       "Tabela": 28.0,
       "RQE Especialista": 14.0,
       "RQS Estrategico": null,
-      "Venda Direta": 16.1
+      "Venda Direta": 16.1,
+      "PSV": 21.0,
+      "Benef. FOB SP": 13.44,
+      "Benef. FOB RJ/MG/RS/SC/PR": 12.4852,
+      "Benef. FOB Restante Brasil": 12.5,
+      "Preço de Escolha": 12.5
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1003,7 +1627,19 @@
       "Tabela": 2.8,
       "RQE Especialista": 1.4,
       "RQS Estrategico": null,
-      "Venda Direta": 1.61
+      "Venda Direta": 1.61,
+      "PSV": 2.0999999999999996,
+      "Benef. FOB SP": 1.3439999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.24852,
+      "Benef. FOB Restante Brasil": 1.178408,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1022,7 +1658,19 @@
       "Tabela": 3.8,
       "RQE Especialista": 1.9,
       "RQS Estrategico": 2.09,
-      "Venda Direta": 2.19
+      "Venda Direta": 2.19,
+      "PSV": 2.8499999999999996,
+      "Benef. FOB SP": 1.8239999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.69442,
+      "Benef. FOB Restante Brasil": 1.599268,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1041,7 +1689,19 @@
       "Tabela": 5.8,
       "RQE Especialista": 2.9,
       "RQS Estrategico": 3.19,
-      "Venda Direta": 3.34
+      "Venda Direta": 3.34,
+      "PSV": 4.35,
+      "Benef. FOB SP": 2.784,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.58622,
+      "Benef. FOB Restante Brasil": 2.440988,
+      "Preço de Escolha": 2.3
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1059,8 +1719,20 @@
     "precos": {
       "Tabela": 31.5,
       "RQE Especialista": 15.75,
-      "RQS Estrategico": 17.33,
-      "Venda Direta": 18.12
+      "RQS Estrategico": 17.330000000000002,
+      "Venda Direta": 18.12,
+      "PSV": 23.625,
+      "Benef. FOB SP": 15.12,
+      "Benef. FOB RJ/MG/RS/SC/PR": 14.04585,
+      "Benef. FOB Restante Brasil": 14.8,
+      "Preço de Escolha": 14.8
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1078,8 +1750,20 @@
     "precos": {
       "Tabela": 37.5,
       "RQE Especialista": 18.75,
-      "RQS Estrategico": 20.63,
-      "Venda Direta": 21.57
+      "RQS Estrategico": 20.630000000000003,
+      "Venda Direta": 21.57,
+      "PSV": 28.125,
+      "Benef. FOB SP": 18.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 16.72125,
+      "Benef. FOB Restante Brasil": 15.782250000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1098,7 +1782,19 @@
       "Tabela": 29.8,
       "RQE Especialista": 14.9,
       "RQS Estrategico": null,
-      "Venda Direta": 17.14
+      "Venda Direta": 17.14,
+      "PSV": 22.35,
+      "Benef. FOB SP": 14.304,
+      "Benef. FOB RJ/MG/RS/SC/PR": 13.287820000000002,
+      "Benef. FOB Restante Brasil": 12.541628000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1117,7 +1813,19 @@
       "Tabela": 31.5,
       "RQE Especialista": 15.75,
       "RQS Estrategico": null,
-      "Venda Direta": 18.12
+      "Venda Direta": 18.12,
+      "PSV": 23.625,
+      "Benef. FOB SP": 15.12,
+      "Benef. FOB RJ/MG/RS/SC/PR": 14.04585,
+      "Benef. FOB Restante Brasil": 13.25709,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1136,7 +1844,19 @@
       "Tabela": 33.0,
       "RQE Especialista": 16.5,
       "RQS Estrategico": null,
-      "Venda Direta": 18.98
+      "Venda Direta": 18.98,
+      "PSV": 24.75,
+      "Benef. FOB SP": 15.84,
+      "Benef. FOB RJ/MG/RS/SC/PR": 14.7147,
+      "Benef. FOB Restante Brasil": 13.88838,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1155,7 +1875,19 @@
       "Tabela": 33.88,
       "RQE Especialista": 16.94,
       "RQS Estrategico": null,
-      "Venda Direta": 19.49
+      "Venda Direta": 19.490000000000002,
+      "PSV": 25.410000000000004,
+      "Benef. FOB SP": 16.2624,
+      "Benef. FOB RJ/MG/RS/SC/PR": 15.107092000000002,
+      "Benef. FOB Restante Brasil": 14.258736800000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1174,7 +1906,19 @@
       "Tabela": 9.6,
       "RQE Especialista": 4.8,
       "RQS Estrategico": null,
-      "Venda Direta": 5.52
+      "Venda Direta": 5.52,
+      "PSV": 7.199999999999999,
+      "Benef. FOB SP": 4.608,
+      "Benef. FOB RJ/MG/RS/SC/PR": 4.28064,
+      "Benef. FOB Restante Brasil": 4.040256,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1193,7 +1937,19 @@
       "Tabela": 15.2,
       "RQE Especialista": 7.6,
       "RQS Estrategico": null,
-      "Venda Direta": 8.74
+      "Venda Direta": 8.74,
+      "PSV": 11.399999999999999,
+      "Benef. FOB SP": 7.295999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 6.77768,
+      "Benef. FOB Restante Brasil": 6.397072,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1212,7 +1968,19 @@
       "Tabela": 7.8,
       "RQE Especialista": 3.9,
       "RQS Estrategico": 4.29,
-      "Venda Direta": 4.49
+      "Venda Direta": 4.49,
+      "PSV": 5.85,
+      "Benef. FOB SP": 3.7439999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 3.47802,
+      "Benef. FOB Restante Brasil": 3.35,
+      "Preço de Escolha": 3.35
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1231,7 +1999,19 @@
       "Tabela": 58.8,
       "RQE Especialista": 29.4,
       "RQS Estrategico": 32.34,
-      "Venda Direta": 33.81
+      "Venda Direta": 33.81,
+      "PSV": 44.099999999999994,
+      "Benef. FOB SP": 28.223999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 26.21892,
+      "Benef. FOB Restante Brasil": 24.746568,
+      "Preço de Escolha": 21.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1250,7 +2030,19 @@
       "Tabela": 93.5,
       "RQE Especialista": 46.75,
       "RQS Estrategico": null,
-      "Venda Direta": 53.77
+      "Venda Direta": 53.769999999999996,
+      "PSV": 70.125,
+      "Benef. FOB SP": 44.879999999999995,
+      "Benef. FOB RJ/MG/RS/SC/PR": 41.69165,
+      "Benef. FOB Restante Brasil": 39.350410000000004,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1269,7 +2061,19 @@
       "Tabela": 11.86,
       "RQE Especialista": 5.93,
       "RQS Estrategico": null,
-      "Venda Direta": 6.82
+      "Venda Direta": 6.819999999999999,
+      "PSV": 8.895,
+      "Benef. FOB SP": 5.692799999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 5.288374,
+      "Benef. FOB Restante Brasil": 4.9913996,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.00165,
+      "cofins": 0.0076
     }
   },
   {
@@ -1288,7 +2092,19 @@
       "Tabela": 3.4,
       "RQE Especialista": 1.7,
       "RQS Estrategico": null,
-      "Venda Direta": 1.96
+      "Venda Direta": 1.96,
+      "PSV": 2.55,
+      "Benef. FOB SP": 1.632,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.51606,
+      "Benef. FOB Restante Brasil": 1.430924,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.00165,
+      "cofins": 0.0076
     }
   },
   {
@@ -1307,7 +2123,19 @@
       "Tabela": 14.7,
       "RQE Especialista": 7.35,
       "RQS Estrategico": null,
-      "Venda Direta": 8.46
+      "Venda Direta": 8.459999999999999,
+      "PSV": 11.024999999999999,
+      "Benef. FOB SP": 7.055999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 6.55473,
+      "Benef. FOB Restante Brasil": 6.6,
+      "Preço de Escolha": 6.6
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.00165,
+      "cofins": 0.0076
     }
   },
   {
@@ -1326,7 +2154,19 @@
       "Tabela": 36.6,
       "RQE Especialista": 18.3,
       "RQS Estrategico": null,
-      "Venda Direta": 21.05
+      "Venda Direta": 21.05,
+      "PSV": 27.450000000000003,
+      "Benef. FOB SP": 17.568,
+      "Benef. FOB RJ/MG/RS/SC/PR": 16.319940000000003,
+      "Benef. FOB Restante Brasil": 15.403476000000001,
+      "Preço de Escolha": 13.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.00165,
+      "cofins": 0.0076
     }
   },
   {
@@ -1345,7 +2185,19 @@
       "Tabela": 70.0,
       "RQE Especialista": 35.0,
       "RQS Estrategico": null,
-      "Venda Direta": 40.25
+      "Venda Direta": 40.25,
+      "PSV": 52.5,
+      "Benef. FOB SP": 33.6,
+      "Benef. FOB RJ/MG/RS/SC/PR": 31.213,
+      "Benef. FOB Restante Brasil": 29.4602,
+      "Preço de Escolha": 24.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.00165,
+      "cofins": 0.0076
     }
   },
   {
@@ -1364,7 +2216,19 @@
       "Tabela": 6.98,
       "RQE Especialista": 3.49,
       "RQS Estrategico": 3.84,
-      "Venda Direta": 4.02
+      "Venda Direta": 4.02,
+      "PSV": 5.235,
+      "Benef. FOB SP": 3.3504,
+      "Benef. FOB RJ/MG/RS/SC/PR": 3.112382,
+      "Benef. FOB Restante Brasil": 2.9376028,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1383,7 +2247,19 @@
       "Tabela": 19.8,
       "RQE Especialista": 9.9,
       "RQS Estrategico": 10.89,
-      "Venda Direta": 11.39
+      "Venda Direta": 11.39,
+      "PSV": 14.850000000000001,
+      "Benef. FOB SP": 9.504,
+      "Benef. FOB RJ/MG/RS/SC/PR": 8.82882,
+      "Benef. FOB Restante Brasil": 8.333028,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1402,7 +2278,19 @@
       "Tabela": 155.0,
       "RQE Especialista": 77.5,
       "RQS Estrategico": 85.25,
-      "Venda Direta": 89.13
+      "Venda Direta": 89.13000000000001,
+      "PSV": 116.25,
+      "Benef. FOB SP": 74.39999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 69.1145,
+      "Benef. FOB Restante Brasil": 65.2333,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1421,7 +2309,19 @@
       "Tabela": 190.0,
       "RQE Especialista": 95.0,
       "RQS Estrategico": 104.5,
-      "Venda Direta": 109.25
+      "Venda Direta": 109.25,
+      "PSV": 142.5,
+      "Benef. FOB SP": 91.2,
+      "Benef. FOB RJ/MG/RS/SC/PR": 84.721,
+      "Benef. FOB Restante Brasil": 79.96340000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1440,7 +2340,19 @@
       "Tabela": 9.8,
       "RQE Especialista": 4.9,
       "RQS Estrategico": 5.39,
-      "Venda Direta": 5.64
+      "Venda Direta": 5.64,
+      "PSV": 7.3500000000000005,
+      "Benef. FOB SP": 4.704,
+      "Benef. FOB RJ/MG/RS/SC/PR": 4.369820000000001,
+      "Benef. FOB Restante Brasil": 4.124428,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.052000000000000005,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1459,7 +2371,19 @@
       "Tabela": 59.8,
       "RQE Especialista": 29.9,
       "RQS Estrategico": 32.89,
-      "Venda Direta": 34.39
+      "Venda Direta": 34.39,
+      "PSV": 44.849999999999994,
+      "Benef. FOB SP": 28.703999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 26.66482,
+      "Benef. FOB Restante Brasil": 25.167428,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.052000000000000005,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1478,7 +2402,19 @@
       "Tabela": 9.9,
       "RQE Especialista": 4.95,
       "RQS Estrategico": 5.45,
-      "Venda Direta": 5.7
+      "Venda Direta": 5.7,
+      "PSV": 7.425000000000001,
+      "Benef. FOB SP": 4.752,
+      "Benef. FOB RJ/MG/RS/SC/PR": 4.41441,
+      "Benef. FOB Restante Brasil": 4.166514,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.052000000000000005,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1497,7 +2433,19 @@
       "Tabela": 16.4,
       "RQE Especialista": 8.2,
       "RQS Estrategico": 9.02,
-      "Venda Direta": 9.43
+      "Venda Direta": 9.43,
+      "PSV": 12.299999999999999,
+      "Benef. FOB SP": 7.871999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 7.31276,
+      "Benef. FOB Restante Brasil": 6.902104,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.052000000000000005,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1516,7 +2464,19 @@
       "Tabela": 78.0,
       "RQE Especialista": 39.0,
       "RQS Estrategico": 42.9,
-      "Venda Direta": 44.85
+      "Venda Direta": 44.85,
+      "PSV": 58.5,
+      "Benef. FOB SP": 37.44,
+      "Benef. FOB RJ/MG/RS/SC/PR": 34.7802,
+      "Benef. FOB Restante Brasil": 32.82708,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.052000000000000005,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1535,7 +2495,19 @@
       "Tabela": 640.0,
       "RQE Especialista": 320.0,
       "RQS Estrategico": null,
-      "Venda Direta": 368.0
+      "Venda Direta": 368.0,
+      "PSV": 480.0,
+      "Benef. FOB SP": 307.2,
+      "Benef. FOB RJ/MG/RS/SC/PR": 285.37600000000003,
+      "Benef. FOB Restante Brasil": 269.35040000000004,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.00165,
+      "cofins": 0.0076
     }
   },
   {
@@ -1551,10 +2523,22 @@
     "categoria": "CUIDADOS CRÍTICOS E INTENSIVOS",
     "divisao": "DIVISÃO - CCI - CUIDADOS CRITICOS E INTENSIVOS",
     "precos": {
-      "Tabela": 200.0,
-      "RQE Especialista": 100.0,
+      "Tabela": 230.0,
+      "RQE Especialista": 115.0,
       "RQS Estrategico": null,
-      "Venda Direta": 115.0
+      "Venda Direta": 132.25,
+      "PSV": 172.5,
+      "Benef. FOB SP": 110.39999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 102.557,
+      "Benef. FOB Restante Brasil": 96.79780000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1573,7 +2557,19 @@
       "Tabela": 30.0,
       "RQE Especialista": 15.0,
       "RQS Estrategico": null,
-      "Venda Direta": 17.25
+      "Venda Direta": 17.25,
+      "PSV": 22.5,
+      "Benef. FOB SP": 14.399999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 13.377,
+      "Benef. FOB Restante Brasil": 12.6258,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1592,7 +2588,19 @@
       "Tabela": 29.5,
       "RQE Especialista": 14.75,
       "RQS Estrategico": 16.23,
-      "Venda Direta": 16.97
+      "Venda Direta": 16.970000000000002,
+      "PSV": 22.125,
+      "Benef. FOB SP": 14.16,
+      "Benef. FOB RJ/MG/RS/SC/PR": 13.15405,
+      "Benef. FOB Restante Brasil": 12.415370000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0455,
+      "pis": 0.022000000000000002,
+      "cofins": 0.10300000000000001
     }
   },
   {
@@ -1611,7 +2619,19 @@
       "Tabela": 13.8,
       "RQE Especialista": 6.9,
       "RQS Estrategico": 7.59,
-      "Venda Direta": 7.94
+      "Venda Direta": 7.9399999999999995,
+      "PSV": 10.350000000000001,
+      "Benef. FOB SP": 6.624,
+      "Benef. FOB RJ/MG/RS/SC/PR": 6.153420000000001,
+      "Benef. FOB Restante Brasil": 5.807868,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.25,
+      "ipi": 0.14300000000000002,
+      "pis": 0.022000000000000002,
+      "cofins": 0.10300000000000001
     }
   },
   {
@@ -1630,7 +2650,19 @@
       "Tabela": 27.8,
       "RQE Especialista": 13.9,
       "RQS Estrategico": 15.29,
-      "Venda Direta": 15.99
+      "Venda Direta": 15.99,
+      "PSV": 20.85,
+      "Benef. FOB SP": 13.344,
+      "Benef. FOB RJ/MG/RS/SC/PR": 12.39602,
+      "Benef. FOB Restante Brasil": 11.699908,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.25,
+      "ipi": 0.14300000000000002,
+      "pis": 0.022000000000000002,
+      "cofins": 0.10300000000000001
     }
   },
   {
@@ -1649,7 +2681,19 @@
       "Tabela": 45.0,
       "RQE Especialista": 22.5,
       "RQS Estrategico": null,
-      "Venda Direta": 25.88
+      "Venda Direta": 25.880000000000003,
+      "PSV": 33.75,
+      "Benef. FOB SP": 21.599999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 20.0655,
+      "Benef. FOB Restante Brasil": 18.9387,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1668,7 +2712,19 @@
       "Tabela": 82.0,
       "RQE Especialista": 41.0,
       "RQS Estrategico": null,
-      "Venda Direta": 47.15
+      "Venda Direta": 47.15,
+      "PSV": 61.5,
+      "Benef. FOB SP": 39.36,
+      "Benef. FOB RJ/MG/RS/SC/PR": 36.5638,
+      "Benef. FOB Restante Brasil": 34.51052,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1687,7 +2743,19 @@
       "Tabela": 120.0,
       "RQE Especialista": 60.0,
       "RQS Estrategico": null,
-      "Venda Direta": 69.0
+      "Venda Direta": 69.0,
+      "PSV": 90.0,
+      "Benef. FOB SP": 57.599999999999994,
+      "Benef. FOB RJ/MG/RS/SC/PR": 53.508,
+      "Benef. FOB Restante Brasil": 50.5032,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1706,7 +2774,19 @@
       "Tabela": 60.0,
       "RQE Especialista": 30.0,
       "RQS Estrategico": null,
-      "Venda Direta": 34.5
+      "Venda Direta": 34.5,
+      "PSV": 45.0,
+      "Benef. FOB SP": 28.799999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 26.754,
+      "Benef. FOB Restante Brasil": 25.2516,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1725,7 +2805,19 @@
       "Tabela": 1790.0,
       "RQE Especialista": 895.0,
       "RQS Estrategico": null,
-      "Venda Direta": 1029.25
+      "Venda Direta": 1029.25,
+      "PSV": 1342.5,
+      "Benef. FOB SP": 859.1999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 798.1610000000001,
+      "Benef. FOB Restante Brasil": 753.3394000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1744,7 +2836,19 @@
       "Tabela": 428.0,
       "RQE Especialista": 214.0,
       "RQS Estrategico": null,
-      "Venda Direta": 246.1
+      "Venda Direta": 246.1,
+      "PSV": 321.0,
+      "Benef. FOB SP": 205.44,
+      "Benef. FOB RJ/MG/RS/SC/PR": 190.8452,
+      "Benef. FOB Restante Brasil": 180.12808,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1763,7 +2867,19 @@
       "Tabela": 145.0,
       "RQE Especialista": 72.5,
       "RQS Estrategico": null,
-      "Venda Direta": 83.38
+      "Venda Direta": 83.38000000000001,
+      "PSV": 108.75,
+      "Benef. FOB SP": 69.6,
+      "Benef. FOB RJ/MG/RS/SC/PR": 64.6555,
+      "Benef. FOB Restante Brasil": 61.0247,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1782,7 +2898,19 @@
       "Tabela": 22.0,
       "RQE Especialista": 11.0,
       "RQS Estrategico": null,
-      "Venda Direta": 12.65
+      "Venda Direta": 12.65,
+      "PSV": 16.5,
+      "Benef. FOB SP": 10.559999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 9.809800000000001,
+      "Benef. FOB Restante Brasil": 9.25892,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0975,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1801,7 +2929,19 @@
       "Tabela": 1000.0,
       "RQE Especialista": 500.0,
       "RQS Estrategico": null,
-      "Venda Direta": 575.0
+      "Venda Direta": 575.0,
+      "PSV": 750.0,
+      "Benef. FOB SP": 480.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 445.90000000000003,
+      "Benef. FOB Restante Brasil": 420.86,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.05,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1820,7 +2960,19 @@
       "Tabela": 1000.0,
       "RQE Especialista": 500.0,
       "RQS Estrategico": null,
-      "Venda Direta": 575.0
+      "Venda Direta": 575.0,
+      "PSV": 750.0,
+      "Benef. FOB SP": 480.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 445.90000000000003,
+      "Benef. FOB Restante Brasil": 420.86,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.05,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1836,10 +2988,22 @@
     "categoria": "HIGIÊNE DAS MÃOS",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 52.6,
-      "RQE Especialista": 26.3,
+      "Tabela": 120.0,
+      "RQE Especialista": 60.0,
       "RQS Estrategico": null,
-      "Venda Direta": 30.25
+      "Venda Direta": 69.0,
+      "PSV": 90.0,
+      "Benef. FOB SP": 57.599999999999994,
+      "Benef. FOB RJ/MG/RS/SC/PR": 53.508,
+      "Benef. FOB Restante Brasil": 50.5032,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.05,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1858,7 +3022,19 @@
       "Tabela": 53.0,
       "RQE Especialista": 26.5,
       "RQS Estrategico": null,
-      "Venda Direta": 30.48
+      "Venda Direta": 30.48,
+      "PSV": 39.75,
+      "Benef. FOB SP": 25.439999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 23.6327,
+      "Benef. FOB Restante Brasil": 22.30558,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1877,7 +3053,19 @@
       "Tabela": 94.0,
       "RQE Especialista": 47.0,
       "RQS Estrategico": null,
-      "Venda Direta": 54.05
+      "Venda Direta": 54.05,
+      "PSV": 70.5,
+      "Benef. FOB SP": 45.12,
+      "Benef. FOB RJ/MG/RS/SC/PR": 41.9146,
+      "Benef. FOB Restante Brasil": 39.56084,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1896,7 +3084,19 @@
       "Tabela": 149.2,
       "RQE Especialista": 74.6,
       "RQS Estrategico": null,
-      "Venda Direta": 85.79
+      "Venda Direta": 85.79,
+      "PSV": 111.89999999999999,
+      "Benef. FOB SP": 71.61599999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 66.52828,
+      "Benef. FOB Restante Brasil": 62.792311999999995,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1915,7 +3115,19 @@
       "Tabela": 320.0,
       "RQE Especialista": 160.0,
       "RQS Estrategico": null,
-      "Venda Direta": 184.0
+      "Venda Direta": 184.0,
+      "PSV": 240.0,
+      "Benef. FOB SP": 153.6,
+      "Benef. FOB RJ/MG/RS/SC/PR": 142.68800000000002,
+      "Benef. FOB Restante Brasil": 134.67520000000002,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -1934,7 +3146,19 @@
       "Tabela": 42.0,
       "RQE Especialista": 21.0,
       "RQS Estrategico": null,
-      "Venda Direta": 24.15
+      "Venda Direta": 24.15,
+      "PSV": 31.5,
+      "Benef. FOB SP": 20.16,
+      "Benef. FOB RJ/MG/RS/SC/PR": 18.727800000000002,
+      "Benef. FOB Restante Brasil": 17.67612,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1953,7 +3177,19 @@
       "Tabela": 62.0,
       "RQE Especialista": 31.0,
       "RQS Estrategico": null,
-      "Venda Direta": 35.65
+      "Venda Direta": 35.65,
+      "PSV": 46.5,
+      "Benef. FOB SP": 29.759999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 27.6458,
+      "Benef. FOB Restante Brasil": 26.093320000000002,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1972,7 +3208,19 @@
       "Tabela": 109.2,
       "RQE Especialista": 54.6,
       "RQS Estrategico": null,
-      "Venda Direta": 62.79
+      "Venda Direta": 62.79,
+      "PSV": 81.9,
+      "Benef. FOB SP": 52.416,
+      "Benef. FOB RJ/MG/RS/SC/PR": 48.692280000000004,
+      "Benef. FOB Restante Brasil": 45.957912,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -1991,7 +3239,19 @@
       "Tabela": 109.2,
       "RQE Especialista": 54.6,
       "RQS Estrategico": null,
-      "Venda Direta": 62.79
+      "Venda Direta": 62.79,
+      "PSV": 81.9,
+      "Benef. FOB SP": 52.416,
+      "Benef. FOB RJ/MG/RS/SC/PR": 48.692280000000004,
+      "Benef. FOB Restante Brasil": 45.957912,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2010,7 +3270,19 @@
       "Tabela": 7.1,
       "RQE Especialista": 3.55,
       "RQS Estrategico": null,
-      "Venda Direta": 4.09
+      "Venda Direta": 4.09,
+      "PSV": 5.324999999999999,
+      "Benef. FOB SP": 3.408,
+      "Benef. FOB RJ/MG/RS/SC/PR": 3.16589,
+      "Benef. FOB Restante Brasil": 2.988106,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2026,10 +3298,22 @@
     "categoria": "HIGIÊNE DAS MÃOS",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 19.0,
-      "RQE Especialista": 9.5,
+      "Tabela": 19.8,
+      "RQE Especialista": 9.9,
       "RQS Estrategico": null,
-      "Venda Direta": 10.93
+      "Venda Direta": 11.39,
+      "PSV": 14.850000000000001,
+      "Benef. FOB SP": 9.504,
+      "Benef. FOB RJ/MG/RS/SC/PR": 8.82882,
+      "Benef. FOB Restante Brasil": 9.0,
+      "Preço de Escolha": 9.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2048,7 +3332,19 @@
       "Tabela": 29.0,
       "RQE Especialista": 14.5,
       "RQS Estrategico": null,
-      "Venda Direta": 16.68
+      "Venda Direta": 16.680000000000003,
+      "PSV": 21.75,
+      "Benef. FOB SP": 13.92,
+      "Benef. FOB RJ/MG/RS/SC/PR": 12.9311,
+      "Benef. FOB Restante Brasil": 12.20494,
+      "Preço de Escolha": 11.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2067,7 +3363,50 @@
       "Tabela": 55.8,
       "RQE Especialista": 27.9,
       "RQS Estrategico": null,
-      "Venda Direta": 32.09
+      "Venda Direta": 32.089999999999996,
+      "PSV": 41.849999999999994,
+      "Benef. FOB SP": 26.784,
+      "Benef. FOB RJ/MG/RS/SC/PR": 24.88122,
+      "Benef. FOB Restante Brasil": 23.483988,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
+    }
+  },
+  {
+    "codigo": "0510105277",
+    "descricao": "RIODEINE DERMO SUAVE DEGER. ESCOVA/ESPONJA 10ML - CX C/ 108 UN",
+    "apresentacao": "Escova/Esponja",
+    "ncm": "30049099",
+    "classificacao": "Medicamento",
+    "principioAtivo": "Iodopovidona 10%",
+    "validade": "24",
+    "qtdPorEmbalagem": 108,
+    "linha": "Clássica",
+    "categoria": "HIGIÊNE DAS MÃOS",
+    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
+    "precos": {
+      "Tabela": 5.36,
+      "RQE Especialista": 2.68,
+      "RQS Estrategico": 2.9499999999999997,
+      "Venda Direta": 3.09,
+      "PSV": 4.0200000000000005,
+      "Benef. FOB SP": 2.5728,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.3900240000000004,
+      "Benef. FOB Restante Brasil": 2.2558096,
+      "Preço de Escolha": 1.6
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -2086,7 +3425,19 @@
       "Tabela": 4.4,
       "RQE Especialista": 2.2,
       "RQS Estrategico": 2.42,
-      "Venda Direta": 2.53
+      "Venda Direta": 2.53,
+      "PSV": 3.3000000000000003,
+      "Benef. FOB SP": 2.112,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.9619600000000001,
+      "Benef. FOB Restante Brasil": 1.851784,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -2105,7 +3456,19 @@
       "Tabela": 19.8,
       "RQE Especialista": 9.9,
       "RQS Estrategico": 10.89,
-      "Venda Direta": 11.39
+      "Venda Direta": 11.39,
+      "PSV": 14.850000000000001,
+      "Benef. FOB SP": 9.504,
+      "Benef. FOB RJ/MG/RS/SC/PR": 8.82882,
+      "Benef. FOB Restante Brasil": 9.0,
+      "Preço de Escolha": 9.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -2124,7 +3487,19 @@
       "Tabela": 28.0,
       "RQE Especialista": 14.0,
       "RQS Estrategico": 15.4,
-      "Venda Direta": 16.1
+      "Venda Direta": 16.1,
+      "PSV": 21.0,
+      "Benef. FOB SP": 13.44,
+      "Benef. FOB RJ/MG/RS/SC/PR": 12.4852,
+      "Benef. FOB Restante Brasil": 11.9,
+      "Preço de Escolha": 11.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -2140,10 +3515,22 @@
     "categoria": "HIGIÊNE DAS MÃOS",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 49.8,
-      "RQE Especialista": 24.9,
+      "Tabela": 59.8,
+      "RQE Especialista": 29.9,
       "RQS Estrategico": null,
-      "Venda Direta": 28.64
+      "Venda Direta": 34.39,
+      "PSV": 44.849999999999994,
+      "Benef. FOB SP": 28.703999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 26.66482,
+      "Benef. FOB Restante Brasil": 25.167428,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -2161,8 +3548,20 @@
     "precos": {
       "Tabela": 4.2,
       "RQE Especialista": 2.1,
-      "RQS Estrategico": null,
-      "Venda Direta": 2.42
+      "RQS Estrategico": 2.31,
+      "Venda Direta": 2.42,
+      "PSV": 3.1500000000000004,
+      "Benef. FOB SP": 2.016,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.8727800000000001,
+      "Benef. FOB Restante Brasil": 1.7676120000000002,
+      "Preço de Escolha": 1.5
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -2181,7 +3580,19 @@
       "Tabela": 65.0,
       "RQE Especialista": 32.5,
       "RQS Estrategico": null,
-      "Venda Direta": 37.38
+      "Venda Direta": 37.379999999999995,
+      "PSV": 48.75,
+      "Benef. FOB SP": 31.2,
+      "Benef. FOB RJ/MG/RS/SC/PR": 28.983500000000003,
+      "Benef. FOB Restante Brasil": 27.355900000000002,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -2200,7 +3611,19 @@
       "Tabela": 73.5,
       "RQE Especialista": 36.75,
       "RQS Estrategico": null,
-      "Venda Direta": 42.27
+      "Venda Direta": 42.269999999999996,
+      "PSV": 55.125,
+      "Benef. FOB SP": 35.28,
+      "Benef. FOB RJ/MG/RS/SC/PR": 32.77365,
+      "Benef. FOB Restante Brasil": 30.933210000000003,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.021,
+      "cofins": 0.099
     }
   },
   {
@@ -2219,7 +3642,19 @@
       "Tabela": 41.8,
       "RQE Especialista": 20.9,
       "RQS Estrategico": null,
-      "Venda Direta": 24.04
+      "Venda Direta": 24.040000000000003,
+      "PSV": 31.349999999999998,
+      "Benef. FOB SP": 20.063999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 18.63862,
+      "Benef. FOB Restante Brasil": 17.591948,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2238,7 +3673,19 @@
       "Tabela": 45.8,
       "RQE Especialista": 22.9,
       "RQS Estrategico": null,
-      "Venda Direta": 26.34
+      "Venda Direta": 26.34,
+      "PSV": 34.349999999999994,
+      "Benef. FOB SP": 21.983999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 20.42222,
+      "Benef. FOB Restante Brasil": 19.275388,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2257,7 +3704,19 @@
       "Tabela": 47.8,
       "RQE Especialista": 23.9,
       "RQS Estrategico": null,
-      "Venda Direta": 27.49
+      "Venda Direta": 27.490000000000002,
+      "PSV": 35.849999999999994,
+      "Benef. FOB SP": 22.944,
+      "Benef. FOB RJ/MG/RS/SC/PR": 21.31402,
+      "Benef. FOB Restante Brasil": 20.117107999999998,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2276,7 +3735,19 @@
       "Tabela": 47.8,
       "RQE Especialista": 23.9,
       "RQS Estrategico": null,
-      "Venda Direta": 27.49
+      "Venda Direta": 27.490000000000002,
+      "PSV": 35.849999999999994,
+      "Benef. FOB SP": 22.944,
+      "Benef. FOB RJ/MG/RS/SC/PR": 21.31402,
+      "Benef. FOB Restante Brasil": 20.117107999999998,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2295,7 +3766,19 @@
       "Tabela": 15.8,
       "RQE Especialista": 7.9,
       "RQS Estrategico": 8.69,
-      "Venda Direta": 9.09
+      "Venda Direta": 9.09,
+      "PSV": 11.850000000000001,
+      "Benef. FOB SP": 7.584,
+      "Benef. FOB RJ/MG/RS/SC/PR": 7.0452200000000005,
+      "Benef. FOB Restante Brasil": 7.0,
+      "Preço de Escolha": 7.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2314,7 +3797,19 @@
       "Tabela": 4.8,
       "RQE Especialista": 2.4,
       "RQS Estrategico": 2.64,
-      "Venda Direta": 2.76
+      "Venda Direta": 2.76,
+      "PSV": 3.5999999999999996,
+      "Benef. FOB SP": 2.304,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.14032,
+      "Benef. FOB Restante Brasil": 2.020128,
+      "Preço de Escolha": 1.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2333,7 +3828,19 @@
       "Tabela": 16.0,
       "RQE Especialista": 8.0,
       "RQS Estrategico": 8.8,
-      "Venda Direta": 9.2
+      "Venda Direta": 9.2,
+      "PSV": 12.0,
+      "Benef. FOB SP": 7.68,
+      "Benef. FOB RJ/MG/RS/SC/PR": 7.1344,
+      "Benef. FOB Restante Brasil": 7.0,
+      "Preço de Escolha": 7.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2352,7 +3859,19 @@
       "Tabela": 3.2,
       "RQE Especialista": 1.6,
       "RQS Estrategico": 1.76,
-      "Venda Direta": 1.84
+      "Venda Direta": 1.84,
+      "PSV": 2.4000000000000004,
+      "Benef. FOB SP": 1.536,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.4268800000000001,
+      "Benef. FOB Restante Brasil": 1.3467520000000002,
+      "Preço de Escolha": 1.35
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2371,7 +3890,19 @@
       "Tabela": 2.88,
       "RQE Especialista": 1.44,
       "RQS Estrategico": null,
-      "Venda Direta": 1.66
+      "Venda Direta": 1.66,
+      "PSV": 2.16,
+      "Benef. FOB SP": 1.3823999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 1.284192,
+      "Benef. FOB Restante Brasil": 1.2120768,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0975,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2390,7 +3921,19 @@
       "Tabela": 1700.0,
       "RQE Especialista": 850.0,
       "RQS Estrategico": 935.0,
-      "Venda Direta": 977.5
+      "Venda Direta": 977.5,
+      "PSV": 1275.0,
+      "Benef. FOB SP": 816.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 758.0300000000001,
+      "Benef. FOB Restante Brasil": 715.462,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2408,8 +3951,20 @@
     "precos": {
       "Tabela": 207.9,
       "RQE Especialista": 103.95,
-      "RQS Estrategico": 114.35,
-      "Venda Direta": 119.55
+      "RQS Estrategico": 114.35000000000001,
+      "Venda Direta": 119.55000000000001,
+      "PSV": 155.925,
+      "Benef. FOB SP": 99.792,
+      "Benef. FOB RJ/MG/RS/SC/PR": 92.70261,
+      "Benef. FOB Restante Brasil": 87.49679400000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.05,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2428,7 +3983,19 @@
       "Tabela": 138.0,
       "RQE Especialista": 69.0,
       "RQS Estrategico": 75.9,
-      "Venda Direta": 79.35
+      "Venda Direta": 79.35,
+      "PSV": 103.5,
+      "Benef. FOB SP": 66.24,
+      "Benef. FOB RJ/MG/RS/SC/PR": 61.534200000000006,
+      "Benef. FOB Restante Brasil": 58.07868,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.05,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2447,7 +4014,19 @@
       "Tabela": 52.5,
       "RQE Especialista": 26.25,
       "RQS Estrategico": null,
-      "Venda Direta": 30.19
+      "Venda Direta": 30.19,
+      "PSV": 39.375,
+      "Benef. FOB SP": 25.2,
+      "Benef. FOB RJ/MG/RS/SC/PR": 23.409750000000003,
+      "Benef. FOB Restante Brasil": 22.09515,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0975,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2466,7 +4045,19 @@
       "Tabela": 57.0,
       "RQE Especialista": 28.5,
       "RQS Estrategico": null,
-      "Venda Direta": 32.78
+      "Venda Direta": 32.78,
+      "PSV": 42.75,
+      "Benef. FOB SP": 27.36,
+      "Benef. FOB RJ/MG/RS/SC/PR": 25.4163,
+      "Benef. FOB Restante Brasil": 23.98902,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0975,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2485,26 +4076,19 @@
       "Tabela": 6.0,
       "RQE Especialista": 3.0,
       "RQS Estrategico": 3.3,
-      "Venda Direta": 3.45
-    }
-  },
-  {
-    "codigo": "E0305",
-    "descricao": "TAMPA LOTTON PUMP P/ GALAO 5L (42MM INCOLOR PESC/235MM)",
-    "apresentacao": "Unidade",
-    "ncm": "84248990",
-    "classificacao": "Acessório",
-    "principioAtivo": "-",
-    "validade": "-",
-    "qtdPorEmbalagem": 1,
-    "linha": "Clássica",
-    "categoria": "HIGIÊNE DAS MÃOS",
-    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
-    "precos": {
-      "Tabela": 9.8,
-      "RQE Especialista": 4.9,
-      "RQS Estrategico": 5.39,
-      "Venda Direta": 5.64
+      "Venda Direta": 3.45,
+      "PSV": 4.5,
+      "Benef. FOB SP": 2.88,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.6754000000000002,
+      "Benef. FOB Restante Brasil": 2.52516,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2520,10 +4104,22 @@
     "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 39.2,
-      "RQE Especialista": 19.6,
+      "Tabela": 43.2,
+      "RQE Especialista": 21.6,
       "RQS Estrategico": null,
-      "Venda Direta": 22.54
+      "Venda Direta": 24.84,
+      "PSV": 35.5178196,
+      "Benef. FOB SP": 20.736,
+      "Benef. FOB RJ/MG/RS/SC/PR": 19.262880000000003,
+      "Benef. FOB Restante Brasil": 18.181152,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0.096229,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2539,10 +4135,22 @@
     "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 19.8,
-      "RQE Especialista": 9.9,
+      "Tabela": 23.6,
+      "RQE Especialista": 11.8,
       "RQS Estrategico": null,
-      "Venda Direta": 11.39
+      "Venda Direta": 13.57,
+      "PSV": 19.4032533,
+      "Benef. FOB SP": 11.328,
+      "Benef. FOB RJ/MG/RS/SC/PR": 10.523240000000001,
+      "Benef. FOB Restante Brasil": 9.932296000000001,
+      "Preço de Escolha": 8.5
+    },
+    "impostos": {
+      "ivaSt": 0.096229,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2561,7 +4169,19 @@
       "Tabela": 97.0,
       "RQE Especialista": 48.5,
       "RQS Estrategico": null,
-      "Venda Direta": 55.78
+      "Venda Direta": 55.78,
+      "PSV": 79.75065975000001,
+      "Benef. FOB SP": 46.559999999999995,
+      "Benef. FOB RJ/MG/RS/SC/PR": 43.252300000000005,
+      "Benef. FOB Restante Brasil": 40.82342,
+      "Preço de Escolha": 37.95
+    },
+    "impostos": {
+      "ivaSt": 0.096229,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2577,10 +4197,22 @@
     "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 7600.0,
-      "RQE Especialista": 3800.0,
+      "Tabela": 8200.0,
+      "RQE Especialista": 4100.0,
       "RQS Estrategico": null,
-      "Venda Direta": 4370.0
+      "Venda Direta": 4715.0,
+      "PSV": 8159.0,
+      "Benef. FOB SP": 3936.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 3656.38,
+      "Benef. FOB Restante Brasil": 3451.052,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.12,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2598,8 +4230,20 @@
     "precos": {
       "Tabela": 207.9,
       "RQE Especialista": 103.95,
-      "RQS Estrategico": 114.35,
-      "Venda Direta": 119.55
+      "RQS Estrategico": 114.35000000000001,
+      "Venda Direta": 119.55000000000001,
+      "PSV": 155.925,
+      "Benef. FOB SP": 99.792,
+      "Benef. FOB RJ/MG/RS/SC/PR": 92.70261,
+      "Benef. FOB Restante Brasil": 87.49679400000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2617,8 +4261,20 @@
     "precos": {
       "Tabela": 157.9,
       "RQE Especialista": 78.95,
-      "RQS Estrategico": 86.85,
-      "Venda Direta": 90.8
+      "RQS Estrategico": 86.85000000000001,
+      "Venda Direta": 90.80000000000001,
+      "PSV": 118.42500000000001,
+      "Benef. FOB SP": 75.792,
+      "Benef. FOB RJ/MG/RS/SC/PR": 70.40761,
+      "Benef. FOB Restante Brasil": 66.453794,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2637,7 +4293,19 @@
       "Tabela": 262.5,
       "RQE Especialista": 131.25,
       "RQS Estrategico": null,
-      "Venda Direta": 150.94
+      "Venda Direta": 150.94,
+      "PSV": 196.875,
+      "Benef. FOB SP": 126.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 117.04875,
+      "Benef. FOB Restante Brasil": 110.47575,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2656,7 +4324,19 @@
       "Tabela": 36.0,
       "RQE Especialista": 18.0,
       "RQS Estrategico": 19.8,
-      "Venda Direta": 20.7
+      "Venda Direta": 20.7,
+      "PSV": 27.0,
+      "Benef. FOB SP": 17.28,
+      "Benef. FOB RJ/MG/RS/SC/PR": 16.052400000000002,
+      "Benef. FOB Restante Brasil": 15.150960000000001,
+      "Preço de Escolha": 15.0
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2675,7 +4355,19 @@
       "Tabela": 98.0,
       "RQE Especialista": 49.0,
       "RQS Estrategico": 53.9,
-      "Venda Direta": 56.35
+      "Venda Direta": 56.35,
+      "PSV": 73.5,
+      "Benef. FOB SP": 47.04,
+      "Benef. FOB RJ/MG/RS/SC/PR": 43.6982,
+      "Benef. FOB Restante Brasil": 45.95,
+      "Preço de Escolha": 45.95
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2694,7 +4386,19 @@
       "Tabela": 29.0,
       "RQE Especialista": 14.5,
       "RQS Estrategico": 15.95,
-      "Venda Direta": 16.68
+      "Venda Direta": 16.680000000000003,
+      "PSV": 21.75,
+      "Benef. FOB SP": 13.92,
+      "Benef. FOB RJ/MG/RS/SC/PR": 12.9311,
+      "Benef. FOB Restante Brasil": 12.20494,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2713,7 +4417,19 @@
       "Tabela": 48.0,
       "RQE Especialista": 24.0,
       "RQS Estrategico": 26.4,
-      "Venda Direta": 27.6
+      "Venda Direta": 27.6,
+      "PSV": 36.0,
+      "Benef. FOB SP": 23.04,
+      "Benef. FOB RJ/MG/RS/SC/PR": 21.403200000000002,
+      "Benef. FOB Restante Brasil": 20.20128,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2732,7 +4448,19 @@
       "Tabela": 20.9,
       "RQE Especialista": 10.45,
       "RQS Estrategico": null,
-      "Venda Direta": 12.02
+      "Venda Direta": 12.02,
+      "PSV": 15.674999999999999,
+      "Benef. FOB SP": 10.031999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 9.31931,
+      "Benef. FOB Restante Brasil": 8.795974,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2751,7 +4479,19 @@
       "Tabela": 51.8,
       "RQE Especialista": 25.9,
       "RQS Estrategico": null,
-      "Venda Direta": 29.79
+      "Venda Direta": 29.790000000000003,
+      "PSV": 38.849999999999994,
+      "Benef. FOB SP": 24.863999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 23.09762,
+      "Benef. FOB Restante Brasil": 21.800548,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2770,7 +4510,19 @@
       "Tabela": 460.0,
       "RQE Especialista": 230.0,
       "RQS Estrategico": null,
-      "Venda Direta": 264.5
+      "Venda Direta": 264.5,
+      "PSV": 345.0,
+      "Benef. FOB SP": 220.79999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 205.114,
+      "Benef. FOB Restante Brasil": 193.59560000000002,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2789,7 +4541,19 @@
       "Tabela": 69.0,
       "RQE Especialista": 34.5,
       "RQS Estrategico": 37.95,
-      "Venda Direta": 39.68
+      "Venda Direta": 39.68,
+      "PSV": 51.75,
+      "Benef. FOB SP": 33.12,
+      "Benef. FOB RJ/MG/RS/SC/PR": 30.767100000000003,
+      "Benef. FOB Restante Brasil": 29.03934,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2808,7 +4572,19 @@
       "Tabela": 260.0,
       "RQE Especialista": 130.0,
       "RQS Estrategico": 143.0,
-      "Venda Direta": 149.5
+      "Venda Direta": 149.5,
+      "PSV": 195.0,
+      "Benef. FOB SP": 124.8,
+      "Benef. FOB RJ/MG/RS/SC/PR": 115.93400000000001,
+      "Benef. FOB Restante Brasil": 109.42360000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.065,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2818,7 +4594,7 @@
     "ncm": "29159050",
     "classificacao": "Saneante",
     "principioAtivo": "Ácido Peracético 0,2%",
-    "validade": "24",
+    "validade": "36",
     "qtdPorEmbalagem": 12,
     "linha": "Premium",
     "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
@@ -2827,7 +4603,19 @@
       "Tabela": 69.8,
       "RQE Especialista": 34.9,
       "RQS Estrategico": null,
-      "Venda Direta": 40.14
+      "Venda Direta": 40.14,
+      "PSV": 52.349999999999994,
+      "Benef. FOB SP": 33.504,
+      "Benef. FOB RJ/MG/RS/SC/PR": 31.12382,
+      "Benef. FOB Restante Brasil": 29.376027999999998,
+      "Preço de Escolha": 26.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2846,7 +4634,19 @@
       "Tabela": 249.8,
       "RQE Especialista": 124.9,
       "RQS Estrategico": null,
-      "Venda Direta": 143.64
+      "Venda Direta": 143.64,
+      "PSV": 187.35000000000002,
+      "Benef. FOB SP": 119.904,
+      "Benef. FOB RJ/MG/RS/SC/PR": 111.38582000000001,
+      "Benef. FOB Restante Brasil": 105.13082800000001,
+      "Preço de Escolha": 89.5
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2865,7 +4665,19 @@
       "Tabela": 270.0,
       "RQE Especialista": 135.0,
       "RQS Estrategico": null,
-      "Venda Direta": 155.25
+      "Venda Direta": 155.25,
+      "PSV": 202.5,
+      "Benef. FOB SP": 129.6,
+      "Benef. FOB RJ/MG/RS/SC/PR": 120.393,
+      "Benef. FOB Restante Brasil": 113.6322,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2884,7 +4696,19 @@
       "Tabela": 110.0,
       "RQE Especialista": 55.0,
       "RQS Estrategico": 60.5,
-      "Venda Direta": 63.25
+      "Venda Direta": 63.25,
+      "PSV": 82.5,
+      "Benef. FOB SP": 52.8,
+      "Benef. FOB RJ/MG/RS/SC/PR": 49.049,
+      "Benef. FOB Restante Brasil": 46.2946,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2903,7 +4727,19 @@
       "Tabela": 42.0,
       "RQE Especialista": 21.0,
       "RQS Estrategico": null,
-      "Venda Direta": 24.15
+      "Venda Direta": 24.15,
+      "PSV": 31.5,
+      "Benef. FOB SP": 20.16,
+      "Benef. FOB RJ/MG/RS/SC/PR": 18.727800000000002,
+      "Benef. FOB Restante Brasil": 17.67612,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2922,7 +4758,19 @@
       "Tabela": 94.5,
       "RQE Especialista": 47.25,
       "RQS Estrategico": null,
-      "Venda Direta": 54.34
+      "Venda Direta": 54.339999999999996,
+      "PSV": 70.875,
+      "Benef. FOB SP": 45.36,
+      "Benef. FOB RJ/MG/RS/SC/PR": 42.137550000000005,
+      "Benef. FOB Restante Brasil": 39.77127,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2941,7 +4789,19 @@
       "Tabela": 450.0,
       "RQE Especialista": 225.0,
       "RQS Estrategico": null,
-      "Venda Direta": 258.75
+      "Venda Direta": 258.75,
+      "PSV": 337.5,
+      "Benef. FOB SP": 216.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 200.655,
+      "Benef. FOB Restante Brasil": 189.387,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2960,7 +4820,19 @@
       "Tabela": 45.0,
       "RQE Especialista": 22.5,
       "RQS Estrategico": 24.75,
-      "Venda Direta": 25.88
+      "Venda Direta": 25.880000000000003,
+      "PSV": 33.75,
+      "Benef. FOB SP": 21.599999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 20.0655,
+      "Benef. FOB Restante Brasil": 18.9387,
+      "Preço de Escolha": 14.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2979,7 +4851,19 @@
       "Tabela": 210.0,
       "RQE Especialista": 105.0,
       "RQS Estrategico": 115.5,
-      "Venda Direta": 120.75
+      "Venda Direta": 120.75,
+      "PSV": 157.5,
+      "Benef. FOB SP": 100.8,
+      "Benef. FOB RJ/MG/RS/SC/PR": 93.63900000000001,
+      "Benef. FOB Restante Brasil": 88.3806,
+      "Preço de Escolha": 69.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -2995,10 +4879,22 @@
     "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 890.0,
-      "RQE Especialista": 445.0,
+      "Tabela": 990.0,
+      "RQE Especialista": 495.0,
       "RQS Estrategico": null,
-      "Venda Direta": 511.75
+      "Venda Direta": 569.25,
+      "PSV": 742.5,
+      "Benef. FOB SP": 475.2,
+      "Benef. FOB RJ/MG/RS/SC/PR": 441.44100000000003,
+      "Benef. FOB Restante Brasil": 416.6514,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3010,14 +4906,26 @@
     "principioAtivo": "Detergente Enzimático",
     "validade": "24",
     "qtdPorEmbalagem": 12,
-    "linha": "Clássica",
+    "linha": "Premium",
     "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
       "Tabela": 90.0,
       "RQE Especialista": 45.0,
       "RQS Estrategico": 49.5,
-      "Venda Direta": 51.75
+      "Venda Direta": 51.75,
+      "PSV": 67.5,
+      "Benef. FOB SP": 43.199999999999996,
+      "Benef. FOB RJ/MG/RS/SC/PR": 40.131,
+      "Benef. FOB Restante Brasil": 37.8774,
+      "Preço de Escolha": 34.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3029,14 +4937,26 @@
     "principioAtivo": "Detergente Enzimático",
     "validade": "24",
     "qtdPorEmbalagem": 4,
-    "linha": "Clássica",
+    "linha": "Premium",
     "categoria": "LIMPEZA, DESINFECÇÃO E CONSERVAÇÃO DE INSTRUMENTAIS",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
       "Tabela": 430.0,
       "RQE Especialista": 215.0,
       "RQS Estrategico": 236.5,
-      "Venda Direta": 247.25
+      "Venda Direta": 247.25,
+      "PSV": 322.5,
+      "Benef. FOB SP": 206.4,
+      "Benef. FOB RJ/MG/RS/SC/PR": 191.737,
+      "Benef. FOB Restante Brasil": 180.9698,
+      "Preço de Escolha": 159.9
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3055,7 +4975,19 @@
       "Tabela": 59.8,
       "RQE Especialista": 29.9,
       "RQS Estrategico": null,
-      "Venda Direta": 34.39
+      "Venda Direta": 34.39,
+      "PSV": 44.849999999999994,
+      "Benef. FOB SP": 28.703999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 26.66482,
+      "Benef. FOB Restante Brasil": 25.167428,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3074,7 +5006,19 @@
       "Tabela": 7.0,
       "RQE Especialista": 3.5,
       "RQS Estrategico": 3.85,
-      "Venda Direta": 4.03
+      "Venda Direta": 4.029999999999999,
+      "PSV": 5.25,
+      "Benef. FOB SP": 3.36,
+      "Benef. FOB RJ/MG/RS/SC/PR": 3.1213,
+      "Benef. FOB Restante Brasil": 2.94602,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3093,7 +5037,19 @@
       "Tabela": 9.8,
       "RQE Especialista": 4.9,
       "RQS Estrategico": 5.39,
-      "Venda Direta": 5.64
+      "Venda Direta": 5.64,
+      "PSV": 7.3500000000000005,
+      "Benef. FOB SP": 4.704,
+      "Benef. FOB RJ/MG/RS/SC/PR": 4.369820000000001,
+      "Benef. FOB Restante Brasil": 4.124428,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3109,10 +5065,22 @@
     "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 38.0,
-      "RQE Especialista": 19.0,
+      "Tabela": 44.0,
+      "RQE Especialista": 22.0,
       "RQS Estrategico": null,
-      "Venda Direta": 21.85
+      "Venda Direta": 25.3,
+      "PSV": 36.129191999999996,
+      "Benef. FOB SP": 21.119999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 19.619600000000002,
+      "Benef. FOB Restante Brasil": 18.51784,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0.094824,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3128,10 +5096,22 @@
     "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 418.0,
-      "RQE Especialista": 209.0,
+      "Tabela": 460.0,
+      "RQE Especialista": 230.0,
       "RQS Estrategico": null,
-      "Venda Direta": 240.35
+      "Venda Direta": 264.5,
+      "PSV": 377.71428,
+      "Benef. FOB SP": 220.79999999999998,
+      "Benef. FOB RJ/MG/RS/SC/PR": 205.114,
+      "Benef. FOB Restante Brasil": 193.59560000000002,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0.094824,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3150,7 +5130,19 @@
       "Tabela": 11.0,
       "RQE Especialista": 5.5,
       "RQS Estrategico": 6.05,
-      "Venda Direta": 6.33
+      "Venda Direta": 6.33,
+      "PSV": 9.032297999999999,
+      "Benef. FOB SP": 5.279999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 4.9049000000000005,
+      "Benef. FOB Restante Brasil": 4.62946,
+      "Preço de Escolha": 4.45
+    },
+    "impostos": {
+      "ivaSt": 0.094824,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3169,7 +5161,19 @@
       "Tabela": 50.0,
       "RQE Especialista": 25.0,
       "RQS Estrategico": 27.5,
-      "Venda Direta": 28.75
+      "Venda Direta": 28.75,
+      "PSV": 41.0559,
+      "Benef. FOB SP": 24.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 22.295,
+      "Benef. FOB Restante Brasil": 21.5,
+      "Preço de Escolha": 21.5
+    },
+    "impostos": {
+      "ivaSt": 0.094824,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3188,7 +5192,19 @@
       "Tabela": 11.8,
       "RQE Especialista": 5.9,
       "RQS Estrategico": 6.49,
-      "Venda Direta": 6.79
+      "Venda Direta": 6.79,
+      "PSV": 9.689192400000001,
+      "Benef. FOB SP": 5.664,
+      "Benef. FOB RJ/MG/RS/SC/PR": 5.261620000000001,
+      "Benef. FOB Restante Brasil": 5.25,
+      "Preço de Escolha": 5.25
+    },
+    "impostos": {
+      "ivaSt": 0.094824,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3207,7 +5223,19 @@
       "Tabela": 57.0,
       "RQE Especialista": 28.5,
       "RQS Estrategico": 31.35,
-      "Venda Direta": 32.78
+      "Venda Direta": 32.78,
+      "PSV": 46.803726,
+      "Benef. FOB SP": 27.36,
+      "Benef. FOB RJ/MG/RS/SC/PR": 25.4163,
+      "Benef. FOB Restante Brasil": 26.45,
+      "Preço de Escolha": 26.45
+    },
+    "impostos": {
+      "ivaSt": 0.094824,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3223,29 +5251,22 @@
     "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 7600.0,
-      "RQE Especialista": 3800.0,
+      "Tabela": 8200.0,
+      "RQE Especialista": 4100.0,
       "RQS Estrategico": null,
-      "Venda Direta": 4370.0
-    }
-  },
-  {
-    "codigo": "E0110",
-    "descricao": "FRASCO SPRAY 750ML BRANCO 28MM",
-    "apresentacao": "750ml Spray / Foam",
-    "ncm": "39233090",
-    "classificacao": "Acessório",
-    "principioAtivo": "-",
-    "validade": "-",
-    "qtdPorEmbalagem": 1,
-    "linha": "Premium",
-    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
-    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
-    "precos": {
-      "Tabela": 5.8,
-      "RQE Especialista": 2.9,
-      "RQS Estrategico": null,
-      "Venda Direta": 3.34
+      "Venda Direta": 4715.0,
+      "PSV": 6150.0,
+      "Benef. FOB SP": 3936.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 3656.38,
+      "Benef. FOB Restante Brasil": 3451.052,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.12,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3255,7 +5276,7 @@
     "ncm": "38089429",
     "classificacao": "Saneante",
     "principioAtivo": "Blend De Quaternário De Amônia E Biganida",
-    "validade": "24",
+    "validade": "36",
     "qtdPorEmbalagem": 15,
     "linha": "Premium",
     "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
@@ -3264,7 +5285,19 @@
       "Tabela": 31.9,
       "RQE Especialista": 15.95,
       "RQS Estrategico": null,
-      "Venda Direta": 18.35
+      "Venda Direta": 18.35,
+      "PSV": 23.924999999999997,
+      "Benef. FOB SP": 15.312,
+      "Benef. FOB RJ/MG/RS/SC/PR": 14.22421,
+      "Benef. FOB Restante Brasil": 13.425434,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3283,7 +5316,19 @@
       "Tabela": 31.9,
       "RQE Especialista": 15.95,
       "RQS Estrategico": null,
-      "Venda Direta": 18.35
+      "Venda Direta": 18.35,
+      "PSV": 23.924999999999997,
+      "Benef. FOB SP": 15.312,
+      "Benef. FOB RJ/MG/RS/SC/PR": 14.22421,
+      "Benef. FOB Restante Brasil": 13.425434,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3302,7 +5347,19 @@
       "Tabela": 15.8,
       "RQE Especialista": 7.9,
       "RQS Estrategico": 8.69,
-      "Venda Direta": 9.09
+      "Venda Direta": 9.09,
+      "PSV": 11.850000000000001,
+      "Benef. FOB SP": 7.584,
+      "Benef. FOB RJ/MG/RS/SC/PR": 7.0452200000000005,
+      "Benef. FOB Restante Brasil": 6.6495880000000005,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3321,7 +5378,19 @@
       "Tabela": 70.0,
       "RQE Especialista": 35.0,
       "RQS Estrategico": 38.5,
-      "Venda Direta": 40.25
+      "Venda Direta": 40.25,
+      "PSV": 52.5,
+      "Benef. FOB SP": 33.6,
+      "Benef. FOB RJ/MG/RS/SC/PR": 31.213,
+      "Benef. FOB Restante Brasil": 29.4602,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3340,7 +5409,19 @@
       "Tabela": 990.0,
       "RQE Especialista": 495.0,
       "RQS Estrategico": null,
-      "Venda Direta": 569.25
+      "Venda Direta": 569.25,
+      "PSV": 742.5,
+      "Benef. FOB SP": 475.2,
+      "Benef. FOB RJ/MG/RS/SC/PR": 441.44100000000003,
+      "Benef. FOB Restante Brasil": 416.6514,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3359,7 +5440,19 @@
       "Tabela": 188.04,
       "RQE Especialista": 94.02,
       "RQS Estrategico": null,
-      "Venda Direta": 108.13
+      "Venda Direta": 108.13000000000001,
+      "PSV": 141.03,
+      "Benef. FOB SP": 90.25919999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 83.847036,
+      "Benef. FOB Restante Brasil": 79.1385144,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3369,7 +5462,7 @@
     "ncm": "34024200",
     "classificacao": "Saneante",
     "principioAtivo": "Peróxido De Hidrogênio E Quaternário Amônia",
-    "validade": "24",
+    "validade": "36",
     "qtdPorEmbalagem": 4,
     "linha": "Premium",
     "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
@@ -3378,7 +5471,19 @@
       "Tabela": 490.0,
       "RQE Especialista": 245.0,
       "RQS Estrategico": null,
-      "Venda Direta": 281.75
+      "Venda Direta": 281.75,
+      "PSV": 402.8641575,
+      "Benef. FOB SP": 235.2,
+      "Benef. FOB RJ/MG/RS/SC/PR": 218.491,
+      "Benef. FOB Restante Brasil": 206.22140000000002,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0.096229,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3397,7 +5502,19 @@
       "Tabela": 41.8,
       "RQE Especialista": 20.9,
       "RQS Estrategico": null,
-      "Venda Direta": 24.04
+      "Venda Direta": 24.040000000000003,
+      "PSV": 34.36677915,
+      "Benef. FOB SP": 20.063999999999997,
+      "Benef. FOB RJ/MG/RS/SC/PR": 18.63862,
+      "Benef. FOB Restante Brasil": 17.591948,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0.096229,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3407,7 +5524,7 @@
     "ncm": "38089429",
     "classificacao": "Saneante",
     "principioAtivo": "-",
-    "validade": "24",
+    "validade": "36",
     "qtdPorEmbalagem": 15,
     "linha": "Premium",
     "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
@@ -3416,7 +5533,19 @@
       "Tabela": 31.9,
       "RQE Especialista": 15.95,
       "RQS Estrategico": null,
-      "Venda Direta": 18.35
+      "Venda Direta": 18.35,
+      "PSV": 23.924999999999997,
+      "Benef. FOB SP": 15.312,
+      "Benef. FOB RJ/MG/RS/SC/PR": 14.22421,
+      "Benef. FOB Restante Brasil": 13.425434,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3433,9 +5562,21 @@
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
       "Tabela": 5580.0,
-      "RQE Especialista": null,
+      "RQE Especialista": 2790.0,
       "RQS Estrategico": null,
-      "Venda Direta": 3208.5
+      "Venda Direta": 3208.5,
+      "PSV": 4185.0,
+      "Benef. FOB SP": 2678.4,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2488.1220000000003,
+      "Benef. FOB Restante Brasil": 2348.3988,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3452,9 +5593,21 @@
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
       "Tabela": 700.0,
-      "RQE Especialista": null,
+      "RQE Especialista": 350.0,
       "RQS Estrategico": null,
-      "Venda Direta": 402.5
+      "Venda Direta": 402.5,
+      "PSV": 525.0,
+      "Benef. FOB SP": 336.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 312.13,
+      "Benef. FOB Restante Brasil": 294.60200000000003,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.12,
+      "ipi": 0,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3471,9 +5624,21 @@
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
       "Tabela": 21.6,
-      "RQE Especialista": null,
+      "RQE Especialista": 10.8,
       "RQS Estrategico": 11.88,
-      "Venda Direta": 12.42
+      "Venda Direta": 12.42,
+      "PSV": 18.240066000000002,
+      "Benef. FOB SP": 10.368,
+      "Benef. FOB RJ/MG/RS/SC/PR": 9.631440000000001,
+      "Benef. FOB Restante Brasil": 8.0,
+      "Preço de Escolha": 9.5
+    },
+    "impostos": {
+      "ivaSt": 0.12593,
+      "icms": 0.18,
+      "ipi": 0.052000000000000005,
+      "pis": 0.0129,
+      "cofins": 0.0591
     }
   },
   {
@@ -3490,9 +5655,21 @@
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
       "Tabela": 99.0,
-      "RQE Especialista": null,
+      "RQE Especialista": 49.5,
       "RQS Estrategico": 54.45,
-      "Venda Direta": 56.93
+      "Venda Direta": 56.93,
+      "PSV": 83.6003025,
+      "Benef. FOB SP": 47.519999999999996,
+      "Benef. FOB RJ/MG/RS/SC/PR": 44.1441,
+      "Benef. FOB Restante Brasil": 41.66514,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0.12593,
+      "icms": 0.18,
+      "ipi": 0.052000000000000005,
+      "pis": 0.0129,
+      "cofins": 0.0591
     }
   },
   {
@@ -3509,9 +5686,21 @@
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
       "Tabela": 19.6,
-      "RQE Especialista": null,
+      "RQE Especialista": 9.8,
       "RQS Estrategico": 10.78,
-      "Venda Direta": 11.27
+      "Venda Direta": 11.27,
+      "PSV": 16.551171,
+      "Benef. FOB SP": 9.408,
+      "Benef. FOB RJ/MG/RS/SC/PR": 8.739640000000001,
+      "Benef. FOB Restante Brasil": 8.248856,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0.12593,
+      "icms": 0.18,
+      "ipi": 0.052000000000000005,
+      "pis": 0.0129,
+      "cofins": 0.0591
     }
   },
   {
@@ -3527,10 +5716,22 @@
     "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 5.1,
-      "RQE Especialista": null,
-      "RQS Estrategico": 2.81,
-      "Venda Direta": 2.94
+      "Tabela": 6.0,
+      "RQE Especialista": 3.0,
+      "RQS Estrategico": 3.3,
+      "Venda Direta": 3.45,
+      "PSV": 4.998636,
+      "Benef. FOB SP": 2.88,
+      "Benef. FOB RJ/MG/RS/SC/PR": 2.6754000000000002,
+      "Benef. FOB Restante Brasil": 2.52516,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0.110808,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0129,
+      "cofins": 0.0591
     }
   },
   {
@@ -3547,9 +5748,21 @@
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
       "Tabela": 31.0,
-      "RQE Especialista": null,
+      "RQE Especialista": 15.5,
       "RQS Estrategico": 17.05,
-      "Venda Direta": 17.83
+      "Venda Direta": 17.830000000000002,
+      "PSV": 25.826286000000003,
+      "Benef. FOB SP": 14.879999999999999,
+      "Benef. FOB RJ/MG/RS/SC/PR": 13.8229,
+      "Benef. FOB Restante Brasil": 13.046660000000001,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0.110808,
+      "icms": 0.18,
+      "ipi": 0,
+      "pis": 0.0129,
+      "cofins": 0.0591
     }
   },
   {
@@ -3560,110 +5773,27 @@
     "classificacao": "Saneante",
     "principioAtivo": "Ácido Dodecilbenzeno Sulfonico",
     "validade": "24",
-    "qtdPorEmbalagem": 12,
+    "qtdPorEmbalagem": 4,
     "linha": "Premium",
     "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
-      "Tabela": 121.8,
-      "RQE Especialista": null,
+      "Tabela": 139.8,
+      "RQE Especialista": 69.9,
       "RQS Estrategico": null,
-      "Venda Direta": 70.04
-    }
-  },
-  {
-    "codigo": "R0448",
-    "descricao": "ROTULO GERMI RIO PLUS NOVO 750ML FRENTE (P/ FRASCO VAZIO)",
-    "apresentacao": "Unidade",
-    "ncm": "48211000",
-    "classificacao": "Acessório",
-    "principioAtivo": "-",
-    "validade": "-",
-    "qtdPorEmbalagem": 1,
-    "linha": "Premium",
-    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
-    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
-    "precos": {
-      "Tabela": 1.68,
-      "RQE Especialista": null,
-      "RQS Estrategico": null,
-      "Venda Direta": 0.97
-    }
-  },
-  {
-    "codigo": "R0449",
-    "descricao": "ROTULO GERMI RIO PLUS NOVO 750ML VERSO (P/ FRASCO VAZIO)",
-    "apresentacao": "Unidade",
-    "ncm": "49119900",
-    "classificacao": "Acessório",
-    "principioAtivo": "-",
-    "validade": "-",
-    "qtdPorEmbalagem": 1,
-    "linha": "Premium",
-    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
-    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
-    "precos": {
-      "Tabela": 1.68,
-      "RQE Especialista": null,
-      "RQS Estrategico": null,
-      "Venda Direta": 0.97
-    }
-  },
-  {
-    "codigo": "R0444",
-    "descricao": "ROTULO OXIRIO PLUS NOVO 750ML FRENTE (P/ FRASCO VAZIO)",
-    "apresentacao": "Unidade",
-    "ncm": "48211000",
-    "classificacao": "Acessório",
-    "principioAtivo": "-",
-    "validade": "-",
-    "qtdPorEmbalagem": 1,
-    "linha": "Premium",
-    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
-    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
-    "precos": {
-      "Tabela": 1.68,
-      "RQE Especialista": null,
-      "RQS Estrategico": null,
-      "Venda Direta": 0.97
-    }
-  },
-  {
-    "codigo": "R0445",
-    "descricao": "ROTULO OXIRIO PLUS NOVO 750ML VERSO (P/ FRASCO VAZIO)",
-    "apresentacao": "Unidade",
-    "ncm": "48211000",
-    "classificacao": "Acessório",
-    "principioAtivo": "-",
-    "validade": "-",
-    "qtdPorEmbalagem": 1,
-    "linha": "Premium",
-    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
-    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
-    "precos": {
-      "Tabela": 1.68,
-      "RQE Especialista": null,
-      "RQS Estrategico": null,
-      "Venda Direta": 0.97
-    }
-  },
-  {
-    "codigo": "E0101",
-    "descricao": "TAMPA 750 ML/1 L VALV GATILHO SPRAY/ESPUMA 28MM BRANCA JH01R",
-    "apresentacao": "Gatilho 750ml",
-    "ncm": "84248990",
-    "classificacao": "Acessório",
-    "principioAtivo": "-",
-    "validade": "-",
-    "qtdPorEmbalagem": 1,
-    "linha": "Premium",
-    "categoria": "LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
-    "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
-    "precos": {
-      "Tabela": 9.0,
-      "RQE Especialista": null,
-      "RQS Estrategico": null,
-      "Venda Direta": 5.18
+      "Venda Direta": 80.39,
+      "PSV": 114.93961065000002,
+      "Benef. FOB SP": 67.104,
+      "Benef. FOB RJ/MG/RS/SC/PR": 62.33682000000001,
+      "Benef. FOB Restante Brasil": 58.836228000000006,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0.096229,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   },
   {
@@ -3680,9 +5810,21 @@
     "divisao": "DIVISÃO - DPI - DIVISÃO DE PREVENÇÃO DE INFECÇÕES",
     "precos": {
       "Tabela": 1200.0,
-      "RQE Especialista": null,
+      "RQE Especialista": 600.0,
       "RQS Estrategico": null,
-      "Venda Direta": 690.0
+      "Venda Direta": 690.0,
+      "PSV": 900.0,
+      "Benef. FOB SP": 576.0,
+      "Benef. FOB RJ/MG/RS/SC/PR": 535.08,
+      "Benef. FOB Restante Brasil": 505.03200000000004,
+      "Preço de Escolha": null
+    },
+    "impostos": {
+      "ivaSt": 0,
+      "icms": 0.18,
+      "ipi": 0.0325,
+      "pis": 0.0165,
+      "cofins": 0.076
     }
   }
 ]
