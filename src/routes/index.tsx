@@ -141,13 +141,24 @@ function PedidosPage() {
   }
 
   const totals = useMemo(() => {
-    const totalGeral = items.reduce((s, it) => s + it.qtyAdjusted * it.unitPrice, 0);
-    const totalUnidades = items.reduce((s, it) => s + it.qtyAdjusted, 0);
-    const totalCaixas = items.reduce(
-      (s, it) => s + Math.ceil(it.qtyAdjusted / Math.max(1, it.product.qtdPorEmbalagem)),
-      0,
-    );
-    return { totalGeral, totalUnidades, totalCaixas, itens: items.length };
+    let totalGeral = 0, totalUnidades = 0, totalCaixas = 0;
+    let baseIcms = 0, vIcms = 0, baseIpi = 0, vIpi = 0;
+    let baseSt = 0, vSt = 0, vPis = 0, vCofins = 0;
+    for (const it of items) {
+      const t = calcItemTaxes(it.unitPrice, it.qtyAdjusted, it.product);
+      totalGeral += t.base;
+      totalUnidades += it.qtyAdjusted;
+      totalCaixas += Math.ceil(it.qtyAdjusted / Math.max(1, it.product.qtdPorEmbalagem));
+      baseIcms += t.base; vIcms += t.icms;
+      baseIpi += t.base; vIpi += t.ipi;
+      baseSt += t.stBase; vSt += t.st;
+      vPis += t.pis; vCofins += t.cofins;
+    }
+    const valorTotalNota = totalGeral + vIpi + vSt;
+    return {
+      totalGeral, totalUnidades, totalCaixas, itens: items.length,
+      baseIcms, vIcms, baseIpi, vIpi, baseSt, vSt, vPis, vCofins, valorTotalNota,
+    };
   }, [items]);
 
   const [saving, setSaving] = useState(false);
