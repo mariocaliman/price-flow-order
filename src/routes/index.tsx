@@ -10,6 +10,7 @@ import {
   categorias,
   roundToBox,
   brl,
+  calcItemTaxes,
   type PriceTable,
   type Product,
 } from "@/lib/products";
