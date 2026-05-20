@@ -639,12 +639,32 @@ function PedidosPage() {
 
             {/* Totais */}
             {items.length > 0 && (
-              <div className="border-t border-border bg-muted/30 px-5 py-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-                <Stat label="Itens" value={String(totals.itens)} />
-                <Stat label="Unidades" value={String(totals.totalUnidades)} />
-                <Stat label="Volumes (caixas)" value={String(totals.totalCaixas)} />
-                <Stat label="Total geral" value={brl(totals.totalGeral)} highlight />
-              </div>
+              <>
+                <div className="border-t border-border bg-muted/30 px-5 py-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <Stat label="Itens" value={String(totals.itens)} />
+                  <Stat label="Unidades" value={String(totals.totalUnidades)} />
+                  <Stat label="Volumes (caixas)" value={String(totals.totalCaixas)} />
+                  <Stat label="Total produtos" value={brl(totals.totalGeral)} />
+                </div>
+                <div className="border-t border-border bg-card px-5 py-4">
+                  <h3 className="text-xs uppercase tracking-wide text-muted-foreground font-semibold mb-3">
+                    Impostos do pedido
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 text-sm">
+                    <Stat label="Base ICMS" value={brl(totals.baseIcms)} />
+                    <Stat label="Valor ICMS" value={brl(totals.vIcms)} />
+                    <Stat label="Base IPI" value={brl(totals.baseIpi)} />
+                    <Stat label="Valor IPI" value={brl(totals.vIpi)} />
+                    <Stat label="Base ST" value={brl(totals.baseSt)} />
+                    <Stat label="Valor ST" value={brl(totals.vSt)} />
+                    <Stat label="Valor PIS" value={brl(totals.vPis)} />
+                    <Stat label="Valor COFINS" value={brl(totals.vCofins)} />
+                    <div className="md:col-span-2 lg:col-span-2">
+                      <Stat label="Valor total da nota" value={brl(totals.valorTotalNota)} highlight />
+                    </div>
+                  </div>
+                </div>
+              </>
             )}
           </div>
         </section>
