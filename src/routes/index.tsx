@@ -674,51 +674,6 @@ function PedidosPage() {
         </div>
       )}
 
-      {/* Envio */}
-      {sendOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4"
-          onClick={() => setSendOpen(false)}>
-          <div className="bg-card border border-border rounded-lg shadow-xl w-full max-w-lg"
-            onClick={(e) => e.stopPropagation()}>
-            <div className="px-5 py-3 border-b border-border flex items-center justify-between">
-              <h2 className="font-semibold">Enviar pedido</h2>
-              <button onClick={() => setSendOpen(false)}
-                className="text-sm px-3 py-1.5 rounded-md border border-border hover:bg-muted">Fechar</button>
-            </div>
-            <div className="p-5 space-y-4">
-              {sendBusy && <p className="text-sm text-muted-foreground">Gerando PDF...</p>}
-              {sendError && (
-                <div className="text-sm text-destructive border border-destructive/40 bg-destructive/10 rounded-md p-3">{sendError}</div>
-              )}
-              {sendFile && !sendBusy && (
-                <>
-                  <p className="text-sm">
-                    Pedido <strong>#{String(currentNumero ?? "").padStart(6, "0")}</strong> pronto para envio.
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    No celular o PDF é anexado automaticamente. No computador o PDF é baixado e basta arrastá-lo para a conversa/email.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <button onClick={onWhatsApp}
-                      className="px-3 py-3 rounded-md bg-[#25D366] text-white font-medium text-sm hover:opacity-90">
-                      💬 WhatsApp
-                    </button>
-                    <button onClick={onEmail}
-                      className="px-3 py-3 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:opacity-90">
-                      ✉ Email
-                    </button>
-                  </div>
-                  {!clienteTelefone && (
-                    <p className="text-[11px] text-muted-foreground">
-                      Dica: preencha o telefone do cliente para o WhatsApp abrir já no contato dele.
-                    </p>
-                  )}
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
