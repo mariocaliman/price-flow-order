@@ -62,6 +62,13 @@ function PedidosPage() {
     }
   }, [allowPrecoEscolha, tabela]);
 
+  // Auto-preencher vendedor com o nome do usuário logado
+  useEffect(() => {
+    if (!mounted) return;
+    const nomeLogado = auth.nome || auth.user?.email?.split("@")[0] || "";
+    if (nomeLogado) setVendedor(nomeLogado);
+  }, [mounted, auth.nome, auth.user?.email]);
+
   // Catálogo
   const [search, setSearch] = useState("");
   const [catFilter, setCatFilter] = useState<string>("");
