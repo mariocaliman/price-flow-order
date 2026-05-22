@@ -332,87 +332,6 @@ function PedidosPage() {
     doc.save(pdfFilename({ cliente, data, numero: currentNumero }));
   }
 
-  // ===== Envio (WhatsApp / Email) com PDF anexado =====
-  const [sendOpen, setSendOpen] = useState(false);
-  const [sendBusy, setSendBusy] = useState(false);
-  const [sendError, setSendError] = useState<string | null>(null);
-  const [sendFile, setSendFile] = useState<File | null>(null);
-
-  async function openSendModal() {
-    if (!auth.user) { alert("Faça login."); return; }
-    if (!items.length) { alert("Pedido vazio."); return; }
-    setSendOpen(true);
-    setSendError(null);
-    setSendFile(null);
-    setSendBusy(true);
-    try {
-      let numero = currentNumero;
-      if (!currentPedidoId) {
-        const saved = await savePedido();
-        if (!saved) { setSendOpen(false); return; }
-        numero = saved.numero;
-      }
-      const doc = await buildPedidoPdf({ numero, cliente, codCliente, prazo, data, vencimento, vendedor, obs, items });
-      const blob = doc.output("blob");
-      const filename = pdfFilename({ cliente, data, numero });
-      setSendFile(new File([blob], filename, { type: "application/pdf" }));
-    } catch (e) {
-      setSendError(e instanceof Error ? e.message : String(e));
-    } finally {
-      setSendBusy(false);
-    }
-  }
-
-  function sendMessage(): string {
-    const num = currentNumero ? `#${String(currentNumero).padStart(6, "0")}` : "";
-    return [
-      `Olá${cliente ? `, ${cliente}` : ""}!`,
-      `Segue em anexo o pedido ${num} no valor de ${brl(totals.valorTotalNota)}.`,
-    ].filter(Boolean).join("\n\n");
-  }
-
-  function downloadFile(f: File) {
-    const url = URL.createObjectURL(f);
-    const a = document.createElement("a");
-    a.href = url; a.download = f.name;
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }
-
-  async function onWhatsApp() {
-    if (!sendFile) return;
-    const text = sendMessage();
-    // Tenta compartilhar o PDF nativamente (mobile): permite escolher WhatsApp e já anexa
-    const nav = navigator as Navigator & { canShare?: (d: { files?: File[] }) => boolean };
-    if (nav.canShare && nav.canShare({ files: [sendFile] })) {
-      try {
-        await navigator.share({ files: [sendFile], text, title: "Pedido" });
-        return;
-      } catch { /* usuário cancelou — segue fallback */ }
-    }
-    // Fallback desktop: baixa o PDF e abre o WhatsApp Web com a mensagem (anexar manualmente)
-    downloadFile(sendFile);
-    const phone = clienteTelefone.replace(/\D/g, "");
-    const base = phone ? `https://wa.me/${phone.length <= 11 ? `55${phone}` : phone}` : "https://wa.me/";
-    const msg = `${text}\n\n(PDF baixado — anexe na conversa)`;
-    window.open(`${base}?text=${encodeURIComponent(msg)}`, "_blank");
-  }
-
-  async function onEmail() {
-    if (!sendFile) return;
-    const text = sendMessage();
-    const nav = navigator as Navigator & { canShare?: (d: { files?: File[] }) => boolean };
-    if (nav.canShare && nav.canShare({ files: [sendFile] })) {
-      try {
-        await navigator.share({ files: [sendFile], text, title: "Pedido" });
-        return;
-      } catch { /* segue fallback */ }
-    }
-    downloadFile(sendFile);
-    const subject = `Pedido${currentNumero ? ` #${String(currentNumero).padStart(6, "0")}` : ""} - ${cliente}`;
-    const body = `${text}\n\n(PDF baixado — anexe no email)`;
-    window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
 
 
   return (
@@ -461,10 +380,6 @@ function PedidosPage() {
             <button onClick={exportPDF} disabled={!items.length}
               className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
               Gerar PDF
-            </button>
-            <button onClick={openSendModal} disabled={!items.length}
-              className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition disabled:opacity-50">
-              Enviar
             </button>
             <button
               onClick={async () => { await supabase.auth.signOut(); navigate({ to: "/login" }); }}
@@ -759,51 +674,6 @@ function PedidosPage() {
         </div>
       )}
 
-      {/* Envio */}
-      {sendOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4"
-          onClick={() => setSendOpen(false)}>
-          <div className="bg-card border border-border rounded-lg shadow-xl w-full max-w-lg"
-            onClick={(e) => e.stopPropagation()}>
-            <div className="px-5 py-3 border-b border-border flex items-center justify-between">
-              <h2 className="font-semibold">Enviar pedido</h2>
-              <button onClick={() => setSendOpen(false)}
-                className="text-sm px-3 py-1.5 rounded-md border border-border hover:bg-muted">Fechar</button>
-            </div>
-            <div className="p-5 space-y-4">
-              {sendBusy && <p className="text-sm text-muted-foreground">Gerando PDF...</p>}
-              {sendError && (
-                <div className="text-sm text-destructive border border-destructive/40 bg-destructive/10 rounded-md p-3">{sendError}</div>
-              )}
-              {sendFile && !sendBusy && (
-                <>
-                  <p className="text-sm">
-                    Pedido <strong>#{String(currentNumero ?? "").padStart(6, "0")}</strong> pronto para envio.
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    No celular o PDF é anexado automaticamente. No computador o PDF é baixado e basta arrastá-lo para a conversa/email.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <button onClick={onWhatsApp}
-                      className="px-3 py-3 rounded-md bg-[#25D366] text-white font-medium text-sm hover:opacity-90">
-                      💬 WhatsApp
-                    </button>
-                    <button onClick={onEmail}
-                      className="px-3 py-3 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:opacity-90">
-                      ✉ Email
-                    </button>
-                  </div>
-                  {!clienteTelefone && (
-                    <p className="text-[11px] text-muted-foreground">
-                      Dica: preencha o telefone do cliente para o WhatsApp abrir já no contato dele.
-                    </p>
-                  )}
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
