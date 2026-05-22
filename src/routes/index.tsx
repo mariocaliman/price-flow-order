@@ -332,42 +332,30 @@ function PedidosPage() {
     doc.save(pdfFilename({ cliente, data, numero: currentNumero }));
   }
 
-  // ===== Envio (WhatsApp / Email) =====
+  // ===== Envio (WhatsApp / Email) com PDF anexado =====
   const [sendOpen, setSendOpen] = useState(false);
-  const [sendUrl, setSendUrl] = useState<string | null>(null);
   const [sendBusy, setSendBusy] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
+  const [sendFile, setSendFile] = useState<File | null>(null);
 
   async function openSendModal() {
     if (!auth.user) { alert("Faça login."); return; }
     if (!items.length) { alert("Pedido vazio."); return; }
     setSendOpen(true);
     setSendError(null);
-    setSendUrl(null);
+    setSendFile(null);
     setSendBusy(true);
     try {
-      // Garante que o pedido está salvo (para ter numero estável)
-      let pedidoId = currentPedidoId;
       let numero = currentNumero;
-      if (!pedidoId) {
+      if (!currentPedidoId) {
         const saved = await savePedido();
         if (!saved) { setSendOpen(false); return; }
-        pedidoId = saved.id; numero = saved.numero;
+        numero = saved.numero;
       }
-
-      // Gera PDF, faz upload em pedidos-pdf/{user_id}/{pedido_id}.pdf
       const doc = await buildPedidoPdf({ numero, cliente, codCliente, prazo, data, vencimento, vendedor, obs, items });
       const blob = doc.output("blob");
-      const path = `${auth.user.id}/${pedidoId}.pdf`;
-      const { error: upErr } = await supabase.storage
-        .from("pedidos-pdf")
-        .upload(path, blob, { upsert: true, contentType: "application/pdf" });
-      if (upErr) throw upErr;
-      const { data: signed, error: signErr } = await supabase.storage
-        .from("pedidos-pdf")
-        .createSignedUrl(path, 60 * 60 * 24 * 30); // 30 dias
-      if (signErr) throw signErr;
-      setSendUrl(signed.signedUrl);
+      const filename = pdfFilename({ cliente, data, numero });
+      setSendFile(new File([blob], filename, { type: "application/pdf" }));
     } catch (e) {
       setSendError(e instanceof Error ? e.message : String(e));
     } finally {
@@ -379,29 +367,53 @@ function PedidosPage() {
     const num = currentNumero ? `#${String(currentNumero).padStart(6, "0")}` : "";
     return [
       `Olá${cliente ? `, ${cliente}` : ""}!`,
-      `Segue o pedido ${num} no valor de ${brl(totals.valorTotalNota)}.`,
-      sendUrl ? `PDF: ${sendUrl}` : "",
+      `Segue em anexo o pedido ${num} no valor de ${brl(totals.valorTotalNota)}.`,
     ].filter(Boolean).join("\n\n");
   }
 
-  function onWhatsApp() {
-    if (!sendUrl) return;
+  function downloadFile(f: File) {
+    const url = URL.createObjectURL(f);
+    const a = document.createElement("a");
+    a.href = url; a.download = f.name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  async function onWhatsApp() {
+    if (!sendFile) return;
+    const text = sendMessage();
+    // Tenta compartilhar o PDF nativamente (mobile): permite escolher WhatsApp e já anexa
+    const nav = navigator as Navigator & { canShare?: (d: { files?: File[] }) => boolean };
+    if (nav.canShare && nav.canShare({ files: [sendFile] })) {
+      try {
+        await navigator.share({ files: [sendFile], text, title: "Pedido" });
+        return;
+      } catch { /* usuário cancelou — segue fallback */ }
+    }
+    // Fallback desktop: baixa o PDF e abre o WhatsApp Web com a mensagem (anexar manualmente)
+    downloadFile(sendFile);
     const phone = clienteTelefone.replace(/\D/g, "");
     const base = phone ? `https://wa.me/${phone.length <= 11 ? `55${phone}` : phone}` : "https://wa.me/";
-    window.open(`${base}?text=${encodeURIComponent(sendMessage())}`, "_blank");
+    const msg = `${text}\n\n(PDF baixado — anexe na conversa)`;
+    window.open(`${base}?text=${encodeURIComponent(msg)}`, "_blank");
   }
 
-  function onEmail() {
-    if (!sendUrl) return;
+  async function onEmail() {
+    if (!sendFile) return;
+    const text = sendMessage();
+    const nav = navigator as Navigator & { canShare?: (d: { files?: File[] }) => boolean };
+    if (nav.canShare && nav.canShare({ files: [sendFile] })) {
+      try {
+        await navigator.share({ files: [sendFile], text, title: "Pedido" });
+        return;
+      } catch { /* segue fallback */ }
+    }
+    downloadFile(sendFile);
     const subject = `Pedido${currentNumero ? ` #${String(currentNumero).padStart(6, "0")}` : ""} - ${cliente}`;
-    window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(sendMessage())}`;
+    const body = `${text}\n\n(PDF baixado — anexe no email)`;
+    window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
-  async function onCopyLink() {
-    if (!sendUrl) return;
-    await navigator.clipboard.writeText(sendUrl);
-    alert("Link copiado!");
-  }
 
   return (
     <div className="min-h-screen bg-background">
