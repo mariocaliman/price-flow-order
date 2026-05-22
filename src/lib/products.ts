@@ -1,4 +1,4 @@
-import data from "@/data/products.json";
+import seedData from "@/data/products.json";
 
 export type PriceTable =
   | "Tabela"
@@ -35,8 +35,6 @@ export interface Product {
   impostos: Impostos;
 }
 
-export const products: Product[] = data as Product[];
-
 export const priceTables: PriceTable[] = [
   "Tabela",
   "RQE Especialista",
@@ -49,8 +47,31 @@ export const priceTables: PriceTable[] = [
   "Preço de Escolha",
 ];
 
-export const categorias = Array.from(new Set(products.map((p) => p.categoria))).filter(Boolean).sort();
-export const divisoes = Array.from(new Set(products.map((p) => p.divisao))).filter(Boolean).sort();
+const CACHE_KEY = "products_catalog_v1";
+
+/** Seed bundled with the app — used as fallback when offline and no cache exists. */
+export const seedProducts = seedData as Product[];
+
+export function getCachedProducts(): Product[] | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as { products: Product[] };
+    return parsed.products ?? null;
+  } catch {
+    return null;
+  }
+}
+
+export function setCachedProducts(products: Product[]) {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ products, savedAt: Date.now() }));
+  } catch {
+    /* ignore quota errors */
+  }
+}
 
 export function roundToBox(qty: number, box: number, mode: "auto" | "suggest" | "off"): number {
   if (!box || box <= 1 || mode === "off") return Math.max(0, Math.round(qty));
@@ -63,7 +84,6 @@ export function brl(n: number): string {
   return n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
-/** Calculate per-item tax breakdown given unit price, quantity and product taxes. */
 export function calcItemTaxes(unitPrice: number, qty: number, p: Product) {
   const base = (unitPrice || 0) * (qty || 0);
   const imp = (p?.impostos ?? {}) as Partial<Impostos>;
@@ -71,7 +91,6 @@ export function calcItemTaxes(unitPrice: number, qty: number, p: Product) {
   const icms = base * (imp.icms || 0);
   const pis = base * (imp.pis || 0);
   const cofins = base * (imp.cofins || 0);
-  // ICMS-ST (Substituição Tributária) base inclui IPI e MVA (IVA-ST)
   const stBase = (base + ipi) * (1 + (imp.ivaSt || 0));
   const stTotal = stBase * (imp.icms || 0);
   const st = Math.max(0, stTotal - icms);

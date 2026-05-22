@@ -4,15 +4,14 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
 import {
-  products as ALL_PRODUCTS,
   priceTables,
-  categorias,
   roundToBox,
   brl,
   calcItemTaxes,
   type PriceTable,
   type Product,
 } from "@/lib/products";
+import { useProducts } from "@/hooks/use-products";
 import { buildPedidoPdf, pdfFilename, pedidoTotal, type OrderItem } from "@/lib/pdf";
 import { enqueuePedido } from "@/lib/offline-queue";
 import { useOfflineStatus } from "@/hooks/use-offline-status";
@@ -75,6 +74,12 @@ function PedidosPage() {
   // Pedido
   const [items, setItems] = useState<OrderItem[]>([]);
 
+  const { products: ALL_PRODUCTS } = useProducts();
+  const categorias = useMemo(
+    () => Array.from(new Set(ALL_PRODUCTS.map((p) => p.categoria))).filter(Boolean).sort(),
+    [ALL_PRODUCTS],
+  );
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     return ALL_PRODUCTS.filter((p) => {
@@ -87,7 +92,7 @@ function PedidosPage() {
         p.categoria.toLowerCase().includes(q)
       );
     }).slice(0, 80);
-  }, [search, catFilter]);
+  }, [ALL_PRODUCTS, search, catFilter]);
 
   function priceOf(p: Product): number {
     const v = p.precos[tabela];
