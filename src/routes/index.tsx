@@ -626,18 +626,6 @@ function PedidosPage() {
               <Field label="Prazo de pagamento" value={prazo} onChange={setPrazo} />
               <Field label="Data do pedido" type="date" value={data} onChange={setData} />
               <Field label="Vencimento da proposta" type="date" value={vencimento} onChange={setVencimento} />
-              <div>
-                <label className="text-xs text-muted-foreground">Modo de arredondamento</label>
-                <select
-                  value={roundMode}
-                  onChange={(e) => setRoundMode(e.target.value as "auto" | "suggest" | "off")}
-                  className="mt-1 w-full px-3 py-2 rounded-md bg-background border border-input text-sm"
-                >
-                  <option value="auto">Automático (ajusta ao confirmar)</option>
-                  <option value="suggest">Sugestão (mostra antes)</option>
-                  <option value="off">Desligado</option>
-                </select>
-              </div>
             </div>
             <div className="mt-3">
               <label className="text-xs text-muted-foreground">Observações</label>
