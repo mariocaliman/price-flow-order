@@ -301,35 +301,64 @@ function PedidosPage() {
     setHistoryOpen(false);
   }
 
-  function exportPDF() {
+  async function loadLogoDataUrl(): Promise<string | null> {
+    try {
+      const res = await fetch(logo);
+      const blob = await res.blob();
+      return await new Promise((resolve) => {
+        const r = new FileReader();
+        r.onloadend = () => resolve(r.result as string);
+        r.onerror = () => resolve(null);
+        r.readAsDataURL(blob);
+      });
+    } catch {
+      return null;
+    }
+  }
+
+  async function exportPDF() {
     const doc = new jsPDF({ unit: "mm", format: "a4", orientation: "landscape" });
     const W = doc.internal.pageSize.getWidth();
     const H = doc.internal.pageSize.getHeight();
     const pedidoNum = `#${Date.now().toString().slice(-6)}`;
+    const RED: [number, number, number] = [200, 30, 40];
+
+    // Logo
+    const logoData = await loadLogoDataUrl();
+    if (logoData) {
+      try { doc.addImage(logoData, "JPEG", 10, 6, 22, 18); } catch { /* ignore */ }
+    }
 
     // Cabeçalho fornecedor
     doc.setFont("helvetica", "bold");
+    doc.setTextColor(...RED);
     doc.setFontSize(12);
-    doc.text("RIOQUIMICA S.A", 10, 10);
+    doc.text("RIOQUIMICA S.A", 34, 11);
+    doc.setTextColor(0);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(8);
-    doc.text("AV. TARRAF, Nr. 2590/2600", 10, 14);
-    doc.text("TEL: 55-17-4009-4288", 10, 18);
-    doc.text("CNPJ: 55.643.555/0001-43", 10, 22);
+    doc.text("AV. TARRAF, Nr. 2590/2600", 34, 15);
+    doc.text("TEL: 55-17-4009-4288", 34, 19);
+    doc.text("CNPJ: 55.643.555/0001-43", 34, 23);
 
     // Bloco direito - confirmação
     doc.setFont("helvetica", "bold");
+    doc.setTextColor(...RED);
     doc.setFontSize(11);
-    doc.text("CONFIRMAÇÃO DO PEDIDO", W - 10, 10, { align: "right" });
+    doc.text("CONFIRMAÇÃO DO PEDIDO", W - 10, 11, { align: "right" });
+    doc.setTextColor(0);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(8);
-    doc.text(`EMISSÃO: ${new Date().toLocaleDateString("pt-BR")}`, W - 10, 14, { align: "right" });
-    doc.text(`PEDIDO Nº ${pedidoNum}`, W - 10, 18, { align: "right" });
+    doc.text(`EMISSÃO: ${new Date().toLocaleDateString("pt-BR")}`, W - 10, 15, { align: "right" });
+    doc.text(`PEDIDO Nº ${pedidoNum}`, W - 10, 19, { align: "right" });
     
 
     // Linha divisória
-    doc.setDrawColor(120);
+    doc.setDrawColor(...RED);
+    doc.setLineWidth(0.4);
     doc.line(10, 26, W - 10, 26);
+    doc.setLineWidth(0.2);
+
 
     // Bloco cliente
     doc.setFont("helvetica", "bold");
@@ -368,7 +397,7 @@ function PedidosPage() {
         ];
       }),
       styles: { fontSize: 7.5, cellPadding: 1.2, lineColor: [180, 180, 180], lineWidth: 0.1 },
-      headStyles: { fillColor: [230, 230, 230], textColor: 0, fontStyle: "bold", lineColor: [120, 120, 120] },
+      headStyles: { fillColor: RED, textColor: 255, fontStyle: "bold", lineColor: RED },
       columnStyles: {
         0: { cellWidth: 10, halign: "center" },
         1: { cellWidth: 25 },
@@ -411,7 +440,7 @@ function PedidosPage() {
         totals.valorTotalNota.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
       ]],
       styles: { fontSize: 7.5, cellPadding: 1.2, halign: "right", lineColor: [120, 120, 120], lineWidth: 0.1 },
-      headStyles: { fillColor: [230, 230, 230], textColor: 0, fontStyle: "bold", halign: "center" },
+      headStyles: { fillColor: RED, textColor: 255, fontStyle: "bold", halign: "center" },
       margin: { left: 10, right: 10 },
     });
 
@@ -420,7 +449,10 @@ function PedidosPage() {
 
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
+    doc.setTextColor(...RED);
     doc.text(`VALOR TOTAL DO PEDIDO: ${brl(totals.valorTotalNota)}`, W - 10, endY, { align: "right" });
+    doc.setTextColor(0);
+
 
     if (obs) {
       doc.setFontSize(8);
