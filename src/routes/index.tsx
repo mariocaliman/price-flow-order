@@ -339,6 +339,9 @@ function PedidosPage() {
     doc.text(`VENDEDOR: ${vendedor || "-"}`, 10, 40);
     doc.text(`COND. PGTO: ${prazo || "-"}`, 10, 44);
     doc.text(`DATA PEDIDO: ${new Date(data).toLocaleDateString("pt-BR")}`, W / 2 + 10, 32);
+    if (vencimento) {
+      doc.text(`VENCIMENTO PROPOSTA: ${new Date(vencimento).toLocaleDateString("pt-BR")}`, W / 2 + 70, 32);
+    }
     doc.text(`Nº ITENS: ${items.length}`, W / 2 + 10, 36);
     doc.text(`Nº VOLUMES: ${totals.totalCaixas}`, W / 2 + 10, 40);
     doc.text(`UNIDADES: ${totals.totalUnidades}`, W / 2 + 10, 44);
