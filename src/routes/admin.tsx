@@ -344,6 +344,7 @@ function AdminPage() {
                   })}
                 </TableBody>
               </Table>
+              </div>
             )}
           </CardContent>
         </Card>
