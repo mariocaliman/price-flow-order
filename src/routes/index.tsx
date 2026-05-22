@@ -324,7 +324,7 @@ function PedidosPage() {
     doc.setFontSize(8);
     doc.text(`EMISSÃO: ${new Date().toLocaleDateString("pt-BR")}`, W - 10, 14, { align: "right" });
     doc.text(`PEDIDO Nº ${pedidoNum}`, W - 10, 18, { align: "right" });
-    doc.text(`TABELA: ${tabela}`, W - 10, 22, { align: "right" });
+    
 
     // Linha divisória
     doc.setDrawColor(120);
