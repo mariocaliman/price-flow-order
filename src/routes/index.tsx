@@ -476,8 +476,8 @@ function PedidosPage() {
                         <span className="font-mono">{p.codigo}</span>
                         <span className="px-1.5 py-0.5 rounded bg-accent text-accent-foreground text-[10px]">{p.linha}</span>
                       </div>
-                      <p className="text-sm font-medium truncate">{p.descricao}</p>
-                      <p className="text-xs text-muted-foreground truncate">{p.apresentacao} · Cx {p.qtdPorEmbalagem}</p>
+                      <p className="text-[11px] sm:text-xs font-medium leading-snug break-words line-clamp-2">{p.descricao}</p>
+                      <p className="text-[10px] sm:text-[11px] text-muted-foreground leading-snug break-words line-clamp-2">{p.apresentacao} · Cx {p.qtdPorEmbalagem}</p>
                     </div>
                     <div className="text-right">
                       <div className="text-sm font-semibold">{price ? brl(price) : "—"}</div>
