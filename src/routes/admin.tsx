@@ -272,6 +272,7 @@ function AdminPage() {
             {loading ? (
               <p className="text-sm text-muted-foreground">Carregando...</p>
             ) : (
+              <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -343,6 +344,7 @@ function AdminPage() {
                   })}
                 </TableBody>
               </Table>
+              </div>
             )}
           </CardContent>
         </Card>

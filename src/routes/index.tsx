@@ -45,7 +45,7 @@ function PedidosPage() {
   const [tabela, setTabela] = useState<PriceTable>("RQE Especialista");
   const [roundMode, setRoundMode] = useState<"auto" | "suggest" | "off">("auto");
 
-  const allowPrecoEscolha = auth.isAdmin || auth.canUsePrecoEscolha;
+  const allowPrecoEscolha = mounted && (auth.isAdmin || auth.canUsePrecoEscolha);
   const availableTables = useMemo(
     () => priceTables.filter((t) => allowPrecoEscolha || t !== "Preço de Escolha"),
     [allowPrecoEscolha],
