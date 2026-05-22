@@ -400,7 +400,7 @@ function PedidosPage() {
             <span className="hidden xl:inline text-xs text-muted-foreground px-2 truncate max-w-[160px]">
               {auth.nome || auth.user?.email}
             </span>
-            {(!offline.online || offline.pending > 0) && (
+            {mounted && (!offline.online || offline.pending > 0) && (
               <button
                 onClick={async () => {
                   if (!offline.online) { alert("Sem internet. A sincronização será automática quando voltar."); return; }
