@@ -8,6 +8,7 @@ export interface AuthState {
   session: Session | null;
   isAdmin: boolean;
   nome: string;
+  canUsePrecoEscolha: boolean;
   roleLoading: boolean;
 }
 
@@ -16,6 +17,7 @@ export function useAuth(): AuthState {
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [nome, setNome] = useState("");
+  const [canUsePrecoEscolha, setCanUsePrecoEscolha] = useState(false);
   const [roleLoading, setRoleLoading] = useState(true);
 
   useEffect(() => {
@@ -34,6 +36,7 @@ export function useAuth(): AuthState {
     if (!uid) {
       setIsAdmin(false);
       setNome("");
+      setCanUsePrecoEscolha(false);
       setRoleLoading(false);
       return;
     }
@@ -41,13 +44,14 @@ export function useAuth(): AuthState {
     (async () => {
       const [{ data: roles }, { data: profile }] = await Promise.all([
         supabase.from("user_roles").select("role").eq("user_id", uid),
-        supabase.from("profiles").select("nome").eq("id", uid).maybeSingle(),
+        supabase.from("profiles").select("nome, can_use_preco_escolha").eq("id", uid).maybeSingle(),
       ]);
       setIsAdmin((roles ?? []).some((r) => r.role === "admin"));
       setNome(profile?.nome ?? "");
+      setCanUsePrecoEscolha(!!profile?.can_use_preco_escolha);
       setRoleLoading(false);
     })();
   }, [session?.user?.id]);
 
-  return { loading, user: session?.user ?? null, session, isAdmin, nome, roleLoading };
+  return { loading, user: session?.user ?? null, session, isAdmin, nome, canUsePrecoEscolha, roleLoading };
 }

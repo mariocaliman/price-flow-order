@@ -7,6 +7,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
   Table,
   TableBody,
   TableCell,
@@ -17,8 +24,10 @@ import {
 import {
   listUsers,
   createUser,
+  updateUser,
   deleteUser,
   setAdmin,
+  setPrecoEscolha,
 } from "@/lib/admin-users.functions";
 
 export const Route = createFileRoute("/admin")({
@@ -31,6 +40,7 @@ interface UserRow {
   nome: string;
   email: string | null;
   created_at: string;
+  can_use_preco_escolha: boolean;
   roles: string[];
 }
 
@@ -39,8 +49,10 @@ function AdminPage() {
   const auth = useAuth();
   const list = useServerFn(listUsers);
   const create = useServerFn(createUser);
+  const update = useServerFn(updateUser);
   const del = useServerFn(deleteUser);
   const promote = useServerFn(setAdmin);
+  const togglePreco = useServerFn(setPrecoEscolha);
 
   const [users, setUsers] = useState<UserRow[]>([]);
   const [loading, setLoading] = useState(false);
@@ -50,7 +62,15 @@ function AdminPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isAdminNew, setIsAdminNew] = useState(false);
+  const [canPrecoNew, setCanPrecoNew] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  // Edit dialog
+  const [editing, setEditing] = useState<UserRow | null>(null);
+  const [editNome, setEditNome] = useState("");
+  const [editEmail, setEditEmail] = useState("");
+  const [editPassword, setEditPassword] = useState("");
+  const [editSubmitting, setEditSubmitting] = useState(false);
 
   useEffect(() => {
     if (auth.loading || auth.roleLoading) return;
@@ -86,11 +106,12 @@ function AdminPage() {
     setSubmitting(true);
     setErr(null);
     try {
-      await create({ data: { nome, email, password, isAdmin: isAdminNew } });
+      await create({ data: { nome, email, password, isAdmin: isAdminNew, canUsePrecoEscolha: canPrecoNew } });
       setNome("");
       setEmail("");
       setPassword("");
       setIsAdminNew(false);
+      setCanPrecoNew(false);
       await refresh();
     } catch (e) {
       setErr(e instanceof Error ? e.message : String(e));
@@ -118,6 +139,45 @@ function AdminPage() {
     }
   }
 
+  async function onTogglePreco(id: string, current: boolean) {
+    try {
+      await togglePreco({ data: { id, enabled: !current } });
+      await refresh();
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : String(e));
+    }
+  }
+
+  function openEdit(u: UserRow) {
+    setEditing(u);
+    setEditNome(u.nome ?? "");
+    setEditEmail(u.email ?? "");
+    setEditPassword("");
+  }
+
+  async function onEditSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!editing) return;
+    setEditSubmitting(true);
+    setErr(null);
+    try {
+      await update({
+        data: {
+          id: editing.id,
+          nome: editNome,
+          email: editEmail,
+          password: editPassword || undefined,
+        },
+      });
+      setEditing(null);
+      await refresh();
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : String(e));
+    } finally {
+      setEditSubmitting(false);
+    }
+  }
+
   if (auth.loading || auth.roleLoading || !auth.isAdmin) {
     return (
       <div className="min-h-screen grid place-items-center text-sm text-muted-foreground">
@@ -129,11 +189,11 @@ function AdminPage() {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-card">
-        <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div>
             <h1 className="font-bold">Administração de Usuários</h1>
             <p className="text-xs text-muted-foreground">
-              Gerencie quem pode acessar o sistema de pedidos
+              Gerencie acesso, papéis e a tabela Preço de Escolha
             </p>
           </div>
           <Link
@@ -145,7 +205,7 @@ function AdminPage() {
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-6 py-6 space-y-6">
+      <main className="max-w-6xl mx-auto px-6 py-6 space-y-6">
         <Card>
           <CardHeader>
             <CardTitle>Novo usuário</CardTitle>
@@ -154,22 +214,11 @@ function AdminPage() {
             <form onSubmit={onCreate} className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="nome">Nome</Label>
-                <Input
-                  id="nome"
-                  value={nome}
-                  onChange={(e) => setNome(e.target.value)}
-                  required
-                />
+                <Input id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
+                <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="password">Senha (mín. 6)</Label>
@@ -182,14 +231,22 @@ function AdminPage() {
                   required
                 />
               </div>
-              <div className="flex items-end gap-3">
+              <div className="flex items-end gap-4 flex-wrap">
                 <label className="flex items-center gap-2 text-sm">
                   <input
                     type="checkbox"
                     checked={isAdminNew}
                     onChange={(e) => setIsAdminNew(e.target.checked)}
                   />
-                  Tornar administrador
+                  Administrador
+                </label>
+                <label className="flex items-center gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={canPrecoNew}
+                    onChange={(e) => setCanPrecoNew(e.target.checked)}
+                  />
+                  Acesso a Preço de Escolha
                 </label>
               </div>
               <div className="sm:col-span-2 flex justify-end">
@@ -221,6 +278,7 @@ function AdminPage() {
                     <TableHead>Nome</TableHead>
                     <TableHead>Email</TableHead>
                     <TableHead>Papel</TableHead>
+                    <TableHead>Preço de Escolha</TableHead>
                     <TableHead className="text-right">Ações</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -231,7 +289,8 @@ function AdminPage() {
                     return (
                       <TableRow key={u.id}>
                         <TableCell className="font-medium">
-                          {u.nome || "—"} {isSelf && <span className="text-xs text-muted-foreground">(você)</span>}
+                          {u.nome || "—"}{" "}
+                          {isSelf && <span className="text-xs text-muted-foreground">(você)</span>}
                         </TableCell>
                         <TableCell>{u.email}</TableCell>
                         <TableCell>
@@ -246,7 +305,20 @@ function AdminPage() {
                             {isUserAdmin ? "admin" : "user"}
                           </span>
                         </TableCell>
+                        <TableCell>
+                          <label className="inline-flex items-center gap-2 text-xs cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={!!u.can_use_preco_escolha}
+                              onChange={() => onTogglePreco(u.id, !!u.can_use_preco_escolha)}
+                            />
+                            {u.can_use_preco_escolha ? "Liberado" : "Bloqueado"}
+                          </label>
+                        </TableCell>
                         <TableCell className="text-right space-x-2">
+                          <Button type="button" variant="outline" size="sm" onClick={() => openEdit(u)}>
+                            Editar
+                          </Button>
                           <Button
                             type="button"
                             variant="outline"
@@ -275,6 +347,48 @@ function AdminPage() {
           </CardContent>
         </Card>
       </main>
+
+      <Dialog open={!!editing} onOpenChange={(o) => !o && setEditing(null)}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Editar usuário</DialogTitle>
+          </DialogHeader>
+          <form onSubmit={onEditSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="edit-nome">Nome</Label>
+              <Input id="edit-nome" value={editNome} onChange={(e) => setEditNome(e.target.value)} required />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="edit-email">Email</Label>
+              <Input
+                id="edit-email"
+                type="email"
+                value={editEmail}
+                onChange={(e) => setEditEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="edit-password">Nova senha (opcional)</Label>
+              <Input
+                id="edit-password"
+                type="text"
+                placeholder="Deixe em branco para manter"
+                value={editPassword}
+                onChange={(e) => setEditPassword(e.target.value)}
+              />
+            </div>
+            <DialogFooter>
+              <Button type="button" variant="outline" onClick={() => setEditing(null)}>
+                Cancelar
+              </Button>
+              <Button type="submit" disabled={editSubmitting}>
+                {editSubmitting ? "Salvando..." : "Salvar alterações"}
+              </Button>
+            </DialogFooter>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

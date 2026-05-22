@@ -45,6 +45,17 @@ function PedidosPage() {
   const [tabela, setTabela] = useState<PriceTable>("RQE Especialista");
   const [roundMode, setRoundMode] = useState<"auto" | "suggest" | "off">("auto");
 
+  const allowPrecoEscolha = auth.isAdmin || auth.canUsePrecoEscolha;
+  const availableTables = useMemo(
+    () => priceTables.filter((t) => allowPrecoEscolha || t !== "Preço de Escolha"),
+    [allowPrecoEscolha],
+  );
+  useEffect(() => {
+    if (!allowPrecoEscolha && tabela === "Preço de Escolha") {
+      setTabela("RQE Especialista");
+    }
+  }, [allowPrecoEscolha, tabela]);
+
   // Catálogo
   const [search, setSearch] = useState("");
   const [catFilter, setCatFilter] = useState<string>("");
@@ -444,7 +455,7 @@ function PedidosPage() {
                     onChange={(e) => setTabela(e.target.value as PriceTable)}
                     className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm font-medium"
                   >
-                    {priceTables.map((t) => (
+                    {availableTables.map((t) => (
                       <option key={t} value={t}>{t}</option>
                     ))}
                   </select>
