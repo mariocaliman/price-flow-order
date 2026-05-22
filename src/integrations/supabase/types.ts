@@ -50,6 +50,60 @@ export type Database = {
         }
         Relationships: []
       }
+      products: {
+        Row: {
+          apresentacao: string
+          categoria: string
+          classificacao: string
+          codigo: string
+          created_at: string
+          descricao: string
+          divisao: string
+          impostos: Json
+          linha: string
+          ncm: string
+          precos: Json
+          principio_ativo: string
+          qtd_por_embalagem: number
+          updated_at: string
+          validade: string
+        }
+        Insert: {
+          apresentacao?: string
+          categoria?: string
+          classificacao?: string
+          codigo: string
+          created_at?: string
+          descricao?: string
+          divisao?: string
+          impostos?: Json
+          linha?: string
+          ncm?: string
+          precos?: Json
+          principio_ativo?: string
+          qtd_por_embalagem?: number
+          updated_at?: string
+          validade?: string
+        }
+        Update: {
+          apresentacao?: string
+          categoria?: string
+          classificacao?: string
+          codigo?: string
+          created_at?: string
+          descricao?: string
+          divisao?: string
+          impostos?: Json
+          linha?: string
+          ncm?: string
+          precos?: Json
+          principio_ativo?: string
+          qtd_por_embalagem?: number
+          updated_at?: string
+          validade?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           can_use_preco_escolha: boolean
