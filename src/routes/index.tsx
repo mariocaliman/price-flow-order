@@ -587,6 +587,7 @@ function PedidosPage() {
               <Field label="Vendedor" value={vendedor} onChange={setVendedor} />
               <Field label="Prazo de pagamento" value={prazo} onChange={setPrazo} />
               <Field label="Data do pedido" type="date" value={data} onChange={setData} />
+              <Field label="Vencimento da proposta" type="date" value={vencimento} onChange={setVencimento} />
               <div>
                 <label className="text-xs text-muted-foreground">Modo de arredondamento</label>
                 <select
