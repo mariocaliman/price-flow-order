@@ -65,14 +65,15 @@ export function brl(n: number): string {
 
 /** Calculate per-item tax breakdown given unit price, quantity and product taxes. */
 export function calcItemTaxes(unitPrice: number, qty: number, p: Product) {
-  const base = unitPrice * qty;
-  const ipi = base * (p.impostos.ipi || 0);
-  const icms = base * (p.impostos.icms || 0);
-  const pis = base * (p.impostos.pis || 0);
-  const cofins = base * (p.impostos.cofins || 0);
+  const base = (unitPrice || 0) * (qty || 0);
+  const imp = (p?.impostos ?? {}) as Partial<Impostos>;
+  const ipi = base * (imp.ipi || 0);
+  const icms = base * (imp.icms || 0);
+  const pis = base * (imp.pis || 0);
+  const cofins = base * (imp.cofins || 0);
   // ICMS-ST (Substituição Tributária) base inclui IPI e MVA (IVA-ST)
-  const stBase = (base + ipi) * (1 + (p.impostos.ivaSt || 0));
-  const stTotal = stBase * (p.impostos.icms || 0);
+  const stBase = (base + ipi) * (1 + (imp.ivaSt || 0));
+  const stTotal = stBase * (imp.icms || 0);
   const st = Math.max(0, stTotal - icms);
   return { base, ipi, icms, pis, cofins, st, stBase };
 }
