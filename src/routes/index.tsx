@@ -27,6 +27,8 @@ interface OrderItem {
 function PedidosPage() {
   const navigate = useNavigate();
   const auth = useAuth();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
   useEffect(() => {
     if (!auth.loading && !auth.user) navigate({ to: "/login" });
   }, [auth.loading, auth.user, navigate]);
