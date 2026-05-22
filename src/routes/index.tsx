@@ -195,7 +195,7 @@ function PedidosPage() {
       return;
     }
     const payload = {
-      cliente, codCliente, prazo, data, vendedor, obs, tabela, roundMode, items, totals,
+      cliente, codCliente, prazo, data, vencimento, vendedor, obs, tabela, roundMode, items, totals,
       savedAt: new Date().toISOString(),
     };
     setSaving(true);
@@ -218,15 +218,86 @@ function PedidosPage() {
     }
   }
 
-  function loadLastPedido() {
-    const keys = Object.keys(localStorage).filter((k) => k.startsWith("pedido_")).sort();
-    if (!keys.length) return alert("Nenhum pedido salvo.");
-    const raw = localStorage.getItem(keys[keys.length - 1]);
-    if (!raw) return;
-    const p = JSON.parse(raw);
-    setCliente(p.cliente); setCodCliente(p.codCliente); setPrazo(p.prazo);
-    setData(p.data); setVendedor(p.vendedor); setObs(p.obs);
-    setTabela(p.tabela); setRoundMode(p.roundMode); setItems(p.items);
+  // ===== Histórico =====
+  interface PedidoRow {
+    id: string;
+    nome: string;
+    data_pedido: string;
+    created_at: string;
+    user_id: string;
+    payload: {
+      cliente?: string;
+      codCliente?: string;
+      vendedor?: string;
+      vencimento?: string;
+      prazo?: string;
+      data?: string;
+      obs?: string;
+      tabela?: PriceTable;
+      roundMode?: "auto" | "suggest" | "off";
+      items?: OrderItem[];
+    };
+    profile_nome?: string;
+  }
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [pedidos, setPedidos] = useState<PedidoRow[]>([]);
+  const [histLoading, setHistLoading] = useState(false);
+  const [fNome, setFNome] = useState("");
+  const [fData, setFData] = useState("");
+  const [fCliente, setFCliente] = useState("");
+  const [fCodigo, setFCodigo] = useState("");
+  const [fVendedor, setFVendedor] = useState("");
+
+  async function openHistory() {
+    setHistoryOpen(true);
+    setHistLoading(true);
+    try {
+      const { data: rows, error } = await supabase
+        .from("pedidos")
+        .select("id, nome, data_pedido, created_at, user_id, payload")
+        .order("created_at", { ascending: false })
+        .limit(500);
+      if (error) throw error;
+      // RLS retorna apenas os do usuário; admin recebe todos.
+      let mapped = (rows ?? []) as unknown as PedidoRow[];
+      if (auth.isAdmin && mapped.length) {
+        const ids = Array.from(new Set(mapped.map((r) => r.user_id)));
+        const { data: profs } = await supabase.from("profiles").select("id, nome").in("id", ids);
+        const map = new Map((profs ?? []).map((p: { id: string; nome: string }) => [p.id, p.nome]));
+        mapped = mapped.map((r) => ({ ...r, profile_nome: map.get(r.user_id) ?? "" }));
+      }
+      setPedidos(mapped);
+    } catch (err) {
+      alert(err instanceof Error ? err.message : String(err));
+    } finally {
+      setHistLoading(false);
+    }
+  }
+
+  const filteredPedidos = useMemo(() => {
+    return pedidos.filter((p) => {
+      if (fNome && !p.nome.toLowerCase().includes(fNome.toLowerCase())) return false;
+      if (fData && p.data_pedido !== fData) return false;
+      if (fCliente && !(p.payload?.codCliente ?? "").toLowerCase().includes(fCliente.toLowerCase())) return false;
+      if (fCodigo && !p.id.toLowerCase().includes(fCodigo.toLowerCase())) return false;
+      if (fVendedor && !(p.payload?.vendedor ?? "").toLowerCase().includes(fVendedor.toLowerCase())) return false;
+      return true;
+    });
+  }, [pedidos, fNome, fData, fCliente, fCodigo, fVendedor]);
+
+  function loadPedido(p: PedidoRow) {
+    const pl = p.payload ?? {};
+    setCliente(pl.cliente ?? p.nome ?? "");
+    setCodCliente(pl.codCliente ?? "");
+    setPrazo(pl.prazo ?? "28 DDL");
+    setData(pl.data ?? p.data_pedido);
+    setVencimento(pl.vencimento ?? "");
+    setVendedor(pl.vendedor ?? "");
+    setObs(pl.obs ?? "");
+    if (pl.tabela) setTabela(pl.tabela);
+    if (pl.roundMode) setRoundMode(pl.roundMode);
+    setItems((pl.items ?? []) as OrderItem[]);
+    setHistoryOpen(false);
   }
 
   function exportPDF() {
