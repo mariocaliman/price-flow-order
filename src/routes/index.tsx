@@ -449,7 +449,10 @@ function PedidosPage() {
 
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
+    doc.setTextColor(...RED);
     doc.text(`VALOR TOTAL DO PEDIDO: ${brl(totals.valorTotalNota)}`, W - 10, endY, { align: "right" });
+    doc.setTextColor(0);
+
 
     if (obs) {
       doc.setFontSize(8);
