@@ -32,6 +32,7 @@ export function useAuth(): AuthState {
   }, []);
 
   useEffect(() => {
+    if (loading) return;
     const uid = session?.user?.id;
     if (!uid) {
       setIsAdmin(false);
@@ -51,7 +52,7 @@ export function useAuth(): AuthState {
       setCanUsePrecoEscolha(!!profile?.can_use_preco_escolha);
       setRoleLoading(false);
     })();
-  }, [session?.user?.id]);
+  }, [loading, session?.user?.id]);
 
   return { loading, user: session?.user ?? null, session, isAdmin, nome, canUsePrecoEscolha, roleLoading };
 }
