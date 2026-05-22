@@ -4,15 +4,14 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
 import {
-  products as ALL_PRODUCTS,
   priceTables,
-  categorias,
   roundToBox,
   brl,
   calcItemTaxes,
   type PriceTable,
   type Product,
 } from "@/lib/products";
+import { useProducts } from "@/hooks/use-products";
 import { buildPedidoPdf, pdfFilename, pedidoTotal, type OrderItem } from "@/lib/pdf";
 import { enqueuePedido } from "@/lib/offline-queue";
 import { useOfflineStatus } from "@/hooks/use-offline-status";
