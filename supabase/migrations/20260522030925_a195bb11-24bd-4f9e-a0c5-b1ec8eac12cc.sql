@@ -1,0 +1,1 @@
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS can_use_preco_escolha boolean NOT NULL DEFAULT false;

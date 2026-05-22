@@ -46,18 +46,21 @@ export type Database = {
       }
       profiles: {
         Row: {
+          can_use_preco_escolha: boolean
           created_at: string
           email: string | null
           id: string
           nome: string
         }
         Insert: {
+          can_use_preco_escolha?: boolean
           created_at?: string
           email?: string | null
           id: string
           nome?: string
         }
         Update: {
+          can_use_preco_escolha?: boolean
           created_at?: string
           email?: string | null
           id?: string
