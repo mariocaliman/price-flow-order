@@ -444,9 +444,7 @@ function PedidosPage() {
       <header className="border-b border-border bg-card sticky top-0 z-30">
         <div className="max-w-[1500px] mx-auto px-3 sm:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 shrink-0 rounded-md bg-primary text-primary-foreground grid place-items-center font-bold">
-              RQ
-            </div>
+            <img src={logo} alt="Rioquímica" className="w-10 h-10 shrink-0 rounded-md object-contain" />
             <div className="min-w-0">
               <h1 className="font-bold leading-tight text-sm sm:text-base truncate" suppressHydrationWarning>
                 {(() => {
