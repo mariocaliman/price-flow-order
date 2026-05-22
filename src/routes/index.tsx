@@ -38,6 +38,11 @@ function PedidosPage() {
   const [codCliente, setCodCliente] = useState("");
   const [prazo, setPrazo] = useState("28 DDL");
   const [data, setData] = useState(() => new Date().toISOString().slice(0, 10));
+  const [vencimento, setVencimento] = useState(() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 15);
+    return d.toISOString().slice(0, 10);
+  });
   const [vendedor, setVendedor] = useState("");
   const [obs, setObs] = useState("");
 
