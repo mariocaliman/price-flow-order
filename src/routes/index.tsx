@@ -397,7 +397,7 @@ function PedidosPage() {
         ];
       }),
       styles: { fontSize: 7.5, cellPadding: 1.2, lineColor: [180, 180, 180], lineWidth: 0.1 },
-      headStyles: { fillColor: [230, 230, 230], textColor: 0, fontStyle: "bold", lineColor: [120, 120, 120] },
+      headStyles: { fillColor: RED, textColor: 255, fontStyle: "bold", lineColor: RED },
       columnStyles: {
         0: { cellWidth: 10, halign: "center" },
         1: { cellWidth: 25 },
