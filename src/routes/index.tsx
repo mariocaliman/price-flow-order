@@ -357,10 +357,15 @@ function PedidosPage() {
             </div>
             <div className="min-w-0">
               <h1 className="font-bold leading-tight text-sm sm:text-base truncate">
-                Sistema de Pedidos Comerciais
+                {(() => {
+                  const h = new Date().getHours();
+                  const saud = h < 12 ? "Bom dia" : h < 18 ? "Boa tarde" : "Boa noite";
+                  const nome = (auth.nome || auth.user?.email?.split("@")[0] || "").split(" ")[0];
+                  return nome ? `${saud}, ${nome}!` : `${saud}!`;
+                })()}
               </h1>
               <p className="text-[11px] sm:text-xs text-muted-foreground truncate">
-                Tabela Hospitalar · {ALL_PRODUCTS.length} produtos
+                Sistema de Pedidos · {ALL_PRODUCTS.length} produtos
               </p>
             </div>
           </div>
