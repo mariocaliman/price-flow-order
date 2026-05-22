@@ -440,7 +440,7 @@ function PedidosPage() {
         totals.valorTotalNota.toLocaleString("pt-BR", { minimumFractionDigits: 2 }),
       ]],
       styles: { fontSize: 7.5, cellPadding: 1.2, halign: "right", lineColor: [120, 120, 120], lineWidth: 0.1 },
-      headStyles: { fillColor: [230, 230, 230], textColor: 0, fontStyle: "bold", halign: "center" },
+      headStyles: { fillColor: RED, textColor: 255, fontStyle: "bold", halign: "center" },
       margin: { left: 10, right: 10 },
     });
 
