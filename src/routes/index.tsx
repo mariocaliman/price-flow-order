@@ -775,15 +775,15 @@ function PedidosPage() {
               {sendError && (
                 <div className="text-sm text-destructive border border-destructive/40 bg-destructive/10 rounded-md p-3">{sendError}</div>
               )}
-              {sendUrl && !sendBusy && (
+              {sendFile && !sendBusy && (
                 <>
                   <p className="text-sm">
                     Pedido <strong>#{String(currentNumero ?? "").padStart(6, "0")}</strong> pronto para envio.
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    O link do PDF é válido por 30 dias. Escolha o canal:
+                    No celular o PDF é anexado automaticamente. No computador o PDF é baixado e basta arrastá-lo para a conversa/email.
                   </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     <button onClick={onWhatsApp}
                       className="px-3 py-3 rounded-md bg-[#25D366] text-white font-medium text-sm hover:opacity-90">
                       💬 WhatsApp
@@ -791,10 +791,6 @@ function PedidosPage() {
                     <button onClick={onEmail}
                       className="px-3 py-3 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:opacity-90">
                       ✉ Email
-                    </button>
-                    <button onClick={onCopyLink}
-                      className="px-3 py-3 rounded-md border border-border text-sm hover:bg-muted">
-                      🔗 Copiar link
                     </button>
                   </div>
                   {!clienteTelefone && (
