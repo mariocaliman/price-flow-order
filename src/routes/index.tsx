@@ -768,6 +768,114 @@ function PedidosPage() {
           </div>
         </section>
       </main>
+
+      {historyOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/60 flex items-start sm:items-center justify-center p-4 overflow-y-auto"
+          onClick={() => setHistoryOpen(false)}
+        >
+          <div
+            className="bg-card border border-border rounded-lg shadow-xl w-full max-w-5xl max-h-[90vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="px-5 py-3 border-b border-border flex items-center justify-between">
+              <div>
+                <h2 className="font-semibold">Histórico de pedidos</h2>
+                <p className="text-xs text-muted-foreground">
+                  {auth.isAdmin ? "Todos os pedidos (admin)" : "Seus pedidos"}
+                </p>
+              </div>
+              <button
+                onClick={() => setHistoryOpen(false)}
+                className="text-sm px-3 py-1.5 rounded-md border border-border hover:bg-muted"
+              >
+                Fechar
+              </button>
+            </div>
+
+            <div className="p-4 border-b border-border grid grid-cols-2 md:grid-cols-5 gap-2">
+              <input
+                value={fNome}
+                onChange={(e) => setFNome(e.target.value)}
+                placeholder="Nome"
+                className="px-3 py-2 rounded-md bg-background border border-input text-sm"
+              />
+              <input
+                type="date"
+                value={fData}
+                onChange={(e) => setFData(e.target.value)}
+                className="px-3 py-2 rounded-md bg-background border border-input text-sm"
+              />
+              <input
+                value={fCliente}
+                onChange={(e) => setFCliente(e.target.value)}
+                placeholder="Cód. cliente"
+                className="px-3 py-2 rounded-md bg-background border border-input text-sm"
+              />
+              <input
+                value={fCodigo}
+                onChange={(e) => setFCodigo(e.target.value)}
+                placeholder="Código do pedido"
+                className="px-3 py-2 rounded-md bg-background border border-input text-sm"
+              />
+              <input
+                value={fVendedor}
+                onChange={(e) => setFVendedor(e.target.value)}
+                placeholder="Vendedor"
+                className="px-3 py-2 rounded-md bg-background border border-input text-sm"
+              />
+            </div>
+
+            <div className="flex-1 overflow-auto">
+              {histLoading ? (
+                <p className="p-6 text-sm text-muted-foreground text-center">Carregando...</p>
+              ) : filteredPedidos.length === 0 ? (
+                <p className="p-6 text-sm text-muted-foreground text-center">Nenhum pedido encontrado.</p>
+              ) : (
+                <table className="w-full text-sm">
+                  <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground sticky top-0">
+                    <tr>
+                      <th className="text-left px-3 py-2">Código</th>
+                      <th className="text-left px-3 py-2">Nome</th>
+                      <th className="text-left px-3 py-2">Cód. cliente</th>
+                      <th className="text-left px-3 py-2">Vendedor</th>
+                      <th className="text-left px-3 py-2">Data</th>
+                      {auth.isAdmin && <th className="text-left px-3 py-2">Usuário</th>}
+                      <th />
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border">
+                    {filteredPedidos.map((p) => (
+                      <tr key={p.id} className="hover:bg-muted/30">
+                        <td className="px-3 py-2 font-mono text-xs">#{p.id.slice(0, 8)}</td>
+                        <td className="px-3 py-2">{p.nome}</td>
+                        <td className="px-3 py-2">{p.payload?.codCliente || "—"}</td>
+                        <td className="px-3 py-2">{p.payload?.vendedor || "—"}</td>
+                        <td className="px-3 py-2">
+                          {new Date(p.data_pedido).toLocaleDateString("pt-BR")}
+                        </td>
+                        {auth.isAdmin && (
+                          <td className="px-3 py-2 text-xs text-muted-foreground">
+                            {p.profile_nome || p.user_id.slice(0, 8)}
+                          </td>
+                        )}
+                        <td className="px-3 py-2 text-right">
+                          <button
+                            onClick={() => loadPedido(p)}
+                            className="text-xs px-2 py-1 rounded border border-border hover:bg-muted"
+                          >
+                            Carregar
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
