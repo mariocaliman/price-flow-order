@@ -14,6 +14,8 @@ import {
   type Product,
 } from "@/lib/products";
 import { buildPedidoPdf, pdfFilename, pedidoTotal, type OrderItem } from "@/lib/pdf";
+import { enqueuePedido } from "@/lib/offline-queue";
+import { useOfflineStatus } from "@/hooks/use-offline-status";
 
 export const Route = createFileRoute("/")({ component: PedidosPage });
 
