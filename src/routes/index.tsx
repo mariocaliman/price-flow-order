@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import logo from "@/assets/rioquimica-logo.jpeg";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
