@@ -475,8 +475,8 @@ function PedidosPage() {
             <span className="hidden xl:inline text-xs text-muted-foreground px-2 truncate max-w-[160px]">
               {auth.nome || auth.user?.email}
             </span>
-            <button onClick={loadLastPedido} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
-              Carregar último
+            <button onClick={openHistory} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
+              Histórico
             </button>
             <button onClick={savePedido} disabled={saving} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
               {saving ? "Salvando..." : "Salvar"}
