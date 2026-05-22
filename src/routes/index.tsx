@@ -455,7 +455,7 @@ function PedidosPage() {
                     onChange={(e) => setTabela(e.target.value as PriceTable)}
                     className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm font-medium"
                   >
-                    {priceTables.map((t) => (
+                    {availableTables.map((t) => (
                       <option key={t} value={t}>{t}</option>
                     ))}
                   </select>
