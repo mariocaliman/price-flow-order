@@ -462,10 +462,6 @@ function PedidosPage() {
               className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
               Gerar PDF
             </button>
-            <button onClick={openSendModal} disabled={!items.length}
-              className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition disabled:opacity-50">
-              Enviar
-            </button>
             <button
               onClick={async () => { await supabase.auth.signOut(); navigate({ to: "/login" }); }}
               className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
