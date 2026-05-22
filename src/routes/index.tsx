@@ -38,6 +38,11 @@ function PedidosPage() {
   const [codCliente, setCodCliente] = useState("");
   const [prazo, setPrazo] = useState("28 DDL");
   const [data, setData] = useState(() => new Date().toISOString().slice(0, 10));
+  const [vencimento, setVencimento] = useState(() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 15);
+    return d.toISOString().slice(0, 10);
+  });
   const [vendedor, setVendedor] = useState("");
   const [obs, setObs] = useState("");
 
@@ -190,7 +195,7 @@ function PedidosPage() {
       return;
     }
     const payload = {
-      cliente, codCliente, prazo, data, vendedor, obs, tabela, roundMode, items, totals,
+      cliente, codCliente, prazo, data, vencimento, vendedor, obs, tabela, roundMode, items, totals,
       savedAt: new Date().toISOString(),
     };
     setSaving(true);
@@ -213,15 +218,86 @@ function PedidosPage() {
     }
   }
 
-  function loadLastPedido() {
-    const keys = Object.keys(localStorage).filter((k) => k.startsWith("pedido_")).sort();
-    if (!keys.length) return alert("Nenhum pedido salvo.");
-    const raw = localStorage.getItem(keys[keys.length - 1]);
-    if (!raw) return;
-    const p = JSON.parse(raw);
-    setCliente(p.cliente); setCodCliente(p.codCliente); setPrazo(p.prazo);
-    setData(p.data); setVendedor(p.vendedor); setObs(p.obs);
-    setTabela(p.tabela); setRoundMode(p.roundMode); setItems(p.items);
+  // ===== Histórico =====
+  interface PedidoRow {
+    id: string;
+    nome: string;
+    data_pedido: string;
+    created_at: string;
+    user_id: string;
+    payload: {
+      cliente?: string;
+      codCliente?: string;
+      vendedor?: string;
+      vencimento?: string;
+      prazo?: string;
+      data?: string;
+      obs?: string;
+      tabela?: PriceTable;
+      roundMode?: "auto" | "suggest" | "off";
+      items?: OrderItem[];
+    };
+    profile_nome?: string;
+  }
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [pedidos, setPedidos] = useState<PedidoRow[]>([]);
+  const [histLoading, setHistLoading] = useState(false);
+  const [fNome, setFNome] = useState("");
+  const [fData, setFData] = useState("");
+  const [fCliente, setFCliente] = useState("");
+  const [fCodigo, setFCodigo] = useState("");
+  const [fVendedor, setFVendedor] = useState("");
+
+  async function openHistory() {
+    setHistoryOpen(true);
+    setHistLoading(true);
+    try {
+      const { data: rows, error } = await supabase
+        .from("pedidos")
+        .select("id, nome, data_pedido, created_at, user_id, payload")
+        .order("created_at", { ascending: false })
+        .limit(500);
+      if (error) throw error;
+      // RLS retorna apenas os do usuário; admin recebe todos.
+      let mapped = (rows ?? []) as unknown as PedidoRow[];
+      if (auth.isAdmin && mapped.length) {
+        const ids = Array.from(new Set(mapped.map((r) => r.user_id)));
+        const { data: profs } = await supabase.from("profiles").select("id, nome").in("id", ids);
+        const map = new Map((profs ?? []).map((p: { id: string; nome: string }) => [p.id, p.nome]));
+        mapped = mapped.map((r) => ({ ...r, profile_nome: map.get(r.user_id) ?? "" }));
+      }
+      setPedidos(mapped);
+    } catch (err) {
+      alert(err instanceof Error ? err.message : String(err));
+    } finally {
+      setHistLoading(false);
+    }
+  }
+
+  const filteredPedidos = useMemo(() => {
+    return pedidos.filter((p) => {
+      if (fNome && !p.nome.toLowerCase().includes(fNome.toLowerCase())) return false;
+      if (fData && p.data_pedido !== fData) return false;
+      if (fCliente && !(p.payload?.codCliente ?? "").toLowerCase().includes(fCliente.toLowerCase())) return false;
+      if (fCodigo && !p.id.toLowerCase().includes(fCodigo.toLowerCase())) return false;
+      if (fVendedor && !(p.payload?.vendedor ?? "").toLowerCase().includes(fVendedor.toLowerCase())) return false;
+      return true;
+    });
+  }, [pedidos, fNome, fData, fCliente, fCodigo, fVendedor]);
+
+  function loadPedido(p: PedidoRow) {
+    const pl = p.payload ?? {};
+    setCliente(pl.cliente ?? p.nome ?? "");
+    setCodCliente(pl.codCliente ?? "");
+    setPrazo(pl.prazo ?? "28 DDL");
+    setData(pl.data ?? p.data_pedido);
+    setVencimento(pl.vencimento ?? "");
+    setVendedor(pl.vendedor ?? "");
+    setObs(pl.obs ?? "");
+    if (pl.tabela) setTabela(pl.tabela);
+    if (pl.roundMode) setRoundMode(pl.roundMode);
+    setItems((pl.items ?? []) as OrderItem[]);
+    setHistoryOpen(false);
   }
 
   function exportPDF() {
@@ -263,6 +339,9 @@ function PedidosPage() {
     doc.text(`VENDEDOR: ${vendedor || "-"}`, 10, 40);
     doc.text(`COND. PGTO: ${prazo || "-"}`, 10, 44);
     doc.text(`DATA PEDIDO: ${new Date(data).toLocaleDateString("pt-BR")}`, W / 2 + 10, 32);
+    if (vencimento) {
+      doc.text(`VENCIMENTO PROPOSTA: ${new Date(vencimento).toLocaleDateString("pt-BR")}`, W / 2 + 70, 32);
+    }
     doc.text(`Nº ITENS: ${items.length}`, W / 2 + 10, 36);
     doc.text(`Nº VOLUMES: ${totals.totalCaixas}`, W / 2 + 10, 40);
     doc.text(`UNIDADES: ${totals.totalUnidades}`, W / 2 + 10, 44);
@@ -396,8 +475,8 @@ function PedidosPage() {
             <span className="hidden xl:inline text-xs text-muted-foreground px-2 truncate max-w-[160px]">
               {auth.nome || auth.user?.email}
             </span>
-            <button onClick={loadLastPedido} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
-              Carregar último
+            <button onClick={openHistory} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
+              Histórico
             </button>
             <button onClick={savePedido} disabled={saving} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
               {saving ? "Salvando..." : "Salvar"}
@@ -508,6 +587,7 @@ function PedidosPage() {
               <Field label="Vendedor" value={vendedor} onChange={setVendedor} />
               <Field label="Prazo de pagamento" value={prazo} onChange={setPrazo} />
               <Field label="Data do pedido" type="date" value={data} onChange={setData} />
+              <Field label="Vencimento da proposta" type="date" value={vencimento} onChange={setVencimento} />
               <div>
                 <label className="text-xs text-muted-foreground">Modo de arredondamento</label>
                 <select
@@ -688,6 +768,114 @@ function PedidosPage() {
           </div>
         </section>
       </main>
+
+      {historyOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/60 flex items-start sm:items-center justify-center p-4 overflow-y-auto"
+          onClick={() => setHistoryOpen(false)}
+        >
+          <div
+            className="bg-card border border-border rounded-lg shadow-xl w-full max-w-5xl max-h-[90vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="px-5 py-3 border-b border-border flex items-center justify-between">
+              <div>
+                <h2 className="font-semibold">Histórico de pedidos</h2>
+                <p className="text-xs text-muted-foreground">
+                  {auth.isAdmin ? "Todos os pedidos (admin)" : "Seus pedidos"}
+                </p>
+              </div>
+              <button
+                onClick={() => setHistoryOpen(false)}
+                className="text-sm px-3 py-1.5 rounded-md border border-border hover:bg-muted"
+              >
+                Fechar
+              </button>
+            </div>
+
+            <div className="p-4 border-b border-border grid grid-cols-2 md:grid-cols-5 gap-2">
+              <input
+                value={fNome}
+                onChange={(e) => setFNome(e.target.value)}
+                placeholder="Nome"
+                className="px-3 py-2 rounded-md bg-background border border-input text-sm"
+              />
+              <input
+                type="date"
+                value={fData}
+                onChange={(e) => setFData(e.target.value)}
+                className="px-3 py-2 rounded-md bg-background border border-input text-sm"
+              />
+              <input
+                value={fCliente}
+                onChange={(e) => setFCliente(e.target.value)}
+                placeholder="Cód. cliente"
+                className="px-3 py-2 rounded-md bg-background border border-input text-sm"
+              />
+              <input
+                value={fCodigo}
+                onChange={(e) => setFCodigo(e.target.value)}
+                placeholder="Código do pedido"
+                className="px-3 py-2 rounded-md bg-background border border-input text-sm"
+              />
+              <input
+                value={fVendedor}
+                onChange={(e) => setFVendedor(e.target.value)}
+                placeholder="Vendedor"
+                className="px-3 py-2 rounded-md bg-background border border-input text-sm"
+              />
+            </div>
+
+            <div className="flex-1 overflow-auto">
+              {histLoading ? (
+                <p className="p-6 text-sm text-muted-foreground text-center">Carregando...</p>
+              ) : filteredPedidos.length === 0 ? (
+                <p className="p-6 text-sm text-muted-foreground text-center">Nenhum pedido encontrado.</p>
+              ) : (
+                <table className="w-full text-sm">
+                  <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground sticky top-0">
+                    <tr>
+                      <th className="text-left px-3 py-2">Código</th>
+                      <th className="text-left px-3 py-2">Nome</th>
+                      <th className="text-left px-3 py-2">Cód. cliente</th>
+                      <th className="text-left px-3 py-2">Vendedor</th>
+                      <th className="text-left px-3 py-2">Data</th>
+                      {auth.isAdmin && <th className="text-left px-3 py-2">Usuário</th>}
+                      <th />
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border">
+                    {filteredPedidos.map((p) => (
+                      <tr key={p.id} className="hover:bg-muted/30">
+                        <td className="px-3 py-2 font-mono text-xs">#{p.id.slice(0, 8)}</td>
+                        <td className="px-3 py-2">{p.nome}</td>
+                        <td className="px-3 py-2">{p.payload?.codCliente || "—"}</td>
+                        <td className="px-3 py-2">{p.payload?.vendedor || "—"}</td>
+                        <td className="px-3 py-2">
+                          {new Date(p.data_pedido).toLocaleDateString("pt-BR")}
+                        </td>
+                        {auth.isAdmin && (
+                          <td className="px-3 py-2 text-xs text-muted-foreground">
+                            {p.profile_nome || p.user_id.slice(0, 8)}
+                          </td>
+                        )}
+                        <td className="px-3 py-2 text-right">
+                          <button
+                            onClick={() => loadPedido(p)}
+                            className="text-xs px-2 py-1 rounded border border-border hover:bg-muted"
+                          >
+                            Carregar
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
