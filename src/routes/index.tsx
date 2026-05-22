@@ -14,6 +14,8 @@ import {
   type Product,
 } from "@/lib/products";
 import { buildPedidoPdf, pdfFilename, pedidoTotal, type OrderItem } from "@/lib/pdf";
+import { enqueuePedido } from "@/lib/offline-queue";
+import { useOfflineStatus } from "@/hooks/use-offline-status";
 
 export const Route = createFileRoute("/")({ component: PedidosPage });
 
@@ -174,6 +176,8 @@ function PedidosPage() {
 
   const [saving, setSaving] = useState(false);
 
+  const offline = useOfflineStatus();
+
   async function savePedido(): Promise<{ id: string; numero: number | null } | null> {
     if (!auth.user) { alert("Faça login para salvar."); return null; }
     if (!cliente.trim()) { alert("Informe o nome do cliente antes de salvar."); return null; }
@@ -183,6 +187,20 @@ function PedidosPage() {
       cliente, codCliente, clienteTelefone, prazo, data, vencimento, vendedor, obs, tabela, roundMode, items, totals,
       savedAt: new Date().toISOString(),
     };
+
+    // Offline → enfileira e segue a vida
+    if (!navigator.onLine) {
+      enqueuePedido({
+        user_id: auth.user.id,
+        nome: cliente.trim(),
+        data_pedido: data,
+        total: totals.valorTotalNota,
+        payload: payload as Record<string, unknown>,
+      });
+      alert(`Sem conexão — pedido "${cliente.trim()}" salvo localmente e será enviado automaticamente quando a internet voltar.`);
+      return null;
+    }
+
     setSaving(true);
     try {
       const { data: row, error } = await supabase.from("pedidos")
@@ -203,6 +221,18 @@ function PedidosPage() {
       return { id: row!.id, numero: row?.numero ?? null };
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
+      // Falha de rede (mesmo com navigator.onLine true) → enfileira
+      if (/network|fetch|failed to fetch/i.test(msg)) {
+        enqueuePedido({
+          user_id: auth.user.id,
+          nome: cliente.trim(),
+          data_pedido: data,
+          total: totals.valorTotalNota,
+          payload: payload as Record<string, unknown>,
+        });
+        alert(`Falha de rede — pedido "${cliente.trim()}" salvo localmente para reenvio automático.`);
+        return null;
+      }
       alert(`Erro ao salvar pedido: ${msg}`);
       return null;
     } finally {
@@ -210,7 +240,6 @@ function PedidosPage() {
     }
   }
 
-  // ===== Histórico =====
   interface PedidoRow {
     id: string;
     nome: string;
@@ -371,6 +400,26 @@ function PedidosPage() {
             <span className="hidden xl:inline text-xs text-muted-foreground px-2 truncate max-w-[160px]">
               {auth.nome || auth.user?.email}
             </span>
+            {(!offline.online || offline.pending > 0) && (
+              <button
+                onClick={async () => {
+                  if (!offline.online) { alert("Sem internet. A sincronização será automática quando voltar."); return; }
+                  const r = await offline.sync();
+                  alert(`Sincronização: ${r.sent} enviado(s), ${r.failed} falha(s), ${r.remaining} pendente(s).`);
+                }}
+                title={offline.online ? "Sincronizar pedidos pendentes" : "Você está offline"}
+                className={`px-2.5 py-2 text-xs rounded-md border inline-flex items-center gap-1.5 transition ${
+                  offline.online
+                    ? "border-amber-500/40 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20"
+                    : "border-destructive/40 bg-destructive/10 text-destructive"
+                }`}
+              >
+                <span aria-hidden>{offline.online ? "↻" : "⚠"}</span>
+                {offline.online
+                  ? `Sincronizar (${offline.pending})`
+                  : `Offline${offline.pending ? ` · ${offline.pending} na fila` : ""}`}
+              </button>
+            )}
             <button onClick={openHistory} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
               Histórico
             </button>
