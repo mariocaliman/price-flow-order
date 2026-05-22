@@ -358,8 +358,9 @@ function PedidosPage() {
               RQ
             </div>
             <div className="min-w-0">
-              <h1 className="font-bold leading-tight text-sm sm:text-base truncate">
+              <h1 className="font-bold leading-tight text-sm sm:text-base truncate" suppressHydrationWarning>
                 {(() => {
+                  if (!mounted) return "Olá!";
                   const h = new Date().getHours();
                   const saud = h < 12 ? "Bom dia" : h < 18 ? "Boa tarde" : "Boa noite";
                   const nome = (auth.nome || auth.user?.email?.split("@")[0] || "").split(" ")[0];
