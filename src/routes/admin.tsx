@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
@@ -46,6 +46,7 @@ interface UserRow {
 
 function AdminPage() {
   const navigate = useNavigate();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   const auth = useAuth();
   const list = useServerFn(listUsers);
   const create = useServerFn(createUser);
@@ -184,6 +185,10 @@ function AdminPage() {
         Carregando...
       </div>
     );
+  }
+
+  if (pathname !== "/admin") {
+    return <Outlet />;
   }
 
   return (
