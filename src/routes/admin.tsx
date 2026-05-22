@@ -201,7 +201,10 @@ function AdminPage() {
               Gerencie acesso, papéis e a tabela Preço de Escolha
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
+            <Link to="/admin/products" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">
+              📦 Produtos
+            </Link>
             <Link to="/admin/dashboard" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">
               📊 Dashboard
             </Link>
