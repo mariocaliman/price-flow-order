@@ -196,12 +196,14 @@ function AdminPage() {
               Gerencie acesso, papéis e a tabela Preço de Escolha
             </p>
           </div>
-          <Link
-            to="/"
-            className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted"
-          >
-            ← Voltar aos pedidos
-          </Link>
+          <div className="flex gap-2">
+            <Link to="/admin/dashboard" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">
+              📊 Dashboard
+            </Link>
+            <Link to="/" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">
+              ← Pedidos
+            </Link>
+          </div>
         </div>
       </header>
 
