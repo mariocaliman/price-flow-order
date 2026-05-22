@@ -771,7 +771,7 @@ function PedidosPage() {
                 className="text-sm px-3 py-1.5 rounded-md border border-border hover:bg-muted">Fechar</button>
             </div>
             <div className="p-5 space-y-4">
-              {sendBusy && <p className="text-sm text-muted-foreground">Gerando PDF e link seguro...</p>}
+              {sendBusy && <p className="text-sm text-muted-foreground">Gerando PDF...</p>}
               {sendError && (
                 <div className="text-sm text-destructive border border-destructive/40 bg-destructive/10 rounded-md p-3">{sendError}</div>
               )}
