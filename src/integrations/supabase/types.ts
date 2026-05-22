@@ -20,7 +20,9 @@ export type Database = {
           data_pedido: string
           id: string
           nome: string
+          numero: number
           payload: Json
+          total: number
           updated_at: string
           user_id: string
         }
@@ -29,7 +31,9 @@ export type Database = {
           data_pedido?: string
           id?: string
           nome?: string
+          numero?: number
           payload: Json
+          total?: number
           updated_at?: string
           user_id: string
         }
@@ -38,7 +42,9 @@ export type Database = {
           data_pedido?: string
           id?: string
           nome?: string
+          numero?: number
           payload?: Json
+          total?: number
           updated_at?: string
           user_id?: string
         }
