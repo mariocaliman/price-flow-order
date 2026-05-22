@@ -176,6 +176,8 @@ function PedidosPage() {
 
   const [saving, setSaving] = useState(false);
 
+  const offline = useOfflineStatus();
+
   async function savePedido(): Promise<{ id: string; numero: number | null } | null> {
     if (!auth.user) { alert("Faça login para salvar."); return null; }
     if (!cliente.trim()) { alert("Informe o nome do cliente antes de salvar."); return null; }
@@ -185,6 +187,20 @@ function PedidosPage() {
       cliente, codCliente, clienteTelefone, prazo, data, vencimento, vendedor, obs, tabela, roundMode, items, totals,
       savedAt: new Date().toISOString(),
     };
+
+    // Offline → enfileira e segue a vida
+    if (!navigator.onLine) {
+      enqueuePedido({
+        user_id: auth.user.id,
+        nome: cliente.trim(),
+        data_pedido: data,
+        total: totals.valorTotalNota,
+        payload: payload as Record<string, unknown>,
+      });
+      alert(`Sem conexão — pedido "${cliente.trim()}" salvo localmente e será enviado automaticamente quando a internet voltar.`);
+      return null;
+    }
+
     setSaving(true);
     try {
       const { data: row, error } = await supabase.from("pedidos")
@@ -205,6 +221,18 @@ function PedidosPage() {
       return { id: row!.id, numero: row?.numero ?? null };
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
+      // Falha de rede (mesmo com navigator.onLine true) → enfileira
+      if (/network|fetch|failed to fetch/i.test(msg)) {
+        enqueuePedido({
+          user_id: auth.user.id,
+          nome: cliente.trim(),
+          data_pedido: data,
+          total: totals.valorTotalNota,
+          payload: payload as Record<string, unknown>,
+        });
+        alert(`Falha de rede — pedido "${cliente.trim()}" salvo localmente para reenvio automático.`);
+        return null;
+      }
       alert(`Erro ao salvar pedido: ${msg}`);
       return null;
     } finally {
@@ -212,7 +240,6 @@ function PedidosPage() {
     }
   }
 
-  // ===== Histórico =====
   interface PedidoRow {
     id: string;
     nome: string;
