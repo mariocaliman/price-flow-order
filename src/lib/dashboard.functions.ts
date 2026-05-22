@@ -21,6 +21,13 @@ interface PayloadShape {
   totals?: { valorTotalNota?: number };
 }
 
+function itemTotal(items: PayloadShape["items"] = []) {
+  return items.reduce(
+    (sum, it) => sum + Number(it.qtyAdjusted ?? 0) * Number(it.unitPrice ?? 0),
+    0,
+  );
+}
+
 export const getDashboardMetrics = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((input) => InputSchema.parse(input))
@@ -80,7 +87,7 @@ export const getDashboardMetrics = createServerFn({ method: "POST" })
     const porTabela = new Map<string, { faturamento: number; pedidos: number }>();
 
     for (const p of pedidos) {
-      const total = p.total || Number(p.payload?.totals?.valorTotalNota ?? 0);
+      const total = p.total || Number(p.payload?.totals?.valorTotalNota ?? 0) || itemTotal(p.payload?.items);
       faturamento += total;
 
       const cliente = (p.payload?.cliente || p.nome || "").trim();
