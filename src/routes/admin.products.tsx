@@ -127,73 +127,103 @@ function AdminProductsPage() {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-card">
-        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between flex-wrap gap-2">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-3 flex items-center justify-between flex-wrap gap-2">
           <div>
-            <h1 className="font-bold">Administração de Produtos</h1>
-            <p className="text-xs text-muted-foreground">Cadastre, edite preços e impostos, ou exclua produtos do catálogo</p>
+            <h1 className="font-bold text-sm sm:text-base">Administração de Produtos</h1>
+            <p className="text-[11px] sm:text-xs text-muted-foreground">Cadastre, edite preços e impostos, ou exclua produtos do catálogo</p>
           </div>
-          <div className="flex gap-2 flex-wrap">
-            <Button onClick={openNew}>+ Novo produto</Button>
-            <Link to="/admin" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">← Usuários</Link>
-            <Link to="/" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">Pedidos</Link>
+          <div className="flex gap-1.5 sm:gap-2 flex-wrap">
+            <Button size="sm" onClick={openNew}>+ Novo produto</Button>
+            <Link to="/admin" className="px-2.5 py-1.5 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">← Usuários</Link>
+            <Link to="/" className="px-2.5 py-1.5 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">Pedidos</Link>
           </div>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-6 space-y-4">
+      <main className="max-w-6xl mx-auto px-3 sm:px-6 py-4 sm:py-6 space-y-4">
         {err && (
           <div className="text-sm text-destructive border border-destructive/40 bg-destructive/10 rounded-md p-3">{err}</div>
         )}
 
         <Card>
-          <CardHeader className="flex-row items-center justify-between">
-            <CardTitle>Produtos ({filtered.length}{filtered.length !== items.length ? `/${items.length}` : ""})</CardTitle>
+          <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 space-y-0 p-4 sm:p-6">
+            <CardTitle className="text-sm sm:text-base">Produtos ({filtered.length}{filtered.length !== items.length ? `/${items.length}` : ""})</CardTitle>
             <Input
-              placeholder="Buscar por código, descrição, categoria..."
+              placeholder="Buscar por código, descrição..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="max-w-xs"
+              className="w-full sm:max-w-xs h-9 text-sm"
             />
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-2 sm:p-6 sm:pt-0">
             {loading ? (
               <p className="text-sm text-muted-foreground">Carregando...</p>
             ) : (
-              <div className="overflow-x-auto">
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Código</TableHead>
-                      <TableHead>Descrição</TableHead>
-                      <TableHead>Categoria</TableHead>
-                      <TableHead className="text-right">Tabela</TableHead>
-                      <TableHead className="text-right">Cx</TableHead>
-                      <TableHead className="text-right">Ações</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {filtered.map((p) => (
-                      <TableRow key={p.codigo}>
-                        <TableCell className="font-mono text-xs">{p.codigo}</TableCell>
-                        <TableCell className="max-w-md">
-                          <div className="text-sm font-medium leading-snug">{p.descricao}</div>
-                          <div className="text-[11px] text-muted-foreground">{p.apresentacao}</div>
-                        </TableCell>
-                        <TableCell className="text-xs">{p.categoria}</TableCell>
-                        <TableCell className="text-right text-sm">{p.precos["Tabela"] != null ? brl(p.precos["Tabela"]!) : "—"}</TableCell>
-                        <TableCell className="text-right">{p.qtdPorEmbalagem}</TableCell>
-                        <TableCell className="text-right space-x-2 whitespace-nowrap">
-                          <Button type="button" variant="outline" size="sm" onClick={() => openEdit(p)}>Editar</Button>
-                          <Button type="button" variant="destructive" size="sm" onClick={() => onDelete(p.codigo)}>Excluir</Button>
-                        </TableCell>
+              <>
+                {/* Mobile: card list */}
+                <div className="sm:hidden space-y-2">
+                  {filtered.map((p) => (
+                    <div key={p.codigo} className="border border-border rounded-md p-2.5 bg-card">
+                      <div className="min-w-0">
+                        <div className="font-mono text-[10px] text-muted-foreground">{p.codigo}</div>
+                        <div className="text-xs font-medium leading-snug">{p.descricao}</div>
+                        {p.apresentacao && (
+                          <div className="text-[10px] text-muted-foreground mt-0.5">{p.apresentacao}</div>
+                        )}
+                        <div className="flex flex-wrap gap-x-3 gap-y-0.5 mt-1 text-[10px] text-muted-foreground">
+                          {p.categoria && <span>{p.categoria}</span>}
+                          <span>Cx: {p.qtdPorEmbalagem}</span>
+                          <span>Tabela: {p.precos["Tabela"] != null ? brl(p.precos["Tabela"]!) : "—"}</span>
+                        </div>
+                      </div>
+                      <div className="flex gap-1.5 mt-2">
+                        <Button type="button" variant="outline" size="sm" className="h-7 px-2 text-xs flex-1" onClick={() => openEdit(p)}>Editar</Button>
+                        <Button type="button" variant="destructive" size="sm" className="h-7 px-2 text-xs flex-1" onClick={() => onDelete(p.codigo)}>Excluir</Button>
+                      </div>
+                    </div>
+                  ))}
+                  {!filtered.length && (
+                    <p className="text-center text-xs text-muted-foreground py-6">Nenhum produto.</p>
+                  )}
+                </div>
+
+                {/* Desktop: table */}
+                <div className="hidden sm:block overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Código</TableHead>
+                        <TableHead>Descrição</TableHead>
+                        <TableHead>Categoria</TableHead>
+                        <TableHead className="text-right">Tabela</TableHead>
+                        <TableHead className="text-right">Cx</TableHead>
+                        <TableHead className="text-right">Ações</TableHead>
                       </TableRow>
-                    ))}
-                    {!filtered.length && (
-                      <TableRow><TableCell colSpan={6} className="text-center text-sm text-muted-foreground py-6">Nenhum produto.</TableCell></TableRow>
-                    )}
-                  </TableBody>
-                </Table>
-              </div>
+                    </TableHeader>
+                    <TableBody>
+                      {filtered.map((p) => (
+                        <TableRow key={p.codigo}>
+                          <TableCell className="font-mono text-xs">{p.codigo}</TableCell>
+                          <TableCell className="max-w-md">
+                            <div className="text-sm font-medium leading-snug">{p.descricao}</div>
+                            <div className="text-[11px] text-muted-foreground">{p.apresentacao}</div>
+                          </TableCell>
+                          <TableCell className="text-xs">{p.categoria}</TableCell>
+                          <TableCell className="text-right text-sm">{p.precos["Tabela"] != null ? brl(p.precos["Tabela"]!) : "—"}</TableCell>
+                          <TableCell className="text-right">{p.qtdPorEmbalagem}</TableCell>
+                          <TableCell className="text-right space-x-2 whitespace-nowrap">
+                            <Button type="button" variant="outline" size="sm" onClick={() => openEdit(p)}>Editar</Button>
+                            <Button type="button" variant="destructive" size="sm" onClick={() => onDelete(p.codigo)}>Excluir</Button>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                      {!filtered.length && (
+                        <TableRow><TableCell colSpan={6} className="text-center text-sm text-muted-foreground py-6">Nenhum produto.</TableCell></TableRow>
+                      )}
+                    </TableBody>
+                  </Table>
+                </div>
+              </>
             )}
           </CardContent>
         </Card>
