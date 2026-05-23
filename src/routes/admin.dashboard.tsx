@@ -3,6 +3,8 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useAuth } from "@/hooks/use-auth";
 import { getDashboardMetrics } from "@/lib/dashboard.functions";
+import { exportPedidos } from "@/lib/export.functions";
+import { downloadCsv, downloadXlsx } from "@/lib/export-utils";
 import {
   Card, CardContent, CardHeader, CardTitle,
 } from "@/components/ui/card";
@@ -38,6 +40,22 @@ function DashboardPage() {
   const navigate = useNavigate();
   const auth = useAuth();
   const fetchMetrics = useServerFn(getDashboardMetrics);
+  const fetchExport = useServerFn(exportPedidos);
+  const [exporting, setExporting] = useState<"csv" | "xlsx" | null>(null);
+
+  async function handleExport(format: "csv" | "xlsx") {
+    setExporting(format);
+    try {
+      const r = await fetchExport({ data: { from, to, vendedorIds } });
+      const stamp = `${from}_a_${to}`;
+      if (format === "csv") downloadCsv(r.pedidos, r.itens, stamp);
+      else downloadXlsx(r.pedidos, r.itens, stamp);
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : String(e));
+    } finally {
+      setExporting(null);
+    }
+  }
 
   const [from, setFrom] = useState(isoDaysAgo(30));
   const [to, setTo] = useState(new Date().toISOString().slice(0, 10));
@@ -136,6 +154,16 @@ function DashboardPage() {
               <button onClick={load} disabled={loading}
                 className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-md bg-primary text-primary-foreground text-xs sm:text-sm font-medium hover:opacity-90 disabled:opacity-50">
                 {loading ? "Carregando..." : "Aplicar"}
+              </button>
+              <button onClick={() => handleExport("xlsx")} disabled={!!exporting}
+                title="Baixar pedidos + itens em Excel (2 abas)"
+                className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-border bg-card text-xs sm:text-sm font-medium hover:bg-muted disabled:opacity-50">
+                {exporting === "xlsx" ? "..." : "📊 Excel"}
+              </button>
+              <button onClick={() => handleExport("csv")} disabled={!!exporting}
+                title="Baixar 2 arquivos CSV (pedidos + itens)"
+                className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-border bg-card text-xs sm:text-sm font-medium hover:bg-muted disabled:opacity-50">
+                {exporting === "csv" ? "..." : "📄 CSV"}
               </button>
             </div>
           </CardContent>
