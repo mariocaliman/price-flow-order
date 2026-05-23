@@ -499,16 +499,16 @@ function PedidosPage() {
         </section>
 
         <section className="col-span-12 md:col-span-7 xl:col-span-8 space-y-4 sm:space-y-6">
-          <div className="bg-card border border-border rounded-lg p-3 sm:p-5">
-            <div className="flex items-center justify-between mb-3 sm:mb-4 gap-2">
-              <h2 className="font-semibold text-xs sm:text-sm uppercase tracking-wide text-muted-foreground">Dados do pedido</h2>
+          <div className="bg-card border border-border rounded-lg p-2.5 sm:p-3">
+            <div className="flex items-center justify-between mb-2 gap-2">
+              <h2 className="font-semibold text-[11px] sm:text-xs uppercase tracking-wide text-muted-foreground">Dados do pedido</h2>
               {currentNumero && (
-                <span className="text-[10px] sm:text-xs px-2 py-1 rounded bg-primary/10 text-primary font-mono">
+                <span className="text-[10px] px-2 py-0.5 rounded bg-primary/10 text-primary font-mono">
                   #{String(currentNumero).padStart(6, "0")}
                 </span>
               )}
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
               <Field label="Cliente" value={cliente} onChange={setCliente} />
               <Field label="Código do cliente" value={codCliente} onChange={setCodCliente} />
               <Field label="Telefone (WhatsApp)" value={clienteTelefone} onChange={setClienteTelefone} placeholder="(DDD) 99999-9999" />
@@ -517,10 +517,10 @@ function PedidosPage() {
               <Field label="Data do pedido" type="date" value={data} onChange={setData} />
               <Field label="Vencimento da proposta" type="date" value={vencimento} onChange={setVencimento} />
             </div>
-            <div className="mt-3">
-              <label className="text-xs text-muted-foreground">Observações</label>
-              <textarea value={obs} onChange={(e) => setObs(e.target.value)} rows={2}
-                className="mt-1 w-full px-2 sm:px-3 py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
+            <div className="mt-2">
+              <label className="text-[10px] text-muted-foreground">Observações</label>
+              <textarea value={obs} onChange={(e) => setObs(e.target.value)} rows={1}
+                className="mt-0.5 w-full px-2 py-1 rounded-md bg-background border border-input text-xs" />
             </div>
           </div>
 
@@ -838,10 +838,10 @@ function Field({
 }: { label: string; value: string; onChange: (v: string) => void; type?: string; placeholder?: string }) {
   return (
     <div>
-      <label className="text-xs text-muted-foreground">{label}</label>
+      <label className="text-[10px] text-muted-foreground">{label}</label>
       <input type={type} value={value} placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-1 w-full px-3 py-2 rounded-md bg-background border border-input text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+        className="mt-0.5 w-full px-2 py-1 rounded-md bg-background border border-input text-xs focus:outline-none focus:ring-2 focus:ring-ring" />
     </div>
   );
 }
