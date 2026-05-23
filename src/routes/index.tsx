@@ -807,8 +807,8 @@ function Field({
 function Stat({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
     <div>
-      <div className="text-xs text-muted-foreground uppercase tracking-wide">{label}</div>
-      <div className={`mt-1 font-bold ${highlight ? "text-xl text-primary" : "text-base"}`}>{value}</div>
+      <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">{label}</div>
+      <div className={`mt-1 font-bold ${highlight ? "text-base sm:text-xl text-primary" : "text-sm sm:text-base"}`}>{value}</div>
     </div>
   );
 }
