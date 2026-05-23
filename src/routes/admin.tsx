@@ -194,44 +194,44 @@ function AdminPage() {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-card">
-        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-3 flex items-center justify-between gap-2 flex-wrap">
           <div>
-            <h1 className="font-bold">Administração de Usuários</h1>
-            <p className="text-xs text-muted-foreground">
+            <h1 className="font-bold text-sm sm:text-base">Administração de Usuários</h1>
+            <p className="text-[11px] sm:text-xs text-muted-foreground">
               Gerencie acesso, papéis e a tabela Preço de Escolha
             </p>
           </div>
-          <div className="flex gap-2 flex-wrap">
-            <Link to="/admin/products" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">
+          <div className="flex gap-1.5 sm:gap-2 flex-wrap">
+            <Link to="/admin/products" className="px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">
               📦 Produtos
             </Link>
-            <Link to="/admin/dashboard" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">
+            <Link to="/admin/dashboard" className="px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">
               📊 Dashboard
             </Link>
-            <Link to="/" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">
+            <Link to="/" className="px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">
               ← Pedidos
             </Link>
           </div>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-6 space-y-6">
+      <main className="max-w-6xl mx-auto px-3 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6">
         <Card>
-          <CardHeader>
-            <CardTitle>Novo usuário</CardTitle>
+          <CardHeader className="p-4 sm:p-6">
+            <CardTitle className="text-base sm:text-lg">Novo usuário</CardTitle>
           </CardHeader>
-          <CardContent>
-            <form onSubmit={onCreate} className="grid sm:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="nome">Nome</Label>
-                <Input id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
+          <CardContent className="p-4 sm:p-6 pt-0 sm:pt-0">
+            <form onSubmit={onCreate} className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="space-y-1.5 sm:space-y-2">
+                <Label htmlFor="nome" className="text-xs">Nome</Label>
+                <Input id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required className="h-8 text-xs sm:text-sm" />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+              <div className="space-y-1.5 sm:space-y-2">
+                <Label htmlFor="email" className="text-xs">Email</Label>
+                <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="h-8 text-xs sm:text-sm" />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="password">Senha (mín. 6)</Label>
+              <div className="space-y-1.5 sm:space-y-2">
+                <Label htmlFor="password" className="text-xs">Senha (mín. 6)</Label>
                 <Input
                   id="password"
                   type="text"
@@ -239,10 +239,11 @@ function AdminPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  className="h-8 text-xs sm:text-sm"
                 />
               </div>
-              <div className="flex items-end gap-4 flex-wrap">
-                <label className="flex items-center gap-2 text-sm">
+              <div className="flex items-end gap-3 sm:gap-4 flex-wrap">
+                <label className="flex items-center gap-2 text-xs sm:text-sm">
                   <input
                     type="checkbox"
                     checked={isAdminNew}
@@ -250,7 +251,7 @@ function AdminPage() {
                   />
                   Administrador
                 </label>
-                <label className="flex items-center gap-2 text-sm">
+                <label className="flex items-center gap-2 text-xs sm:text-sm">
                   <input
                     type="checkbox"
                     checked={canPrecoNew}
@@ -260,7 +261,7 @@ function AdminPage() {
                 </label>
               </div>
               <div className="sm:col-span-2 flex justify-end">
-                <Button type="submit" disabled={submitting}>
+                <Button type="submit" size="sm" disabled={submitting} className="w-full sm:w-auto">
                   {submitting ? "Criando..." : "Criar usuário"}
                 </Button>
               </div>
@@ -269,45 +270,37 @@ function AdminPage() {
         </Card>
 
         {err && (
-          <div className="text-sm text-destructive border border-destructive/40 bg-destructive/10 rounded-md p-3">
+          <div className="text-xs sm:text-sm text-destructive border border-destructive/40 bg-destructive/10 rounded-md p-3">
             {err}
           </div>
         )}
 
         <Card>
-          <CardHeader>
-            <CardTitle>Usuários ({users.length})</CardTitle>
+          <CardHeader className="p-4 sm:p-6">
+            <CardTitle className="text-base sm:text-lg">Usuários ({users.length})</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-4 sm:p-6 pt-0 sm:pt-0">
             {loading ? (
               <p className="text-sm text-muted-foreground">Carregando...</p>
             ) : (
-              <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Nome</TableHead>
-                    <TableHead>Email</TableHead>
-                    <TableHead>Papel</TableHead>
-                    <TableHead>Preço de Escolha</TableHead>
-                    <TableHead className="text-right">Ações</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
+              <>
+                {/* Mobile: card list */}
+                <div className="sm:hidden space-y-2">
                   {users.map((u) => {
                     const isUserAdmin = u.roles.includes("admin");
                     const isSelf = u.id === auth.user?.id;
                     return (
-                      <TableRow key={u.id}>
-                        <TableCell className="font-medium">
-                          {u.nome || "—"}{" "}
-                          {isSelf && <span className="text-xs text-muted-foreground">(você)</span>}
-                        </TableCell>
-                        <TableCell>{u.email}</TableCell>
-                        <TableCell>
+                      <div key={u.id} className="border border-border rounded-md p-3 space-y-2">
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="min-w-0 flex-1">
+                            <div className="font-medium text-xs truncate">
+                              {u.nome || "—"} {isSelf && <span className="text-[10px] text-muted-foreground">(você)</span>}
+                            </div>
+                            <div className="text-[11px] text-muted-foreground truncate">{u.email}</div>
+                          </div>
                           <span
                             className={
-                              "inline-block px-2 py-0.5 rounded text-xs " +
+                              "inline-block px-1.5 py-0.5 rounded text-[10px] shrink-0 " +
                               (isUserAdmin
                                 ? "bg-primary text-primary-foreground"
                                 : "bg-muted text-muted-foreground")
@@ -315,87 +308,163 @@ function AdminPage() {
                           >
                             {isUserAdmin ? "admin" : "user"}
                           </span>
-                        </TableCell>
-                        <TableCell>
-                          <label className="inline-flex items-center gap-2 text-xs cursor-pointer">
-                            <input
-                              type="checkbox"
-                              checked={!!u.can_use_preco_escolha}
-                              onChange={() => onTogglePreco(u.id, !!u.can_use_preco_escolha)}
-                            />
-                            {u.can_use_preco_escolha ? "Liberado" : "Bloqueado"}
-                          </label>
-                        </TableCell>
-                        <TableCell className="text-right space-x-2">
-                          <Button type="button" variant="outline" size="sm" onClick={() => openEdit(u)}>
+                        </div>
+                        <label className="inline-flex items-center gap-2 text-[11px] cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={!!u.can_use_preco_escolha}
+                            onChange={() => onTogglePreco(u.id, !!u.can_use_preco_escolha)}
+                          />
+                          Preço de Escolha: {u.can_use_preco_escolha ? "Liberado" : "Bloqueado"}
+                        </label>
+                        <div className="grid grid-cols-3 gap-1.5">
+                          <Button type="button" variant="outline" size="sm" className="h-7 px-2 text-[11px]" onClick={() => openEdit(u)}>
                             Editar
                           </Button>
                           <Button
                             type="button"
                             variant="outline"
                             size="sm"
+                            className="h-7 px-2 text-[11px]"
                             onClick={() => onToggleAdmin(u.id, isUserAdmin)}
                             disabled={isSelf && isUserAdmin}
                           >
-                            {isUserAdmin ? "Remover admin" : "Tornar admin"}
+                            {isUserAdmin ? "Rem. admin" : "Tornar admin"}
                           </Button>
                           <Button
                             type="button"
                             variant="destructive"
                             size="sm"
+                            className="h-7 px-2 text-[11px]"
                             onClick={() => onDelete(u.id)}
                             disabled={isSelf}
                           >
                             Excluir
                           </Button>
-                        </TableCell>
-                      </TableRow>
+                        </div>
+                      </div>
                     );
                   })}
-                </TableBody>
-              </Table>
-              </div>
+                </div>
+
+                {/* Desktop: table */}
+                <div className="hidden sm:block overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Nome</TableHead>
+                      <TableHead>Email</TableHead>
+                      <TableHead>Papel</TableHead>
+                      <TableHead>Preço de Escolha</TableHead>
+                      <TableHead className="text-right">Ações</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {users.map((u) => {
+                      const isUserAdmin = u.roles.includes("admin");
+                      const isSelf = u.id === auth.user?.id;
+                      return (
+                        <TableRow key={u.id}>
+                          <TableCell className="font-medium">
+                            {u.nome || "—"}{" "}
+                            {isSelf && <span className="text-xs text-muted-foreground">(você)</span>}
+                          </TableCell>
+                          <TableCell>{u.email}</TableCell>
+                          <TableCell>
+                            <span
+                              className={
+                                "inline-block px-2 py-0.5 rounded text-xs " +
+                                (isUserAdmin
+                                  ? "bg-primary text-primary-foreground"
+                                  : "bg-muted text-muted-foreground")
+                              }
+                            >
+                              {isUserAdmin ? "admin" : "user"}
+                            </span>
+                          </TableCell>
+                          <TableCell>
+                            <label className="inline-flex items-center gap-2 text-xs cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={!!u.can_use_preco_escolha}
+                                onChange={() => onTogglePreco(u.id, !!u.can_use_preco_escolha)}
+                              />
+                              {u.can_use_preco_escolha ? "Liberado" : "Bloqueado"}
+                            </label>
+                          </TableCell>
+                          <TableCell className="text-right space-x-2">
+                            <Button type="button" variant="outline" size="sm" onClick={() => openEdit(u)}>
+                              Editar
+                            </Button>
+                            <Button
+                              type="button"
+                              variant="outline"
+                              size="sm"
+                              onClick={() => onToggleAdmin(u.id, isUserAdmin)}
+                              disabled={isSelf && isUserAdmin}
+                            >
+                              {isUserAdmin ? "Remover admin" : "Tornar admin"}
+                            </Button>
+                            <Button
+                              type="button"
+                              variant="destructive"
+                              size="sm"
+                              onClick={() => onDelete(u.id)}
+                              disabled={isSelf}
+                            >
+                              Excluir
+                            </Button>
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+                </div>
+              </>
             )}
           </CardContent>
         </Card>
       </main>
 
       <Dialog open={!!editing} onOpenChange={(o) => !o && setEditing(null)}>
-        <DialogContent>
+        <DialogContent className="w-[calc(100vw-1rem)] max-w-md max-h-[92vh] overflow-y-auto p-4 sm:p-6">
           <DialogHeader>
-            <DialogTitle>Editar usuário</DialogTitle>
+            <DialogTitle className="text-base sm:text-lg">Editar usuário</DialogTitle>
           </DialogHeader>
-          <form onSubmit={onEditSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="edit-nome">Nome</Label>
-              <Input id="edit-nome" value={editNome} onChange={(e) => setEditNome(e.target.value)} required />
+          <form onSubmit={onEditSubmit} className="space-y-3 sm:space-y-4">
+            <div className="space-y-1.5 sm:space-y-2">
+              <Label htmlFor="edit-nome" className="text-xs">Nome</Label>
+              <Input id="edit-nome" value={editNome} onChange={(e) => setEditNome(e.target.value)} required className="h-8 text-xs sm:text-sm" />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="edit-email">Email</Label>
+            <div className="space-y-1.5 sm:space-y-2">
+              <Label htmlFor="edit-email" className="text-xs">Email</Label>
               <Input
                 id="edit-email"
                 type="email"
                 value={editEmail}
                 onChange={(e) => setEditEmail(e.target.value)}
                 required
+                className="h-8 text-xs sm:text-sm"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="edit-password">Nova senha (opcional)</Label>
+            <div className="space-y-1.5 sm:space-y-2">
+              <Label htmlFor="edit-password" className="text-xs">Nova senha (opcional)</Label>
               <Input
                 id="edit-password"
                 type="text"
                 placeholder="Deixe em branco para manter"
                 value={editPassword}
                 onChange={(e) => setEditPassword(e.target.value)}
+                className="h-8 text-xs sm:text-sm"
               />
             </div>
-            <DialogFooter>
-              <Button type="button" variant="outline" onClick={() => setEditing(null)}>
+            <DialogFooter className="flex-row gap-2">
+              <Button type="button" variant="outline" size="sm" className="flex-1 sm:flex-none" onClick={() => setEditing(null)}>
                 Cancelar
               </Button>
-              <Button type="submit" disabled={editSubmitting}>
-                {editSubmitting ? "Salvando..." : "Salvar alterações"}
+              <Button type="submit" size="sm" className="flex-1 sm:flex-none" disabled={editSubmitting}>
+                {editSubmitting ? "Salvando..." : "Salvar"}
               </Button>
             </DialogFooter>
           </form>

@@ -84,46 +84,47 @@ function DashboardPage() {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-card">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-3 flex-wrap">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex items-center justify-between gap-2 flex-wrap">
           <div>
-            <h1 className="font-bold">Dashboard de pedidos</h1>
-            <p className="text-xs text-muted-foreground">Métricas administrativas</p>
+            <h1 className="font-bold text-sm sm:text-base">Dashboard de pedidos</h1>
+            <p className="text-[11px] sm:text-xs text-muted-foreground">Métricas administrativas</p>
           </div>
-          <div className="flex gap-2">
-            <Link to="/admin" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">Usuários</Link>
-            <Link to="/" className="px-3 py-2 text-sm rounded-md border border-border hover:bg-muted">← Pedidos</Link>
+          <div className="flex gap-1.5 sm:gap-2 flex-wrap">
+            <Link to="/admin" className="px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">Usuários</Link>
+            <Link to="/admin/products" className="px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">Produtos</Link>
+            <Link to="/" className="px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">← Pedidos</Link>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-6 space-y-6">
+      <main className="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6">
         {/* Filtros */}
         <Card>
-          <CardContent className="pt-6">
-            <div className="flex flex-wrap gap-3 items-end">
+          <CardContent className="p-4 sm:pt-6">
+            <div className="flex flex-wrap gap-2 sm:gap-3 items-end">
               <div className="flex gap-1">
                 {[7, 30, 90].map((d) => (
                   <button key={d} onClick={() => setPreset(d)}
-                    className="px-3 py-2 text-xs rounded-md border border-border hover:bg-muted">
+                    className="px-2 sm:px-3 py-1.5 sm:py-2 text-[11px] sm:text-xs rounded-md border border-border hover:bg-muted">
                     {d}d
                   </button>
                 ))}
               </div>
               <div>
-                <label className="text-xs text-muted-foreground block">De</label>
+                <label className="text-[10px] sm:text-xs text-muted-foreground block">De</label>
                 <input type="date" value={from} onChange={(e) => setFrom(e.target.value)}
-                  className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                  className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
               </div>
               <div>
-                <label className="text-xs text-muted-foreground block">Até</label>
+                <label className="text-[10px] sm:text-xs text-muted-foreground block">Até</label>
                 <input type="date" value={to} onChange={(e) => setTo(e.target.value)}
-                  className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                  className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
               </div>
-              <div className="flex-1 min-w-[200px]">
-                <label className="text-xs text-muted-foreground block">Vendedores</label>
+              <div className="flex-1 min-w-[160px] sm:min-w-[200px]">
+                <label className="text-[10px] sm:text-xs text-muted-foreground block">Vendedores</label>
                 <select multiple value={vendedorIds}
                   onChange={(e) => setVendedorIds(Array.from(e.target.selectedOptions).map((o) => o.value))}
-                  className="w-full px-2 py-1.5 rounded-md bg-background border border-input text-sm min-h-[42px]">
+                  className="w-full px-2 py-1.5 rounded-md bg-background border border-input text-xs sm:text-sm min-h-[42px]">
                   {(data?.vendedores ?? []).map((v) => (
                     <option key={v.id} value={v.id}>{v.nome}</option>
                   ))}
@@ -133,7 +134,7 @@ function DashboardPage() {
                 </p>
               </div>
               <button onClick={load} disabled={loading}
-                className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 disabled:opacity-50">
+                className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-md bg-primary text-primary-foreground text-xs sm:text-sm font-medium hover:opacity-90 disabled:opacity-50">
                 {loading ? "Carregando..." : "Aplicar"}
               </button>
             </div>
@@ -141,13 +142,13 @@ function DashboardPage() {
         </Card>
 
         {err && (
-          <div className="text-sm text-destructive border border-destructive/40 bg-destructive/10 rounded-md p-3">
+          <div className="text-xs sm:text-sm text-destructive border border-destructive/40 bg-destructive/10 rounded-md p-3">
             {err}
           </div>
         )}
 
         {/* Cards de resumo */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
           <StatCard label="Pedidos" value={String(data?.resumo.totalPedidos ?? 0)} />
           <StatCard label="Faturamento" value={brl(data?.resumo.faturamento ?? 0)} highlight />
           <StatCard label="Ticket médio" value={brl(data?.resumo.ticketMedio ?? 0)} />
@@ -155,15 +156,15 @@ function DashboardPage() {
         </div>
 
         {/* Gráficos */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
           <Card className="lg:col-span-2">
-            <CardHeader><CardTitle className="text-sm">Faturamento por dia</CardTitle></CardHeader>
-            <CardContent className="h-72">
+            <CardHeader className="p-4 sm:p-6"><CardTitle className="text-xs sm:text-sm">Faturamento por dia</CardTitle></CardHeader>
+            <CardContent className="h-56 sm:h-72 p-2 sm:p-6 pt-0 sm:pt-0">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data?.porDia ?? []}>
                   <CartesianGrid strokeDasharray="3 3" opacity={0.3} />
-                  <XAxis dataKey="dia" tick={{ fontSize: 11 }} />
-                  <YAxis tick={{ fontSize: 11 }} tickFormatter={(v) => `R$${(v / 1000).toFixed(0)}k`} />
+                  <XAxis dataKey="dia" tick={{ fontSize: 10 }} />
+                  <YAxis tick={{ fontSize: 10 }} tickFormatter={(v) => `R$${(v / 1000).toFixed(0)}k`} />
                   <Tooltip formatter={(v: number) => brl(v)} />
                   <Line type="monotone" dataKey="faturamento" stroke={RED} strokeWidth={2} dot={false} />
                 </LineChart>
@@ -172,15 +173,15 @@ function DashboardPage() {
           </Card>
 
           <Card>
-            <CardHeader><CardTitle className="text-sm">Distribuição por tabela</CardTitle></CardHeader>
-            <CardContent className="h-72">
+            <CardHeader className="p-4 sm:p-6"><CardTitle className="text-xs sm:text-sm">Distribuição por tabela</CardTitle></CardHeader>
+            <CardContent className="h-56 sm:h-72 p-2 sm:p-6 pt-0 sm:pt-0">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={80} label={(e) => e.name}>
+                  <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={60} label={(e) => e.name} style={{ fontSize: 10 }}>
                     {pieData.map((_, i) => <Cell key={i} fill={PIE_COLORS[i % PIE_COLORS.length]} />)}
                   </Pie>
                   <Tooltip formatter={(v: number) => brl(v)} />
-                  <Legend wrapperStyle={{ fontSize: 11 }} />
+                  <Legend wrapperStyle={{ fontSize: 10 }} />
                 </PieChart>
               </ResponsiveContainer>
             </CardContent>
@@ -188,13 +189,13 @@ function DashboardPage() {
         </div>
 
         <Card>
-          <CardHeader><CardTitle className="text-sm">Top 10 vendedores (faturamento)</CardTitle></CardHeader>
-          <CardContent className="h-72">
+          <CardHeader className="p-4 sm:p-6"><CardTitle className="text-xs sm:text-sm">Top 10 vendedores (faturamento)</CardTitle></CardHeader>
+          <CardContent className="h-56 sm:h-72 p-2 sm:p-6 pt-0 sm:pt-0">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={data?.porVendedor ?? []}>
                 <CartesianGrid strokeDasharray="3 3" opacity={0.3} />
-                <XAxis dataKey="nome" tick={{ fontSize: 11 }} interval={0} angle={-15} textAnchor="end" height={60} />
-                <YAxis tick={{ fontSize: 11 }} tickFormatter={(v) => `R$${(v / 1000).toFixed(0)}k`} />
+                <XAxis dataKey="nome" tick={{ fontSize: 10 }} interval={0} angle={-15} textAnchor="end" height={60} />
+                <YAxis tick={{ fontSize: 10 }} tickFormatter={(v) => `R$${(v / 1000).toFixed(0)}k`} />
                 <Tooltip formatter={(v: number) => brl(v)} />
                 <Bar dataKey="faturamento" fill={RED} />
               </BarChart>
@@ -202,27 +203,27 @@ function DashboardPage() {
           </CardContent>
         </Card>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
           <Card>
-            <CardHeader><CardTitle className="text-sm">Top 20 produtos</CardTitle></CardHeader>
-            <CardContent>
-              <div className="max-h-96 overflow-auto">
+            <CardHeader className="p-4 sm:p-6"><CardTitle className="text-xs sm:text-sm">Top 20 produtos</CardTitle></CardHeader>
+            <CardContent className="p-2 sm:p-6 pt-0 sm:pt-0">
+              <div className="max-h-80 sm:max-h-96 overflow-auto">
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Código</TableHead>
-                      <TableHead>Produto</TableHead>
-                      <TableHead className="text-right">Qtd</TableHead>
-                      <TableHead className="text-right">Faturamento</TableHead>
+                      <TableHead className="text-[11px] sm:text-xs">Código</TableHead>
+                      <TableHead className="text-[11px] sm:text-xs">Produto</TableHead>
+                      <TableHead className="text-right text-[11px] sm:text-xs">Qtd</TableHead>
+                      <TableHead className="text-right text-[11px] sm:text-xs">Faturamento</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {(data?.porProduto ?? []).map((p) => (
                       <TableRow key={p.codigo}>
-                        <TableCell className="font-mono text-xs">{p.codigo}</TableCell>
-                        <TableCell className="text-xs">{p.descricao}</TableCell>
-                        <TableCell className="text-right">{p.qtd.toLocaleString("pt-BR")}</TableCell>
-                        <TableCell className="text-right font-medium">{brl(p.faturamento)}</TableCell>
+                        <TableCell className="font-mono text-[10px] sm:text-xs">{p.codigo}</TableCell>
+                        <TableCell className="text-[10px] sm:text-xs">{p.descricao}</TableCell>
+                        <TableCell className="text-right text-[10px] sm:text-xs">{p.qtd.toLocaleString("pt-BR")}</TableCell>
+                        <TableCell className="text-right font-medium text-[10px] sm:text-xs">{brl(p.faturamento)}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -232,23 +233,23 @@ function DashboardPage() {
           </Card>
 
           <Card>
-            <CardHeader><CardTitle className="text-sm">Top 10 clientes</CardTitle></CardHeader>
-            <CardContent>
-              <div className="max-h-96 overflow-auto">
+            <CardHeader className="p-4 sm:p-6"><CardTitle className="text-xs sm:text-sm">Top 10 clientes</CardTitle></CardHeader>
+            <CardContent className="p-2 sm:p-6 pt-0 sm:pt-0">
+              <div className="max-h-80 sm:max-h-96 overflow-auto">
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Cliente</TableHead>
-                      <TableHead className="text-right">Pedidos</TableHead>
-                      <TableHead className="text-right">Faturamento</TableHead>
+                      <TableHead className="text-[11px] sm:text-xs">Cliente</TableHead>
+                      <TableHead className="text-right text-[11px] sm:text-xs">Pedidos</TableHead>
+                      <TableHead className="text-right text-[11px] sm:text-xs">Faturamento</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {(data?.porCliente ?? []).map((c) => (
                       <TableRow key={c.nome}>
-                        <TableCell className="text-xs capitalize">{c.nome}</TableCell>
-                        <TableCell className="text-right">{c.pedidos}</TableCell>
-                        <TableCell className="text-right font-medium">{brl(c.faturamento)}</TableCell>
+                        <TableCell className="text-[10px] sm:text-xs capitalize">{c.nome}</TableCell>
+                        <TableCell className="text-right text-[10px] sm:text-xs">{c.pedidos}</TableCell>
+                        <TableCell className="text-right font-medium text-[10px] sm:text-xs">{brl(c.faturamento)}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -265,9 +266,9 @@ function DashboardPage() {
 function StatCard({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
     <Card>
-      <CardContent className="pt-6">
-        <div className="text-xs uppercase tracking-wide text-muted-foreground">{label}</div>
-        <div className={`mt-1 font-bold ${highlight ? "text-2xl text-primary" : "text-xl"}`}>{value}</div>
+      <CardContent className="p-3 sm:pt-6 sm:px-6 sm:pb-6">
+        <div className="text-[10px] sm:text-xs uppercase tracking-wide text-muted-foreground">{label}</div>
+        <div className={`mt-1 font-bold ${highlight ? "text-base sm:text-2xl text-primary" : "text-sm sm:text-xl"}`}>{value}</div>
       </CardContent>
     </Card>
   );
