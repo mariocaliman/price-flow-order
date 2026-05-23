@@ -444,7 +444,7 @@ function PedidosPage() {
         </div>
       </header>
 
-      <main className="max-w-[1500px] mx-auto px-6 py-6 grid grid-cols-12 gap-6">
+      <main className="max-w-[1500px] mx-auto px-3 sm:px-6 py-4 sm:py-6 grid grid-cols-12 gap-3 sm:gap-6">
         <section className="col-span-12 md:col-span-5 xl:col-span-4">
           <div className="bg-card border border-border rounded-lg overflow-hidden">
             <div className="p-4 border-b border-border space-y-3">
