@@ -428,41 +428,43 @@ function AdminPage() {
       </main>
 
       <Dialog open={!!editing} onOpenChange={(o) => !o && setEditing(null)}>
-        <DialogContent>
+        <DialogContent className="w-[calc(100vw-1rem)] max-w-md max-h-[92vh] overflow-y-auto p-4 sm:p-6">
           <DialogHeader>
-            <DialogTitle>Editar usuário</DialogTitle>
+            <DialogTitle className="text-base sm:text-lg">Editar usuário</DialogTitle>
           </DialogHeader>
-          <form onSubmit={onEditSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="edit-nome">Nome</Label>
-              <Input id="edit-nome" value={editNome} onChange={(e) => setEditNome(e.target.value)} required />
+          <form onSubmit={onEditSubmit} className="space-y-3 sm:space-y-4">
+            <div className="space-y-1.5 sm:space-y-2">
+              <Label htmlFor="edit-nome" className="text-xs">Nome</Label>
+              <Input id="edit-nome" value={editNome} onChange={(e) => setEditNome(e.target.value)} required className="h-8 text-xs sm:text-sm" />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="edit-email">Email</Label>
+            <div className="space-y-1.5 sm:space-y-2">
+              <Label htmlFor="edit-email" className="text-xs">Email</Label>
               <Input
                 id="edit-email"
                 type="email"
                 value={editEmail}
                 onChange={(e) => setEditEmail(e.target.value)}
                 required
+                className="h-8 text-xs sm:text-sm"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="edit-password">Nova senha (opcional)</Label>
+            <div className="space-y-1.5 sm:space-y-2">
+              <Label htmlFor="edit-password" className="text-xs">Nova senha (opcional)</Label>
               <Input
                 id="edit-password"
                 type="text"
                 placeholder="Deixe em branco para manter"
                 value={editPassword}
                 onChange={(e) => setEditPassword(e.target.value)}
+                className="h-8 text-xs sm:text-sm"
               />
             </div>
-            <DialogFooter>
-              <Button type="button" variant="outline" onClick={() => setEditing(null)}>
+            <DialogFooter className="flex-row gap-2">
+              <Button type="button" variant="outline" size="sm" className="flex-1 sm:flex-none" onClick={() => setEditing(null)}>
                 Cancelar
               </Button>
-              <Button type="submit" disabled={editSubmitting}>
-                {editSubmitting ? "Salvando..." : "Salvar alterações"}
+              <Button type="submit" size="sm" className="flex-1 sm:flex-none" disabled={editSubmitting}>
+                {editSubmitting ? "Salvando..." : "Salvar"}
               </Button>
             </DialogFooter>
           </form>
