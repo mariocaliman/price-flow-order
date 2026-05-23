@@ -846,11 +846,11 @@ function Field({
   );
 }
 
-function Stat({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
+function Stat({ label, value, highlight, size }: { label: string; value: string; highlight?: boolean; size?: "sm" }) {
   return (
     <div>
-      <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">{label}</div>
-      <div className={`mt-1 font-bold ${highlight ? "text-base sm:text-xl text-primary" : "text-sm sm:text-base"}`}>{value}</div>
+      <div className={`${size === "sm" ? "text-[9px] sm:text-[10px]" : "text-[10px] sm:text-xs"} text-muted-foreground uppercase tracking-wide`}>{label}</div>
+      <div className={`mt-1 font-bold ${highlight ? "text-base sm:text-xl text-primary" : size === "sm" ? "text-[11px] sm:text-xs" : "text-sm sm:text-base"}`}>{value}</div>
     </div>
   );
 }
