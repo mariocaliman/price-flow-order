@@ -208,6 +208,9 @@ function AdminPage() {
             <Link to="/admin/dashboard" className="px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">
               📊 Dashboard
             </Link>
+            <Link to="/admin/audit" className="px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">
+              📜 Auditoria
+            </Link>
             <Link to="/" className="px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">
               ← Pedidos
             </Link>
