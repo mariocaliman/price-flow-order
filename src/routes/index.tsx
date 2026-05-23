@@ -444,7 +444,7 @@ function PedidosPage() {
         </div>
       </header>
 
-      <main className="max-w-[1500px] mx-auto px-6 py-6 grid grid-cols-12 gap-6">
+      <main className="max-w-[1500px] mx-auto px-3 sm:px-6 py-4 sm:py-6 grid grid-cols-12 gap-3 sm:gap-6">
         <section className="col-span-12 md:col-span-5 xl:col-span-4">
           <div className="bg-card border border-border rounded-lg overflow-hidden">
             <div className="p-4 border-b border-border space-y-3">
@@ -498,17 +498,17 @@ function PedidosPage() {
           </div>
         </section>
 
-        <section className="col-span-12 md:col-span-7 xl:col-span-8 space-y-6">
-          <div className="bg-card border border-border rounded-lg p-5">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">Dados do pedido</h2>
+        <section className="col-span-12 md:col-span-7 xl:col-span-8 space-y-4 sm:space-y-6">
+          <div className="bg-card border border-border rounded-lg p-3 sm:p-5">
+            <div className="flex items-center justify-between mb-3 sm:mb-4 gap-2">
+              <h2 className="font-semibold text-xs sm:text-sm uppercase tracking-wide text-muted-foreground">Dados do pedido</h2>
               {currentNumero && (
-                <span className="text-xs px-2 py-1 rounded bg-primary/10 text-primary font-mono">
-                  Pedido #{String(currentNumero).padStart(6, "0")}
+                <span className="text-[10px] sm:text-xs px-2 py-1 rounded bg-primary/10 text-primary font-mono">
+                  #{String(currentNumero).padStart(6, "0")}
                 </span>
               )}
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
               <Field label="Cliente" value={cliente} onChange={setCliente} />
               <Field label="Código do cliente" value={codCliente} onChange={setCodCliente} />
               <Field label="Telefone (WhatsApp)" value={clienteTelefone} onChange={setClienteTelefone} placeholder="(DDD) 99999-9999" />
@@ -520,103 +520,162 @@ function PedidosPage() {
             <div className="mt-3">
               <label className="text-xs text-muted-foreground">Observações</label>
               <textarea value={obs} onChange={(e) => setObs(e.target.value)} rows={2}
-                className="mt-1 w-full px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="mt-1 w-full px-2 sm:px-3 py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
             </div>
           </div>
 
           <div className="bg-card border border-border rounded-lg overflow-hidden">
-            <div className="px-5 py-3 border-b border-border flex items-center justify-between">
-              <h2 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">
-                Itens do pedido ({items.length})
+            <div className="px-3 sm:px-5 py-2.5 sm:py-3 border-b border-border flex items-center justify-between">
+              <h2 className="font-semibold text-xs sm:text-sm uppercase tracking-wide text-muted-foreground">
+                Itens ({items.length})
               </h2>
               {items.length > 0 && (
-                <button onClick={clearOrder} className="text-xs text-destructive hover:underline">Limpar tudo</button>
+                <button onClick={clearOrder} className="text-[11px] sm:text-xs text-destructive hover:underline">Limpar tudo</button>
               )}
             </div>
             {items.length === 0 ? (
-              <div className="p-12 text-center text-sm text-muted-foreground">
+              <div className="p-8 sm:p-12 text-center text-xs sm:text-sm text-muted-foreground">
                 Selecione produtos no catálogo ao lado para começar.
               </div>
             ) : (
-              <div className="overflow-auto max-h-[55vh]">
-                <table className="w-full min-w-[900px] text-sm">
-                  <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground sticky top-0 z-10">
-                    <tr>
-                      <th className="text-left px-3 py-2">Código</th>
-                      <th className="text-left px-3 py-2">Produto</th>
-                      <th className="text-center px-3 py-2">Cx</th>
-                      <th className="text-center px-3 py-2">Qtd digitada</th>
-                      <th className="text-center px-3 py-2">Qtd ajustada</th>
-                      <th className="text-right px-3 py-2">Preço un.</th>
-                      <th className="text-right px-3 py-2">Total</th>
-                      <th />
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border">
-                    {items.map((it, idx) => {
-                      const box = it.product.qtdPorEmbalagem;
-                      return (
-                        <tr key={it.product.codigo} className="hover:bg-muted/30">
-                          <td className="px-3 py-2 font-mono text-xs">{it.product.codigo}</td>
-                          <td className="px-3 py-2">
-                            <div className="font-medium">{it.product.descricao}</div>
-                            <div className="text-xs text-muted-foreground">{it.product.apresentacao}</div>
-                          </td>
-                          <td className="px-3 py-2 text-center">{box}</td>
-                          <td className="px-3 py-2 text-center">
+              <>
+                {/* Mobile: card list */}
+                <div className="md:hidden divide-y divide-border max-h-[55vh] overflow-auto">
+                  {items.map((it, idx) => {
+                    const box = it.product.qtdPorEmbalagem;
+                    return (
+                      <div key={it.product.codigo} className="p-3 space-y-2">
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="min-w-0 flex-1">
+                            <div className="font-mono text-[10px] text-muted-foreground">{it.product.codigo}</div>
+                            <div className="font-medium text-xs leading-snug">{it.product.descricao}</div>
+                            <div className="text-[10px] text-muted-foreground">{it.product.apresentacao} · Cx {box}</div>
+                          </div>
+                          <button onClick={() => removeItem(idx)} className="text-destructive text-[11px] hover:underline shrink-0">remover</button>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                          <div>
+                            <label className="text-[10px] text-muted-foreground block">Qtd digitada</label>
                             <input type="number" min={0} value={it.qtyTyped}
                               onChange={(e) => updateQty(idx, Number(e.target.value) || 0)}
-                              className="w-20 px-2 py-1 text-center rounded border border-input bg-background" />
-                          </td>
-                          <td className="px-3 py-2 text-center font-semibold">
-                            {it.qtyAdjusted}
-                            <div className="text-[10px] text-muted-foreground">{Math.ceil(it.qtyAdjusted / box)} cx</div>
-                          </td>
-                          <td className="px-3 py-2 text-right">
-                            <div className="flex items-center justify-end gap-1">
-                              <span className="text-xs text-muted-foreground">R$</span>
-                              <input type="number" step="0.01" min={0} value={it.unitPrice}
-                                onChange={(e) => setItems((prev) => {
-                                  const nx = [...prev];
-                                  nx[idx] = { ...nx[idx], unitPrice: Number(e.target.value) || 0 };
-                                  return nx;
-                                })}
-                                className={`w-24 px-2 py-1 text-right rounded border border-input bg-background ${it.unitPrice !== priceOf(it.product) ? "ring-1 ring-warning" : ""}`}
-                                title={`Tabela: ${brl(priceOf(it.product))}`} />
+                              className="w-full px-2 py-1 text-xs rounded border border-input bg-background" />
+                          </div>
+                          <div>
+                            <label className="text-[10px] text-muted-foreground block">Qtd ajustada</label>
+                            <div className="px-2 py-1 text-xs font-semibold">
+                              {it.qtyAdjusted} <span className="text-[10px] text-muted-foreground">({Math.ceil(it.qtyAdjusted / box)} cx)</span>
                             </div>
-                            {it.unitPrice !== priceOf(it.product) && (
-                              <button onClick={() => setItems((prev) => {
+                          </div>
+                          <div>
+                            <label className="text-[10px] text-muted-foreground block">Preço un.</label>
+                            <input type="number" step="0.01" min={0} value={it.unitPrice}
+                              onChange={(e) => setItems((prev) => {
                                 const nx = [...prev];
-                                nx[idx] = { ...nx[idx], unitPrice: priceOf(nx[idx].product) };
+                                nx[idx] = { ...nx[idx], unitPrice: Number(e.target.value) || 0 };
                                 return nx;
-                              })} className="text-[10px] text-muted-foreground hover:underline mt-0.5">
-                                restaurar tabela
-                              </button>
-                            )}
-                          </td>
-                          <td className="px-3 py-2 text-right font-semibold">{brl(it.unitPrice * it.qtyAdjusted)}</td>
-                          <td className="px-3 py-2 text-right">
-                            <button onClick={() => removeItem(idx)} className="text-destructive hover:underline text-xs">remover</button>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
+                              })}
+                              className={`w-full px-2 py-1 text-xs rounded border border-input bg-background ${it.unitPrice !== priceOf(it.product) ? "ring-1 ring-warning" : ""}`} />
+                          </div>
+                          <div>
+                            <label className="text-[10px] text-muted-foreground block">Total</label>
+                            <div className="px-2 py-1 text-xs font-semibold">{brl(it.unitPrice * it.qtyAdjusted)}</div>
+                          </div>
+                        </div>
+                        {it.unitPrice !== priceOf(it.product) && (
+                          <button onClick={() => setItems((prev) => {
+                            const nx = [...prev];
+                            nx[idx] = { ...nx[idx], unitPrice: priceOf(nx[idx].product) };
+                            return nx;
+                          })} className="text-[10px] text-muted-foreground hover:underline">
+                            restaurar preço da tabela
+                          </button>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Desktop: table */}
+                <div className="hidden md:block overflow-auto max-h-[55vh]">
+                  <table className="w-full min-w-[900px] text-sm">
+                    <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground sticky top-0 z-10">
+                      <tr>
+                        <th className="text-left px-3 py-2">Código</th>
+                        <th className="text-left px-3 py-2">Produto</th>
+                        <th className="text-center px-3 py-2">Cx</th>
+                        <th className="text-center px-3 py-2">Qtd digitada</th>
+                        <th className="text-center px-3 py-2">Qtd ajustada</th>
+                        <th className="text-right px-3 py-2">Preço un.</th>
+                        <th className="text-right px-3 py-2">Total</th>
+                        <th />
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                      {items.map((it, idx) => {
+                        const box = it.product.qtdPorEmbalagem;
+                        return (
+                          <tr key={it.product.codigo} className="hover:bg-muted/30">
+                            <td className="px-3 py-2 font-mono text-xs">{it.product.codigo}</td>
+                            <td className="px-3 py-2">
+                              <div className="font-medium">{it.product.descricao}</div>
+                              <div className="text-xs text-muted-foreground">{it.product.apresentacao}</div>
+                            </td>
+                            <td className="px-3 py-2 text-center">{box}</td>
+                            <td className="px-3 py-2 text-center">
+                              <input type="number" min={0} value={it.qtyTyped}
+                                onChange={(e) => updateQty(idx, Number(e.target.value) || 0)}
+                                className="w-20 px-2 py-1 text-center rounded border border-input bg-background" />
+                            </td>
+                            <td className="px-3 py-2 text-center font-semibold">
+                              {it.qtyAdjusted}
+                              <div className="text-[10px] text-muted-foreground">{Math.ceil(it.qtyAdjusted / box)} cx</div>
+                            </td>
+                            <td className="px-3 py-2 text-right">
+                              <div className="flex items-center justify-end gap-1">
+                                <span className="text-xs text-muted-foreground">R$</span>
+                                <input type="number" step="0.01" min={0} value={it.unitPrice}
+                                  onChange={(e) => setItems((prev) => {
+                                    const nx = [...prev];
+                                    nx[idx] = { ...nx[idx], unitPrice: Number(e.target.value) || 0 };
+                                    return nx;
+                                  })}
+                                  className={`w-24 px-2 py-1 text-right rounded border border-input bg-background ${it.unitPrice !== priceOf(it.product) ? "ring-1 ring-warning" : ""}`}
+                                  title={`Tabela: ${brl(priceOf(it.product))}`} />
+                              </div>
+                              {it.unitPrice !== priceOf(it.product) && (
+                                <button onClick={() => setItems((prev) => {
+                                  const nx = [...prev];
+                                  nx[idx] = { ...nx[idx], unitPrice: priceOf(nx[idx].product) };
+                                  return nx;
+                                })} className="text-[10px] text-muted-foreground hover:underline mt-0.5">
+                                  restaurar tabela
+                                </button>
+                              )}
+                            </td>
+                            <td className="px-3 py-2 text-right font-semibold">{brl(it.unitPrice * it.qtyAdjusted)}</td>
+                            <td className="px-3 py-2 text-right">
+                              <button onClick={() => removeItem(idx)} className="text-destructive hover:underline text-xs">remover</button>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </>
             )}
 
             {items.length > 0 && (
               <>
-                <div className="border-t border-border bg-muted/30 px-5 py-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="border-t border-border bg-muted/30 px-3 sm:px-5 py-3 sm:py-4 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                   <Stat label="Itens" value={String(totals.itens)} />
                   <Stat label="Unidades" value={String(totals.totalUnidades)} />
                   <Stat label="Volumes (caixas)" value={String(totals.totalCaixas)} />
                   <Stat label="Total produtos" value={brl(totals.totalGeral)} />
                 </div>
-                <div className="border-t border-border bg-card px-5 py-4">
-                  <h3 className="text-xs uppercase tracking-wide text-muted-foreground font-semibold mb-3">Impostos do pedido</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 text-sm">
+                <div className="border-t border-border bg-card px-3 sm:px-5 py-3 sm:py-4">
+                  <h3 className="text-[11px] sm:text-xs uppercase tracking-wide text-muted-foreground font-semibold mb-2 sm:mb-3">Impostos do pedido</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 text-xs sm:text-sm">
                     <Stat label="Base ICMS" value={brl(totals.baseIcms)} />
                     <Stat label="Valor ICMS" value={brl(totals.vIcms)} />
                     <Stat label="Base IPI" value={brl(totals.baseIpi)} />
@@ -625,7 +684,7 @@ function PedidosPage() {
                     <Stat label="Valor ST" value={brl(totals.vSt)} />
                     <Stat label="Valor PIS" value={brl(totals.vPis)} />
                     <Stat label="Valor COFINS" value={brl(totals.vCofins)} />
-                    <div className="md:col-span-2 lg:col-span-2">
+                    <div className="col-span-2 md:col-span-2 lg:col-span-2">
                       <Stat label="Valor total da nota" value={brl(totals.valorTotalNota)} highlight />
                     </div>
                   </div>
@@ -638,32 +697,32 @@ function PedidosPage() {
 
       {/* Histórico */}
       {historyOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-start sm:items-center justify-center p-4 overflow-y-auto"
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-start sm:items-center justify-center p-2 sm:p-4 overflow-y-auto"
           onClick={() => setHistoryOpen(false)}>
-          <div className="bg-card border border-border rounded-lg shadow-xl w-full max-w-6xl max-h-[90vh] flex flex-col"
+          <div className="bg-card border border-border rounded-lg shadow-xl w-full max-w-6xl max-h-[95vh] sm:max-h-[90vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}>
-            <div className="px-5 py-3 border-b border-border flex items-center justify-between">
-              <div>
-                <h2 className="font-semibold">Histórico de pedidos</h2>
-                <p className="text-xs text-muted-foreground">
+            <div className="px-3 sm:px-5 py-2.5 sm:py-3 border-b border-border flex items-center justify-between gap-2">
+              <div className="min-w-0">
+                <h2 className="font-semibold text-sm sm:text-base">Histórico de pedidos</h2>
+                <p className="text-[11px] sm:text-xs text-muted-foreground">
                   {auth.isAdmin ? "Todos os pedidos (admin)" : "Seus pedidos"}
                 </p>
               </div>
               <button onClick={() => setHistoryOpen(false)}
-                className="text-sm px-3 py-1.5 rounded-md border border-border hover:bg-muted">Fechar</button>
+                className="text-xs sm:text-sm px-2.5 sm:px-3 py-1.5 rounded-md border border-border hover:bg-muted shrink-0">Fechar</button>
             </div>
 
-            <div className="p-4 border-b border-border grid grid-cols-2 md:grid-cols-5 gap-2">
+            <div className="p-3 sm:p-4 border-b border-border grid grid-cols-2 md:grid-cols-5 gap-2">
               <input value={fNome} onChange={(e) => setFNome(e.target.value)} placeholder="Nome cliente"
-                className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
               <input type="date" value={fData} onChange={(e) => setFData(e.target.value)}
-                className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
               <input value={fCliente} onChange={(e) => setFCliente(e.target.value)} placeholder="Cód. cliente"
-                className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
               <input value={fCodigo} onChange={(e) => setFCodigo(e.target.value)} placeholder="Nº pedido"
-                className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
               <input value={fVendedor} onChange={(e) => setFVendedor(e.target.value)} placeholder="Vendedor"
-                className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm col-span-2 md:col-span-1" />
             </div>
 
             <div className="flex-1 overflow-auto">
@@ -672,56 +731,98 @@ function PedidosPage() {
               ) : filteredPedidos.length === 0 ? (
                 <p className="p-6 text-sm text-muted-foreground text-center">Nenhum pedido encontrado.</p>
               ) : (
-                <table className="w-full text-sm">
-                  <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground sticky top-0">
-                    <tr>
-                      <th className="text-left px-3 py-2">Nº</th>
-                      <th className="text-left px-3 py-2">Cliente</th>
-                      <th className="text-left px-3 py-2">Cód.</th>
-                      <th className="text-left px-3 py-2">Vendedor</th>
-                      <th className="text-left px-3 py-2">Data</th>
-                      <th className="text-right px-3 py-2">Total</th>
-                      {auth.isAdmin && <th className="text-left px-3 py-2">Usuário</th>}
-                      <th />
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border">
+                <>
+                  {/* Mobile: cards */}
+                  <div className="sm:hidden divide-y divide-border">
                     {filteredPedidos.map((p) => {
                       const total = Number(p.total ?? 0) || pedidoTotal((p.payload?.items ?? []) as OrderItem[]);
                       return (
-                        <tr key={p.id} className="hover:bg-muted/30">
-                          <td className="px-3 py-2 font-mono text-xs">
-                            {p.numero ? `#${String(p.numero).padStart(6, "0")}` : p.id.slice(0, 6)}
-                          </td>
-                          <td className="px-3 py-2">{p.nome}</td>
-                          <td className="px-3 py-2">{p.payload?.codCliente || "—"}</td>
-                          <td className="px-3 py-2">{p.payload?.vendedor || "—"}</td>
-                          <td className="px-3 py-2">{new Date(p.data_pedido).toLocaleDateString("pt-BR")}</td>
-                          <td className="px-3 py-2 text-right font-semibold">{brl(total)}</td>
-                          {auth.isAdmin && (
-                            <td className="px-3 py-2 text-xs text-muted-foreground">
-                              {p.profile_nome || p.user_id.slice(0, 8)}
-                            </td>
-                          )}
-                          <td className="px-3 py-2 text-right whitespace-nowrap space-x-1">
+                        <div key={p.id} className="p-3 space-y-2">
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="min-w-0 flex-1">
+                              <div className="font-mono text-[10px] text-muted-foreground">
+                                {p.numero ? `#${String(p.numero).padStart(6, "0")}` : p.id.slice(0, 6)}
+                              </div>
+                              <div className="font-medium text-xs truncate">{p.nome}</div>
+                              <div className="text-[10px] text-muted-foreground truncate">
+                                {p.payload?.codCliente ? `Cód ${p.payload.codCliente} · ` : ""}
+                                {p.payload?.vendedor || "—"} · {new Date(p.data_pedido).toLocaleDateString("pt-BR")}
+                              </div>
+                              {auth.isAdmin && (
+                                <div className="text-[10px] text-muted-foreground truncate">
+                                  👤 {p.profile_nome || p.user_id.slice(0, 8)}
+                                </div>
+                              )}
+                            </div>
+                            <div className="text-xs font-semibold whitespace-nowrap">{brl(total)}</div>
+                          </div>
+                          <div className="grid grid-cols-4 gap-1.5">
                             <button onClick={() => applyPedido(p, false)}
-                              className="text-xs px-2 py-1 rounded border border-border hover:bg-muted">Abrir</button>
+                              className="text-[10px] px-1 py-1 rounded border border-border hover:bg-muted">Abrir</button>
                             <button onClick={() => applyPedido(p, true)}
-                              className="text-xs px-2 py-1 rounded border border-border hover:bg-muted" title="Carregar itens como novo pedido">
-                              Duplicar
-                            </button>
+                              className="text-[10px] px-1 py-1 rounded border border-border hover:bg-muted">Duplicar</button>
                             <button onClick={() => reissuePdf(p)}
-                              className="text-xs px-2 py-1 rounded border border-border hover:bg-muted">PDF</button>
+                              className="text-[10px] px-1 py-1 rounded border border-border hover:bg-muted">PDF</button>
                             <button onClick={() => deletePedido(p.id)}
-                              className="text-xs px-2 py-1 rounded border border-destructive/40 text-destructive hover:bg-destructive/10">
-                              Excluir
-                            </button>
-                          </td>
-                        </tr>
+                              className="text-[10px] px-1 py-1 rounded border border-destructive/40 text-destructive hover:bg-destructive/10">Excluir</button>
+                          </div>
+                        </div>
                       );
                     })}
-                  </tbody>
-                </table>
+                  </div>
+
+                  {/* Desktop: table */}
+                  <table className="hidden sm:table w-full text-sm">
+                    <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground sticky top-0">
+                      <tr>
+                        <th className="text-left px-3 py-2">Nº</th>
+                        <th className="text-left px-3 py-2">Cliente</th>
+                        <th className="text-left px-3 py-2">Cód.</th>
+                        <th className="text-left px-3 py-2">Vendedor</th>
+                        <th className="text-left px-3 py-2">Data</th>
+                        <th className="text-right px-3 py-2">Total</th>
+                        {auth.isAdmin && <th className="text-left px-3 py-2">Usuário</th>}
+                        <th />
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                      {filteredPedidos.map((p) => {
+                        const total = Number(p.total ?? 0) || pedidoTotal((p.payload?.items ?? []) as OrderItem[]);
+                        return (
+                          <tr key={p.id} className="hover:bg-muted/30">
+                            <td className="px-3 py-2 font-mono text-xs">
+                              {p.numero ? `#${String(p.numero).padStart(6, "0")}` : p.id.slice(0, 6)}
+                            </td>
+                            <td className="px-3 py-2">{p.nome}</td>
+                            <td className="px-3 py-2">{p.payload?.codCliente || "—"}</td>
+                            <td className="px-3 py-2">{p.payload?.vendedor || "—"}</td>
+                            <td className="px-3 py-2">{new Date(p.data_pedido).toLocaleDateString("pt-BR")}</td>
+                            <td className="px-3 py-2 text-right font-semibold">{brl(total)}</td>
+                            {auth.isAdmin && (
+                              <td className="px-3 py-2 text-xs text-muted-foreground">
+                                {p.profile_nome || p.user_id.slice(0, 8)}
+                              </td>
+                            )}
+                            <td className="px-3 py-2 text-right whitespace-nowrap space-x-1">
+                              <button onClick={() => applyPedido(p, false)}
+                                className="text-xs px-2 py-1 rounded border border-border hover:bg-muted">Abrir</button>
+                              <button onClick={() => applyPedido(p, true)}
+                                className="text-xs px-2 py-1 rounded border border-border hover:bg-muted" title="Carregar itens como novo pedido">
+                                Duplicar
+                              </button>
+                              <button onClick={() => reissuePdf(p)}
+                                className="text-xs px-2 py-1 rounded border border-border hover:bg-muted">PDF</button>
+                              <button onClick={() => deletePedido(p.id)}
+                                className="text-xs px-2 py-1 rounded border border-destructive/40 text-destructive hover:bg-destructive/10">
+                                Excluir
+                              </button>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </>
               )}
             </div>
           </div>
@@ -748,8 +849,8 @@ function Field({
 function Stat({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
     <div>
-      <div className="text-xs text-muted-foreground uppercase tracking-wide">{label}</div>
-      <div className={`mt-1 font-bold ${highlight ? "text-xl text-primary" : "text-base"}`}>{value}</div>
+      <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">{label}</div>
+      <div className={`mt-1 font-bold ${highlight ? "text-base sm:text-xl text-primary" : "text-sm sm:text-base"}`}>{value}</div>
     </div>
   );
 }
