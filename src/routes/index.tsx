@@ -697,32 +697,32 @@ function PedidosPage() {
 
       {/* Histórico */}
       {historyOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-start sm:items-center justify-center p-4 overflow-y-auto"
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-start sm:items-center justify-center p-2 sm:p-4 overflow-y-auto"
           onClick={() => setHistoryOpen(false)}>
-          <div className="bg-card border border-border rounded-lg shadow-xl w-full max-w-6xl max-h-[90vh] flex flex-col"
+          <div className="bg-card border border-border rounded-lg shadow-xl w-full max-w-6xl max-h-[95vh] sm:max-h-[90vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}>
-            <div className="px-5 py-3 border-b border-border flex items-center justify-between">
-              <div>
-                <h2 className="font-semibold">Histórico de pedidos</h2>
-                <p className="text-xs text-muted-foreground">
+            <div className="px-3 sm:px-5 py-2.5 sm:py-3 border-b border-border flex items-center justify-between gap-2">
+              <div className="min-w-0">
+                <h2 className="font-semibold text-sm sm:text-base">Histórico de pedidos</h2>
+                <p className="text-[11px] sm:text-xs text-muted-foreground">
                   {auth.isAdmin ? "Todos os pedidos (admin)" : "Seus pedidos"}
                 </p>
               </div>
               <button onClick={() => setHistoryOpen(false)}
-                className="text-sm px-3 py-1.5 rounded-md border border-border hover:bg-muted">Fechar</button>
+                className="text-xs sm:text-sm px-2.5 sm:px-3 py-1.5 rounded-md border border-border hover:bg-muted shrink-0">Fechar</button>
             </div>
 
-            <div className="p-4 border-b border-border grid grid-cols-2 md:grid-cols-5 gap-2">
+            <div className="p-3 sm:p-4 border-b border-border grid grid-cols-2 md:grid-cols-5 gap-2">
               <input value={fNome} onChange={(e) => setFNome(e.target.value)} placeholder="Nome cliente"
-                className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
               <input type="date" value={fData} onChange={(e) => setFData(e.target.value)}
-                className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
               <input value={fCliente} onChange={(e) => setFCliente(e.target.value)} placeholder="Cód. cliente"
-                className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
               <input value={fCodigo} onChange={(e) => setFCodigo(e.target.value)} placeholder="Nº pedido"
-                className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm" />
               <input value={fVendedor} onChange={(e) => setFVendedor(e.target.value)} placeholder="Vendedor"
-                className="px-3 py-2 rounded-md bg-background border border-input text-sm" />
+                className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md bg-background border border-input text-xs sm:text-sm col-span-2 md:col-span-1" />
             </div>
 
             <div className="flex-1 overflow-auto">
@@ -731,56 +731,98 @@ function PedidosPage() {
               ) : filteredPedidos.length === 0 ? (
                 <p className="p-6 text-sm text-muted-foreground text-center">Nenhum pedido encontrado.</p>
               ) : (
-                <table className="w-full text-sm">
-                  <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground sticky top-0">
-                    <tr>
-                      <th className="text-left px-3 py-2">Nº</th>
-                      <th className="text-left px-3 py-2">Cliente</th>
-                      <th className="text-left px-3 py-2">Cód.</th>
-                      <th className="text-left px-3 py-2">Vendedor</th>
-                      <th className="text-left px-3 py-2">Data</th>
-                      <th className="text-right px-3 py-2">Total</th>
-                      {auth.isAdmin && <th className="text-left px-3 py-2">Usuário</th>}
-                      <th />
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border">
+                <>
+                  {/* Mobile: cards */}
+                  <div className="sm:hidden divide-y divide-border">
                     {filteredPedidos.map((p) => {
                       const total = Number(p.total ?? 0) || pedidoTotal((p.payload?.items ?? []) as OrderItem[]);
                       return (
-                        <tr key={p.id} className="hover:bg-muted/30">
-                          <td className="px-3 py-2 font-mono text-xs">
-                            {p.numero ? `#${String(p.numero).padStart(6, "0")}` : p.id.slice(0, 6)}
-                          </td>
-                          <td className="px-3 py-2">{p.nome}</td>
-                          <td className="px-3 py-2">{p.payload?.codCliente || "—"}</td>
-                          <td className="px-3 py-2">{p.payload?.vendedor || "—"}</td>
-                          <td className="px-3 py-2">{new Date(p.data_pedido).toLocaleDateString("pt-BR")}</td>
-                          <td className="px-3 py-2 text-right font-semibold">{brl(total)}</td>
-                          {auth.isAdmin && (
-                            <td className="px-3 py-2 text-xs text-muted-foreground">
-                              {p.profile_nome || p.user_id.slice(0, 8)}
-                            </td>
-                          )}
-                          <td className="px-3 py-2 text-right whitespace-nowrap space-x-1">
+                        <div key={p.id} className="p-3 space-y-2">
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="min-w-0 flex-1">
+                              <div className="font-mono text-[10px] text-muted-foreground">
+                                {p.numero ? `#${String(p.numero).padStart(6, "0")}` : p.id.slice(0, 6)}
+                              </div>
+                              <div className="font-medium text-xs truncate">{p.nome}</div>
+                              <div className="text-[10px] text-muted-foreground truncate">
+                                {p.payload?.codCliente ? `Cód ${p.payload.codCliente} · ` : ""}
+                                {p.payload?.vendedor || "—"} · {new Date(p.data_pedido).toLocaleDateString("pt-BR")}
+                              </div>
+                              {auth.isAdmin && (
+                                <div className="text-[10px] text-muted-foreground truncate">
+                                  👤 {p.profile_nome || p.user_id.slice(0, 8)}
+                                </div>
+                              )}
+                            </div>
+                            <div className="text-xs font-semibold whitespace-nowrap">{brl(total)}</div>
+                          </div>
+                          <div className="grid grid-cols-4 gap-1.5">
                             <button onClick={() => applyPedido(p, false)}
-                              className="text-xs px-2 py-1 rounded border border-border hover:bg-muted">Abrir</button>
+                              className="text-[10px] px-1 py-1 rounded border border-border hover:bg-muted">Abrir</button>
                             <button onClick={() => applyPedido(p, true)}
-                              className="text-xs px-2 py-1 rounded border border-border hover:bg-muted" title="Carregar itens como novo pedido">
-                              Duplicar
-                            </button>
+                              className="text-[10px] px-1 py-1 rounded border border-border hover:bg-muted">Duplicar</button>
                             <button onClick={() => reissuePdf(p)}
-                              className="text-xs px-2 py-1 rounded border border-border hover:bg-muted">PDF</button>
+                              className="text-[10px] px-1 py-1 rounded border border-border hover:bg-muted">PDF</button>
                             <button onClick={() => deletePedido(p.id)}
-                              className="text-xs px-2 py-1 rounded border border-destructive/40 text-destructive hover:bg-destructive/10">
-                              Excluir
-                            </button>
-                          </td>
-                        </tr>
+                              className="text-[10px] px-1 py-1 rounded border border-destructive/40 text-destructive hover:bg-destructive/10">Excluir</button>
+                          </div>
+                        </div>
                       );
                     })}
-                  </tbody>
-                </table>
+                  </div>
+
+                  {/* Desktop: table */}
+                  <table className="hidden sm:table w-full text-sm">
+                    <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground sticky top-0">
+                      <tr>
+                        <th className="text-left px-3 py-2">Nº</th>
+                        <th className="text-left px-3 py-2">Cliente</th>
+                        <th className="text-left px-3 py-2">Cód.</th>
+                        <th className="text-left px-3 py-2">Vendedor</th>
+                        <th className="text-left px-3 py-2">Data</th>
+                        <th className="text-right px-3 py-2">Total</th>
+                        {auth.isAdmin && <th className="text-left px-3 py-2">Usuário</th>}
+                        <th />
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                      {filteredPedidos.map((p) => {
+                        const total = Number(p.total ?? 0) || pedidoTotal((p.payload?.items ?? []) as OrderItem[]);
+                        return (
+                          <tr key={p.id} className="hover:bg-muted/30">
+                            <td className="px-3 py-2 font-mono text-xs">
+                              {p.numero ? `#${String(p.numero).padStart(6, "0")}` : p.id.slice(0, 6)}
+                            </td>
+                            <td className="px-3 py-2">{p.nome}</td>
+                            <td className="px-3 py-2">{p.payload?.codCliente || "—"}</td>
+                            <td className="px-3 py-2">{p.payload?.vendedor || "—"}</td>
+                            <td className="px-3 py-2">{new Date(p.data_pedido).toLocaleDateString("pt-BR")}</td>
+                            <td className="px-3 py-2 text-right font-semibold">{brl(total)}</td>
+                            {auth.isAdmin && (
+                              <td className="px-3 py-2 text-xs text-muted-foreground">
+                                {p.profile_nome || p.user_id.slice(0, 8)}
+                              </td>
+                            )}
+                            <td className="px-3 py-2 text-right whitespace-nowrap space-x-1">
+                              <button onClick={() => applyPedido(p, false)}
+                                className="text-xs px-2 py-1 rounded border border-border hover:bg-muted">Abrir</button>
+                              <button onClick={() => applyPedido(p, true)}
+                                className="text-xs px-2 py-1 rounded border border-border hover:bg-muted" title="Carregar itens como novo pedido">
+                                Duplicar
+                              </button>
+                              <button onClick={() => reissuePdf(p)}
+                                className="text-xs px-2 py-1 rounded border border-border hover:bg-muted">PDF</button>
+                              <button onClick={() => deletePedido(p.id)}
+                                className="text-xs px-2 py-1 rounded border border-destructive/40 text-destructive hover:bg-destructive/10">
+                                Excluir
+                              </button>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </>
               )}
             </div>
           </div>
