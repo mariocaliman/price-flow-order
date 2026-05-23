@@ -230,72 +230,74 @@ function AdminProductsPage() {
       </main>
 
       <Dialog open={!!editing} onOpenChange={(o) => !o && setEditing(null)}>
-        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-3xl w-[calc(100vw-1rem)] max-h-[92vh] overflow-y-auto p-4 sm:p-6">
           <DialogHeader>
-            <DialogTitle>{isNew ? "Novo produto" : `Editar ${editing?.codigo}`}</DialogTitle>
+            <DialogTitle className="text-sm sm:text-base">{isNew ? "Novo produto" : `Editar ${editing?.codigo}`}</DialogTitle>
           </DialogHeader>
           {editing && (
-            <form onSubmit={onSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div className="space-y-1.5">
-                  <Label>Código</Label>
+            <form onSubmit={onSubmit} className="space-y-4 sm:space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                <div className="space-y-1">
+                  <Label className="text-xs">Código</Label>
                   <Input
+                    className="h-8 text-xs sm:text-sm"
                     value={editing.codigo}
                     onChange={(e) => setEditing({ ...editing, codigo: e.target.value })}
                     disabled={!isNew}
                     required
                   />
                 </div>
-                <div className="space-y-1.5">
-                  <Label>Apresentação</Label>
-                  <Input value={editing.apresentacao} onChange={(e) => setEditing({ ...editing, apresentacao: e.target.value })} />
+                <div className="space-y-1">
+                  <Label className="text-xs">Apresentação</Label>
+                  <Input className="h-8 text-xs sm:text-sm" value={editing.apresentacao} onChange={(e) => setEditing({ ...editing, apresentacao: e.target.value })} />
                 </div>
-                <div className="space-y-1.5 sm:col-span-2">
-                  <Label>Descrição</Label>
-                  <Input value={editing.descricao} onChange={(e) => setEditing({ ...editing, descricao: e.target.value })} required />
+                <div className="space-y-1 sm:col-span-2">
+                  <Label className="text-xs">Descrição</Label>
+                  <Input className="h-8 text-xs sm:text-sm" value={editing.descricao} onChange={(e) => setEditing({ ...editing, descricao: e.target.value })} required />
                 </div>
-                <div className="space-y-1.5">
-                  <Label>NCM</Label>
-                  <Input value={editing.ncm} onChange={(e) => setEditing({ ...editing, ncm: e.target.value })} />
+                <div className="space-y-1">
+                  <Label className="text-xs">NCM</Label>
+                  <Input className="h-8 text-xs sm:text-sm" value={editing.ncm} onChange={(e) => setEditing({ ...editing, ncm: e.target.value })} />
                 </div>
-                <div className="space-y-1.5">
-                  <Label>Classificação</Label>
-                  <Input value={editing.classificacao} onChange={(e) => setEditing({ ...editing, classificacao: e.target.value })} />
+                <div className="space-y-1">
+                  <Label className="text-xs">Classificação</Label>
+                  <Input className="h-8 text-xs sm:text-sm" value={editing.classificacao} onChange={(e) => setEditing({ ...editing, classificacao: e.target.value })} />
                 </div>
-                <div className="space-y-1.5">
-                  <Label>Princípio ativo</Label>
-                  <Input value={editing.principioAtivo} onChange={(e) => setEditing({ ...editing, principioAtivo: e.target.value })} />
+                <div className="space-y-1">
+                  <Label className="text-xs">Princípio ativo</Label>
+                  <Input className="h-8 text-xs sm:text-sm" value={editing.principioAtivo} onChange={(e) => setEditing({ ...editing, principioAtivo: e.target.value })} />
                 </div>
-                <div className="space-y-1.5">
-                  <Label>Validade (meses)</Label>
-                  <Input value={editing.validade} onChange={(e) => setEditing({ ...editing, validade: e.target.value })} />
+                <div className="space-y-1">
+                  <Label className="text-xs">Validade (meses)</Label>
+                  <Input className="h-8 text-xs sm:text-sm" value={editing.validade} onChange={(e) => setEditing({ ...editing, validade: e.target.value })} />
                 </div>
-                <div className="space-y-1.5">
-                  <Label>Qtd por embalagem</Label>
-                  <Input type="number" min={1} value={editing.qtdPorEmbalagem}
+                <div className="space-y-1">
+                  <Label className="text-xs">Qtd por embalagem</Label>
+                  <Input className="h-8 text-xs sm:text-sm" type="number" min={1} value={editing.qtdPorEmbalagem}
                     onChange={(e) => setEditing({ ...editing, qtdPorEmbalagem: Math.max(1, Number(e.target.value) || 1) })} />
                 </div>
-                <div className="space-y-1.5">
-                  <Label>Linha</Label>
-                  <Input value={editing.linha} onChange={(e) => setEditing({ ...editing, linha: e.target.value })} />
+                <div className="space-y-1">
+                  <Label className="text-xs">Linha</Label>
+                  <Input className="h-8 text-xs sm:text-sm" value={editing.linha} onChange={(e) => setEditing({ ...editing, linha: e.target.value })} />
                 </div>
-                <div className="space-y-1.5">
-                  <Label>Categoria</Label>
-                  <Input value={editing.categoria} onChange={(e) => setEditing({ ...editing, categoria: e.target.value })} />
+                <div className="space-y-1">
+                  <Label className="text-xs">Categoria</Label>
+                  <Input className="h-8 text-xs sm:text-sm" value={editing.categoria} onChange={(e) => setEditing({ ...editing, categoria: e.target.value })} />
                 </div>
-                <div className="space-y-1.5 sm:col-span-2">
-                  <Label>Divisão</Label>
-                  <Input value={editing.divisao} onChange={(e) => setEditing({ ...editing, divisao: e.target.value })} />
+                <div className="space-y-1 sm:col-span-2">
+                  <Label className="text-xs">Divisão</Label>
+                  <Input className="h-8 text-xs sm:text-sm" value={editing.divisao} onChange={(e) => setEditing({ ...editing, divisao: e.target.value })} />
                 </div>
               </div>
 
               <div>
-                <h3 className="text-sm font-semibold mb-2">Preços por tabela (R$)</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <h3 className="text-xs sm:text-sm font-semibold mb-2">Preços por tabela (R$)</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-3">
                   {priceTables.map((t) => (
-                    <div key={t} className="space-y-1.5">
-                      <Label className="text-xs">{t}</Label>
+                    <div key={t} className="space-y-1">
+                      <Label className="text-[10px] sm:text-xs">{t}</Label>
                       <Input
+                        className="h-8 text-xs sm:text-sm"
                         type="number"
                         step="0.01"
                         min={0}
@@ -312,12 +314,13 @@ function AdminProductsPage() {
               </div>
 
               <div>
-                <h3 className="text-sm font-semibold mb-2">Impostos (0 a 1 — ex.: 0.18 = 18%)</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                <h3 className="text-xs sm:text-sm font-semibold mb-2">Impostos (0 a 1 — ex.: 0.18 = 18%)</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3">
                   {(["ivaSt", "icms", "ipi", "pis", "cofins"] as const).map((k) => (
-                    <div key={k} className="space-y-1.5">
-                      <Label className="text-xs uppercase">{k}</Label>
+                    <div key={k} className="space-y-1">
+                      <Label className="text-[10px] sm:text-xs uppercase">{k}</Label>
                       <Input
+                        className="h-8 text-xs sm:text-sm"
                         type="number"
                         step="0.0001"
                         min={0}
@@ -332,9 +335,9 @@ function AdminProductsPage() {
                 </div>
               </div>
 
-              <DialogFooter>
-                <Button type="button" variant="outline" onClick={() => setEditing(null)}>Cancelar</Button>
-                <Button type="submit" disabled={submitting}>
+              <DialogFooter className="flex-row gap-2 sm:gap-2">
+                <Button type="button" variant="outline" size="sm" className="flex-1 sm:flex-none" onClick={() => setEditing(null)}>Cancelar</Button>
+                <Button type="submit" size="sm" className="flex-1 sm:flex-none" disabled={submitting}>
                   {submitting ? "Salvando..." : isNew ? "Cadastrar" : "Salvar alterações"}
                 </Button>
               </DialogFooter>
