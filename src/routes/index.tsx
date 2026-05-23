@@ -675,15 +675,15 @@ function PedidosPage() {
                 </div>
                 <div className="border-t border-border bg-card px-3 sm:px-5 py-3 sm:py-4">
                   <h3 className="text-[11px] sm:text-xs uppercase tracking-wide text-muted-foreground font-semibold mb-2 sm:mb-3">Impostos do pedido</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 text-xs sm:text-sm">
-                    <Stat label="Base ICMS" value={brl(totals.baseIcms)} />
-                    <Stat label="Valor ICMS" value={brl(totals.vIcms)} />
-                    <Stat label="Base IPI" value={brl(totals.baseIpi)} />
-                    <Stat label="Valor IPI" value={brl(totals.vIpi)} />
-                    <Stat label="Base ST" value={brl(totals.baseSt)} />
-                    <Stat label="Valor ST" value={brl(totals.vSt)} />
-                    <Stat label="Valor PIS" value={brl(totals.vPis)} />
-                    <Stat label="Valor COFINS" value={brl(totals.vCofins)} />
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3">
+                    <Stat label="Base ICMS" value={brl(totals.baseIcms)} size="sm" />
+                    <Stat label="Valor ICMS" value={brl(totals.vIcms)} size="sm" />
+                    <Stat label="Base IPI" value={brl(totals.baseIpi)} size="sm" />
+                    <Stat label="Valor IPI" value={brl(totals.vIpi)} size="sm" />
+                    <Stat label="Base ST" value={brl(totals.baseSt)} size="sm" />
+                    <Stat label="Valor ST" value={brl(totals.vSt)} size="sm" />
+                    <Stat label="Valor PIS" value={brl(totals.vPis)} size="sm" />
+                    <Stat label="Valor COFINS" value={brl(totals.vCofins)} size="sm" />
                     <div className="col-span-2 md:col-span-2 lg:col-span-2">
                       <Stat label="Valor total da nota" value={brl(totals.valorTotalNota)} highlight />
                     </div>
