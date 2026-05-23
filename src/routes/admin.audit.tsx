@@ -56,8 +56,11 @@ function AuditPage() {
 
   useEffect(() => {
     if (auth.loading || auth.roleLoading) return;
-    if (!auth.user) return navigate({ to: "/login" });
-    if (!auth.isAdmin) return navigate({ to: "/" });
+    if (!auth.user) {
+      navigate({ to: "/login" });
+      return;
+    }
+    if (!auth.isAdmin) navigate({ to: "/" });
   }, [auth.loading, auth.roleLoading, auth.user, auth.isAdmin, navigate]);
 
   async function refresh() {

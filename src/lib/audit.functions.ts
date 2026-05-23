@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import type { Json } from "@/integrations/supabase/types";
 
 async function assertAdmin(userId: string) {
   const { data, error } = await supabaseAdmin
@@ -21,8 +22,8 @@ export interface AuditRow {
   record_id: string | null;
   user_id: string | null;
   user_email: string | null;
-  old_data: unknown;
-  new_data: unknown;
+  old_data: Json | null;
+  new_data: Json | null;
   created_at: string;
 }
 
