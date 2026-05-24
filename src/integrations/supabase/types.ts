@@ -229,25 +229,40 @@ export type Database = {
       }
       profiles: {
         Row: {
+          avatar_url: string | null
+          bio: string | null
           can_use_preco_escolha: boolean
+          cargo: string | null
           created_at: string
           email: string | null
           id: string
           nome: string
+          telefone: string | null
+          updated_at: string
         }
         Insert: {
+          avatar_url?: string | null
+          bio?: string | null
           can_use_preco_escolha?: boolean
+          cargo?: string | null
           created_at?: string
           email?: string | null
           id: string
           nome?: string
+          telefone?: string | null
+          updated_at?: string
         }
         Update: {
+          avatar_url?: string | null
+          bio?: string | null
           can_use_preco_escolha?: boolean
+          cargo?: string | null
           created_at?: string
           email?: string | null
           id?: string
           nome?: string
+          telefone?: string | null
+          updated_at?: string
         }
         Relationships: []
       }
