@@ -274,6 +274,12 @@ function AdminPage() {
           </div>
         )}
 
+        {createdNotice && (
+          <div className="text-xs sm:text-sm text-emerald-700 dark:text-emerald-400 border border-emerald-500/40 bg-emerald-500/10 rounded-md p-3">
+            {createdNotice}
+          </div>
+        )}
+
         <Card>
           <CardHeader className="p-4 sm:p-6">
             <CardTitle className="text-base sm:text-lg">Usuários ({users.length})</CardTitle>
