@@ -425,6 +425,10 @@ function PedidosPage() {
                   : `Offline${offline.pending ? ` · ${offline.pending} na fila` : ""}`}
               </button>
             )}
+            <Link to="/perfil" title="Meu perfil"
+              className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition inline-flex items-center gap-1.5">
+              <span aria-hidden>👤</span> Perfil
+            </Link>
             <button onClick={openHistory} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
               Histórico
             </button>
