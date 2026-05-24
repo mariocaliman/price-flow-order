@@ -61,10 +61,10 @@ function AdminPage() {
 
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [isAdminNew, setIsAdminNew] = useState(false);
   const [canPrecoNew, setCanPrecoNew] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [createdNotice, setCreatedNotice] = useState<string | null>(null);
 
   // Edit dialog
   const [editing, setEditing] = useState<UserRow | null>(null);
@@ -106,11 +106,14 @@ function AdminPage() {
     e.preventDefault();
     setSubmitting(true);
     setErr(null);
+    setCreatedNotice(null);
     try {
-      await create({ data: { nome, email, password, isAdmin: isAdminNew, canUsePrecoEscolha: canPrecoNew } });
+      await create({ data: { nome, email, isAdmin: isAdminNew, canUsePrecoEscolha: canPrecoNew } });
+      setCreatedNotice(
+        `Usuário criado. Uma senha temporária foi enviada para ${email}.`,
+      );
       setNome("");
       setEmail("");
-      setPassword("");
       setIsAdminNew(false);
       setCanPrecoNew(false);
       await refresh();
@@ -233,17 +236,10 @@ function AdminPage() {
                 <Label htmlFor="email" className="text-xs">Email</Label>
                 <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="h-8 text-xs sm:text-sm" />
               </div>
-              <div className="space-y-1.5 sm:space-y-2">
-                <Label htmlFor="password" className="text-xs">Senha (mín. 6)</Label>
-                <Input
-                  id="password"
-                  type="text"
-                  minLength={6}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="h-8 text-xs sm:text-sm"
-                />
+              <div className="space-y-1.5 sm:space-y-2 sm:col-span-2">
+                <p className="text-[11px] text-muted-foreground">
+                  A senha será gerada automaticamente e enviada por email para o novo usuário.
+                </p>
               </div>
               <div className="flex items-end gap-3 sm:gap-4 flex-wrap">
                 <label className="flex items-center gap-2 text-xs sm:text-sm">
