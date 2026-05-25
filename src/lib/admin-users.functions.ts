@@ -1,67 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
-import { getRequestHeader, getRequestHost } from "@tanstack/react-start/server";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
-
-function generatePassword(length = 14): string {
-  const upper = "ABCDEFGHJKLMNPQRSTUVWXYZ";
-  const lower = "abcdefghijkmnpqrstuvwxyz";
-  const digits = "23456789";
-  const symbols = "!@#$%&*?";
-  const all = upper + lower + digits + symbols;
-  const bytes = new Uint8Array(length);
-  crypto.getRandomValues(bytes);
-  // Ensure at least one of each category
-  const required = [
-    upper[bytes[0] % upper.length],
-    lower[bytes[1] % lower.length],
-    digits[bytes[2] % digits.length],
-    symbols[bytes[3] % symbols.length],
-  ];
-  const rest = Array.from(bytes.slice(4)).map((b) => all[b % all.length]);
-  const arr = [...required, ...rest];
-  // Shuffle
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr.join("");
-}
-
-async function sendCredentialsEmail(params: {
-  to: string;
-  nome: string;
-  senha: string;
-}) {
-  try {
-    const auth = getRequestHeader("authorization");
-    const host = getRequestHost();
-    if (!auth || !host) return;
-    const proto = host.startsWith("localhost") ? "http" : "https";
-    const loginUrl = `${proto}://${host}/login`;
-    await fetch(`${proto}://${host}/lovable/email/transactional/send`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: auth,
-      },
-      body: JSON.stringify({
-        templateName: "credentials",
-        recipientEmail: params.to,
-        templateData: {
-          nome: params.nome,
-          email: params.to,
-          senha: params.senha,
-          loginUrl,
-        },
-      }),
-    });
-  } catch (e) {
-    console.error("Failed to send credentials email", e);
-  }
-}
-
 
 async function assertAdmin(userId: string) {
   const { data, error } = await supabaseAdmin
@@ -97,6 +37,7 @@ export const createUser = createServerFn({ method: "POST" })
       .object({
         email: z.string().email(),
         nome: z.string().min(1).max(120),
+        password: z.string().min(6).max(72),
         isAdmin: z.boolean().optional(),
         canUsePrecoEscolha: z.boolean().optional(),
       })
@@ -104,10 +45,9 @@ export const createUser = createServerFn({ method: "POST" })
   )
   .handler(async ({ context, data }) => {
     await assertAdmin(context.userId);
-    const password = generatePassword(14);
     const { data: created, error } = await supabaseAdmin.auth.admin.createUser({
       email: data.email,
-      password,
+      password: data.password,
       email_confirm: true,
       user_metadata: { nome: data.nome },
     });
@@ -122,8 +62,7 @@ export const createUser = createServerFn({ method: "POST" })
         .update({ can_use_preco_escolha: true })
         .eq("id", newId);
     }
-    await sendCredentialsEmail({ to: data.email, nome: data.nome, senha: password });
-    return { id: newId, emailSent: true };
+    return { id: newId };
   });
 
 export const updateUser = createServerFn({ method: "POST" })
