@@ -61,6 +61,7 @@ function AdminPage() {
 
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isAdminNew, setIsAdminNew] = useState(false);
   const [canPrecoNew, setCanPrecoNew] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -108,12 +109,11 @@ function AdminPage() {
     setErr(null);
     setCreatedNotice(null);
     try {
-      await create({ data: { nome, email, isAdmin: isAdminNew, canUsePrecoEscolha: canPrecoNew } });
-      setCreatedNotice(
-        `Usuário criado. Uma senha temporária foi enviada para ${email}.`,
-      );
+      await create({ data: { nome, email, password, isAdmin: isAdminNew, canUsePrecoEscolha: canPrecoNew } });
+      setCreatedNotice(`Usuário criado. Informe a senha cadastrada diretamente ao usuário.`);
       setNome("");
       setEmail("");
+      setPassword("");
       setIsAdminNew(false);
       setCanPrecoNew(false);
       await refresh();
