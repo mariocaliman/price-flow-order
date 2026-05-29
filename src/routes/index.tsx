@@ -97,12 +97,18 @@ function PedidosPage() {
   function priceOf(p: Product): number {
     const v = p.precos[tabela];
     if (v != null) return v;
+    // Fallback: "Preço de Escolha" cobre poucos produtos — usa RQE Especialista quando não houver
+    if (tabela === "Preço de Escolha") {
+      const rqe = p.precos["RQE Especialista"];
+      if (rqe != null) return rqe;
+    }
     for (const t of priceTables) {
       const x = p.precos[t];
       if (x != null) return x;
     }
     return 0;
   }
+
 
   function addProduct(p: Product) {
     const price = priceOf(p);
