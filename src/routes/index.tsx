@@ -273,6 +273,8 @@ function PedidosPage() {
       data?: string;
       obs?: string;
       tabela?: PriceTable;
+      fallbackTabela?: PriceTable;
+
       items?: OrderItem[];
     };
     profile_nome?: string;
