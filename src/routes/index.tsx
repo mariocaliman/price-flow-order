@@ -43,6 +43,8 @@ function PedidosPage() {
 
   // Configurações
   const [tabela, setTabela] = useState<PriceTable>("RQE Especialista");
+  const [fallbackTabela, setFallbackTabela] = useState<PriceTable>("RQE Especialista");
+
   const roundMode: "auto" | "suggest" | "off" = "auto";
 
   // ID do pedido sendo editado (se carregado do histórico) — para gerar PDF com mesmo número
@@ -97,10 +99,10 @@ function PedidosPage() {
   function priceOf(p: Product): number {
     const v = p.precos[tabela];
     if (v != null) return v;
-    // Fallback: "Preço de Escolha" cobre poucos produtos — usa RQE Especialista quando não houver
+    // Quando "Preço de Escolha" não cobre o produto, usa a tabela de fallback escolhida pelo vendedor
     if (tabela === "Preço de Escolha") {
-      const rqe = p.precos["RQE Especialista"];
-      if (rqe != null) return rqe;
+      const fb = p.precos[fallbackTabela];
+      if (fb != null) return fb;
     }
     for (const t of priceTables) {
       const x = p.precos[t];
@@ -108,6 +110,7 @@ function PedidosPage() {
     }
     return 0;
   }
+
 
 
   function addProduct(p: Product) {
@@ -195,9 +198,10 @@ function PedidosPage() {
     if (!items.length) { alert("Adicione pelo menos um item ao pedido."); return null; }
 
     const payload = {
-      cliente, codCliente, clienteTelefone, prazo, data, vencimento, vendedor, obs, tabela, roundMode, items, totals,
+      cliente, codCliente, clienteTelefone, prazo, data, vencimento, vendedor, obs, tabela, fallbackTabela, roundMode, items, totals,
       savedAt: new Date().toISOString(),
     };
+
 
     // Offline → enfileira e segue a vida
     if (!navigator.onLine) {
@@ -269,6 +273,8 @@ function PedidosPage() {
       data?: string;
       obs?: string;
       tabela?: PriceTable;
+      fallbackTabela?: PriceTable;
+
       items?: OrderItem[];
     };
     profile_nome?: string;
@@ -337,6 +343,8 @@ function PedidosPage() {
     setVencimento(pl.vencimento ?? "");
     setVendedor(pl.vendedor ?? "");
     if (pl.tabela) setTabela(pl.tabela);
+    if (pl.fallbackTabela) setFallbackTabela(pl.fallbackTabela);
+
     setItems((pl.items ?? []) as OrderItem[]);
     setHistoryOpen(false);
   }
@@ -477,9 +485,26 @@ function PedidosPage() {
                     className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm font-medium">
                     {availableTables.map((t) => <option key={t} value={t}>{t}</option>)}
                   </select>
+                  {tabela === "Preço de Escolha" && (
+                    <div className="mt-2">
+                      <label className="text-[11px] uppercase tracking-wide text-muted-foreground">
+                        Tabela para produtos sem Preço de Escolha
+                      </label>
+                      <select
+                        value={fallbackTabela}
+                        onChange={(e) => setFallbackTabela(e.target.value as PriceTable)}
+                        className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm font-medium"
+                      >
+                        {priceTables.filter((t) => t !== "Preço de Escolha").map((t) => (
+                          <option key={t} value={t}>{t}</option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
+
             <div className="max-h-[70vh] overflow-y-auto divide-y divide-border">
               {filtered.map((p) => {
                 const price = priceOf(p);
