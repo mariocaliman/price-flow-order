@@ -43,6 +43,8 @@ function PedidosPage() {
 
   // Configurações
   const [tabela, setTabela] = useState<PriceTable>("RQE Especialista");
+  const [fallbackTabela, setFallbackTabela] = useState<PriceTable>("RQE Especialista");
+
   const roundMode: "auto" | "suggest" | "off" = "auto";
 
   // ID do pedido sendo editado (se carregado do histórico) — para gerar PDF com mesmo número
