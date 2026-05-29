@@ -343,6 +343,8 @@ function PedidosPage() {
     setVencimento(pl.vencimento ?? "");
     setVendedor(pl.vendedor ?? "");
     if (pl.tabela) setTabela(pl.tabela);
+    if (pl.fallbackTabela) setFallbackTabela(pl.fallbackTabela);
+
     setItems((pl.items ?? []) as OrderItem[]);
     setHistoryOpen(false);
   }
