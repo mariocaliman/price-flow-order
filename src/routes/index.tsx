@@ -198,9 +198,10 @@ function PedidosPage() {
     if (!items.length) { alert("Adicione pelo menos um item ao pedido."); return null; }
 
     const payload = {
-      cliente, codCliente, clienteTelefone, prazo, data, vencimento, vendedor, obs, tabela, roundMode, items, totals,
+      cliente, codCliente, clienteTelefone, prazo, data, vencimento, vendedor, obs, tabela, fallbackTabela, roundMode, items, totals,
       savedAt: new Date().toISOString(),
     };
+
 
     // Offline → enfileira e segue a vida
     if (!navigator.onLine) {
