@@ -480,9 +480,26 @@ function PedidosPage() {
                     className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm font-medium">
                     {availableTables.map((t) => <option key={t} value={t}>{t}</option>)}
                   </select>
+                  {tabela === "Preço de Escolha" && (
+                    <div className="mt-2">
+                      <label className="text-[11px] uppercase tracking-wide text-muted-foreground">
+                        Tabela para produtos sem Preço de Escolha
+                      </label>
+                      <select
+                        value={fallbackTabela}
+                        onChange={(e) => setFallbackTabela(e.target.value as PriceTable)}
+                        className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm font-medium"
+                      >
+                        {priceTables.filter((t) => t !== "Preço de Escolha").map((t) => (
+                          <option key={t} value={t}>{t}</option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
+
             <div className="max-h-[70vh] overflow-y-auto divide-y divide-border">
               {filtered.map((p) => {
                 const price = priceOf(p);
