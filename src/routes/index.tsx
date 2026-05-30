@@ -470,31 +470,33 @@ function PedidosPage() {
               <input value={search} onChange={(e) => setSearch(e.target.value)}
                 placeholder="Buscar por código, descrição, princípio ativo..."
                 className="w-full px-3 py-2 rounded-md bg-background border border-input text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-              <div className={`grid grid-cols-1 gap-2 ${tabela === "Preço de Escolha" ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
-                <div>
-                  <label className="text-[10px] uppercase tracking-wide text-muted-foreground">Categoria</label>
-                  <select value={catFilter} onChange={(e) => setCatFilter(e.target.value)}
-                    className="mt-0.5 w-full px-1.5 py-1 rounded-md bg-background border border-input text-[11px]">
-                    <option value="">Todas categorias</option>
-                    {categorias.map((c) => <option key={c} value={c}>{c}</option>)}
-                  </select>
-                </div>
-                <div>
-                  <label className="text-[10px] uppercase tracking-wide text-muted-foreground">Tabela de preço</label>
-                  <select value={tabela} onChange={(e) => setTabela(e.target.value as PriceTable)}
-                    className="mt-0.5 w-full px-1.5 py-1 rounded-md bg-background border border-input text-[11px] font-medium">
-                    {availableTables.map((t) => <option key={t} value={t}>{t}</option>)}
-                  </select>
+              <div className="space-y-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div>
+                    <label className="text-[10px] uppercase tracking-wide text-muted-foreground">Categoria</label>
+                    <select value={catFilter} onChange={(e) => setCatFilter(e.target.value)}
+                      className="mt-0.5 w-full px-2 py-1.5 rounded-md bg-background border border-input text-xs">
+                      <option value="">Todas categorias</option>
+                      {categorias.map((c) => <option key={c} value={c}>{c}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-[10px] uppercase tracking-wide text-muted-foreground">Tabela de preço</label>
+                    <select value={tabela} onChange={(e) => setTabela(e.target.value as PriceTable)}
+                      className="mt-0.5 w-full px-2 py-1.5 rounded-md bg-background border border-input text-xs font-medium">
+                      {availableTables.map((t) => <option key={t} value={t}>{t}</option>)}
+                    </select>
+                  </div>
                 </div>
                 {tabela === "Preço de Escolha" && (
-                  <div>
-                    <label className="text-[10px] uppercase tracking-wide text-muted-foreground">
-                      Tabela complementar
+                  <div className="flex items-center gap-2 pl-2 border-l-2 border-primary/40">
+                    <label className="text-[10px] uppercase tracking-wide text-muted-foreground whitespace-nowrap">
+                      ↳ Complementar
                     </label>
                     <select
                       value={fallbackTabela}
                       onChange={(e) => setFallbackTabela(e.target.value as PriceTable)}
-                      className="mt-0.5 w-full px-1.5 py-1 rounded-md bg-background border border-input text-[11px] font-medium"
+                      className="flex-1 px-2 py-1.5 rounded-md bg-background border border-input text-xs font-medium"
                     >
                       {priceTables.filter((t) => t !== "Preço de Escolha").map((t) => (
                         <option key={t} value={t}>{t}</option>
