@@ -472,29 +472,29 @@ function PedidosPage() {
                 className="w-full px-3 py-2 rounded-md bg-background border border-input text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
               <div className={`grid grid-cols-1 gap-2 ${tabela === "Preço de Escolha" ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
                 <div>
-                  <label className="text-[11px] uppercase tracking-wide text-muted-foreground">Categoria</label>
+                  <label className="text-[10px] uppercase tracking-wide text-muted-foreground">Categoria</label>
                   <select value={catFilter} onChange={(e) => setCatFilter(e.target.value)}
-                    className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm">
+                    className="mt-0.5 w-full px-1.5 py-1 rounded-md bg-background border border-input text-[11px]">
                     <option value="">Todas categorias</option>
                     {categorias.map((c) => <option key={c} value={c}>{c}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="text-[11px] uppercase tracking-wide text-muted-foreground">Tabela de preço</label>
+                  <label className="text-[10px] uppercase tracking-wide text-muted-foreground">Tabela de preço</label>
                   <select value={tabela} onChange={(e) => setTabela(e.target.value as PriceTable)}
-                    className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm font-medium">
+                    className="mt-0.5 w-full px-1.5 py-1 rounded-md bg-background border border-input text-[11px] font-medium">
                     {availableTables.map((t) => <option key={t} value={t}>{t}</option>)}
                   </select>
                 </div>
                 {tabela === "Preço de Escolha" && (
                   <div>
-                    <label className="text-[11px] uppercase tracking-wide text-muted-foreground">
+                    <label className="text-[10px] uppercase tracking-wide text-muted-foreground">
                       Tabela complementar
                     </label>
                     <select
                       value={fallbackTabela}
                       onChange={(e) => setFallbackTabela(e.target.value as PriceTable)}
-                      className="mt-1 w-full px-2 py-2 rounded-md bg-background border border-input text-sm font-medium"
+                      className="mt-0.5 w-full px-1.5 py-1 rounded-md bg-background border border-input text-[11px] font-medium"
                     >
                       {priceTables.filter((t) => t !== "Preço de Escolha").map((t) => (
                         <option key={t} value={t}>{t}</option>
