@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import logoRioquimica from "@/assets/logo-rioquimica.webp";
 
 export const Route = createFileRoute("/login")({
   component: LoginPage,
@@ -38,7 +39,12 @@ function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background px-4 py-8">
+      <img
+        src={logoRioquimica}
+        alt="Rioquímica Indústria Farmacêutica"
+        className="w-full max-w-xs mb-6"
+      />
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-2xl">Entrar</CardTitle>
