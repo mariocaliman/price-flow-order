@@ -218,6 +218,24 @@ function PedidosPage() {
 
     setSaving(true);
     try {
+      if (currentPedidoId) {
+        // Edição → atualiza o mesmo registro (mantém número), apenas atualiza data
+        const { data: row, error } = await supabase.from("pedidos")
+          .update({
+            nome: cliente.trim(),
+            data_pedido: data,
+            total: totals.valorTotalNota,
+            payload: payload as never,
+          })
+          .eq("id", currentPedidoId)
+          .select("id, numero")
+          .single();
+        if (error) throw error;
+        localStorage.setItem(`pedido_${Date.now()}`, JSON.stringify(payload));
+        setCurrentNumero(row?.numero ?? null);
+        alert(`Pedido #${String(row?.numero ?? "").padStart(6, "0")} "${cliente.trim()}" atualizado.`);
+        return { id: row!.id, numero: row?.numero ?? null };
+      }
       const { data: row, error } = await supabase.from("pedidos")
         .insert({
           user_id: auth.user.id,
@@ -234,6 +252,7 @@ function PedidosPage() {
       setCurrentNumero(row?.numero ?? null);
       alert(`Pedido #${String(row?.numero ?? "").padStart(6, "0")} "${cliente.trim()}" salvo.`);
       return { id: row!.id, numero: row?.numero ?? null };
+
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       // Falha de rede (mesmo com navigator.onLine true) → enfileira
