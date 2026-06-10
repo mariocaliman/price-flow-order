@@ -887,6 +887,11 @@ function PedidosPage() {
         </div>
       )}
 
+      <footer className="border-t border-border bg-card mt-6 py-3 text-center">
+        <p className="text-[10px] text-muted-foreground">
+          Versão {__APP_VERSION__}
+        </p>
+      </footer>
     </div>
   );
 }
