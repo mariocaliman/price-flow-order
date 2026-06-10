@@ -12,4 +12,9 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+  vite: {
+    define: {
+      __APP_VERSION__: JSON.stringify(new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })),
+    },
+  },
 });
