@@ -1,3 +1,5 @@
+declare const __APP_VERSION__: string;
+
 import { useEffect, useMemo, useState } from "react";
 import logo from "@/assets/rioquimica-logo.jpeg";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
