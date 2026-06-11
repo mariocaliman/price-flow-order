@@ -157,6 +157,24 @@ function PedidosPage() {
     });
   }
 
+  function updateUnitPrice(idx: number, value: number) {
+    setItems((prev) => {
+      const nx = [...prev];
+      const it = nx[idx];
+      if (tabela === "Preço de Escolha" && !auth.isAdmin) {
+        const tabelaPrice = it.product.precos["Tabela"] ?? priceOf(it.product);
+        if (value < tabelaPrice) {
+          alert(
+            `Preço bloqueado: na tabela "Preço de Escolha" não é permitido reduzir o preço abaixo de ${brl(tabelaPrice)}. Esta alteração somente com aprovação de um administrador.`,
+          );
+          return prev;
+        }
+      }
+      nx[idx] = { ...it, unitPrice: value };
+      return nx;
+    });
+  }
+
   function removeItem(idx: number) {
     setItems((prev) => prev.filter((_, i) => i !== idx));
   }
