@@ -645,11 +645,7 @@ function PedidosPage() {
                           <div>
                             <label className="text-[10px] text-muted-foreground block">Preço un.</label>
                             <input type="number" step="0.01" min={0} value={it.unitPrice}
-                              onChange={(e) => setItems((prev) => {
-                                const nx = [...prev];
-                                nx[idx] = { ...nx[idx], unitPrice: Number(e.target.value) || 0 };
-                                return nx;
-                              })}
+                              onChange={(e) => updateUnitPrice(idx, Number(e.target.value) || 0)}
                               className={`w-full px-2 py-1 text-xs rounded border border-input bg-background ${it.unitPrice !== priceOf(it.product) ? "ring-1 ring-warning" : ""}`} />
                           </div>
                           <div>
