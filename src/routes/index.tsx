@@ -592,7 +592,23 @@ function PedidosPage() {
               <Field label="Código do cliente" value={codCliente} onChange={setCodCliente} />
               <Field label="Telefone (WhatsApp)" value={clienteTelefone} onChange={setClienteTelefone} placeholder="(DDD) 99999-9999" />
               <Field label="Vendedor" value={vendedor} onChange={setVendedor} />
-              <Field label="Prazo de pagamento" value={prazo} onChange={setPrazo} />
+              <div>
+                <label className="text-[10px] text-muted-foreground">Prazo de pagamento</label>
+                <input
+                  list="prazos"
+                  value={prazo}
+                  onChange={(e) => setPrazo(e.target.value)}
+                  className="mt-0.5 w-full px-2 py-1 rounded-md bg-background border border-input text-xs focus:outline-none focus:ring-2 focus:ring-ring"
+                />
+                <datalist id="prazos">
+                  <option value="002 - 28 dias" />
+                  <option value="018 - 28/35 dias" />
+                  <option value="011 - 28/35/42 dias" />
+                  <option value="031 - 28/35/42/49 dias" />
+                  <option value="023 - 28/35/42/49/56 dias" />
+                  <option value="097 - 35/ 42/ 49/ 56 dias" />
+                </datalist>
+              </div>
               <Field label="Data do pedido" type="date" value={data} onChange={setData} />
               <Field label="Vencimento da proposta" type="date" value={vencimento} onChange={setVencimento} />
             </div>
