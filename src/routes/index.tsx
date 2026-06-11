@@ -157,6 +157,24 @@ function PedidosPage() {
     });
   }
 
+  function updateUnitPrice(idx: number, value: number) {
+    setItems((prev) => {
+      const nx = [...prev];
+      const it = nx[idx];
+      if (tabela === "Preço de Escolha" && !auth.isAdmin) {
+        const minPrice = priceOf(it.product);
+        if (value < minPrice) {
+          alert(
+            `Preço bloqueado: na tabela "Preço de Escolha" não é permitido reduzir o preço abaixo de ${brl(minPrice)}. Esta alteração somente com aprovação de um administrador.`,
+          );
+          return prev;
+        }
+      }
+      nx[idx] = { ...it, unitPrice: value };
+      return nx;
+    });
+  }
+
   function removeItem(idx: number) {
     setItems((prev) => prev.filter((_, i) => i !== idx));
   }
@@ -627,11 +645,7 @@ function PedidosPage() {
                           <div>
                             <label className="text-[10px] text-muted-foreground block">Preço un.</label>
                             <input type="number" step="0.01" min={0} value={it.unitPrice}
-                              onChange={(e) => setItems((prev) => {
-                                const nx = [...prev];
-                                nx[idx] = { ...nx[idx], unitPrice: Number(e.target.value) || 0 };
-                                return nx;
-                              })}
+                              onChange={(e) => updateUnitPrice(idx, Number(e.target.value) || 0)}
                               className={`w-full px-2 py-1 text-xs rounded border border-input bg-background ${it.unitPrice !== priceOf(it.product) ? "ring-1 ring-warning" : ""}`} />
                           </div>
                           <div>
@@ -692,11 +706,7 @@ function PedidosPage() {
                               <div className="flex items-center justify-end gap-1">
                                 <span className="text-xs text-muted-foreground">R$</span>
                                 <input type="number" step="0.01" min={0} value={it.unitPrice}
-                                  onChange={(e) => setItems((prev) => {
-                                    const nx = [...prev];
-                                    nx[idx] = { ...nx[idx], unitPrice: Number(e.target.value) || 0 };
-                                    return nx;
-                                  })}
+                                  onChange={(e) => updateUnitPrice(idx, Number(e.target.value) || 0)}
                                   className={`w-24 px-2 py-1 text-right rounded border border-input bg-background ${it.unitPrice !== priceOf(it.product) ? "ring-1 ring-warning" : ""}`}
                                   title={`Tabela: ${brl(priceOf(it.product))}`} />
                               </div>
