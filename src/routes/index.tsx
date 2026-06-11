@@ -162,10 +162,10 @@ function PedidosPage() {
       const nx = [...prev];
       const it = nx[idx];
       if (tabela === "Preço de Escolha" && !auth.isAdmin) {
-        const tabelaPrice = it.product.precos["Tabela"] ?? priceOf(it.product);
-        if (value < tabelaPrice) {
+        const minPrice = priceOf(it.product);
+        if (value < minPrice) {
           alert(
-            `Preço bloqueado: na tabela "Preço de Escolha" não é permitido reduzir o preço abaixo de ${brl(tabelaPrice)}. Esta alteração somente com aprovação de um administrador.`,
+            `Preço bloqueado: na tabela "Preço de Escolha" não é permitido reduzir o preço abaixo de ${brl(minPrice)}. Esta alteração somente com aprovação de um administrador.`,
           );
           return prev;
         }
