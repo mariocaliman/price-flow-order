@@ -907,6 +907,32 @@ function PedidosPage() {
   );
 }
 
+function VersionNotes() {
+  const [open, setOpen] = useState(false);
+  const isMobile = useIsMobile();
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <p
+          className="text-[10px] text-muted-foreground cursor-help underline decoration-dotted underline-offset-2 inline-block"
+          onMouseEnter={() => !isMobile && setOpen(true)}
+          onMouseLeave={() => !isMobile && setOpen(false)}
+        >
+          Versão {__APP_VERSION__}
+        </p>
+      </PopoverTrigger>
+      <PopoverContent side="top" align="center" className="w-72 text-xs">
+        <p className="font-semibold mb-1">Notas desta versão</p>
+        <ul className="list-disc pl-4 space-y-1">
+          {RELEASE_NOTES.map((n, i) => (
+            <li key={i}>{n}</li>
+          ))}
+        </ul>
+      </PopoverContent>
+    </Popover>
+  );
+}
+
 function Field({
   label, value, onChange, type = "text", placeholder,
 }: { label: string; value: string; onChange: (v: string) => void; type?: string; placeholder?: string }) {
