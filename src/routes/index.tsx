@@ -901,22 +901,7 @@ function PedidosPage() {
       )}
 
       <footer className="border-t border-border bg-card mt-6 py-3 text-center">
-        <div className="relative inline-block group">
-          <p className="text-[10px] text-muted-foreground cursor-help underline decoration-dotted underline-offset-2">
-            Versão {__APP_VERSION__}
-          </p>
-          <div
-            role="tooltip"
-            className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 w-72 -translate-x-1/2 rounded-md border border-border bg-popover p-3 text-left text-xs text-popover-foreground shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
-          >
-            <p className="font-semibold mb-1">Notas desta versão</p>
-            <ul className="list-disc pl-4 space-y-1">
-              {RELEASE_NOTES.map((n, i) => (
-                <li key={i}>{n}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <VersionNotes />
       </footer>
     </div>
   );
