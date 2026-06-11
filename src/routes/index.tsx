@@ -706,11 +706,7 @@ function PedidosPage() {
                               <div className="flex items-center justify-end gap-1">
                                 <span className="text-xs text-muted-foreground">R$</span>
                                 <input type="number" step="0.01" min={0} value={it.unitPrice}
-                                  onChange={(e) => setItems((prev) => {
-                                    const nx = [...prev];
-                                    nx[idx] = { ...nx[idx], unitPrice: Number(e.target.value) || 0 };
-                                    return nx;
-                                  })}
+                                  onChange={(e) => updateUnitPrice(idx, Number(e.target.value) || 0)}
                                   className={`w-24 px-2 py-1 text-right rounded border border-input bg-background ${it.unitPrice !== priceOf(it.product) ? "ring-1 ring-warning" : ""}`}
                                   title={`Tabela: ${brl(priceOf(it.product))}`} />
                               </div>
