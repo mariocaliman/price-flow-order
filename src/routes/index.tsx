@@ -601,12 +601,25 @@ function PedidosPage() {
                   className="mt-0.5 w-full px-2 py-1 rounded-md bg-background border border-input text-xs focus:outline-none focus:ring-2 focus:ring-ring"
                 />
                 <datalist id="prazos">
-                  <option value="002 - 28 dias" />
-                  <option value="018 - 28/35 dias" />
-                  <option value="011 - 28/35/42 dias" />
-                  <option value="031 - 28/35/42/49 dias" />
-                  <option value="023 - 28/35/42/49/56 dias" />
-                  <option value="097 - 35/ 42/ 49/ 56 dias" />
+                  <option value="PAGAMENTO A VISTA" />
+                  <option value="15 DIAS DE PRAZO" />
+                  <option value="28 DIAS DE PRAZO" />
+                  <option value="28 E 35 DIAS DE PRAZO" />
+                  <option value="28 E 42 DIAS DE PRAZO" />
+                  <option value="28, 42 E 56 DIAS DE PRAZO" />
+                  <option value="28, 35, 42 E 49 DIAS DE PRAZO" />
+                  <option value="28, 35, 42, 49, 56 E 63 DIAS DE PRAZO" />
+                  <option value="30 DIAS DE PRAZO" />
+                  <option value="35 DIAS DE PRAZO" />
+                  <option value="45 DIAS DE PRAZO" />
+                  <option value="35 E 45 DIAS DE PRAZO" />
+                  <option value="35, 42 DIAS DE PRAZO" />
+                  <option value="35, 42 E 56 DIAS DE PRAZO" />
+                  <option value="35, 42 E 63 DIAS DE PRAZO" />
+                  <option value="35, 42, 48, 56 DIAS DE PRAZO" />
+                  <option value="35, 42, 49 DIAS DE PRAZO" />
+                  <option value="35, 42, 49, 56 DIAS DE PRAZO" />
+                  <option value="35, 42, 49, 56 E 63 DIAS DE PRAZO" />
                 </datalist>
               </div>
               <Field label="Data do pedido" type="date" value={data} onChange={setData} />
