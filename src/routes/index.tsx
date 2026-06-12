@@ -44,7 +44,7 @@ function PedidosPage() {
     return d.toISOString().slice(0, 10);
   });
   const [vendedor, setVendedor] = useState("");
-  const [obs, setObs] = useState("");
+  const [obs, setObs] = useState("Confira seu pedido e formalize a aprovação por e-mail, para que possamos seguir com faturamento. Após a emissão de NF, não aceitamos cancelamentos ou devoluções.\n\nPor favor, enviar a confirmação para os e-mails:");
 
   // Configurações
   const [tabela, setTabela] = useState<PriceTable>("RQE Especialista");
