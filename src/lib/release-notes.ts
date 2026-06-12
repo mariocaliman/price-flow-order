@@ -1,5 +1,7 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "Lista de prazos de pagamento padrão com opção de digitar manualmente.",
+  "No mobile, clique na versão para ver as notas da release (popup).",
   "Campo de observações do pedido agora inicia com mensagem padrão editável.",
   "Bloqueio de redução de preço na tabela 'Preço de Escolha' (somente admins podem reduzir).",
   "Versão do app exibida no rodapé, atualizada automaticamente a cada build.",
