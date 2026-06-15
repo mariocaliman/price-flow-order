@@ -511,6 +511,10 @@ function PedidosPage() {
               className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
               Gerar PDF
             </button>
+            <button onClick={resetOrder} title="Excluir tudo e começar novo pedido"
+              className="px-3 py-2 text-xs sm:text-sm rounded-md border border-destructive/40 text-destructive hover:bg-destructive/10 transition">
+              Excluir tudo
+            </button>
             <button
               onClick={async () => { await supabase.auth.signOut(); navigate({ to: "/login" }); }}
               className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
