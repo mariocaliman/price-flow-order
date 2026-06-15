@@ -1,5 +1,6 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "Botão 'Excluir tudo' movido para dentro do card 'Dados do pedido' (canto direito, tamanho reduzido).",
   "Botão 'Excluir tudo' no cabeçalho para começar um novo pedido (limpa itens e dados do cabeçalho).",
   "Lista de prazos de pagamento padrão com opção de digitar manualmente.",
   "No mobile, clique na versão para ver as notas da release (popup).",
