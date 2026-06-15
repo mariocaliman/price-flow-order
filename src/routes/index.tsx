@@ -511,10 +511,6 @@ function PedidosPage() {
               className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
               Gerar PDF
             </button>
-            <button onClick={resetOrder} title="Excluir tudo e começar novo pedido"
-              className="px-3 py-2 text-xs sm:text-sm rounded-md border border-destructive/40 text-destructive hover:bg-destructive/10 transition">
-              Excluir tudo
-            </button>
             <button
               onClick={async () => { await supabase.auth.signOut(); navigate({ to: "/login" }); }}
               className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
@@ -601,11 +597,17 @@ function PedidosPage() {
           <div className="bg-card border border-border rounded-lg p-2.5 sm:p-3">
             <div className="flex items-center justify-between mb-2 gap-2">
               <h2 className="font-semibold text-[11px] sm:text-xs uppercase tracking-wide text-muted-foreground">Dados do pedido</h2>
-              {currentNumero && (
-                <span className="text-[10px] px-2 py-0.5 rounded bg-primary/10 text-primary font-mono">
-                  #{String(currentNumero).padStart(6, "0")}
-                </span>
-              )}
+              <div className="flex items-center gap-2">
+                {currentNumero && (
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-primary/10 text-primary font-mono">
+                    #{String(currentNumero).padStart(6, "0")}
+                  </span>
+                )}
+                <button onClick={resetOrder} title="Excluir tudo e começar novo pedido"
+                  className="px-2 py-1 text-[10px] rounded-md border border-destructive/40 text-destructive hover:bg-destructive/10 transition">
+                  Excluir tudo
+                </button>
+              </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
               <Field label="Cliente" value={cliente} onChange={setCliente} />
