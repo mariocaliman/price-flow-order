@@ -190,6 +190,22 @@ function PedidosPage() {
     }
   }
 
+  function resetOrder() {
+    if (!confirm("Excluir TUDO e começar um novo pedido? Esta ação não pode ser desfeita.")) return;
+    setItems([]);
+    setCliente("");
+    setCodCliente("");
+    setClienteTelefone("");
+    setPrazo("28 DDL");
+    const hoje = new Date().toISOString().slice(0, 10);
+    setData(hoje);
+    const v = new Date(); v.setDate(v.getDate() + 15);
+    setVencimento(v.toISOString().slice(0, 10));
+    setObs("Confira seu pedido e formalize a aprovação por e-mail, para que possamos seguir com faturamento. Após a emissão de NF, não aceitamos cancelamentos ou devoluções.\n\nPor favor, enviar a confirmação para os e-mails:");
+    setCurrentPedidoId(null);
+    setCurrentNumero(null);
+  }
+
   const totals = useMemo(() => {
     let totalGeral = 0, totalUnidades = 0, totalCaixas = 0;
     let baseIcms = 0, vIcms = 0, baseIpi = 0, vIpi = 0;
