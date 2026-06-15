@@ -1,5 +1,6 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "Botão 'Excluir tudo' no cabeçalho para começar um novo pedido (limpa itens e dados do cabeçalho).",
   "Lista de prazos de pagamento padrão com opção de digitar manualmente.",
   "No mobile, clique na versão para ver as notas da release (popup).",
   "Campo de observações do pedido agora inicia com mensagem padrão editável.",
