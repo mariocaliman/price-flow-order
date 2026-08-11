@@ -32,6 +32,8 @@ export function useProducts() {
   }
 
   useEffect(() => {
+    const cached = getCachedProducts();
+    if (cached) setProducts(cached);
     if (typeof navigator !== "undefined" && navigator.onLine === false) return;
     void refresh();
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) => {
