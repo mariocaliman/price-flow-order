@@ -11,10 +11,7 @@ import {
 
 export function useProducts() {
   const fetchProducts = useServerFn(listProducts);
-  const [products, setProducts] = useState<Product[]>(() => {
-    if (typeof window === "undefined") return seedProducts;
-    return getCachedProducts() ?? seedProducts;
-  });
+  const [products, setProducts] = useState<Product[]>(seedProducts);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
