@@ -15,6 +15,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as AdminProductsRouteImport } from './routes/admin.products'
+import { Route as AdminPricesRouteImport } from './routes/admin.prices'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminAuditRouteImport } from './routes/admin.audit'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
@@ -52,6 +53,11 @@ const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
 const AdminProductsRoute = AdminProductsRouteImport.update({
   id: '/products',
   path: '/products',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPricesRoute = AdminPricesRouteImport.update({
+  id: '/prices',
+  path: '/prices',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminDashboardRoute = AdminDashboardRouteImport.update({
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/perfil': typeof PerfilRoute
   '/admin/audit': typeof AdminAuditRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/prices': typeof AdminPricesRoute
   '/admin/products': typeof AdminProductsRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -121,6 +128,7 @@ export interface FileRoutesByTo {
   '/perfil': typeof PerfilRoute
   '/admin/audit': typeof AdminAuditRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/prices': typeof AdminPricesRoute
   '/admin/products': typeof AdminProductsRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -138,6 +146,7 @@ export interface FileRoutesById {
   '/perfil': typeof PerfilRoute
   '/admin/audit': typeof AdminAuditRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/prices': typeof AdminPricesRoute
   '/admin/products': typeof AdminProductsRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -156,6 +165,7 @@ export interface FileRouteTypes {
     | '/perfil'
     | '/admin/audit'
     | '/admin/dashboard'
+    | '/admin/prices'
     | '/admin/products'
     | '/email/unsubscribe'
     | '/lovable/email/suppression'
@@ -172,6 +182,7 @@ export interface FileRouteTypes {
     | '/perfil'
     | '/admin/audit'
     | '/admin/dashboard'
+    | '/admin/prices'
     | '/admin/products'
     | '/email/unsubscribe'
     | '/lovable/email/suppression'
@@ -188,6 +199,7 @@ export interface FileRouteTypes {
     | '/perfil'
     | '/admin/audit'
     | '/admin/dashboard'
+    | '/admin/prices'
     | '/admin/products'
     | '/email/unsubscribe'
     | '/lovable/email/suppression'
@@ -256,6 +268,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminProductsRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/prices': {
+      id: '/admin/prices'
+      path: '/prices'
+      fullPath: '/admin/prices'
+      preLoaderRoute: typeof AdminPricesRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/dashboard': {
       id: '/admin/dashboard'
       path: '/dashboard'
@@ -318,12 +337,14 @@ declare module '@tanstack/react-router' {
 interface AdminRouteChildren {
   AdminAuditRoute: typeof AdminAuditRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminPricesRoute: typeof AdminPricesRoute
   AdminProductsRoute: typeof AdminProductsRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
   AdminAuditRoute: AdminAuditRoute,
   AdminDashboardRoute: AdminDashboardRoute,
+  AdminPricesRoute: AdminPricesRoute,
   AdminProductsRoute: AdminProductsRoute,
 }
 
@@ -345,13 +366,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

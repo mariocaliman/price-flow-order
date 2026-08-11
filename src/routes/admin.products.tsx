@@ -134,6 +134,7 @@ function AdminProductsPage() {
           </div>
           <div className="flex gap-1.5 sm:gap-2 flex-wrap">
             <Button size="sm" onClick={openNew}>+ Novo produto</Button>
+            <Link to="/admin/prices" className="px-2.5 py-1.5 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">💲 Histórico de preços</Link>
             <Link to="/admin" className="px-2.5 py-1.5 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">← Usuários</Link>
             <Link to="/" className="px-2.5 py-1.5 text-xs sm:text-sm rounded-md border border-border hover:bg-muted">Pedidos</Link>
           </div>

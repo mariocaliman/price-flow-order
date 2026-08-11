@@ -1,5 +1,6 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "Nova seção no admin: 'Histórico de preços' (/admin/prices) com filtro por código e período, mostrando preço anterior, novo, variação % e quem alterou.",
   "Tabela de preços atualizada conforme planilha HOSPITALAR (REV 0006.26 — agosto): 185 produtos com novos preços e impostos.",
   "5 produtos novos incluídos no catálogo (0510105423, 0530102057, 0530102058, 0530102059, 0530102060).",
   "Botão 'Excluir tudo' movido para dentro do card 'Dados do pedido' (canto direito, tamanho reduzido).",
