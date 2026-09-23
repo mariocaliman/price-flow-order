@@ -266,6 +266,45 @@ export type Database = {
         }
         Relationships: []
       }
+      propostas: {
+        Row: {
+          cliente: string
+          created_at: string
+          id: string
+          numero: number
+          payload: Json
+          status: string
+          total: number
+          updated_at: string
+          user_id: string
+          vencimento: string | null
+        }
+        Insert: {
+          cliente?: string
+          created_at?: string
+          id?: string
+          numero?: number
+          payload?: Json
+          status?: string
+          total?: number
+          updated_at?: string
+          user_id: string
+          vencimento?: string | null
+        }
+        Update: {
+          cliente?: string
+          created_at?: string
+          id?: string
+          numero?: number
+          payload?: Json
+          status?: string
+          total?: number
+          updated_at?: string
+          user_id?: string
+          vencimento?: string | null
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string
