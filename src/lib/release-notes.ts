@@ -1,5 +1,6 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "Propostas: tabelas de preço seguem a mesma lógica dos pedidos (tabela complementar, bloqueio no Preço de Escolha, arredondamento por caixa).",
   "Novo módulo 'Propostas Comerciais': criar, salvar, duplicar e editar propostas com preços de qualquer tabela (editáveis) e gerar PDF profissional.",
   "Nova seção no admin: 'Histórico de preços' (/admin/prices) com filtro por código e período, mostrando preço anterior, novo, variação % e quem alterou.",
   "Tabela de preços atualizada conforme planilha HOSPITALAR (REV 0006.26 — agosto): 185 produtos com novos preços e impostos.",
