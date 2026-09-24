@@ -497,6 +497,10 @@ function PedidosPage() {
                   : `Offline${offline.pending ? ` · ${offline.pending} na fila` : ""}`}
               </button>
             )}
+            <Link to="/propostas" title="Propostas Comerciais"
+              className="px-3 py-2 text-xs sm:text-sm font-semibold rounded-md border border-primary/40 text-primary hover:bg-primary/10 transition inline-flex items-center gap-1.5">
+              <span aria-hidden>📄</span> Propostas Comerciais
+            </Link>
             <Link to="/perfil" title="Meu perfil"
               className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition inline-flex items-center gap-1.5">
               <span aria-hidden>👤</span> Perfil
