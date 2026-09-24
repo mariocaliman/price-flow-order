@@ -4,7 +4,7 @@ import logo from "@/assets/rioquimica-logo.jpeg";
 import { useAuth } from "@/hooks/use-auth";
 import { useProducts } from "@/hooks/use-products";
 import { supabase } from "@/integrations/supabase/client";
-import { brl, priceTables, type PriceTable, type Product } from "@/lib/products";
+import { brl, priceTables, roundToBox, type PriceTable, type Product } from "@/lib/products";
 import {
   buildPropostaPdf, DEFAULT_APRESENTACAO, fmtNumero, propostaFilename, propostaTotal,
   type PropostaData, type PropostaItem,
@@ -36,11 +36,12 @@ const today = () => new Date().toISOString().slice(0, 10);
 const plus = (d: number) => new Date(Date.now() + d * 864e5).toISOString().slice(0, 10);
 const fmtD = (d?: string | null) => (d ? d.slice(0, 10).split("-").reverse().join("/") : "—");
 
-function emptyForm(nome = "", cargo = ""): PropostaData & { status: string } {
+type Form = PropostaData & { status: string; tabela: PriceTable; fallbackTabela: PriceTable };
+function emptyForm(nome = "", cargo = ""): Form {
   return {
     numero: null, dataCriacao: today(), cliente: "", prazo: "28 DDL", vencimento: plus(15),
     apresentacao: DEFAULT_APRESENTACAO, obs: "", assinaturaNome: nome, assinaturaCargo: cargo,
-    assinaturaInfo: "", assinaturaCliente: true, items: [], status: "rascunho",
+    assinaturaInfo: "", assinaturaCliente: true, items: [], status: "rascunho", tabela: "RQE Especialista", fallbackTabela: "RQE Especialista",
   };
 }
 
@@ -57,7 +58,7 @@ function PropostasPage() {
   const [id, setId] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [search, setSearch] = useState("");
-  const [tabela, setTabela] = useState<PriceTable>("RQE Especialista");
+  const [catFilter, setCatFilter] = useState("");
   const [cargo, setCargo] = useState("");
 
   useEffect(() => {
@@ -113,7 +114,7 @@ function PropostasPage() {
   }
 
   function openRow(r: Row, duplicate = false) {
-    const f = { ...emptyForm(), ...r.payload, status: duplicate ? "rascunho" : r.status } as PropostaData & { status: string };
+    const f = { ...emptyForm(), ...r.payload, status: duplicate ? "rascunho" : r.status } as Form;
     if (duplicate) { f.numero = null; f.dataCriacao = today(); f.vencimento = plus(15); }
     else f.numero = r.numero;
     setForm(f); setId(duplicate ? null : r.id); setView("edit");
@@ -135,23 +136,71 @@ function PropostasPage() {
   const setItem = (i: number, patch: Partial<PropostaItem>) =>
     setForm((f) => ({ ...f, items: f.items.map((it, j) => (j === i ? { ...it, ...patch } : it)) }));
 
+  const tabela = form.tabela;
+  const fallbackTabela = form.fallbackTabela;
+  const allowPrecoEscolha = auth.isAdmin || auth.canUsePrecoEscolha;
+  const availableTables = priceTables.filter((t) => allowPrecoEscolha || t !== "Preço de Escolha");
+  useEffect(() => {
+    if (!auth.roleLoading && !allowPrecoEscolha && form.tabela === "Preço de Escolha") set("tabela", "RQE Especialista");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [auth.roleLoading, allowPrecoEscolha, form.tabela]);
+
   const productMap = useMemo(() => new Map(products.map((p) => [p.codigo, p])), [products]);
+  const categorias = useMemo(() => Array.from(new Set(products.map((p) => p.categoria))).filter(Boolean).sort(), [products]);
   const filtered = useMemo(() => {
     const s = search.trim().toLowerCase();
-    const list = s
-      ? products.filter((p) => `${p.codigo} ${p.descricao} ${p.apresentacao} ${p.principioAtivo}`.toLowerCase().includes(s))
-      : products;
-    return list.slice(0, 200);
-  }, [products, search]);
+    return products.filter((p) => {
+      if (catFilter && p.categoria !== catFilter) return false;
+      if (!s) return true;
+      return `${p.codigo} ${p.descricao} ${p.principioAtivo} ${p.categoria}`.toLowerCase().includes(s);
+    });
+  }, [products, search, catFilter]);
 
-  const availableTables = priceTables.filter((t) => t !== "Preço de Escolha" || auth.canUsePrecoEscolha || auth.isAdmin);
+  function priceOf(p: Product): number {
+    const v = p.precos[tabela];
+    if (v != null) return v;
+    if (tabela === "Preço de Escolha") {
+      const fb = p.precos[fallbackTabela];
+      if (fb != null) return fb;
+    }
+    for (const t of priceTables) { const x = p.precos[t]; if (x != null) return x; }
+    return 0;
+  }
+  function tableUsed(p: Product): string {
+    if (p.precos[tabela] != null) return tabela;
+    if (tabela === "Preço de Escolha" && p.precos[fallbackTabela] != null) return fallbackTabela;
+    return priceTables.find((t) => p.precos[t] != null) ?? tabela;
+  }
 
   function addProduct(p: Product) {
-    const price = p.precos[tabela] ?? availableTables.map((t) => p.precos[t]).find((v) => v != null) ?? 0;
-    setForm((f) => ({
-      ...f,
-      items: [...f.items, { codigo: p.codigo, descricao: p.descricao, apresentacao: p.apresentacao, tabela, qty: p.qtdPorEmbalagem || 1, unitPrice: price }],
-    }));
+    const price = priceOf(p);
+    if (!price) { alert(`Sem preço cadastrado em "${tabela}" para ${p.descricao}.`); return; }
+    setForm((f) => {
+      const i = f.items.findIndex((it) => it.codigo === p.codigo);
+      if (i >= 0) {
+        const items = [...f.items];
+        items[i] = { ...items[i], qty: roundToBox(items[i].qty + p.qtdPorEmbalagem, p.qtdPorEmbalagem, "auto"), unitPrice: price, tabela: tableUsed(p) };
+        return { ...f, items };
+      }
+      return { ...f, items: [...f.items, { codigo: p.codigo, descricao: p.descricao, apresentacao: p.apresentacao, tabela: tableUsed(p), qty: p.qtdPorEmbalagem || 1, unitPrice: price }] };
+    });
+  }
+
+  function updateQty(i: number, v: number) {
+    const p = productMap.get(form.items[i].codigo);
+    setItem(i, { qty: p ? roundToBox(v, p.qtdPorEmbalagem, "auto") : v });
+  }
+
+  function updateUnitPrice(i: number, v: number) {
+    const p = productMap.get(form.items[i].codigo);
+    if (p && tabela === "Preço de Escolha" && !auth.isAdmin) {
+      const min = priceOf(p);
+      if (v < min) {
+        alert(`Preço bloqueado: na tabela "Preço de Escolha" não é permitido reduzir o preço abaixo de ${brl(min)}. Esta alteração somente com aprovação de um administrador.`);
+        return;
+      }
+    }
+    setItem(i, { unitPrice: v });
   }
 
   function validate(): string | null {
@@ -290,16 +339,33 @@ function PropostasPage() {
               <div className="p-4 border-b border-border space-y-2">
                 <h2 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">Adicionar Produto</h2>
                 <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Buscar por código, nome ou descrição..." className={inputCls} />
-                <div>
-                  <label className="text-[10px] uppercase tracking-wide text-muted-foreground">Tabela de preço padrão</label>
-                  <select value={tabela} onChange={(e) => setTabela(e.target.value as PriceTable)} className={inputCls + " text-xs"}>
-                    {availableTables.map((t) => <option key={t}>{t}</option>)}
-                  </select>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div>
+                    <label className="text-[10px] uppercase tracking-wide text-muted-foreground">Categoria</label>
+                    <select value={catFilter} onChange={(e) => setCatFilter(e.target.value)} className="mt-0.5 w-full px-2 py-1.5 rounded-md bg-background border border-input text-xs">
+                      <option value="">Todas categorias</option>
+                      {categorias.map((c) => <option key={c}>{c}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-[10px] uppercase tracking-wide text-muted-foreground">Tabela de preço</label>
+                    <select value={tabela} onChange={(e) => set("tabela", e.target.value as PriceTable)} className="mt-0.5 w-full px-2 py-1.5 rounded-md bg-background border border-input text-xs font-medium">
+                      {availableTables.map((t) => <option key={t}>{t}</option>)}
+                    </select>
+                  </div>
                 </div>
+                {tabela === "Preço de Escolha" && (
+                  <div className="flex items-center gap-2 pl-2 border-l-2 border-primary/40">
+                    <label className="text-[10px] uppercase tracking-wide text-muted-foreground whitespace-nowrap">↳ Complementar</label>
+                    <select value={fallbackTabela} onChange={(e) => set("fallbackTabela", e.target.value as PriceTable)} className="flex-1 px-2 py-1.5 rounded-md bg-background border border-input text-xs font-medium">
+                      {priceTables.filter((t) => t !== "Preço de Escolha").map((t) => <option key={t}>{t}</option>)}
+                    </select>
+                  </div>
+                )}
               </div>
               <div className="max-h-[70vh] overflow-y-auto divide-y divide-border">
                 {filtered.map((p) => {
-                  const price = p.precos[tabela];
+                  const price = priceOf(p);
                   return (
                     <button key={p.codigo} onClick={() => addProduct(p)} className="w-full text-left p-3 hover:bg-muted/60 transition flex gap-3">
                       <div className="flex-1 min-w-0">
@@ -376,27 +442,20 @@ function PropostasPage() {
                             <div className="text-muted-foreground">{it.apresentacao}</div>
                           </td>
                           <td className="p-2">
-                            <select value={it.tabela} disabled={!p}
-                              onChange={(e) => {
-                                const t = e.target.value;
-                                const v = p?.precos[t as PriceTable];
-                                setItem(i, v != null ? { tabela: t, unitPrice: v } : { tabela: t });
-                              }}
-                              className="px-1.5 py-1 rounded border border-input bg-background text-[11px] max-w-[180px]">
-                              {availableTables.map((t) => (
-                                <option key={t} value={t}>{t}{p?.precos[t] != null ? ` · ${brl(p.precos[t]!)}` : " · —"}</option>
-                              ))}
-                              <option value="Manual">Manual</option>
-                            </select>
+                            <span className="text-[11px] text-muted-foreground">{it.tabela}</span>
                           </td>
                           <td className="p-2">
-                            <input type="number" min={0} value={it.qty} onChange={(e) => setItem(i, { qty: Number(e.target.value) })}
+                            <input type="number" min={0} value={it.qty} onChange={(e) => updateQty(i, Number(e.target.value))}
                               className="w-full px-1.5 py-1 rounded border border-input bg-background text-right" />
                           </td>
                           <td className="p-2">
                             <input type="number" min={0} step="0.01" value={it.unitPrice}
-                              onChange={(e) => setItem(i, { unitPrice: Number(e.target.value), tabela: "Manual" })}
-                              className="w-full px-1.5 py-1 rounded border border-input bg-background text-right" />
+                              onChange={(e) => updateUnitPrice(i, Number(e.target.value))}
+                              title={p ? `Tabela: ${brl(priceOf(p))}` : undefined}
+                              className={`w-full px-1.5 py-1 rounded border border-input bg-background text-right ${p && it.unitPrice !== priceOf(p) ? "ring-1 ring-warning" : ""}`} />
+                            {p && it.unitPrice !== priceOf(p) && (
+                              <button onClick={() => setItem(i, { unitPrice: priceOf(p), tabela: tableUsed(p) })} className="text-[10px] text-primary hover:underline">restaurar tabela</button>
+                            )}
                           </td>
                           <td className="p-2 text-right font-semibold whitespace-nowrap">{brl(it.qty * it.unitPrice)}</td>
                           <td className="p-2">
