@@ -15,10 +15,16 @@ export interface PropostaItem {
 export interface PropostaData {
   numero?: number | null;
   dataCriacao: string;
+  cidade: string;
   cliente: string;
+  contatoNome: string;
+  contatoTratamento: string; // ex.: "À Sra.", "Ao Sr."
   prazo: string;
   vencimento: string;
   apresentacao: string;
+  diferenciais: string;
+  logistica: string;
+  compromisso: string;
   obs: string;
   assinaturaNome: string;
   assinaturaCargo: string;
@@ -28,7 +34,16 @@ export interface PropostaData {
 }
 
 export const DEFAULT_APRESENTACAO =
-  "Prezado cliente,\n\nApresentamos nossa proposta comercial, elaborada especialmente para atender às suas necessidades, contemplando os produtos e as condições comerciais descritos abaixo.\n\nAgradecemos a oportunidade e permanecemos à disposição para quaisquer esclarecimentos.";
+  "A Rioquímica, empresa com ampla experiência no desenvolvimento e fabricação de soluções para higiene, antissepsia, desinfecção e assistência à saúde, apresenta esta proposta comercial, reafirmando nosso compromisso com qualidade, segurança, desempenho e confiabilidade dos produtos destinados ao ambiente hospitalar.\n\nNossa linha de produtos é desenvolvida seguindo rigorosos padrões de qualidade e Boas Práticas de Fabricação, com controles de processo e matérias-primas que asseguram a padronização e a segurança dos produtos.\n\nUm dos diferenciais do nosso processo produtivo está no rigoroso controle da água utilizada na fabricação, incluindo o emprego de água submetida ao processo de osmose reversa, contribuindo para a obtenção de produtos com elevado padrão de qualidade e controle microbiológico.\n\nOutro importante diferencial da Rioquímica é o investimento contínuo em pesquisa, desenvolvimento e validação de eficácia microbiológica. Dispomos de laudos e estudos de eficácia frente a cepas microbiológicas mais recentes e de relevância para o ambiente hospitalar, proporcionando maior segurança na utilização dos produtos e suporte técnico às instituições de saúde.";
+
+export const DEFAULT_DIFERENCIAIS =
+  "Qualidade e segurança: produtos desenvolvidos para atender às necessidades dos serviços de saúde, com rigoroso controle de qualidade.\n\nBoas Práticas de Fabricação: processos produtivos submetidos a controles que buscam garantir padronização, rastreabilidade e segurança dos produtos.\n\nControle da água de processo: utilização de água tratada por osmose reversa, dentro dos controles estabelecidos para o processo produtivo.\n\nEficácia microbiológica: disponibilidade de laudos técnicos de eficácia contra cepas microbiológicas recentes e relevantes, proporcionando maior respaldo técnico para utilização em ambientes hospitalares.\n\nSuporte técnico: a Rioquímica oferece suporte comercial e técnico aos seus parceiros, contribuindo para a correta utilização dos produtos e para a implementação de boas práticas de higiene, antissepsia e desinfecção.";
+
+export const DEFAULT_LOGISTICA =
+  "Com o objetivo de proporcionar agilidade, disponibilidade e eficiência no atendimento, a operação logística dos produtos é realizada por distribuidores parceiros da Rioquímica, responsáveis pelo suporte à operação de distribuição, incluindo recebimento, armazenagem e entrega dos produtos, de acordo com os pedidos e necessidades estabelecidas pelo cliente.\n\nEssa estrutura permite maior proximidade no atendimento, contribuindo para a regularidade do abastecimento, agilidade nas entregas e disponibilidade dos produtos, mantendo a Rioquímica como responsável pelo fornecimento e suporte técnico da linha apresentada.";
+
+export const DEFAULT_COMPROMISSO =
+  "A Rioquímica coloca-se à disposição para apresentar tecnicamente os produtos, disponibilizar os respectivos documentos e laudos de eficácia, bem como apoiar a equipe na avaliação e validação das soluções propostas.\n\nNosso objetivo é estabelecer uma parceria baseada em qualidade, segurança, eficiência, disponibilidade e custo-benefício, contribuindo para o aprimoramento contínuo dos processos de higiene, antissepsia e desinfecção da instituição.\n\nPermanecemos à disposição para quaisquer esclarecimentos e para uma apresentação técnica dos produtos.";
 
 export function propostaTotal(items: PropostaItem[]) {
   return items.reduce((s, i) => s + (i.qty || 0) * (i.unitPrice || 0), 0);
@@ -42,6 +57,13 @@ function fmtDate(d: string) {
   if (!d) return "-";
   const [y, m, day] = d.slice(0, 10).split("-");
   return `${day}/${m}/${y}`;
+}
+
+const MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
+function fmtDateExtenso(d: string) {
+  if (!d) return "";
+  const [y, m, day] = d.slice(0, 10).split("-");
+  return `${Number(day)} de ${MESES[Number(m) - 1]} de ${y}`;
 }
 
 async function loadLogo(): Promise<string | null> {
@@ -62,109 +84,142 @@ export async function buildPropostaPdf(d: PropostaData): Promise<jsPDF> {
   const doc = new jsPDF({ unit: "mm", format: "a4" });
   const W = doc.internal.pageSize.getWidth();
   const H = doc.internal.pageSize.getHeight();
-  const M = 15;
+  const M = 20;
   const RED: [number, number, number] = [200, 30, 40];
   const logoData = await loadLogo();
+  let y = 0;
 
-  // Header
-  if (logoData) { try { doc.addImage(logoData, "JPEG", M, 10, 24, 20); } catch { /* ignore */ } }
-  doc.setFont("helvetica", "bold").setFontSize(12).setTextColor(...RED);
-  doc.text("RIOQUIMICA S.A", M + 28, 16);
-  doc.setFont("helvetica", "normal").setFontSize(8).setTextColor(60);
-  doc.text("AV. TARRAF, Nr. 2590/2600 · TEL: 55-17-4009-4288", M + 28, 21);
-  doc.text("CNPJ: 55.643.555/0001-43", M + 28, 25);
-  doc.setFont("helvetica", "bold").setFontSize(15).setTextColor(...RED);
-  doc.text("PROPOSTA COMERCIAL", W - M, 16, { align: "right" });
-  doc.setFont("helvetica", "normal").setFontSize(9).setTextColor(0);
-  doc.text(`Nº ${fmtNumero(d.numero)}`, W - M, 22, { align: "right" });
-  doc.text(`Emissão: ${fmtDate(d.dataCriacao)}`, W - M, 27, { align: "right" });
-  doc.setDrawColor(...RED).setLineWidth(0.5).line(M, 33, W - M, 33);
+  const header = () => {
+    if (logoData) { try { doc.addImage(logoData, "JPEG", M, 12, 22, 18); } catch { /* ignore */ } }
+    doc.setFont("helvetica", "bold").setFontSize(11).setTextColor(...RED);
+    doc.text("RIOQUIMICA S.A", M + 26, 18);
+    doc.setFont("helvetica", "normal").setFontSize(7.5).setTextColor(60);
+    doc.text("AV. TARRAF, Nr. 2590/2600 · TEL: 55-17-4009-4288", M + 26, 22.5);
+    doc.text("CNPJ: 55.643.555/0001-43", M + 26, 26.5);
+    doc.setDrawColor(...RED).setLineWidth(0.5).line(M, 33, W - M, 33);
+    y = 42;
+  };
+  header();
 
-  // Info box
-  doc.setFillColor(248, 245, 245).rect(M, 37, W - 2 * M, 18, "F");
-  doc.setFontSize(9).setFont("helvetica", "bold");
-  doc.text("CLIENTE:", M + 3, 43);
-  doc.text("PRAZO DE PAGAMENTO:", M + 3, 50);
-  doc.text("VÁLIDA ATÉ:", W / 2 + 15, 50);
-  doc.setFont("helvetica", "normal");
-  doc.text(doc.splitTextToSize(d.cliente || "-", W - 2 * M - 25)[0], M + 20, 43);
-  doc.text(d.prazo || "-", M + 42, 50);
-  doc.text(fmtDate(d.vencimento), W / 2 + 37, 50);
+  const ensure = (h: number) => { if (y + h > H - 22) { doc.addPage(); header(); } };
 
-  // Presentation
-  let y = 63;
-  doc.setFontSize(9.5).setTextColor(30);
-  const pres = doc.splitTextToSize(d.apresentacao || "", W - 2 * M);
-  doc.text(pres, M, y);
-  y += pres.length * 4.3 + 4;
+  const sectionTitle = (t: string) => {
+    ensure(12);
+    doc.setFont("helvetica", "bold").setFontSize(10.5).setTextColor(...RED);
+    doc.text(t, M, y);
+    y += 6;
+  };
 
+  const bodyText = (t: string, bold = false) => {
+    doc.setFont("helvetica", bold ? "bold" : "normal").setFontSize(9.5).setTextColor(30);
+    for (const para of t.split(/\n+/).map((p) => p.trim()).filter(Boolean)) {
+      const lines = doc.splitTextToSize(para, W - 2 * M);
+      for (const l of lines) { ensure(5); doc.text(l, M, y, { align: "justify", maxWidth: W - 2 * M }); y += 4.4; }
+      y += 2;
+    }
+  };
+
+  // Data por extenso
+  doc.setFont("helvetica", "bold").setFontSize(10).setTextColor(0);
+  const dataExt = `${d.cidade || "São José do Rio Preto"}, ${fmtDateExtenso(d.dataCriacao)}`;
+  doc.text(dataExt, M, y);
+  y += 10;
+
+  // Título
+  doc.setFont("helvetica", "bold").setFontSize(14).setTextColor(...RED);
+  doc.text("PROPOSTA COMERCIAL", W / 2, y, { align: "center" });
+  y += 6;
+  doc.setFont("helvetica", "normal").setFontSize(8.5).setTextColor(80);
+  doc.text(`Nº ${fmtNumero(d.numero)} · Válida até ${fmtDate(d.vencimento)}`, W / 2, y, { align: "center" });
+  y += 9;
+
+  // Cliente / destinatário
+  doc.setFont("helvetica", "bold").setFontSize(10.5).setTextColor(0);
+  doc.text(d.cliente || "-", M, y);
+  y += 6;
+  if (d.contatoNome.trim()) {
+    doc.setFontSize(10);
+    doc.text(`${d.contatoTratamento || "À"} ${d.contatoNome} — ${d.cliente}`, M, y);
+    y += 7;
+  }
+  if (d.contatoNome.trim()) {
+    const masc = /^ao/i.test(d.contatoTratamento || "");
+    doc.text(`Prezad${masc ? "o" : "a"} ${d.contatoNome},`, M, y);
+    y += 7;
+  }
+
+  // Apresentação
+  bodyText(d.apresentacao || "");
+  y += 2;
+
+  // Produtos e condições comerciais
+  sectionTitle("PRODUTOS E CONDIÇÕES COMERCIAIS");
   autoTable(doc, {
     startY: y,
-    margin: { left: M, right: M, bottom: 18 },
-    head: [["Código", "Descrição do produto", "Quantidade", "Valor unitário", "Valor total"]],
+    margin: { left: M, right: M, bottom: 20 },
+    head: [["Produto", "Quantidade", "Valor unitário", "Valor total"]],
     body: d.items.map((it) => [
-      it.codigo,
-      `${it.descricao} ${it.apresentacao}`.trim(),
+      `${it.descricao}${it.apresentacao ? ` — ${it.apresentacao}` : ""}`,
       it.qty.toLocaleString("pt-BR"),
       brl(it.unitPrice),
       brl(it.qty * it.unitPrice),
     ]),
-    styles: { fontSize: 8.5, cellPadding: 2, lineColor: [210, 210, 210], lineWidth: 0.1, overflow: "linebreak" },
-    headStyles: { fillColor: RED, textColor: 255, fontStyle: "bold" },
-    alternateRowStyles: { fillColor: [250, 248, 248] },
+    styles: { fontSize: 9, cellPadding: 2, lineColor: [200, 200, 200], lineWidth: 0.1, overflow: "linebreak" },
+    headStyles: { fillColor: [245, 245, 245], textColor: 0, fontStyle: "bold" },
     columnStyles: {
-      0: { cellWidth: 24 },
-      2: { cellWidth: 22, halign: "right" },
+      1: { cellWidth: 24, halign: "right" },
+      2: { cellWidth: 28, halign: "right" },
       3: { cellWidth: 28, halign: "right" },
-      4: { cellWidth: 30, halign: "right" },
     },
   });
   // @ts-expect-error lastAutoTable
-  y = doc.lastAutoTable.finalY + 6;
-
-  const ensure = (h: number) => { if (y + h > H - 20) { doc.addPage(); y = 20; } };
+  y = doc.lastAutoTable.finalY + 5;
 
   ensure(12);
-  doc.setFillColor(...RED).rect(W - M - 95, y - 5, 95, 10, "F");
-  doc.setFont("helvetica", "bold").setFontSize(11).setTextColor(255);
-  doc.text(`VALOR TOTAL DA PROPOSTA: ${brl(propostaTotal(d.items))}`, W - M - 3, y + 1.5, { align: "right" });
+  doc.setFillColor(...RED).rect(W - M - 90, y - 4.5, 90, 9, "F");
+  doc.setFont("helvetica", "bold").setFontSize(10.5).setTextColor(255);
+  doc.text(`VALOR TOTAL: ${brl(propostaTotal(d.items))}`, W - M - 3, y + 1.5, { align: "right" });
   doc.setTextColor(0);
-  y += 14;
+  y += 11;
 
-  ensure(20);
-  doc.setFontSize(10).setTextColor(...RED).text("CONDIÇÕES COMERCIAIS", M, y);
-  doc.setTextColor(0).setFont("helvetica", "normal").setFontSize(9);
-  y += 5;
-  doc.text(`Prazo / condição de pagamento: ${d.prazo || "-"}`, M, y); y += 5;
-  doc.text(`Vencimento da proposta: ${fmtDate(d.vencimento)}`, M, y); y += 7;
+  doc.setFont("helvetica", "normal").setFontSize(9.5).setTextColor(30);
+  ensure(6);
+  doc.text(`Condição de pagamento: ${d.prazo || "-"} · Proposta válida até ${fmtDate(d.vencimento)}.`, M, y);
+  y += 8;
+
+  if (d.diferenciais.trim()) { sectionTitle("DIFERENCIAIS RIOQUÍMICA"); bodyText(d.diferenciais); }
+  if (d.logistica.trim()) { sectionTitle("OPERAÇÃO LOGÍSTICA"); bodyText(d.logistica); }
+  sectionTitle(`COMPROMISSO COM ${(d.cliente || "O CLIENTE").toUpperCase()}`);
+  bodyText(d.compromisso || DEFAULT_COMPROMISSO);
 
   if (d.obs.trim()) {
-    const lines = doc.splitTextToSize(d.obs, W - 2 * M);
-    ensure(10);
-    doc.setFont("helvetica", "bold").text("Observações:", M, y); y += 5;
-    doc.setFont("helvetica", "normal");
-    for (const l of lines) { ensure(5); doc.text(l, M, y); y += 4.3; }
-    y += 4;
+    sectionTitle("OBSERVAÇÕES");
+    bodyText(d.obs);
   }
 
-  ensure(40);
-  y += 14;
-  const colW = (W - 2 * M - 20) / 2;
-  doc.setDrawColor(80).setLineWidth(0.3).line(M, y, M + colW, y);
-  doc.setFont("helvetica", "bold").setFontSize(9).text(d.assinaturaNome || "Responsável comercial", M, y + 5);
+  // Assinatura
+  ensure(42);
+  y += 8;
+  doc.setFont("helvetica", "normal").setFontSize(10).setTextColor(0);
+  doc.text("Atenciosamente,", M, y);
+  y += 12;
+  doc.setDrawColor(80).setLineWidth(0.3).line(M, y, M + 80, y);
+  doc.setFont("helvetica", "bold").setFontSize(9.5).text(d.assinaturaNome || "Responsável comercial", M, y + 5);
   doc.setFont("helvetica", "normal").setFontSize(8.5);
-  let sy = y + 9;
-  if (d.assinaturaCargo) { doc.text(d.assinaturaCargo, M, sy); sy += 4; }
-  if (d.assinaturaInfo) doc.text(doc.splitTextToSize(d.assinaturaInfo, colW), M, sy);
-  doc.text("Rioquímica S.A", M, sy + (d.assinaturaInfo ? doc.splitTextToSize(d.assinaturaInfo, colW).length * 4 : 0));
+  let sy = y + 9.5;
+  if (d.assinaturaCargo) { doc.text(`${d.assinaturaCargo} — Rioquímica`, M, sy); sy += 4.2; }
+  if (d.assinaturaInfo) {
+    for (const l of doc.splitTextToSize(d.assinaturaInfo, 80)) { doc.text(l, M, sy); sy += 4; }
+  }
   if (d.assinaturaCliente) {
-    const x = M + colW + 20;
-    doc.line(x, y, x + colW, y);
-    doc.setFont("helvetica", "bold").setFontSize(9).text("De acordo — Cliente", x, y + 5);
-    doc.setFont("helvetica", "normal").setFontSize(8.5).text(d.cliente || "", x, y + 9);
-    doc.text("Data: ____/____/______", x, y + 13);
+    const x = W - M - 80;
+    doc.setDrawColor(80).line(x, y, x + 80, y);
+    doc.setFont("helvetica", "bold").setFontSize(9.5).text("De acordo — Cliente", x, y + 5);
+    doc.setFont("helvetica", "normal").setFontSize(8.5).text(d.cliente || "", x, y + 9.5);
+    doc.text("Data: ____/____/______", x, y + 13.7);
   }
 
+  // Rodapé em todas as páginas
   const pages = doc.getNumberOfPages();
   for (let i = 1; i <= pages; i++) {
     doc.setPage(i);

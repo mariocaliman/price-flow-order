@@ -6,7 +6,8 @@ import { useProducts } from "@/hooks/use-products";
 import { supabase } from "@/integrations/supabase/client";
 import { brl, priceTables, roundToBox, type PriceTable, type Product } from "@/lib/products";
 import {
-  buildPropostaPdf, DEFAULT_APRESENTACAO, fmtNumero, propostaFilename, propostaTotal,
+  buildPropostaPdf, DEFAULT_APRESENTACAO, DEFAULT_COMPROMISSO, DEFAULT_DIFERENCIAIS, DEFAULT_LOGISTICA,
+  fmtNumero, propostaFilename, propostaTotal,
   type PropostaData, type PropostaItem,
 } from "@/lib/proposta-pdf";
 
@@ -39,8 +40,11 @@ const fmtD = (d?: string | null) => (d ? d.slice(0, 10).split("-").reverse().joi
 type Form = PropostaData & { status: string; tabela: PriceTable; fallbackTabela: PriceTable };
 function emptyForm(nome = "", cargo = ""): Form {
   return {
-    numero: null, dataCriacao: today(), cliente: "", prazo: "28 DDL", vencimento: plus(15),
-    apresentacao: DEFAULT_APRESENTACAO, obs: "", assinaturaNome: nome, assinaturaCargo: cargo,
+    numero: null, dataCriacao: today(), cidade: "São José do Rio Preto", cliente: "",
+    contatoNome: "", contatoTratamento: "À Sra.", prazo: "28 DDL", vencimento: plus(15),
+    apresentacao: DEFAULT_APRESENTACAO, diferenciais: DEFAULT_DIFERENCIAIS,
+    logistica: DEFAULT_LOGISTICA, compromisso: DEFAULT_COMPROMISSO,
+    obs: "", assinaturaNome: nome, assinaturaCargo: cargo,
     assinaturaInfo: "", assinaturaCliente: true, items: [], status: "rascunho", tabela: "RQE Especialista", fallbackTabela: "RQE Especialista",
   };
 }
@@ -414,6 +418,20 @@ function PropostasPage() {
                     {Object.entries(STATUS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
                   </select>
                 </div>
+                <div>
+                  <label className="text-[10px] text-muted-foreground">Cidade (data do PDF)</label>
+                  <input value={form.cidade} onChange={(e) => set("cidade", e.target.value)} className={inputCls} placeholder="Ex.: Recife" />
+                </div>
+                <div>
+                  <label className="text-[10px] text-muted-foreground">Tratamento do contato</label>
+                  <select value={form.contatoTratamento} onChange={(e) => set("contatoTratamento", e.target.value)} className={inputCls}>
+                    <option>À Sra.</option><option>Ao Sr.</option><option>À</option><option>Ao</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[10px] text-muted-foreground">Nome do contato no cliente</label>
+                  <input value={form.contatoNome} onChange={(e) => set("contatoNome", e.target.value)} className={inputCls} placeholder="Ex.: Flávia" />
+                </div>
               </div>
             </div>
 
@@ -486,7 +504,19 @@ function PropostasPage() {
               <h2 className="font-semibold text-xs uppercase tracking-wide text-muted-foreground">Texto, observações e assinatura</h2>
               <div>
                 <label className="text-[10px] text-muted-foreground">Texto de apresentação (PDF)</label>
-                <textarea rows={4} value={form.apresentacao} onChange={(e) => set("apresentacao", e.target.value)} className={inputCls} />
+                <textarea rows={6} value={form.apresentacao} onChange={(e) => set("apresentacao", e.target.value)} className={inputCls} />
+              </div>
+              <div>
+                <label className="text-[10px] text-muted-foreground">Diferenciais Rioquímica (PDF)</label>
+                <textarea rows={5} value={form.diferenciais} onChange={(e) => set("diferenciais", e.target.value)} className={inputCls} />
+              </div>
+              <div>
+                <label className="text-[10px] text-muted-foreground">Operação logística (PDF)</label>
+                <textarea rows={4} value={form.logistica} onChange={(e) => set("logistica", e.target.value)} className={inputCls} />
+              </div>
+              <div>
+                <label className="text-[10px] text-muted-foreground">Compromisso com o cliente (PDF)</label>
+                <textarea rows={4} value={form.compromisso} onChange={(e) => set("compromisso", e.target.value)} className={inputCls} />
               </div>
               <div>
                 <label className="text-[10px] text-muted-foreground">Observações comerciais</label>
