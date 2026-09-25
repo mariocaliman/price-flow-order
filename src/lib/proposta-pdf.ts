@@ -143,8 +143,8 @@ export async function buildPropostaPdf(d: PropostaData): Promise<jsPDF> {
     y += 7;
   }
   if (d.contatoNome.trim()) {
-    const trat = (d.contatoTratamento || "").replace(/^(À|Ao)\s*/i, "");
-    doc.text(`Prezad${/sr/i.test(trat) ? "o" : "a"} ${d.contatoNome},`, M, y);
+    const masc = /^ao/i.test(d.contatoTratamento || "");
+    doc.text(`Prezad${masc ? "o" : "a"} ${d.contatoNome},`, M, y);
     y += 7;
   }
 
