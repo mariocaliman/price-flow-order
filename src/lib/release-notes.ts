@@ -1,5 +1,7 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "PDF da proposta remodelado no formato do papel timbrado: data por extenso, saudação ao contato, apresentação, produtos, diferenciais, operação logística, compromisso e assinatura.",
+  "Proposta: novos campos cidade, tratamento e nome do contato no cliente, e textos editáveis de diferenciais, logística e compromisso.",
   "Propostas: tabelas de preço seguem a mesma lógica dos pedidos (tabela complementar, bloqueio no Preço de Escolha, arredondamento por caixa).",
   "Novo módulo 'Propostas Comerciais': criar, salvar, duplicar e editar propostas com preços de qualquer tabela (editáveis) e gerar PDF profissional.",
   "Nova seção no admin: 'Histórico de preços' (/admin/prices) com filtro por código e período, mostrando preço anterior, novo, variação % e quem alterou.",
