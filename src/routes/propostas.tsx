@@ -6,7 +6,8 @@ import { useProducts } from "@/hooks/use-products";
 import { supabase } from "@/integrations/supabase/client";
 import { brl, priceTables, roundToBox, type PriceTable, type Product } from "@/lib/products";
 import {
-  buildPropostaPdf, DEFAULT_APRESENTACAO, fmtNumero, propostaFilename, propostaTotal,
+  buildPropostaPdf, DEFAULT_APRESENTACAO, DEFAULT_COMPROMISSO, DEFAULT_DIFERENCIAIS, DEFAULT_LOGISTICA,
+  fmtNumero, propostaFilename, propostaTotal,
   type PropostaData, type PropostaItem,
 } from "@/lib/proposta-pdf";
 
@@ -39,8 +40,11 @@ const fmtD = (d?: string | null) => (d ? d.slice(0, 10).split("-").reverse().joi
 type Form = PropostaData & { status: string; tabela: PriceTable; fallbackTabela: PriceTable };
 function emptyForm(nome = "", cargo = ""): Form {
   return {
-    numero: null, dataCriacao: today(), cliente: "", prazo: "28 DDL", vencimento: plus(15),
-    apresentacao: DEFAULT_APRESENTACAO, obs: "", assinaturaNome: nome, assinaturaCargo: cargo,
+    numero: null, dataCriacao: today(), cidade: "São José do Rio Preto", cliente: "",
+    contatoNome: "", contatoTratamento: "À Sra.", prazo: "28 DDL", vencimento: plus(15),
+    apresentacao: DEFAULT_APRESENTACAO, diferenciais: DEFAULT_DIFERENCIAIS,
+    logistica: DEFAULT_LOGISTICA, compromisso: DEFAULT_COMPROMISSO,
+    obs: "", assinaturaNome: nome, assinaturaCargo: cargo,
     assinaturaInfo: "", assinaturaCliente: true, items: [], status: "rascunho", tabela: "RQE Especialista", fallbackTabela: "RQE Especialista",
   };
 }
