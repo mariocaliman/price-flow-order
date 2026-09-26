@@ -45,7 +45,7 @@ function emptyForm(nome = "", cargo = ""): Form {
     apresentacao: DEFAULT_APRESENTACAO, diferenciais: DEFAULT_DIFERENCIAIS,
     logistica: DEFAULT_LOGISTICA, compromisso: DEFAULT_COMPROMISSO,
     obs: "", assinaturaNome: nome, assinaturaCargo: cargo,
-    assinaturaInfo: "", assinaturaCliente: true, items: [], status: "rascunho", tabela: "RQE Especialista", fallbackTabela: "RQE Especialista",
+    assinaturaInfo: "", assinaturaCliente: true, semQuantidades: false, items: [], status: "rascunho", tabela: "RQE Especialista", fallbackTabela: "RQE Especialista",
   };
 }
 
@@ -212,7 +212,7 @@ function PropostasPage() {
     if (!form.prazo.trim()) return "Informe o prazo de pagamento.";
     if (!form.vencimento) return "Informe o vencimento da proposta.";
     if (!form.items.length) return "Adicione pelo menos um produto.";
-    if (form.items.some((i) => !(i.qty > 0) || !(i.unitPrice > 0))) return "Todos os itens precisam de quantidade e preço maiores que zero.";
+    if (form.items.some((i) => !(i.unitPrice > 0) || (!form.semQuantidades && !(i.qty > 0)))) return "Todos os itens precisam de quantidade e preço maiores que zero.";
     return null;
   }
 
@@ -222,7 +222,7 @@ function PropostasPage() {
     const payload = { ...form };
     const rec = {
       cliente: form.cliente.trim(), status: form.status, vencimento: form.vencimento || null,
-      total: propostaTotal(form.items), payload: payload as never,
+      total: form.semQuantidades ? 0 : propostaTotal(form.items), payload: payload as never,
     };
     const res = id
       ? await supabase.from("propostas").update(rec).eq("id", id).select("id, numero").single()
@@ -312,7 +312,7 @@ function PropostasPage() {
                         <td className="p-3">{r.cliente}</td>
                         <td className="p-3">{fmtD(r.created_at)}</td>
                         <td className={`p-3 ${expired ? "text-destructive" : ""}`}>{fmtD(r.vencimento)}{expired ? " (vencida)" : ""}</td>
-                        <td className="p-3 text-right font-semibold">{brl(Number(r.total))}</td>
+                        <td className="p-3 text-right font-semibold">{r.payload?.semQuantidades ? "—" : brl(Number(r.total))}</td>
                         <td className="p-3"><span className="text-xs px-2 py-0.5 rounded bg-accent text-accent-foreground">{STATUS[r.status] ?? r.status}</span></td>
                         <td className="p-3">
                           <div className="flex gap-1 justify-end flex-wrap">
