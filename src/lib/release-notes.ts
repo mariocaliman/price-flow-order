@@ -1,5 +1,6 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "Propostas: nova opção 'somente preços' — oculta quantidades e valor total na tela e no PDF (tabela mostra apenas produto e valor unitário).",
   "PDF da proposta remodelado no formato do papel timbrado: data por extenso, saudação ao contato, apresentação, produtos, diferenciais, operação logística, compromisso e assinatura.",
   "Proposta: novos campos cidade, tratamento e nome do contato no cliente, e textos editáveis de diferenciais, logística e compromisso.",
   "Propostas: tabelas de preço seguem a mesma lógica dos pedidos (tabela complementar, bloqueio no Preço de Escolha, arredondamento por caixa).",
