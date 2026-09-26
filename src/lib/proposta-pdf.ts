@@ -30,6 +30,7 @@ export interface PropostaData {
   assinaturaCargo: string;
   assinaturaInfo: string;
   assinaturaCliente: boolean;
+  semQuantidades?: boolean;
   items: PropostaItem[];
 }
 
@@ -154,33 +155,40 @@ export async function buildPropostaPdf(d: PropostaData): Promise<jsPDF> {
 
   // Produtos e condições comerciais
   sectionTitle("PRODUTOS E CONDIÇÕES COMERCIAIS");
+  const semQtd = !!d.semQuantidades;
   autoTable(doc, {
     startY: y,
     margin: { left: M, right: M, bottom: 20 },
-    head: [["Produto", "Quantidade", "Valor unitário", "Valor total"]],
-    body: d.items.map((it) => [
-      `${it.descricao}${it.apresentacao ? ` — ${it.apresentacao}` : ""}`,
-      it.qty.toLocaleString("pt-BR"),
-      brl(it.unitPrice),
-      brl(it.qty * it.unitPrice),
-    ]),
+    head: [semQtd ? ["Produto", "Valor unitário"] : ["Produto", "Quantidade", "Valor unitário", "Valor total"]],
+    body: d.items.map((it) => semQtd
+      ? [`${it.descricao}${it.apresentacao ? ` — ${it.apresentacao}` : ""}`, brl(it.unitPrice)]
+      : [
+        `${it.descricao}${it.apresentacao ? ` — ${it.apresentacao}` : ""}`,
+        it.qty.toLocaleString("pt-BR"),
+        brl(it.unitPrice),
+        brl(it.qty * it.unitPrice),
+      ]),
     styles: { fontSize: 9, cellPadding: 2, lineColor: [200, 200, 200], lineWidth: 0.1, overflow: "linebreak" },
     headStyles: { fillColor: [245, 245, 245], textColor: 0, fontStyle: "bold" },
-    columnStyles: {
-      1: { cellWidth: 24, halign: "right" },
-      2: { cellWidth: 28, halign: "right" },
-      3: { cellWidth: 28, halign: "right" },
-    },
+    columnStyles: semQtd
+      ? { 1: { cellWidth: 32, halign: "right" } }
+      : {
+        1: { cellWidth: 24, halign: "right" },
+        2: { cellWidth: 28, halign: "right" },
+        3: { cellWidth: 28, halign: "right" },
+      },
   });
   // @ts-expect-error lastAutoTable
   y = doc.lastAutoTable.finalY + 5;
 
-  ensure(12);
-  doc.setFillColor(...RED).rect(W - M - 90, y - 4.5, 90, 9, "F");
-  doc.setFont("helvetica", "bold").setFontSize(10.5).setTextColor(255);
-  doc.text(`VALOR TOTAL: ${brl(propostaTotal(d.items))}`, W - M - 3, y + 1.5, { align: "right" });
-  doc.setTextColor(0);
-  y += 11;
+  if (!semQtd) {
+    ensure(12);
+    doc.setFillColor(...RED).rect(W - M - 90, y - 4.5, 90, 9, "F");
+    doc.setFont("helvetica", "bold").setFontSize(10.5).setTextColor(255);
+    doc.text(`VALOR TOTAL: ${brl(propostaTotal(d.items))}`, W - M - 3, y + 1.5, { align: "right" });
+    doc.setTextColor(0);
+    y += 11;
+  }
 
   doc.setFont("helvetica", "normal").setFontSize(9.5).setTextColor(30);
   ensure(6);
