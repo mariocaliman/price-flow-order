@@ -20,6 +20,10 @@ import { useProducts } from "@/hooks/use-products";
 import { buildPedidoPdf, pdfFilename, pedidoTotal, type OrderItem } from "@/lib/pdf";
 import { enqueuePedido } from "@/lib/offline-queue";
 import { useOfflineStatus } from "@/hooks/use-offline-status";
+import { AppHeader, hdrBtn, hdrBtnPrimary } from "@/components/app-header";
+import { openWhatsApp, resumoTexto } from "@/lib/share";
+import { takeHandoff } from "@/lib/pedido-handoff";
+
 
 export const Route = createFileRoute("/")({ component: PedidosPage });
 
@@ -86,6 +90,43 @@ function PedidosPage() {
     () => Array.from(new Set(ALL_PRODUCTS.map((p) => p.categoria))).filter(Boolean).sort(),
     [ALL_PRODUCTS],
   );
+
+  // Clientes frequentes (autocomplete a partir do histórico)
+  interface ClienteConhecido { nome: string; codCliente?: string; telefone?: string; prazo?: string }
+  const [clientesConhecidos, setClientesConhecidos] = useState<ClienteConhecido[]>([]);
+  useEffect(() => {
+    if (!auth.user) return;
+    (async () => {
+      const { data } = await supabase
+        .from("pedidos")
+        .select("nome, payload")
+        .order("created_at", { ascending: false })
+        .limit(300);
+      const map = new Map<string, ClienteConhecido>();
+      for (const r of (data ?? []) as { nome: string; payload: Record<string, string> | null }[]) {
+        const nome = (r.nome ?? "").trim();
+        if (!nome || map.has(nome.toLowerCase())) continue;
+        const pl = r.payload ?? {};
+        map.set(nome.toLowerCase(), {
+          nome,
+          codCliente: pl.codCliente,
+          telefone: pl.clienteTelefone,
+          prazo: pl.prazo,
+        });
+      }
+      setClientesConhecidos([...map.values()].sort((a, b) => a.nome.localeCompare(b.nome)));
+    })();
+  }, [auth.user?.id]);
+
+  function onClienteChange(v: string) {
+    setCliente(v);
+    const hit = clientesConhecidos.find((c) => c.nome.toLowerCase() === v.trim().toLowerCase());
+    if (!hit) return;
+    if (hit.codCliente) setCodCliente(hit.codCliente);
+    if (hit.telefone) setClienteTelefone(hit.telefone);
+    if (hit.prazo) setPrazo(hit.prazo);
+  }
+
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
