@@ -1,5 +1,6 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "Tabela de preços atualizada (REV 0006.26 — setembro): 5 produtos novos (Riocare Baby 230ml/1L, Riohex Dermo Suave 30ml/100ml/1L) e novos preços do Riocare Gel de Arnica e Riozyme IV E Neutro.",
   "Propostas: nova opção 'somente preços' — oculta quantidades e valor total na tela e no PDF (tabela mostra apenas produto e valor unitário).",
   "PDF da proposta remodelado no formato do papel timbrado: data por extenso, saudação ao contato, apresentação, produtos, diferenciais, operação logística, compromisso e assinatura.",
   "Proposta: novos campos cidade, tratamento e nome do contato no cliente, e textos editáveis de diferenciais, logística e compromisso.",
