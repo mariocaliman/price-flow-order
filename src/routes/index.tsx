@@ -715,7 +715,20 @@ function PedidosPage() {
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
-              <Field label="Cliente" value={cliente} onChange={setCliente} />
+              <div>
+                <label className="text-[10px] text-muted-foreground">Cliente</label>
+                <input
+                  list="clientes-frequentes"
+                  value={cliente}
+                  onChange={(e) => onClienteChange(e.target.value)}
+                  placeholder="Digite ou escolha um cliente"
+                  className="mt-0.5 w-full px-2 py-1 rounded-md bg-background border border-input text-xs focus:outline-none focus:ring-2 focus:ring-ring"
+                />
+                <datalist id="clientes-frequentes">
+                  {clientesConhecidos.map((c) => <option key={c.nome} value={c.nome} />)}
+                </datalist>
+              </div>
+
               <Field label="Código do cliente" value={codCliente} onChange={setCodCliente} />
               <Field label="Telefone (WhatsApp)" value={clienteTelefone} onChange={setClienteTelefone} placeholder="(DDD) 99999-9999" />
               <Field label="Vendedor" value={vendedor} onChange={setVendedor} />
