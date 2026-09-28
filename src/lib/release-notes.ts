@@ -1,5 +1,6 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "Cabeçalho: ajustado o espaçamento do logo no canto superior esquerdo (não fica mais sobreposto ao título e à navegação).",
   "Novo cabeçalho unificado com navegação (Pedidos · Propostas · Admin) e menu do usuário com perfil e sair.",
   "Proposta comercial vira pedido com 1 clique (botão '→ Pedido' na lista e no editor).",
   "Botão WhatsApp em pedidos e propostas: envia o resumo pronto (cliente, itens, prazo e total).",
