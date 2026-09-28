@@ -348,15 +348,18 @@ function PropostasPage() {
                         <td className="p-3">{fmtD(r.created_at)}</td>
                         <td className={`p-3 ${expired ? "text-destructive" : ""}`}>{fmtD(r.vencimento)}{expired ? " (vencida)" : ""}</td>
                         <td className="p-3 text-right font-semibold">{r.payload?.semQuantidades ? "—" : brl(Number(r.total))}</td>
-                        <td className="p-3"><span className="text-xs px-2 py-0.5 rounded bg-accent text-accent-foreground">{STATUS[r.status] ?? r.status}</span></td>
+                        <td className="p-3"><StatusBadge status={r.status} label={STATUS[r.status] ?? r.status} /></td>
                         <td className="p-3">
                           <div className="flex gap-1 justify-end flex-wrap">
                             <button onClick={() => openRow(r)} className="px-2 py-1 text-xs rounded border border-border hover:bg-muted">Abrir</button>
                             <button onClick={() => openRow(r, true)} className="px-2 py-1 text-xs rounded border border-border hover:bg-muted">Duplicar</button>
+                            <button onClick={() => gerarPedido({ ...emptyForm(), ...r.payload } as PropostaData, r.numero)} className="px-2 py-1 text-xs rounded border border-primary/40 text-primary hover:bg-primary/10" title="Criar pedido com esta proposta">→ Pedido</button>
+                            <button onClick={() => shareWhatsApp({ ...emptyForm(), ...r.payload } as PropostaData, r.numero)} className="px-2 py-1 text-xs rounded border border-border hover:bg-muted">WhatsApp</button>
                             <button onClick={() => pdfFromRow(r)} className="px-2 py-1 text-xs rounded border border-border hover:bg-muted">PDF</button>
                             <button onClick={() => deleteRow(r)} className="px-2 py-1 text-xs rounded border border-destructive/40 text-destructive hover:bg-destructive/10">Excluir</button>
                           </div>
                         </td>
+
                       </tr>
                     );
                   })}
