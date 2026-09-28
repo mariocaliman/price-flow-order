@@ -249,7 +249,44 @@ function PropostasPage() {
     else doc.save(propostaFilename(d));
   }
 
+  function shareWhatsApp(d: Form | PropostaData, numero?: number | null) {
+    openWhatsApp(
+      resumoTexto({
+        tipo: "Proposta comercial",
+        numero: numero ?? d.numero ?? null,
+        cliente: d.cliente,
+        prazo: d.prazo,
+        vencimento: d.vencimento,
+        vendedor: d.assinaturaNome,
+        total: d.semQuantidades ? null : propostaTotal(d.items),
+        itens: (d.items ?? []).map((i) => ({
+          codigo: i.codigo,
+          descricao: i.descricao,
+          qty: d.semQuantidades ? undefined : i.qty,
+          unitPrice: i.unitPrice,
+        })),
+      }),
+    );
+  }
+
+  function gerarPedido(d: PropostaData & { tabela?: PriceTable; fallbackTabela?: PriceTable }, numero?: number | null) {
+    if (!d.items?.length) { alert("A proposta não tem produtos."); return; }
+    if (!confirm("Gerar um pedido com os dados e produtos desta proposta?")) return;
+    setHandoff({
+      cliente: d.cliente,
+      prazo: d.prazo,
+      vencimento: d.vencimento,
+      obs: d.obs,
+      tabela: d.tabela,
+      fallbackTabela: d.fallbackTabela,
+      numeroProposta: numero ?? d.numero ?? null,
+      items: d.items.map((i) => ({ codigo: i.codigo, qty: i.qty || 0, unitPrice: i.unitPrice })),
+    });
+    navigate({ to: "/" });
+  }
+
   const total = propostaTotal(form.items);
+
   const totalQty = form.items.reduce((s, i) => s + (i.qty || 0), 0);
   const inputCls = "mt-0.5 w-full px-2 py-1.5 rounded-md bg-background border border-input text-sm focus:outline-none focus:ring-2 focus:ring-ring";
   const btn = "px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50";
@@ -259,35 +296,29 @@ function PropostasPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-card sticky top-0 z-30">
-        <div className="max-w-[1500px] mx-auto px-3 sm:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="Rioquímica" className="w-10 h-10 rounded-md object-contain" />
-            <div>
-              <h1 className="font-bold text-sm sm:text-base">Propostas Comerciais</h1>
-              <p className="text-[11px] sm:text-xs text-muted-foreground">
-                {view === "list" ? "Minhas Propostas" : id ? `Editando proposta Nº ${fmtNumero(form.numero)}` : "Nova Proposta"}
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <Link to="/" className={btn}>← Pedidos</Link>
-            {view === "list" ? (
-              <button onClick={newProposta} className={btnPrimary}>+ Nova Proposta</button>
-            ) : (
-              <>
-                <button onClick={closeEditor} className={btn}>Minhas Propostas</button>
-                <button onClick={async () => { if (await save() != null) alert("Proposta salva."); }} disabled={saving} className={btn}>
-                  {saving ? "Salvando..." : id ? "Salvar Alterações" : "Salvar Rascunho"}
-                </button>
-                {id && <button onClick={() => { setId(null); setForm((f) => ({ ...f, numero: null, dataCriacao: today(), status: "rascunho" })); }} className={btn}>Duplicar Proposta</button>}
-                <button onClick={() => pdf("view")} className={btn}>Visualizar PDF</button>
-                <button onClick={() => pdf("download")} className={btnPrimary}>Gerar PDF</button>
-              </>
-            )}
-          </div>
-        </div>
-      </header>
+      <AppHeader
+        current="propostas"
+        title="Propostas Comerciais"
+        subtitle={view === "list" ? "Minhas Propostas" : id ? `Editando proposta Nº ${fmtNumero(form.numero)}` : "Nova Proposta"}
+        actions={
+          view === "list" ? (
+            <button onClick={newProposta} className={btnPrimary}>+ Nova Proposta</button>
+          ) : (
+            <>
+              <button onClick={closeEditor} className={btn}>Minhas Propostas</button>
+              <button onClick={async () => { if (await save() != null) alert("Proposta salva."); }} disabled={saving} className={btn}>
+                {saving ? "Salvando..." : id ? "Salvar Alterações" : "Salvar Rascunho"}
+              </button>
+              {id && <button onClick={() => { setId(null); setForm((f) => ({ ...f, numero: null, dataCriacao: today(), status: "rascunho" })); }} className={btn}>Duplicar</button>}
+              <button onClick={() => gerarPedido(form, form.numero)} className={btn} title="Criar pedido com os itens desta proposta">→ Pedido</button>
+              <button onClick={() => shareWhatsApp(form)} className={btn} title="Enviar resumo por WhatsApp">WhatsApp</button>
+              <button onClick={() => pdf("view")} className={btn}>Visualizar PDF</button>
+              <button onClick={() => pdf("download")} className={btnPrimary}>Gerar PDF</button>
+            </>
+          )
+        }
+      />
+
 
       {view === "list" ? (
         <main className="max-w-[1500px] mx-auto px-3 sm:px-6 py-4 sm:py-6">
