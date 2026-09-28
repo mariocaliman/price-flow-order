@@ -10,6 +10,10 @@ import {
   fmtNumero, propostaFilename, propostaTotal,
   type PropostaData, type PropostaItem,
 } from "@/lib/proposta-pdf";
+import { AppHeader, StatusBadge } from "@/components/app-header";
+import { openWhatsApp, resumoTexto } from "@/lib/share";
+import { setHandoff } from "@/lib/pedido-handoff";
+
 
 export const Route = createFileRoute("/propostas")({
   head: () => ({
