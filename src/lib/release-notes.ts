@@ -1,6 +1,12 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "Novo cabeçalho unificado com navegação (Pedidos · Propostas · Admin) e menu do usuário com perfil e sair.",
+  "Proposta comercial vira pedido com 1 clique (botão '→ Pedido' na lista e no editor).",
+  "Botão WhatsApp em pedidos e propostas: envia o resumo pronto (cliente, itens, prazo e total).",
+  "Pedidos: exportação do pedido atual em Excel e sugestão automática de clientes já atendidos (preenche código, telefone e prazo).",
+  "Situações das propostas com selos coloridos (rascunho, enviada, aprovada, recusada).",
   "Tabela de preços atualizada (REV 0006.26 — setembro): 5 produtos novos (Riocare Baby 230ml/1L, Riohex Dermo Suave 30ml/100ml/1L) e novos preços do Riocare Gel de Arnica e Riozyme IV E Neutro.",
+
   "Propostas: nova opção 'somente preços' — oculta quantidades e valor total na tela e no PDF (tabela mostra apenas produto e valor unitário).",
   "PDF da proposta remodelado no formato do papel timbrado: data por extenso, saudação ao contato, apresentação, produtos, diferenciais, operação logística, compromisso e assinatura.",
   "Proposta: novos campos cidade, tratamento e nome do contato no cliente, e textos editáveis de diferenciais, logística e compromisso.",

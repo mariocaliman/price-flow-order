@@ -479,91 +479,151 @@ function PedidosPage() {
     doc.save(pdfFilename({ cliente, data, numero: currentNumero }));
   }
 
+  // Proposta comercial → pedido (1 clique)
+  useEffect(() => {
+    if (!mounted || !ALL_PRODUCTS.length) return;
+    const h = takeHandoff();
+    if (!h) return;
+    setCliente(h.cliente || "");
+    if (h.prazo) setPrazo(h.prazo);
+    if (h.vencimento) setVencimento(h.vencimento);
+    if (h.obs) setObs(h.obs);
+    if (h.tabela) setTabela(h.tabela as PriceTable);
+    if (h.fallbackTabela) setFallbackTabela(h.fallbackTabela as PriceTable);
+    const its: OrderItem[] = [];
+    for (const l of h.items) {
+      const p = ALL_PRODUCTS.find((x) => x.codigo === l.codigo);
+      if (!p) continue;
+      const qty = l.qty || p.qtdPorEmbalagem;
+      its.push({
+        product: p,
+        qtyTyped: qty,
+        qtyAdjusted: roundToBox(qty, p.qtdPorEmbalagem, "auto"),
+        unitPrice: l.unitPrice,
+      });
+    }
+    setItems(its);
+    setCurrentPedidoId(null);
+    setCurrentNumero(null);
+    alert(
+      `Pedido montado a partir da proposta${h.numeroProposta ? ` nº ${String(h.numeroProposta).padStart(6, "0")}` : ""}. Confira os dados e salve.`,
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted, ALL_PRODUCTS.length]);
+
+  function shareWhatsApp() {
+    if (!items.length) { alert("Adicione itens ao pedido antes de compartilhar."); return; }
+    openWhatsApp(
+      resumoTexto({
+        tipo: "Pedido",
+        numero: currentNumero,
+        cliente,
+        prazo,
+        vencimento,
+        vendedor,
+        total: totals.valorTotalNota,
+        itens: items.map((i) => ({
+          codigo: i.product.codigo,
+          descricao: i.product.descricao,
+          qty: i.qtyAdjusted,
+          unitPrice: i.unitPrice,
+        })),
+      }),
+      clienteTelefone,
+    );
+  }
+
+  async function exportPlanilha() {
+    if (!items.length) { alert("Adicione itens ao pedido antes de exportar."); return; }
+    const XLSX = await import("xlsx");
+    const rows = items.map((it) => ({
+      Pedido: currentNumero ? String(currentNumero).padStart(6, "0") : "",
+      Data: data,
+      Cliente: cliente,
+      "Cód. cliente": codCliente,
+      Vendedor: vendedor,
+      Prazo: prazo,
+      Tabela: tabela,
+      Código: it.product.codigo,
+      Produto: it.product.descricao,
+      Apresentação: it.product.apresentacao,
+      Quantidade: it.qtyAdjusted,
+      "Preço unit.": it.unitPrice,
+      Subtotal: Number((it.unitPrice * it.qtyAdjusted).toFixed(2)),
+    }));
+    const ws = XLSX.utils.json_to_sheet(rows);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Pedido");
+    const buf = XLSX.write(wb, { type: "array", bookType: "xlsx" }) as ArrayBuffer;
+    const blob = new Blob([buf], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `pedido_${currentNumero ? String(currentNumero).padStart(6, "0") : (cliente || "novo").replace(/\W+/g, "_")}.xlsx`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+
 
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-card sticky top-0 z-30">
-        <div className="max-w-[1500px] mx-auto px-3 sm:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
-          <div className="flex items-center gap-3 min-w-0">
-            <img src={logo} alt="Rioquímica" className="w-10 h-10 shrink-0 rounded-md object-contain" />
-            <div className="min-w-0">
-              <h1 className="font-bold leading-tight text-sm sm:text-base truncate" suppressHydrationWarning>
-                {(() => {
-                  if (!mounted) return "Olá!";
-                  const h = new Date().getHours();
-                  const saud = h < 12 ? "Bom dia" : h < 18 ? "Boa tarde" : "Boa noite";
-                  const nome = (auth.nome || auth.user?.email?.split("@")[0] || "").split(" ")[0];
-                  return nome ? `${saud}, ${nome}!` : `${saud}!`;
-                })()}
-              </h1>
-              <p className="text-[11px] sm:text-xs text-muted-foreground truncate">
-                Sistema de Pedidos · {ALL_PRODUCTS.length} produtos
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-wrap items-center gap-2 lg:justify-end">
-            {auth.isAdmin && (
-              <>
-                <Link to="/admin/dashboard" title="Dashboard"
-                  className="px-3 py-2 text-xs sm:text-sm font-semibold rounded-md bg-secondary text-secondary-foreground hover:opacity-90 transition inline-flex items-center gap-1.5">
-                  <span aria-hidden>📊</span> Dashboard
-                </Link>
-                <Link to="/admin" title="Admin"
-                  className="px-3 py-2 text-xs sm:text-sm font-semibold rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition inline-flex items-center gap-1.5 shadow-sm">
-                  <span aria-hidden>⚙</span> Admin
-                </Link>
-              </>
-            )}
-            <span className="hidden xl:inline text-xs text-muted-foreground px-2 truncate max-w-[160px]">
-              {auth.nome || auth.user?.email}
-            </span>
-            {mounted && (!offline.online || offline.pending > 0) && (
-              <button
-                onClick={async () => {
-                  if (!offline.online) { alert("Sem internet. A sincronização será automática quando voltar."); return; }
-                  const r = await offline.sync();
-                  alert(`Sincronização: ${r.sent} enviado(s), ${r.failed} falha(s), ${r.remaining} pendente(s).`);
-                }}
-                title={offline.online ? "Sincronizar pedidos pendentes" : "Você está offline"}
-                className={`px-2.5 py-2 text-xs rounded-md border inline-flex items-center gap-1.5 transition ${
-                  offline.online
-                    ? "border-amber-500/40 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20"
-                    : "border-destructive/40 bg-destructive/10 text-destructive"
-                }`}
-              >
-                <span aria-hidden>{offline.online ? "↻" : "⚠"}</span>
-                {offline.online
-                  ? `Sincronizar (${offline.pending})`
-                  : `Offline${offline.pending ? ` · ${offline.pending} na fila` : ""}`}
-              </button>
-            )}
-            <Link to="/propostas" title="Propostas Comerciais"
-              className="px-3 py-2 text-xs sm:text-sm font-semibold rounded-md border border-primary/40 text-primary hover:bg-primary/10 transition inline-flex items-center gap-1.5">
-              <span aria-hidden>📄</span> Propostas Comerciais
-            </Link>
-            <Link to="/perfil" title="Meu perfil"
-              className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition inline-flex items-center gap-1.5">
-              <span aria-hidden>👤</span> Perfil
-            </Link>
-            <button onClick={openHistory} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
-              Histórico
+      <AppHeader
+        current="pedidos"
+        title={(() => {
+          if (!mounted) return "Olá!";
+          const h = new Date().getHours();
+          const saud = h < 12 ? "Bom dia" : h < 18 ? "Boa tarde" : "Boa noite";
+          const nome = (auth.nome || auth.user?.email?.split("@")[0] || "").split(" ")[0];
+          return nome ? `${saud}, ${nome}!` : `${saud}!`;
+        })()}
+        subtitle={`Sistema de Pedidos · ${ALL_PRODUCTS.length} produtos`}
+        extra={
+          mounted && (!offline.online || offline.pending > 0) ? (
+            <button
+              onClick={async () => {
+                if (!offline.online) { alert("Sem internet. A sincronização será automática quando voltar."); return; }
+                const r = await offline.sync();
+                alert(`Sincronização: ${r.sent} enviado(s), ${r.failed} falha(s), ${r.remaining} pendente(s).`);
+              }}
+              title={offline.online ? "Sincronizar pedidos pendentes" : "Você está offline"}
+              className={`px-2.5 py-2 text-xs rounded-md border inline-flex items-center gap-1.5 transition ${
+                offline.online
+                  ? "border-amber-500/40 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20"
+                  : "border-destructive/40 bg-destructive/10 text-destructive"
+              }`}
+            >
+              <span aria-hidden>{offline.online ? "↻" : "⚠"}</span>
+              {offline.online
+                ? `Sincronizar (${offline.pending})`
+                : `Offline${offline.pending ? ` · ${offline.pending} na fila` : ""}`}
             </button>
-            <button onClick={() => savePedido()} disabled={saving} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
+          ) : null
+        }
+        actions={
+          <>
+            <button onClick={openHistory} className={hdrBtn}>Histórico</button>
+            <button onClick={exportPlanilha} disabled={!items.length} className={hdrBtn} title="Baixar pedido em Excel">
+              Excel
+            </button>
+            <button onClick={shareWhatsApp} disabled={!items.length} className={hdrBtn} title="Enviar resumo por WhatsApp">
+              WhatsApp
+            </button>
+            <button onClick={() => savePedido()} disabled={saving} className={hdrBtn}>
               {saving ? "Salvando..." : "Salvar"}
             </button>
-            <button onClick={exportPDF} disabled={!items.length}
-              className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
+            <button onClick={exportPDF} disabled={!items.length} className={hdrBtnPrimary}>
               Gerar PDF
             </button>
-            <button
-              onClick={async () => { await supabase.auth.signOut(); navigate({ to: "/login" }); }}
-              className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
-              Sair
-            </button>
-          </div>
-        </div>
-      </header>
+          </>
+        }
+      />
+
 
       <main className="max-w-[1500px] mx-auto px-3 sm:px-6 py-4 sm:py-6 grid grid-cols-12 gap-3 sm:gap-6">
         <section className="col-span-12 md:col-span-5 xl:col-span-4">
@@ -655,7 +715,20 @@ function PedidosPage() {
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
-              <Field label="Cliente" value={cliente} onChange={setCliente} />
+              <div>
+                <label className="text-[10px] text-muted-foreground">Cliente</label>
+                <input
+                  list="clientes-frequentes"
+                  value={cliente}
+                  onChange={(e) => onClienteChange(e.target.value)}
+                  placeholder="Digite ou escolha um cliente"
+                  className="mt-0.5 w-full px-2 py-1 rounded-md bg-background border border-input text-xs focus:outline-none focus:ring-2 focus:ring-ring"
+                />
+                <datalist id="clientes-frequentes">
+                  {clientesConhecidos.map((c) => <option key={c.nome} value={c.nome} />)}
+                </datalist>
+              </div>
+
               <Field label="Código do cliente" value={codCliente} onChange={setCodCliente} />
               <Field label="Telefone (WhatsApp)" value={clienteTelefone} onChange={setClienteTelefone} placeholder="(DDD) 99999-9999" />
               <Field label="Vendedor" value={vendedor} onChange={setVendedor} />
