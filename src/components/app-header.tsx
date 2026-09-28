@@ -48,15 +48,15 @@ export function AppHeader({
   return (
     <header className="border-b border-border bg-card sticky top-0 z-30">
       <div className="max-w-[1500px] mx-auto px-3 sm:px-6 py-2.5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2.5">
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="flex items-center gap-3 min-w-0 flex-1">
           <img src={logo} alt="Rioquímica" className="w-9 h-9 shrink-0 rounded-md object-contain" />
-          <div className="min-w-0">
+          <div className="min-w-0 shrink-0 max-w-[220px] sm:max-w-[280px]">
             <h1 className="font-bold leading-tight text-sm sm:text-base truncate">{title}</h1>
             {subtitle && (
               <p className="text-[11px] text-muted-foreground truncate">{subtitle}</p>
             )}
           </div>
-          <nav className="hidden md:flex items-center gap-1 ml-3 pl-3 border-l border-border">
+          <nav className="hidden md:flex items-center gap-1 ml-3 pl-3 border-l border-border shrink-0">
             <Link to="/" className={cls("pedidos")}>
               <span aria-hidden>📋</span> Pedidos
             </Link>
