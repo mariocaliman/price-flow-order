@@ -573,87 +573,57 @@ function PedidosPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-card sticky top-0 z-30">
-        <div className="max-w-[1500px] mx-auto px-3 sm:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
-          <div className="flex items-center gap-3 min-w-0">
-            <img src={logo} alt="Rioquímica" className="w-10 h-10 shrink-0 rounded-md object-contain" />
-            <div className="min-w-0">
-              <h1 className="font-bold leading-tight text-sm sm:text-base truncate" suppressHydrationWarning>
-                {(() => {
-                  if (!mounted) return "Olá!";
-                  const h = new Date().getHours();
-                  const saud = h < 12 ? "Bom dia" : h < 18 ? "Boa tarde" : "Boa noite";
-                  const nome = (auth.nome || auth.user?.email?.split("@")[0] || "").split(" ")[0];
-                  return nome ? `${saud}, ${nome}!` : `${saud}!`;
-                })()}
-              </h1>
-              <p className="text-[11px] sm:text-xs text-muted-foreground truncate">
-                Sistema de Pedidos · {ALL_PRODUCTS.length} produtos
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-wrap items-center gap-2 lg:justify-end">
-            {auth.isAdmin && (
-              <>
-                <Link to="/admin/dashboard" title="Dashboard"
-                  className="px-3 py-2 text-xs sm:text-sm font-semibold rounded-md bg-secondary text-secondary-foreground hover:opacity-90 transition inline-flex items-center gap-1.5">
-                  <span aria-hidden>📊</span> Dashboard
-                </Link>
-                <Link to="/admin" title="Admin"
-                  className="px-3 py-2 text-xs sm:text-sm font-semibold rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition inline-flex items-center gap-1.5 shadow-sm">
-                  <span aria-hidden>⚙</span> Admin
-                </Link>
-              </>
-            )}
-            <span className="hidden xl:inline text-xs text-muted-foreground px-2 truncate max-w-[160px]">
-              {auth.nome || auth.user?.email}
-            </span>
-            {mounted && (!offline.online || offline.pending > 0) && (
-              <button
-                onClick={async () => {
-                  if (!offline.online) { alert("Sem internet. A sincronização será automática quando voltar."); return; }
-                  const r = await offline.sync();
-                  alert(`Sincronização: ${r.sent} enviado(s), ${r.failed} falha(s), ${r.remaining} pendente(s).`);
-                }}
-                title={offline.online ? "Sincronizar pedidos pendentes" : "Você está offline"}
-                className={`px-2.5 py-2 text-xs rounded-md border inline-flex items-center gap-1.5 transition ${
-                  offline.online
-                    ? "border-amber-500/40 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20"
-                    : "border-destructive/40 bg-destructive/10 text-destructive"
-                }`}
-              >
-                <span aria-hidden>{offline.online ? "↻" : "⚠"}</span>
-                {offline.online
-                  ? `Sincronizar (${offline.pending})`
-                  : `Offline${offline.pending ? ` · ${offline.pending} na fila` : ""}`}
-              </button>
-            )}
-            <Link to="/propostas" title="Propostas Comerciais"
-              className="px-3 py-2 text-xs sm:text-sm font-semibold rounded-md border border-primary/40 text-primary hover:bg-primary/10 transition inline-flex items-center gap-1.5">
-              <span aria-hidden>📄</span> Propostas Comerciais
-            </Link>
-            <Link to="/perfil" title="Meu perfil"
-              className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition inline-flex items-center gap-1.5">
-              <span aria-hidden>👤</span> Perfil
-            </Link>
-            <button onClick={openHistory} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
-              Histórico
+      <AppHeader
+        current="pedidos"
+        title={(() => {
+          if (!mounted) return "Olá!";
+          const h = new Date().getHours();
+          const saud = h < 12 ? "Bom dia" : h < 18 ? "Boa tarde" : "Boa noite";
+          const nome = (auth.nome || auth.user?.email?.split("@")[0] || "").split(" ")[0];
+          return nome ? `${saud}, ${nome}!` : `${saud}!`;
+        })()}
+        subtitle={`Sistema de Pedidos · ${ALL_PRODUCTS.length} produtos`}
+        extra={
+          mounted && (!offline.online || offline.pending > 0) ? (
+            <button
+              onClick={async () => {
+                if (!offline.online) { alert("Sem internet. A sincronização será automática quando voltar."); return; }
+                const r = await offline.sync();
+                alert(`Sincronização: ${r.sent} enviado(s), ${r.failed} falha(s), ${r.remaining} pendente(s).`);
+              }}
+              title={offline.online ? "Sincronizar pedidos pendentes" : "Você está offline"}
+              className={`px-2.5 py-2 text-xs rounded-md border inline-flex items-center gap-1.5 transition ${
+                offline.online
+                  ? "border-amber-500/40 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20"
+                  : "border-destructive/40 bg-destructive/10 text-destructive"
+              }`}
+            >
+              <span aria-hidden>{offline.online ? "↻" : "⚠"}</span>
+              {offline.online
+                ? `Sincronizar (${offline.pending})`
+                : `Offline${offline.pending ? ` · ${offline.pending} na fila` : ""}`}
             </button>
-            <button onClick={() => savePedido()} disabled={saving} className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
+          ) : null
+        }
+        actions={
+          <>
+            <button onClick={openHistory} className={hdrBtn}>Histórico</button>
+            <button onClick={exportPlanilha} disabled={!items.length} className={hdrBtn} title="Baixar pedido em Excel">
+              Excel
+            </button>
+            <button onClick={shareWhatsApp} disabled={!items.length} className={hdrBtn} title="Enviar resumo por WhatsApp">
+              WhatsApp
+            </button>
+            <button onClick={() => savePedido()} disabled={saving} className={hdrBtn}>
               {saving ? "Salvando..." : "Salvar"}
             </button>
-            <button onClick={exportPDF} disabled={!items.length}
-              className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition disabled:opacity-50">
+            <button onClick={exportPDF} disabled={!items.length} className={hdrBtnPrimary}>
               Gerar PDF
             </button>
-            <button
-              onClick={async () => { await supabase.auth.signOut(); navigate({ to: "/login" }); }}
-              className="px-3 py-2 text-xs sm:text-sm rounded-md border border-border hover:bg-muted transition">
-              Sair
-            </button>
-          </div>
-        </div>
-      </header>
+          </>
+        }
+      />
+
 
       <main className="max-w-[1500px] mx-auto px-3 sm:px-6 py-4 sm:py-6 grid grid-cols-12 gap-3 sm:gap-6">
         <section className="col-span-12 md:col-span-5 xl:col-span-4">
