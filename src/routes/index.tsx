@@ -479,6 +479,96 @@ function PedidosPage() {
     doc.save(pdfFilename({ cliente, data, numero: currentNumero }));
   }
 
+  // Proposta comercial → pedido (1 clique)
+  useEffect(() => {
+    if (!mounted || !ALL_PRODUCTS.length) return;
+    const h = takeHandoff();
+    if (!h) return;
+    setCliente(h.cliente || "");
+    if (h.prazo) setPrazo(h.prazo);
+    if (h.vencimento) setVencimento(h.vencimento);
+    if (h.obs) setObs(h.obs);
+    if (h.tabela) setTabela(h.tabela as PriceTable);
+    if (h.fallbackTabela) setFallbackTabela(h.fallbackTabela as PriceTable);
+    const its: OrderItem[] = [];
+    for (const l of h.items) {
+      const p = ALL_PRODUCTS.find((x) => x.codigo === l.codigo);
+      if (!p) continue;
+      const qty = l.qty || p.qtdPorEmbalagem;
+      its.push({
+        product: p,
+        qtyTyped: qty,
+        qtyAdjusted: roundToBox(qty, p.qtdPorEmbalagem, "auto"),
+        unitPrice: l.unitPrice,
+      });
+    }
+    setItems(its);
+    setCurrentPedidoId(null);
+    setCurrentNumero(null);
+    alert(
+      `Pedido montado a partir da proposta${h.numeroProposta ? ` nº ${String(h.numeroProposta).padStart(6, "0")}` : ""}. Confira os dados e salve.`,
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted, ALL_PRODUCTS.length]);
+
+  function shareWhatsApp() {
+    if (!items.length) { alert("Adicione itens ao pedido antes de compartilhar."); return; }
+    openWhatsApp(
+      resumoTexto({
+        tipo: "Pedido",
+        numero: currentNumero,
+        cliente,
+        prazo,
+        vencimento,
+        vendedor,
+        total: totals.valorTotalNota,
+        itens: items.map((i) => ({
+          codigo: i.product.codigo,
+          descricao: i.product.descricao,
+          qty: i.qtyAdjusted,
+          unitPrice: i.unitPrice,
+        })),
+      }),
+      clienteTelefone,
+    );
+  }
+
+  async function exportPlanilha() {
+    if (!items.length) { alert("Adicione itens ao pedido antes de exportar."); return; }
+    const XLSX = await import("xlsx");
+    const rows = items.map((it) => ({
+      Pedido: currentNumero ? String(currentNumero).padStart(6, "0") : "",
+      Data: data,
+      Cliente: cliente,
+      "Cód. cliente": codCliente,
+      Vendedor: vendedor,
+      Prazo: prazo,
+      Tabela: tabela,
+      Código: it.product.codigo,
+      Produto: it.product.descricao,
+      Apresentação: it.product.apresentacao,
+      Quantidade: it.qtyAdjusted,
+      "Preço unit.": it.unitPrice,
+      Subtotal: Number((it.unitPrice * it.qtyAdjusted).toFixed(2)),
+    }));
+    const ws = XLSX.utils.json_to_sheet(rows);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Pedido");
+    const buf = XLSX.write(wb, { type: "array", bookType: "xlsx" }) as ArrayBuffer;
+    const blob = new Blob([buf], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `pedido_${currentNumero ? String(currentNumero).padStart(6, "0") : (cliente || "novo").replace(/\W+/g, "_")}.xlsx`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+
 
 
   return (
