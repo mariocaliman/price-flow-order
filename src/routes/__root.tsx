@@ -34,7 +34,8 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent(props: { error: unknown; reset: () => void }) {
+  const error = props.error instanceof Error ? props.error : new Error(String(props.error));
   console.error(error);
   const router = useRouter();
 
@@ -68,6 +69,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     </div>
   );
 }
+
+const LazyErrorComponent = lazy(
+  async () => await Promise.resolve({ default: ErrorComponent }),
+);
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
