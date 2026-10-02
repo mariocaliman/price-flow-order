@@ -1,5 +1,6 @@
 // Notas da versão atual. Atualize esta lista a cada modificação relevante.
 export const RELEASE_NOTES: string[] = [
+  "Histórico de versões: o popup mostra as últimas 5 atualizações e um botão 'Ver histórico total' abre a lista completa.",
   "Preço de Escolha atualizado (outubro): Riodeine Dermo Suave Degermante Escova e Riohex 2% Escova 22ml passam para R$ 1,80. Impostos conferidos, sem alterações.",
   "Cabeçalho: ajustado o espaçamento do logo no canto superior esquerdo (não fica mais sobreposto ao título e à navegação).",
   "Novo cabeçalho unificado com navegação (Pedidos · Propostas · Admin) e menu do usuário com perfil e sair.",

@@ -1,6 +1,13 @@
 declare const __APP_VERSION__: string;
 import { RELEASE_NOTES } from "@/lib/release-notes";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 import { useEffect, useMemo, useState } from "react";
