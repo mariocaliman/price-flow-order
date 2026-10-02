@@ -1078,27 +1078,60 @@ function PedidosPage() {
 
 function VersionNotes() {
   const [open, setOpen] = useState(false);
+  const [fullOpen, setFullOpen] = useState(false);
   const isMobile = useIsMobile();
+  const recent = RELEASE_NOTES.slice(0, 5);
+  const rest = RELEASE_NOTES.slice(5);
   return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <p
-          className="text-[10px] text-muted-foreground cursor-help underline decoration-dotted underline-offset-2 inline-block"
-          onMouseEnter={() => !isMobile && setOpen(true)}
-          onMouseLeave={() => !isMobile && setOpen(false)}
-        >
-          Versão {__APP_VERSION__}
-        </p>
-      </PopoverTrigger>
-      <PopoverContent side="top" align="center" className="w-72 text-xs">
-        <p className="font-semibold mb-1">Notas desta versão</p>
-        <ul className="list-disc pl-4 space-y-1">
-          {RELEASE_NOTES.map((n, i) => (
-            <li key={i}>{n}</li>
-          ))}
-        </ul>
-      </PopoverContent>
-    </Popover>
+    <>
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger asChild>
+          <p
+            className="text-[10px] text-muted-foreground cursor-help underline decoration-dotted underline-offset-2 inline-block"
+            onMouseEnter={() => !isMobile && setOpen(true)}
+            onMouseLeave={() => !isMobile && !fullOpen && setOpen(false)}
+          >
+            Versão {__APP_VERSION__}
+          </p>
+        </PopoverTrigger>
+        <PopoverContent side="top" align="center" className="w-80 text-xs">
+          <p className="font-semibold mb-1">Últimas 5 atualizações</p>
+          <ul className="list-disc pl-4 space-y-1">
+            {recent.map((n, i) => (
+              <li key={i}>{n}</li>
+            ))}
+          </ul>
+          <button
+            className="mt-2 text-[11px] text-primary underline underline-offset-2 hover:font-medium"
+            onClick={() => {
+              setFullOpen(true);
+              setOpen(false);
+            }}
+          >
+            Ver histórico total ({RELEASE_NOTES.length})
+          </button>
+        </PopoverContent>
+      </Popover>
+
+      <Dialog open={fullOpen} onOpenChange={setFullOpen}>
+        <DialogContent className="max-w-lg max-h-[80vh] overflow-hidden flex flex-col">
+          <DialogHeader>
+            <DialogTitle>Histórico de versões</DialogTitle>
+            <DialogDescription>Versão atual: {__APP_VERSION__}</DialogDescription>
+          </DialogHeader>
+          <div className="overflow-y-auto pr-1 text-xs">
+            <ul className="list-disc pl-4 space-y-2">
+              {RELEASE_NOTES.map((n, i) => (
+                <li key={i}>{n}</li>
+              ))}
+            </ul>
+            {rest.length === 0 && (
+              <p className="text-muted-foreground mt-2">Nenhuma atualização anterior.</p>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
 
