@@ -1111,7 +1111,6 @@ function VersionNotes() {
           <button
             className="mt-2 text-[11px] text-primary underline underline-offset-2 hover:font-medium"
             onClick={() => {
-              console.log("[VN] btn click, opening full");
               setOpen(false);
               window.setTimeout(() => setFullOpen(true), 0);
             }}
@@ -1121,13 +1120,7 @@ function VersionNotes() {
         </PopoverContent>
       </Popover>
 
-      <Dialog
-        open={fullOpen}
-        onOpenChange={(o) => {
-          console.log("[VN] dialog onOpenChange:", o, new Error().stack?.split("\n").slice(1, 5).join(" | "));
-          setFullOpen(o);
-        }}
-      >
+      <Dialog open={fullOpen} onOpenChange={setFullOpen}>
         <DialogContent
           className="max-w-lg max-h-[80vh] overflow-hidden flex flex-col"
           onFocusOutside={(e) => e.preventDefault()}
