@@ -1111,8 +1111,8 @@ function VersionNotes() {
           <button
             className="mt-2 text-[11px] text-primary underline underline-offset-2 hover:font-medium"
             onClick={() => {
-              setFullOpen(true);
               setOpen(false);
+              window.setTimeout(() => setFullOpen(true), 0);
             }}
           >
             Ver histórico total ({RELEASE_NOTES.length})
@@ -1121,7 +1121,10 @@ function VersionNotes() {
       </Popover>
 
       <Dialog open={fullOpen} onOpenChange={setFullOpen}>
-        <DialogContent className="max-w-lg max-h-[80vh] overflow-hidden flex flex-col">
+        <DialogContent
+          className="max-w-lg max-h-[80vh] overflow-hidden flex flex-col"
+          onFocusOutside={(e) => e.preventDefault()}
+        >
           <DialogHeader>
             <DialogTitle>Histórico de versões</DialogTitle>
             <DialogDescription>Versão atual: {__APP_VERSION__}</DialogDescription>
