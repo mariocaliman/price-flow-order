@@ -1111,8 +1111,8 @@ function VersionNotes() {
           <button
             className="mt-2 text-[11px] text-primary underline underline-offset-2 hover:font-medium"
             onClick={() => {
-              setFullOpen(true);
               setOpen(false);
+              window.setTimeout(() => setFullOpen(true), 0);
             }}
           >
             Ver histórico total ({RELEASE_NOTES.length})
