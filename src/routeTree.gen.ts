@@ -9,36 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PropostasRouteImport } from './routes/propostas'
-import { Route as PerfilRouteImport } from './routes/perfil'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
-import { Route as AdminProductsRouteImport } from './routes/admin.products'
-import { Route as AdminPricesRouteImport } from './routes/admin.prices'
-import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as PropostasRouteImport } from './routes/propostas'
 import { Route as AdminAuditRouteImport } from './routes/admin.audit'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminPricesRouteImport } from './routes/admin.prices'
+import { Route as AdminProductsRouteImport } from './routes/admin.products'
+import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
-import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
-import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
-import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
-import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
 import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
+import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
+import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
+import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
+import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
 
-const PropostasRoute = PropostasRouteImport.update({
-  id: '/propostas',
-  path: '/propostas',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PerfilRoute = PerfilRouteImport.update({
-  id: '/perfil',
-  path: '/perfil',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminRoute = AdminRouteImport.update({
@@ -46,24 +36,24 @@ const AdminRoute = AdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
-  id: '/email/unsubscribe',
-  path: '/email/unsubscribe',
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminProductsRoute = AdminProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => AdminRoute,
+const PropostasRoute = PropostasRouteImport.update({
+  id: '/propostas',
+  path: '/propostas',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AdminPricesRoute = AdminPricesRouteImport.update({
-  id: '/prices',
-  path: '/prices',
+const AdminAuditRoute = AdminAuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminDashboardRoute = AdminDashboardRouteImport.update({
@@ -71,20 +61,40 @@ const AdminDashboardRoute = AdminDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AdminRoute,
 } as any)
-const AdminAuditRoute = AdminAuditRouteImport.update({
-  id: '/audit',
-  path: '/audit',
+const AdminPricesRoute = AdminPricesRouteImport.update({
+  id: '/prices',
+  path: '/prices',
   getParentRoute: () => AdminRoute,
+} as any)
+const AdminProductsRoute = AdminProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => AdminRoute,
+} as any)
+const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
+  id: '/email/unsubscribe',
+  path: '/email/unsubscribe',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   id: '/lovable/email/suppression',
   path: '/lovable/email/suppression',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LovableEmailTransactionalSendRoute =
-  LovableEmailTransactionalSendRouteImport.update({
-    id: '/lovable/email/transactional/send',
-    path: '/lovable/email/transactional/send',
+const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
+  id: '/lovable/email/auth/preview',
+  path: '/lovable/email/auth/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
+  id: '/lovable/email/auth/webhook',
+  path: '/lovable/email/auth/webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailQueueProcessRoute =
+  LovableEmailQueueProcessRouteImport.update({
+    id: '/lovable/email/queue/process',
+    path: '/lovable/email/queue/process',
     getParentRoute: () => rootRouteImport,
   } as any)
 const LovableEmailTransactionalPreviewRoute =
@@ -93,22 +103,12 @@ const LovableEmailTransactionalPreviewRoute =
     path: '/lovable/email/transactional/preview',
     getParentRoute: () => rootRouteImport,
   } as any)
-const LovableEmailQueueProcessRoute =
-  LovableEmailQueueProcessRouteImport.update({
-    id: '/lovable/email/queue/process',
-    path: '/lovable/email/queue/process',
+const LovableEmailTransactionalSendRoute =
+  LovableEmailTransactionalSendRouteImport.update({
+    id: '/lovable/email/transactional/send',
+    path: '/lovable/email/transactional/send',
     getParentRoute: () => rootRouteImport,
   } as any)
-const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
-  id: '/lovable/email/auth/webhook',
-  path: '/lovable/email/auth/webhook',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
-  id: '/lovable/email/auth/preview',
-  path: '/lovable/email/auth/preview',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -239,25 +239,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/propostas': {
-      id: '/propostas'
-      path: '/propostas'
-      fullPath: '/propostas'
-      preLoaderRoute: typeof PropostasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/perfil': {
-      id: '/perfil'
-      path: '/perfil'
-      fullPath: '/perfil'
-      preLoaderRoute: typeof PerfilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin': {
@@ -267,32 +253,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/email/unsubscribe': {
-      id: '/email/unsubscribe'
-      path: '/email/unsubscribe'
-      fullPath: '/email/unsubscribe'
-      preLoaderRoute: typeof EmailUnsubscribeRouteImport
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/products': {
-      id: '/admin/products'
-      path: '/products'
-      fullPath: '/admin/products'
-      preLoaderRoute: typeof AdminProductsRouteImport
-      parentRoute: typeof AdminRoute
+    '/propostas': {
+      id: '/propostas'
+      path: '/propostas'
+      fullPath: '/propostas'
+      preLoaderRoute: typeof PropostasRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/admin/prices': {
-      id: '/admin/prices'
-      path: '/prices'
-      fullPath: '/admin/prices'
-      preLoaderRoute: typeof AdminPricesRouteImport
+    '/admin/audit': {
+      id: '/admin/audit'
+      path: '/audit'
+      fullPath: '/admin/audit'
+      preLoaderRoute: typeof AdminAuditRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/dashboard': {
@@ -302,12 +288,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardRouteImport
       parentRoute: typeof AdminRoute
     }
-    '/admin/audit': {
-      id: '/admin/audit'
-      path: '/audit'
-      fullPath: '/admin/audit'
-      preLoaderRoute: typeof AdminAuditRouteImport
+    '/admin/prices': {
+      id: '/admin/prices'
+      path: '/prices'
+      fullPath: '/admin/prices'
+      preLoaderRoute: typeof AdminPricesRouteImport
       parentRoute: typeof AdminRoute
+    }
+    '/admin/products': {
+      id: '/admin/products'
+      path: '/products'
+      fullPath: '/admin/products'
+      preLoaderRoute: typeof AdminProductsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/email/unsubscribe': {
+      id: '/email/unsubscribe'
+      path: '/email/unsubscribe'
+      fullPath: '/email/unsubscribe'
+      preLoaderRoute: typeof EmailUnsubscribeRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/lovable/email/suppression': {
       id: '/lovable/email/suppression'
@@ -316,25 +316,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailSuppressionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lovable/email/transactional/send': {
-      id: '/lovable/email/transactional/send'
-      path: '/lovable/email/transactional/send'
-      fullPath: '/lovable/email/transactional/send'
-      preLoaderRoute: typeof LovableEmailTransactionalSendRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lovable/email/transactional/preview': {
-      id: '/lovable/email/transactional/preview'
-      path: '/lovable/email/transactional/preview'
-      fullPath: '/lovable/email/transactional/preview'
-      preLoaderRoute: typeof LovableEmailTransactionalPreviewRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lovable/email/queue/process': {
-      id: '/lovable/email/queue/process'
-      path: '/lovable/email/queue/process'
-      fullPath: '/lovable/email/queue/process'
-      preLoaderRoute: typeof LovableEmailQueueProcessRouteImport
+    '/lovable/email/auth/preview': {
+      id: '/lovable/email/auth/preview'
+      path: '/lovable/email/auth/preview'
+      fullPath: '/lovable/email/auth/preview'
+      preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lovable/email/auth/webhook': {
@@ -344,11 +330,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailAuthWebhookRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lovable/email/auth/preview': {
-      id: '/lovable/email/auth/preview'
-      path: '/lovable/email/auth/preview'
-      fullPath: '/lovable/email/auth/preview'
-      preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
+    '/lovable/email/queue/process': {
+      id: '/lovable/email/queue/process'
+      path: '/lovable/email/queue/process'
+      fullPath: '/lovable/email/queue/process'
+      preLoaderRoute: typeof LovableEmailQueueProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/transactional/preview': {
+      id: '/lovable/email/transactional/preview'
+      path: '/lovable/email/transactional/preview'
+      fullPath: '/lovable/email/transactional/preview'
+      preLoaderRoute: typeof LovableEmailTransactionalPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/transactional/send': {
+      id: '/lovable/email/transactional/send'
+      path: '/lovable/email/transactional/send'
+      fullPath: '/lovable/email/transactional/send'
+      preLoaderRoute: typeof LovableEmailTransactionalSendRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
